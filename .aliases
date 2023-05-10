@@ -50,12 +50,12 @@ alias vscbashrc='code ~/.bashrc'
 alias vsczshrc='code ~/.zshrc'
 
 # source run commands and aliases
-alias srca='source ~/.aliases && echo hey, you sourced your aliases, yay!'
-alias srcb='source ~/.bashrc && echo hey, you sourced the bash run commands, hooray!'
-alias srcz='source ~/.zshrc && echo hey, you sourced the zsh run commands, nice!'
-# alias srcaliases='source ~/.aliases && echo hey, you sourced your aliases, yay!'
-# alias srcbashrc='source ~/.bashrc && echo hey, you sourced the bash run commands, hooray!'
-# alias srczshrc='source ~/.zshrc && echo hey, you sourced the zsh run commands, nice!'
+alias src='source ~/.aliases && source ~/.zshrc && echo hey, you sourced your aliases and zsh run commands, yay!'
+alias srcb='source ~/.aliases && source ~/.bashrc && echo hey, you sourced your aliases and bash run commands, yay!'
+# alias srcz='source ~/.aliases && source ~/.zshrc && echo hey, you sourced your aliases and zsh run commands, yay!'
+
+# copies run command and alias files to sh-config (git/github)
+alias copyconfig='_copyconfig() { cp -irv ~/.aliases ~/builds/.sh-config/ && cp -irv ~/.bashrc ~/builds/.sh-config/ && cp -irv ~/.zshrc ~/builds/.sh-config/ ; }; _copyconfig'
 
 # ---
 
@@ -97,6 +97,7 @@ alias glogg='_glogg() { git log --oneline --decorate --graph --max-count="$1" ; 
 alias glogp='git log --stat --patch' # as 'glgp' in zsh
 alias gloog='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'\'' --stat' # as 'glols' in zsh
 alias grlog='git reflog'
+alias gcfg='git config --list --global'
 
 # utilities
 alias gnb='git switch -c' # creates a new branch and switches to it
@@ -176,25 +177,25 @@ alias help='man'
 
 alias clr='clear'
 
-alias copy='_copy() { cp -irv "$1" "$2" && echo hey to be completely clear, you COPIED that \""$1"\" thing using the cp command. just making sure! ; }; _copy'
+alias copy='_copy() { cp -irv "$1" "$2" && echo hey, you COPIED that \""$1"\" thing using the \*cp\* command! ; }; _copy'
 
-alias rename='_rename() { mv -iv "$1" "$2" && echo hey to be completely clear, you RENAMED that \""$1"\" thing using the mv command. just making sure! ; }; _rename'
+alias rename='_rename() { mv -iv "$1" "$2" && echo hey, you RENAMED that \""$1"\" thing using the \*mv\* command! ; }; _rename'
 
-alias move='_move() { mv -iv "$1" "$2" && echo hey to be completely clear, you MOVED that \""$1"\" thing using the mv command. just making sure! ; }; _move'
+alias move='_move() { mv -iv "$1" "$2" && echo hey, you MOVED that \""$1"\" thing using the \*mv\* command! ; }; _move'
 
-alias mf='_makefile() { touch "$1" && echo hey, you just created that \""$1"\" file using the touch command. yay! ; }; _makefile'
-# alias makefile='_makefile() { touch "$1" && echo hey, you just created that \""$1"\" file using the touch command. yay! ; }; _makefile'
+alias mf='_makefile() { touch "$1" && echo hey, you just created that \""$1"\" file using the \*touch\* command. yay! ; }; _makefile'
+# alias makefile='_makefile() { touch "$1" && echo hey, you just created that \""$1"\" file using the \*touch\* command. yay! ; }; _makefile'
 
-alias rf='_removefile() { rm -Iv "$1" && echo hey, you just removed that \""$1"\" thing using the rm command && echo if all you wanted to do was put something in the trash, try using the \"toss\" alias command instead! ; }; _removefile'
-# alias removefile='_removefile() { rm -Iv "$1" && echo hey, you just removed that \""$1"\" thing using the rm command && echo if all you wanted to do was put something in the trash, try using the \"toss\" alias command instead! ; }; _removefile'
+alias rf='_removefile() { rm -Iv "$1" && echo hey, you just removed that \""$1"\" thing using the \*rm\* command! ; }; _removefile'
+# alias removefile='_removefile() { rm -Iv "$1" && echo hey, you just removed that \""$1"\" thing using the \*rm\* command! ; }; _removefile'
 
 alias md='mkdir -pv' 
 # alias makedirectory='mkdir -pv'
 # alias makedir='mkdir -pv'
 
-alias rd='_removedirectory() { rm -Ivr "$1" && echo hey, you just removed that \""$1"\" directory using the rm command, NOT rmdir. hope that was what you wanted! && echo if all you wanted to do was put something in the trash, try using the \"toss\" alias command instead! ; }; _removedirectory'
-# alias removedirectory='_removedirectory() { rm -Ivr "$1" && echo hey, you just removed that \""$1"\" directory using the rm command, NOT rmdir. hope that was what you wanted! && echo if all you wanted to do was put something in the trash, try using the \"toss\" alias command instead! ; }; _removedirectory'
-# alias removedir='_removedirectory() { rm -Ivr "$1" && echo hey, you just removed that \""$1"\" directory using the rm command, NOT rmdir. hope that was what you wanted! && echo if all you wanted to do was put something in the trash, try using the \"toss\" alias command instead! ; }; _removedirectory'
+alias rd='_removedirectory() { rm -Ivr "$1" && echo hey, you just removed that \""$1"\" directory using the \*rm\* command, NOT rmdir! ; }; _removedirectory'
+# alias removedirectory='_removedirectory() { rm -Ivr "$1" && echo hey, you just removed that \""$1"\" directory using the \*rm\* command, NOT rmdir! ; }; _removedirectory'
+# alias removedir='_removedirectory() { rm -Ivr "$1" && echo hey, you just removed that \""$1"\" directory using the \*rm\* command, NOT rmdir! ; }; _removedirectory'
 
 # make a directory and cd into it
 alias mdcd='_mdcd() { md "$1" && cd "$1" ; }; _mdcd'
@@ -210,8 +211,8 @@ alias explore='nautilus .'
 # trash and toss stuff
 
 # toss things into the trash instead of hard deleting
-alias toss='_toss() { md ~/.local/share/Trash/files/tossed && mv -ivt ~/.local/share/Trash/files/tossed "$1" && echo hey, you just tossed that \""$1"\" thing in the trash using the mv command. so stinky! ; }; _toss'
-# alias tossout='_toss() { mv -ivt ~/.local/share/Trash/files "$1" && echo hey, you just tossed that \""$1"\" thing in the trash using the mv command. so stinky! ; }; _toss'
+alias toss='_toss() { md ~/.local/share/Trash/files/tossed && mv -ivt ~/.local/share/Trash/files/tossed "$1" && echo hey, you just tossed that \""$1"\" thing in the trash using the \*mv\* command. so stinky! ; }; _toss'
+# alias tossout='_toss() { mv -ivt ~/.local/share/Trash/files "$1" && echo hey, you just tossed that \""$1"\" thing in the trash using the \*mv\* command. so stinky! ; }; _toss'
 
 # lists what is in trash and tossed
 alias ltrash='_ltrash() { la -got ~/.local/share/Trash/files && echo \(listed by last modified\) ; }; _ltrash'
