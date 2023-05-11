@@ -22,7 +22,7 @@ alias srcb='source ~/.bashrc && echo hey, you sourced bash things, yay!'
 alias srcz='source ~/.zshrc && echo hey, you sourced zsh things, yay!'
 
 # copies run command and alias files to sh-config (git/github)
-alias copyconfig='_copyconfig() { cp -irv ~/.aliases ~/builds/.sh-config/ && cp -irv ~/.bashrc ~/builds/.sh-config/ && cp -irv ~/.bash_aliases ~/builds/.sh-config/ && cp -irv ~/.zshrc ~/builds/.sh-config/ ; }; _copyconfig'
+alias copyconfig='_copyconfig() { cp -f ~/.aliases ~/builds/.sh-config/ && cp -f ~/.bashrc ~/builds/.sh-config/ && cp -f ~/.bash_aliases ~/builds/.sh-config/ && cp -f ~/.zshrc ~/builds/.sh-config/ && echo aliases and run commands copied ; }; _copyconfig'
 
 # git aliases
 alias ga='git add -v'
@@ -48,6 +48,7 @@ alias gr='git remote -v'
 
 alias grst='git reset'
 alias grstr='git restore'
+alias grstra='git restore .'
 
 # logging stuff
 alias gstat='git status --short --branch'

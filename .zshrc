@@ -87,6 +87,26 @@ plugins=(
   universalarchive
   vscode
   z
+
+  # other plugins I might like
+
+  # autoenv
+  # common-aliases
+  # dircycle
+  # dirhistory
+  # dnote
+  # dotenv
+  # fastfile
+  # frontend-search
+  # gitignore
+  # isodate
+  # jsontools
+  # last-working-dir
+  # qrcode
+  # react-native
+  # sudo
+  # urltools
+  # web-search
 )
 
 # Configurations for oh-my-zsh plugins
