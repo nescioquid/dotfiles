@@ -119,11 +119,12 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# terminal editor will always be nano (hopefully)
-export EDITOR=nano
-export VISUAL="$EDITOR"
-
-# adds my aliases
-if [ -f ~/.aliases ]; then
-    . ~/.aliases
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='nano'
+else
+  export EDITOR='nano'
 fi
+
+# # adds my common aliases
+source $HOME/.aliases

@@ -78,7 +78,6 @@ plugins=(
   copyfile
   copypath
   extract
-  frontend-search
   gh
   git
   history
@@ -86,7 +85,6 @@ plugins=(
   nvm
   timer
   universalarchive
-  web-search
   vscode
   z
 )
@@ -147,5 +145,5 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# adds my aliases
+# # adds my common aliases
 source $HOME/.aliases

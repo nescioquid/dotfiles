@@ -1,71 +1,34 @@
 # ALIASES
 
-# pokeemerald-specific aliases
-
-alias vscberries='code ~/builds/pokemon/berries.md'
-alias vschabitats='code ~/builds/pokemon/habitats.md'
-alias vscitems='code ~/builds/pokemon/items.md'
-alias vsclocations='code ~/builds/pokemon/locations.md'
-alias vscmarts='code ~/builds/pokemon/marts.md'
-alias vscnotes='code ~/builds/pokemon/notes.md'
-alias vscpickup='code ~/builds/pokemon/pickup.md'
-alias vsctypes='code ~/builds/pokemon/types.md'
-
-alias vscgt='code -n ~/builds/pokemon/archive/green-thing'
-
-alias tossit='toss pokeemerald.sav'
-alias takeit='move pokeemerald.sav ~/builds/pokemon/last-save/'
-alias bringit='move ~/builds/pokemon/last-save/pokeemerald.sav ~/builds/pokemon/pokeemerald/'
-
-alias maake='make -j6'
-alias makke='make clean'
-alias maakke='make clean && make -j6'
-
-alias OA='echo haha it happened again oooh aaah hahaha'
-
-alias firstagbcc='sudo apt install build-essential binutils-arm-none-eabi git libpng-dev && git clone https://github.com/pret/agbcc && cd agbcc && ./build.sh'
-alias secondagbcc='./install.sh ../pokeemerald'
-
-# alias addporyscript='md tools/poryscript && copy ~/builds/pokemon/poryscript/poryscript-linux/font_config.json ~/builds/pokemon/pokeemerald/tools/poryscript/font_config.json && copy ~/builds/pokemon/poryscript/poryscript-linux/poryscript ~/builds/pokemon/pokeemerald/tools/poryscript/poryscript'
-
-# alias removeporyscript='rd tools/poryscript'
-
-# ---
-
-# alias and run command stuff
-
 alias a='alias'
 alias an='alias'
-# alias what='alias'
 
 alias funcs='print -l ${(ok)functions}\n'
 
 # open this file and others like it
 alias aliases='${=EDITOR} ~/.aliases'
-alias bashrc='${=EDITOR} ~/.bshrc'
+alias bashrc='${=EDITOR} ~/.bashrc'
+alias bash_aliases='${=EDITOR} ~/.bash_aliases'
 alias zshrc='${=EDITOR} ~/.zshrc'
 
 alias vscaliases='code ~/.aliases'
 alias vscbashrc='code ~/.bashrc'
+alias vscbash_aliases='code ~/.bash_aliases'
 alias vsczshrc='code ~/.zshrc'
 
 # source run commands and aliases
-alias src='source ~/.aliases && source ~/.zshrc && echo hey, you sourced your aliases and zsh run commands, yay!'
-alias srcb='source ~/.aliases && source ~/.bashrc && echo hey, you sourced your aliases and bash run commands, yay!'
-# alias srcz='source ~/.aliases && source ~/.zshrc && echo hey, you sourced your aliases and zsh run commands, yay!'
+alias src='source ~/.zshrc && echo hey, you sourced zsh things, yay!'
+alias srcb='source ~/.bashrc && echo hey, you sourced bash things, yay!'
+alias srcz='source ~/.zshrc && echo hey, you sourced zsh things, yay!'
 
 # copies run command and alias files to sh-config (git/github)
-alias copyconfig='_copyconfig() { cp -irv ~/.aliases ~/builds/.sh-config/ && cp -irv ~/.bashrc ~/builds/.sh-config/ && cp -irv ~/.zshrc ~/builds/.sh-config/ ; }; _copyconfig'
-
-# ---
+alias copyconfig='_copyconfig() { cp -irv ~/.aliases ~/builds/.sh-config/ && cp -irv ~/.bashrc ~/builds/.sh-config/ && cp -irv ~/.bash_aliases ~/builds/.sh-config/ && cp -irv ~/.zshrc ~/builds/.sh-config/ ; }; _copyconfig'
 
 # git aliases
 alias ga='git add -v'
 alias gaa='git add -v --all'
 
-alias gb='git branch'
 alias gbb='git branch -vv'
-alias gba='git branch --all'
 alias gbba='git branch -vv --all'
 
 
@@ -83,16 +46,12 @@ alias gpdr='git push -v --dry-run'
 
 alias gr='git remote -v'
 
-
 alias grst='git reset'
 alias grstr='git restore'
 
-alias gsw='git switch'
-
 # logging stuff
-alias gstat='git status'
+alias gstat='git status --short --branch'
 
-alias glog='git log --oneline --decorate --graph'
 alias glogg='_glogg() { git log --oneline --decorate --graph --max-count="$1" ; }; _glogg'
 alias glogp='git log --stat --patch' # as 'glgp' in zsh
 alias gloog='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'\'' --stat' # as 'glols' in zsh
@@ -100,9 +59,8 @@ alias grlog='git reflog'
 alias gcfg='git config --list --global'
 
 # utilities
-alias gnb='git switch -c' # creates a new branch and switches to it
+alias gnb='git switch --create'
 alias ghelp='_ghelp() { man git-"$1" ; }; _ghelp'
-# alias gh='_ghelp() { man git-"$1" ; }; _ghelp'
 alias grclean='git remote -v update origin --prune'
 alias gback='_gback() { git reset HEAD~"$1" ; }; _gback'
 
@@ -120,37 +78,14 @@ alias grhh='echo hey! that command was intentionally blocked, use a more verbose
 alias groh='echo hey! that command was intentionally blocked, use a more verbose one like \"git reset origin/$(git_current_branch) --hard\" instead'
 alias='gpf!'='echo hey! that command was intentionally blocked, use a more verbose one like \"git push --force\" instead'
 
-# ---
-
-# find and grep aliases
-
-alias f='find . -iname'
-# alias findhere='find . -iname'
-
-# alias count='find . -type f | wc -l'
-
-alias s='grep -ir'
-alias search='grep -ir'
-
-# alias searche='egrep -ir'
-# alias se='egrep -ir'
-
-# alias searchf='fgrep -ir'
-# alias sf='fgrep -ir'
-
-# ---
-
 # easier/english-like common utilities 
 
-# in bash, alias /='cd /' doesn't work, so instead use:
-alias ~~='cd /'
-alias root='cd /'
-# alias goroot='cd /'
-# alias toroot='cd /'
-alias ~='cd ~'
 alias home='cd ~'
 # alias gohome='cd ~'
 # alias tohome='cd ~'
+alias root='cd /'
+# alias goroot='cd /'
+# alias toroot='cd /'
 
 # overwrites original, done this way for copy-and-paste instances
 alias apt='sudo apt'
@@ -177,6 +112,22 @@ alias help='man'
 
 alias clr='clear'
 
+alias o='open'
+
+alias f='find . -iname'
+# alias findhere='find . -iname'
+
+# alias count='find . -type f | wc -l'
+
+alias s='grep -ir'
+alias search='grep -ir'
+
+# alias searche='egrep -ir'
+# alias se='egrep -ir'
+
+# alias searchf='fgrep -ir'
+# alias sf='fgrep -ir'
+
 alias copy='_copy() { cp -irv "$1" "$2" && echo hey, you COPIED that \""$1"\" thing using the \*cp\* command! ; }; _copy'
 
 alias rename='_rename() { mv -iv "$1" "$2" && echo hey, you RENAMED that \""$1"\" thing using the \*mv\* command! ; }; _rename'
@@ -201,8 +152,6 @@ alias rd='_removedirectory() { rm -Ivr "$1" && echo hey, you just removed that \
 alias mdcd='_mdcd() { md "$1" && cd "$1" ; }; _mdcd'
 alias mcd='_mdcd() { md "$1" && cd "$1" ; }; _mdcd'
 
-# ---
-
 # gnome-specific aliases
 
 # opens up a file explorer at the current directory
@@ -225,8 +174,6 @@ alias trash='_totrash() { cd ~/.local/share/Trash/files ; }; _totrash'
 alias tossed='_totossed() { cd ~/.local/share/Trash/files/tossed ; }; _totossed'
 # alias totossed='_totossed() { cd ~/.local/share/Trash/files ; }; _totossed'
 
-# ---
-
 # cd and ls stuff
 
 # english-like cd
@@ -235,19 +182,6 @@ alias back='cd ..'
 # alias goto='cd'
 # alias goback='cd ..'
 # alias toback='cd ..'
-
-# go up directories
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
-alias ......='cd ../../../../..'
-
-# oh-my-zsh style ls in bash
-alias l='ls -lah'
-alias ll='ls -lh'
-alias la='ls -lAh'
-alias lsa='ls -lah'
 
 # simpler 'l' (oh-my-zsh style ls has 'l' and 'lsa' aliased the same)
 # alias l='ls -h'
@@ -337,7 +271,7 @@ alias cl='_cdl() { cd "$1" && l ; }; _cdl'
 # alias cdlm='_cdlm() { cd "$1" && lm ; }; _cdlm'
 # alias clm='_cdlm() { cd "$1" && lm ; }; _cdlm'
 
-# Functions
+# functions
 
 # run this command to see the top ten commands you run most
 function topten() {
