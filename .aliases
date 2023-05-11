@@ -7,11 +7,13 @@ alias funcs='print -l ${(ok)functions}\n'
 
 # open this file and others like it
 alias aliases='${=EDITOR} ~/.aliases'
+alias more_aliases='${=EDITOR} ~/.more_aliases'
 alias bashrc='${=EDITOR} ~/.bashrc'
 alias bash_aliases='${=EDITOR} ~/.bash_aliases'
 alias zshrc='${=EDITOR} ~/.zshrc'
 
 alias vscaliases='code ~/.aliases'
+alias vscmore_aliases='code ~/.more_aliases'
 alias vscbashrc='code ~/.bashrc'
 alias vscbash_aliases='code ~/.bash_aliases'
 alias vsczshrc='code ~/.zshrc'
@@ -272,7 +274,7 @@ alias cl='_cdl() { cd "$1" && l ; }; _cdl'
 # alias cdlm='_cdlm() { cd "$1" && lm ; }; _cdlm'
 # alias clm='_cdlm() { cd "$1" && lm ; }; _cdlm'
 
-# functions
+# Functions
 
 # run this command to see the top ten commands you run most
 function topten() {
@@ -288,3 +290,8 @@ function toptwenty() {
 function topfifty() {
   history | awk '{cmd[$2]++} END {for(elem in cmd) {print cmd[elem] " " elem}}' | sort -n -r | head -50
 }
+
+# Other sources
+
+# sources more project-specific aliases
+source ~/.more_aliases
