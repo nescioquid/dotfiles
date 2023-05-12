@@ -32,10 +32,26 @@ alias home='cd ~'
 alias root='cd /'
 alias last='cd -'
 
-alias l='_l() { ls -1A --group-directories-first && echo --- && echo \(listed with directories first\) ; }; _l'
-alias ll='_ll() { ls -Ahgot && echo --- && echo \(listed by last modified\) ; }; _ll'
-alias lll='_lll() { ls -Ahgo --group-directories-first && echo --- && echo \(listed with directories first\) ; }; _lll'
-alias llll='_llll() { ls -lahF && echo --- && echo \(listed alphabetically\) ; }; _llll'
+alias l='_l() {
+  ls -1A --group-directories-first &&
+  echo --- &&
+  echo \(listed with directories first\) ;
+}; _l'
+alias ll='_ll() {
+  la -got &&
+  echo --- &&
+  echo \(listed by last modified\) ;
+}; _ll'
+alias lll='_lll() {
+  la -go --group-directories-first &&
+  echo --- &&
+  echo \(listed with directories first\) ;
+}; _lll'
+alias llll='_llll() {
+  lsa -F &&
+  echo --- &&
+  echo \(listed alphabetically\) ;
+}; _llll'
 
 # go up and down directories and list contents
 alias ..l='.. && l'
@@ -66,41 +82,61 @@ alias search='grep -ir'
 alias f='find . -iname'
 alias count='find . -type f | wc -l'
 
-alias copy='_copy() { cp -irv "$1" "$2" && echo hey, you COPIED that \""$1"\" thing using the \*cp\* command! ; }; _copy'
+alias copy='_copy() {
+  cp -irv "$1" "$2" &&
+  echo hey, you COPIED that \""$1"\" thing using the \*cp\* command! ;
+}; _copy'
 
-alias rename='_rename() { mv -iv "$1" "$2" && echo hey, you RENAMED that \""$1"\" thing using the \*mv\* command! ; }; _rename'
+alias move='_move() {
+  mv -iv "$1" "$2" &&
+  echo hey, you MOVED that \""$1"\" thing using the \*mv\* command! ;
+}; _move'
 
-alias move='_move() { mv -iv "$1" "$2" && echo hey, you MOVED that \""$1"\" thing using the \*mv\* command! ; }; _move'
+alias rename='_rename() {
+  mv -iv "$1" "$2" &&
+  echo hey, you RENAMED that \""$1"\" thing using the \*mv\* command! ;
+}; _rename'
 
-alias mf='makefile'
-alias makefile='_makefile() { touch "$1" && echo hey, you just created that \""$1"\" file using the \*touch\* command. yay! ; }; _makefile'
+alias makefile='_makefile() {
+  touch "$1" &&
+  echo hey, you just created that \""$1"\" file using the \*touch\* command. yay! ;
+}; _makefile'
 
-alias md='makedirectory' 
-alias mkd='makedirectory' 
-# alias makedir='mkdir -pv'
+alias removefile='_removefile() {
+  rm -Iv "$1" &&
+  echo hey, you just removed that \""$1"\" thing using the \*rm\* command! ;
+}; _removefile'
+
 alias makedirectory='mkdir -pv'
 
-alias rf='removefile'
-alias removefile='_removefile() { rm -Iv "$1" && echo hey, you just removed that \""$1"\" thing using the \*rm\* command! ; }; _removefile'
+alias removedirectory='_removedirectory() {
+  rm -Ivr "$1" &&
+  echo hey, you just removed that \""$1"\" directory using the \*rm\* command, NOT rmdir! ;
+}; _removedirectory'
 
+alias mf='makefile'
+# alias mkf='makefile'
+alias rf='removefile'
+# alias rmf='removefile'
+alias md='makedirectory'
+# alias mkd='makedirectory'
 alias rd='removedirectory'
-alias rmd='removedirectory'
-# alias removedir='removedirectory'
-alias removedirectory='_removedirectory() { rm -Ivr "$1" && echo hey, you just removed that \""$1"\" directory using the \*rm\* command, NOT rmdir! ; }; _removedirectory'
+# alias rmd='removedirectory'
+# alias rmdir='removedirectory'
 
 # ---
 
-# run this command to see the top ten commands you run most
+# see the top ten commands you run most
 function topten() {
   history | awk '{cmd[$2]++} END {for(elem in cmd) {print cmd[elem] " " elem}}' | sort -n -r | head -10
 }
 
-# run this command to see the top twenty commands you run most
+# see the top twenty commands you run most
 function toptwenty() {
   history | awk '{cmd[$2]++} END {for(elem in cmd) {print cmd[elem] " " elem}}' | sort -n -r | head -20
 }
 
-# run this command to see the top fifty commands you run most
+# see the top fifty commands you run most
 function topfifty() {
   history | awk '{cmd[$2]++} END {for(elem in cmd) {print cmd[elem] " " elem}}' | sort -n -r | head -50
 }

@@ -19,7 +19,7 @@ alias gcdr='git commit -v --dry-run'
 alias gcmdr='git commit -v --dry-run --message'
 alias gcamdr='git commit -v --dry-run --all --message'
 
-alias gdl='git diff HEAD HEAD~1'
+alias gdl='git diff HEAD~1 HEAD'
 
 alias gl='git pull -v'
 alias gldr='git pull -v --dry-run'

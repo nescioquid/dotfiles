@@ -10,30 +10,60 @@ alias sh-config='cd ~/builds/sh-config/'
 
 # ---
 
-# copies configurations to sh-config
-alias copyconfig='_copyconfig() { 
-  cp -fr ~/.custom ~/builds/sh-config/ && 
-  cp -f ~/.bash_history ~/builds/sh-config/ && 
-  cp -f ~/.bashrc ~/builds/sh-config/ && 
-  cp -f ~/.gitconfig ~/builds/sh-config/ && 
-  cp -f ~/.z ~/builds/sh-config/ && 
-  cp -f ~/.zsh_history ~/builds/sh-config/ && 
-  cp -f ~/.zshrc ~/builds/sh-config/ && 
-  echo configurations copied, hooray! ;
-}; _copyconfig'
+# https://github.com/nescioquid/sh-config.git
 
-# automatically updates https://github.com/nescioquid/sh-config.git
-alias backupconfig='_backupconfig() { 
-  cd ~/builds/sh-config && 
-  echo whoosh! heading over to: && 
-  echo ~/builds/sh-config && 
-  copyconfig && 
-  echo starting to do git things: && 
-  git add -v --all && 
-  git commit -v --message "updated on $(date +"%d %B %Y at %T")" && 
-  git push && 
-  echo backup updated, congrats! && 
-  echo done doing git things, && 
-  echo and now heading back to: && 
+# ---
+
+# pushes configurations to github
+alias sh-configpush='_sh-configpush() {
+  cd ~/builds/sh-config &&
+  echo whoosh! heading over to: &&
+  echo ~/builds/sh-config &&
+  sh-configpushcopy &&
+  echo starting to do git things: &&
+  git add -v --all &&
+  git commit -v --message "updated on $(date +"%d %B %Y at %T")" &&
+  git push &&
+  echo configurations pushed, congrats! &&
+  echo done doing git things, &&
+  echo and now heading back to: &&
   cd - ;
-}; _backupconfig'
+}; _sh-configpush'
+
+# pulls configurations from github
+alias sh-configpull='_sh-configpull() {
+  cd ~/builds/sh-config &&
+  echo whoosh! heading over to: &&
+  echo ~/builds/sh-config &&
+  echo starting to do git things: &&
+  git pull &&
+  echo done doing git things &&
+  sh-configpullcopy &&
+  echo configurations pulled, congrats! &&
+  echo and now heading back to: &&
+  cd - ;
+}; _sh-configpull'
+
+# copies home and ~/.custom configurations to sh-config 
+alias sh-configpushcopy='_sh-configpushcopy() {
+  cp -fr ~/.custom/      ~/builds/sh-config/ &&
+  cp -f  ~/.bash_history ~/builds/sh-config/ &&
+  cp -f  ~/.bashrc       ~/builds/sh-config/ &&
+  cp -f  ~/.gitconfig    ~/builds/sh-config/ &&
+  cp -f  ~/.z            ~/builds/sh-config/ &&
+  cp -f  ~/.zsh_history  ~/builds/sh-config/ &&
+  cp -f  ~/.zshrc        ~/builds/sh-config/ &&
+  echo configurations copied for push, hooray! ;
+}; _sh-configpushcopy'
+
+# copies sh-config configurations to home and ~/.custom
+alias sh-configpullcopy='_sh-configpullcopy() {
+  cp -fr ~/builds/sh-config/.custom/      ~/.custom/      &&
+  cp -f  ~/builds/sh-config/.bash_history ~/.bash_history &&
+  cp -f  ~/builds/sh-config/.bashrc       ~/.bashrc       &&
+  cp -f  ~/builds/sh-config/.gitconfig    ~/.gitconfig    &&
+  cp -f  ~/builds/sh-config/.z            ~/.z            &&
+  cp -f  ~/builds/sh-config/.zsh_history  ~/.zsh_history  &&
+  cp -f  ~/builds/sh-config/.zshrc        ~/.zshrc        &&
+  echo configurations copied for pull, hooray! ;
+}; _sh-configpullcopy' 
