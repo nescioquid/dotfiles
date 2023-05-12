@@ -126,6 +126,6 @@ else
   export EDITOR='nano'
 fi
 
-# adds my configurations
-source $HOME/.custom/.aliases
+# Adds my configurations
 source $HOME/.custom/.bash_aliases
+source $HOME/.custom/.aliases

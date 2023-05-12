@@ -1,0 +1,23 @@
+#ZSH_ALIASES
+
+# opens the stuff
+alias zshrc='${EDITOR} ~/.zshrc'
+alias vsczshrc='code ~/.zshrc'
+alias zsh_aliases='${EDITOR} ~/.custom/.zsh_aliases'
+alias vsczsh_aliases='code ~/.custom/.zsh_aliases'
+
+# sources the stuff
+alias srczshrc='source ~/.zshrc && echo hey, you sourced .zshrc, yay!'
+alias srczsh_aliases='source ~/.custom/.zsh_aliases && echo hey, you sourced .zsh_aliases, yay!'
+
+alias src='source ~/.zshrc && echo hey, you sourced the zsh things, yay!'
+
+# ---
+
+alias what='acs'
+
+alias omz='_omzplugin() { nano ~/.oh-my-zsh/plugins/"$1"/README.md ; }; _omzplugin'
+# alias omzz='_omzz() { nano ~/.oh-my-zsh/plugins/z/MANUAL.md ; }; _omzz'
+
+# alias jumpto='j'
+# alias jump='j'

@@ -1,0 +1,46 @@
+# POKEMON_ALIASES
+
+# opens the stuff
+alias vscpokeemerald='code -n ~/builds/pokemon/pokeemerald'
+alias pokeemerald_aliases='${EDITOR} ~/.custom/.pokeemerald_aliases'
+alias vscpokeemerald_aliases='code ~/.custom/.pokeemerald_aliases'
+
+# gets you to the stuff
+alias pokemon='cd ~/builds/pokemon/'
+alias pokeemerald='cd ~/builds/pokemon/pokeemerald'
+
+# ---
+
+alias p-berries='code ~/builds/pokemon/berries.md'
+alias p-habitats='code ~/builds/pokemon/habitats.md'
+alias p-items='code ~/builds/pokemon/items.md'
+alias p-locations='code ~/builds/pokemon/locations.md'
+alias p-marts='code ~/builds/pokemon/marts.md'
+alias p-notes='code ~/builds/pokemon/notes.md'
+alias p-pickup='code ~/builds/pokemon/pickup.md'
+alias p-tmshms='code ~builds/pokemon/TMsHMs.md'
+alias p-types='code ~/builds/pokemon/types.md'
+
+
+alias findit='f pokeemerald.sav'
+alias tossit='toss pokeemerald.sav'
+alias takeit='move pokeemerald.sav ~/builds/pokemon/last-save/'
+alias bringit='move ~/builds/pokemon/last-save/pokeemerald.sav ~/builds/pokemon/pokeemerald/'
+
+alias maake='make -j6'
+alias makke='make clean'
+alias maakke='make clean && make -j6'
+
+alias OA='echo haha it happened again oooh aaah hahaha'
+
+alias agbcc1='sudo apt install build-essential binutils-arm-none-eabi git libpng-dev && git clone https://github.com/pret/agbcc && cd agbcc && ./build.sh'
+alias agbcc2='./install.sh ../pokeemerald'
+
+# deprecated
+
+alias vscgreen-thing='code -n ~/builds/pokemon/archive/green-thing'
+alias green-thing='cd ~/builds/pokemon/archive/green-thing'
+
+# alias addporyscript='md tools/poryscript && copy ~/builds/pokemon/poryscript/poryscript-linux/font_config.json ~/builds/pokemon/pokeemerald/tools/poryscript/font_config.json && copy ~/builds/pokemon/poryscript/poryscript-linux/poryscript ~/builds/pokemon/pokeemerald/tools/poryscript/poryscript'
+
+# alias removeporyscript='rd tools/poryscript'

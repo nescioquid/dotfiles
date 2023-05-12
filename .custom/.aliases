@@ -1,143 +1,70 @@
 # ALIASES
 
+# opens the stuff
+alias aliases='${EDITOR} ~/.custom/.aliases'
+alias vscaliases='code ~/.custom/.aliases'
+alias vsccustom='code -n ~/.custom'
+
+# gets you to the stuff
+alias custom='cd ~/.custom'
+
+# domain-specific aliases
+# comment out lines to remove them from what's loaded by run commands
+source ~/.custom/.git_aliases
+# source ~/.custom/.ls_aliases
+source ~/.custom/.pop-os_aliases
+source ~/.custom/.sh-config_aliases
+source ~/.custom/.pokemon_aliases
+
+# ---
+
 alias a='alias'
 alias an='alias'
 
-alias funcs='print -l ${(ok)functions}\n'
+# vscode
+alias vsc='code'
 
-# open this file and others like it
-alias aliases='${=EDITOR} ~/.custom/.aliases'
-alias more_aliases='${=EDITOR} ~/.custom/.more_aliases'
-alias bash_aliases='${=EDITOR} ~/.custom/.bash_aliases'
-alias bashrc='${=EDITOR} ~/.bashrc'
-alias zshrc='${=EDITOR} ~/.zshrc'
+# custom cd and ls
 
-alias vscaliases='code ~/.custom/.aliases'
-alias vscmore_aliases='code ~/.custom/.more_aliases'
-alias vscbash_aliases='code ~/.custom/.bash_aliases'
-alias vscbashrc='code ~/.bashrc'
-alias vsczshrc='code ~/.zshrc'
-
-# source run commands and aliases
-alias src='source ~/.zshrc && echo hey, you sourced zsh things, yay!'
-alias srcb='source ~/.bashrc && echo hey, you sourced bash things, yay!'
-alias srcz='source ~/.zshrc && echo hey, you sourced zsh things, yay!'
-
-# copies configurations to .sh-config (for backup on github)
-alias copyconfig='_copyconfig() { 
-  cp -fr ~/.custom ~/builds/.sh-config/ && 
-  cp -f ~/.bash_history ~/builds/.sh-config/ && 
-  cp -f ~/.bashrc ~/builds/.sh-config/ && 
-  cp -f ~/.gitconfig ~/builds/.sh-config/ && 
-  cp -f ~/.z ~/builds/.sh-config/ && 
-  cp -f ~/.zsh_history ~/builds/.sh-config/ && 
-  cp -f ~/.zshrc ~/builds/.sh-config/ && 
-  echo configurations copied, hooray! ;
-}; _copyconfig'
-
-# git aliases
-alias ga='git add -v'
-alias gaa='git add -v --all'
-
-alias gbb='git branch -vv'
-alias gbba='git branch -vv --all'
-
-alias gcm='git commit -v --message'
-alias gcam='git commit -v --all --message'
-alias gcmdr='git commit -v --dry-run --message'
-alias gcamdr='git commit -v --dry-run --all --message'
-
-alias gl='git pull -v'
-alias gldr='git pull -v --dry-run'
-
-alias gp='git push -v'
-alias gpo='git push -v origin'
-alias gpdr='git push -v --dry-run'
-
-alias gr='git remote -v'
-
-alias grst='git reset'
-alias grstr='git restore'
-alias grstra='git restore .'
-
-# logging stuff
-alias gstat='git status --short --branch'
-
-alias glogg='_glogg() { git log --oneline --decorate --graph --max-count="$1" ; }; _glogg'
-alias glogp='git log --stat --patch' # as 'glgp' in zsh
-alias gloog='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'\'' --stat' # as 'glols' in zsh
-alias grlog='git reflog'
-alias gcfg='git config --list --global'
-
-# utilities
-alias gnb='git switch --create'
-alias ghelp='_ghelp() { man git-"$1" ; }; _ghelp'
-alias grclean='git remote -v update origin --prune'
-alias gback='_gback() { git reset HEAD~"$1" ; }; _gback'
-
-alias gset='git branch -vv --set-upstream-to=origin/$(git_current_branch)'
-alias gunset='git branch -vv --unset-upstream && echo hey, it looks like you unset that upstream branch'
-alias gsetup='git push -v --set-upstream origin $(git_current_branch)'               
-
-# safeguards
-alias gbd='echo hey! that command was intentionally blocked, use a more verbose one like \"gb -d\" instead'
-alias gbD='echo hey! that command was intentionally blocked, use a more verbose one like \"gb -df or gb -D\" instead'
-alias ggf='echo hey! that command was intentionally blocked, use a more verbose one like \"git push --force origin $(current_branch\" instead)'
-alias gpod='echo hey! that command was intentionally blocked, use a more verbose one like \"gpo -d\" instead'
-alias gpristine='echo hey! that command was intentionally blocked, use more verbose ones like \"git reset --hard\" and \"git clean --force -dfx\" instead'
-alias grhh='echo hey! that command was intentionally blocked, use a more verbose one like \"git reset --hard\" instead'  
-alias groh='echo hey! that command was intentionally blocked, use a more verbose one like \"git reset origin/$(git_current_branch) --hard\" instead'
-alias='gpf!'='echo hey! that command was intentionally blocked, use a more verbose one like \"git push --force\" instead'
-
-# easier/english-like common utilities 
-
+alias back='cd ..'
+alias to='cd'
 alias home='cd ~'
-# alias gohome='cd ~'
-# alias tohome='cd ~'
 alias root='cd /'
-# alias goroot='cd /'
-# alias toroot='cd /'
+alias last='cd -'
 
-# overwrites original, done this way for copy-and-paste instances
-alias apt='sudo apt'
+alias l='_l() { ls -1A --group-directories-first && echo --- && echo \(listed with directories first\) ; }; _l'
+alias ll='_ll() { ls -Ahgot && echo --- && echo \(listed by last modified\) ; }; _ll'
+alias lll='_lll() { ls -Ahgo --group-directories-first && echo --- && echo \(listed with directories first\) ; }; _lll'
+alias llll='_llll() { ls -lahF && echo --- && echo \(listed alphabetically\) ; }; _llll'
+
+# go up and down directories and list contents
+alias ..l='.. && l'
+alias cl='_cdl() { cd "$1" && l ; }; _cdl'
+
+# make a directory and cd into it
+alias mdcd='_mdcd() { md "$1" && cd "$1" ; }; _mdcd'
+alias mcd='_mdcd() { md "$1" && cd "$1" ; }; _mdcd'
+
+# easier/more english-like common utilities
+
+alias apt='sudo apt' # overwrites original for copy-paste reasons
 alias sapt='sudo apt'
 alias supt='sudo apt'
-
+alias apti='sudo apt install'
 alias sauu='sudo apt update && sudo apt upgrade -y'
 alias saw='sudo apt update && sudo apt upgrade -y'
-# alias sapdate='sudo apt update && sudo apt upgrade -y'
-# alias sapgrade='sudo apt update && sudo apt upgrade -y'
-# alias saptdate='sudo apt update && sudo apt upgrade -y'
-# alias saptgrade='sudo apt update && sudo apt upgrade -y'
-# alias supdate='sudo apt update && sudo apt upgrade -y'
-# alias supgrade='sudo apt update && sudo apt upgrade -y'
-# alias suptdate='sudo apt update && sudo apt upgrade -y'
-# alias suptgrade='sudo apt update && sudo apt upgrade -y'
-
-alias apti='apt install'
 
 alias here='pwd'
-# alias whereami='pwd'
-
-alias help='man'
-
 alias clr='clear'
-
+alias help='man'
+alias funcs='print -l ${(ok)functions}\n'
 alias o='open'
-
-alias f='find . -iname'
-# alias findhere='find . -iname'
-
-# alias count='find . -type f | wc -l'
 
 alias s='grep -ir'
 alias search='grep -ir'
 
-# alias searche='egrep -ir'
-# alias se='egrep -ir'
-
-# alias searchf='fgrep -ir'
-# alias sf='fgrep -ir'
+alias f='find . -iname'
+alias count='find . -type f | wc -l'
 
 alias copy='_copy() { cp -irv "$1" "$2" && echo hey, you COPIED that \""$1"\" thing using the \*cp\* command! ; }; _copy'
 
@@ -145,144 +72,23 @@ alias rename='_rename() { mv -iv "$1" "$2" && echo hey, you RENAMED that \""$1"\
 
 alias move='_move() { mv -iv "$1" "$2" && echo hey, you MOVED that \""$1"\" thing using the \*mv\* command! ; }; _move'
 
-alias mf='_makefile() { touch "$1" && echo hey, you just created that \""$1"\" file using the \*touch\* command. yay! ; }; _makefile'
-# alias makefile='_makefile() { touch "$1" && echo hey, you just created that \""$1"\" file using the \*touch\* command. yay! ; }; _makefile'
+alias mf='makefile'
+alias makefile='_makefile() { touch "$1" && echo hey, you just created that \""$1"\" file using the \*touch\* command. yay! ; }; _makefile'
 
-alias rf='_removefile() { rm -Iv "$1" && echo hey, you just removed that \""$1"\" thing using the \*rm\* command! ; }; _removefile'
-# alias removefile='_removefile() { rm -Iv "$1" && echo hey, you just removed that \""$1"\" thing using the \*rm\* command! ; }; _removefile'
-
-alias md='mkdir -pv' 
-# alias makedirectory='mkdir -pv'
+alias md='makedirectory' 
+alias mkd='makedirectory' 
 # alias makedir='mkdir -pv'
+alias makedirectory='mkdir -pv'
 
-alias rd='_removedirectory() { rm -Ivr "$1" && echo hey, you just removed that \""$1"\" directory using the \*rm\* command, NOT rmdir! ; }; _removedirectory'
-# alias removedirectory='_removedirectory() { rm -Ivr "$1" && echo hey, you just removed that \""$1"\" directory using the \*rm\* command, NOT rmdir! ; }; _removedirectory'
-# alias removedir='_removedirectory() { rm -Ivr "$1" && echo hey, you just removed that \""$1"\" directory using the \*rm\* command, NOT rmdir! ; }; _removedirectory'
+alias rf='removefile'
+alias removefile='_removefile() { rm -Iv "$1" && echo hey, you just removed that \""$1"\" thing using the \*rm\* command! ; }; _removefile'
 
-# make a directory and cd into it
-alias mdcd='_mdcd() { md "$1" && cd "$1" ; }; _mdcd'
-alias mcd='_mdcd() { md "$1" && cd "$1" ; }; _mdcd'
+alias rd='removedirectory'
+alias rmd='removedirectory'
+# alias removedir='removedirectory'
+alias removedirectory='_removedirectory() { rm -Ivr "$1" && echo hey, you just removed that \""$1"\" directory using the \*rm\* command, NOT rmdir! ; }; _removedirectory'
 
-# gnome-specific aliases
-
-# opens up a file explorer at the current directory
-alias explore='nautilus .'
-
-# trash and toss stuff
-
-# toss things into the trash instead of hard deleting
-alias toss='_toss() { md ~/.local/share/Trash/files/tossed && mv -ivt ~/.local/share/Trash/files/tossed "$1" && echo hey, you just tossed that \""$1"\" thing in the trash using the \*mv\* command. so stinky! ; }; _toss'
-# alias tossout='_toss() { mv -ivt ~/.local/share/Trash/files "$1" && echo hey, you just tossed that \""$1"\" thing in the trash using the \*mv\* command. so stinky! ; }; _toss'
-
-# lists what is in trash and tossed
-alias ltrash='_ltrash() { la -got ~/.local/share/Trash/files && echo \(listed by last modified\) ; }; _ltrash'
-alias ltossed='_ltossed() { la -got ~/.local/share/Trash/files/tossed && echo \(listed by last modified\) ; }; _ltossed'
-alias lt='_ltossed() { la -got ~/.local/share/Trash/files/tossed && echo \(listed by last modified\) ; }; _ltossed'
-
-# cd/jump into trash and tossed
-alias trash='_totrash() { cd ~/.local/share/Trash/files ; }; _totrash'
-# alias totrash='_totrash() { cd ~/.local/share/Trash/files ; }; _totrash'
-alias tossed='_totossed() { cd ~/.local/share/Trash/files/tossed ; }; _totossed'
-# alias totossed='_totossed() { cd ~/.local/share/Trash/files ; }; _totossed'
-
-# cd and ls stuff
-
-# english-like cd
-alias to='cd'
-alias back='cd ..'
-# alias goto='cd'
-# alias goback='cd ..'
-# alias toback='cd ..'
-
-# simpler 'l' (oh-my-zsh style ls has 'l' and 'lsa' aliased the same)
-# alias l='ls -h'
-
-# alternate many-l forms
-# alias lll='la'
-# alias llll='lsa'
-
-# list with directories first
-# alias list='la --group-directories-first'
-# alias li='la --group-directories-first'
-
-# list by last modified
-# alias last='la -t'
-# alias lm='la -t'
-
-# list by size
-alias lsize='ls -1ahsS'
-
-# my ls behaviors
-alias l='_l() { ls -1A --group-directories-first && echo --- && echo \(listed with directories first\) ; }; _l'
-alias ll='_ll() { la -got && echo --- && echo \(listed by last modified\) ; }; _ll'
-alias lll='_lll() { la -go --group-directories-first && echo --- && echo \(listed with directories first\) ; }; _lll'
-alias llll='_llll() { lsa -F && echo --- && echo \(listed alphabetically\) ; }; _llll'
-
-# go up directories and list contents
-alias ..l='.. && l'
-# alias ...l='... && l'
-# alias ....l='.... && l'
-# alias .....l='..... && l'
-# alias ......l='...... && l'
-# alias ..ll='.. && ll'
-# alias ...ll='... && ll'
-# alias ....ll='.... && ll'
-# alias .....ll='..... && ll'
-# alias ......ll='...... && ll'
-# alias ..la='.. && la'
-# alias ...la='... && la'
-# alias ....la='.... && la'
-# alias .....la='..... && la'
-# alias ......la='...... && la'
-# alias ..lsa='.. && lsa'
-# alias ...lsa='... && lsa'
-# alias ....lsa='.... && lsa'
-# alias .....lsa='..... && lsa'
-# alias ......lsa='...... && lsa'
-
-# alias ..lll='.. && lll'
-# alias ...lll='... && lll'
-# alias ....lll='.... && lll'
-# alias .....lll='..... && lll'
-# alias ......lll='...... && lll'
-# alias ..llll='.. && llll'
-# alias ...llll='... && llll'
-# alias ....llll='.... && llll'
-# alias .....llll='..... && llll'
-# alias ......llll='...... && llll'
-
-# alias ..li='.. && li'
-# alias ...li='... && li'
-# alias ....li='.... && li'
-# alias .....li='..... && li'
-# alias ......li='...... && li'
-# alias ..lm='.. && lm'
-# alias ...lm='... && lm'
-# alias ....lm='.... && lm'
-# alias .....lm='..... && lm'
-# alias ......lm='...... && lm'
-
-# go down directories and list contents
-alias cdl='_cdl() { cd "$1" && l ; }; _cdl'
-alias cl='_cdl() { cd "$1" && l ; }; _cdl'
-# alias cdll='_cdll() { cd "$1" && ll ; }; _cdll'
-# alias cll='_cdll() { cd "$1" && ll ; }; _cdll'
-# alias cdla='_cdla() { cd "$1" && la ; }; _cdla'
-# alias cla='_cdla() { cd "$1" && la ; }; _cdla'
-# alias cdlsa='_cdlsa() { cd "$1" && lsa ; }; _cdlsa'
-# alias clsa='_cdlsa() { cd "$1" && lsa ; }; _cdlsa'
-
-# alias cdlll='_cdlll() { cd "$1" && lll ; }; _cdlll'
-# alias clll='_cdlll() { cd "$1" && lll ; }; _cdlll'
-# alias cdllll='_cdllll() { cd "$1" && llll ; }; _cdllll'
-# alias cllll='_cdllll() { cd "$1" && llll ; }; _cdllll'
-
-# alias cdli='_cdli() { cd "$1" && li ; }; _cdli'
-# alias cli='_cdli() { cd "$1" && li ; }; _cdli'
-# alias cdlm='_cdlm() { cd "$1" && lm ; }; _cdlm'
-# alias clm='_cdlm() { cd "$1" && lm ; }; _cdlm'
-
-# Functions
+# ---
 
 # run this command to see the top ten commands you run most
 function topten() {
@@ -298,8 +104,3 @@ function toptwenty() {
 function topfifty() {
   history | awk '{cmd[$2]++} END {for(elem in cmd) {print cmd[elem] " " elem}}' | sort -n -r | head -50
 }
-
-# Other sources
-
-# sources more project-specific aliases
-source ~/.custom/.more_aliases

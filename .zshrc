@@ -111,31 +111,21 @@ plugins=(
 
 # Configurations for oh-my-zsh plugins
 
-alias omz='_omz() { nano ~/.oh-my-zsh/plugins/"$1"/README.md ; }; _omz'
-# alias omzz='_omzz() { nano ~/.oh-my-zsh/plugins/z/MANUAL.md ; }; _omzz'
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# aliases (cheatsheet)
-alias what='acs'
+zstyle ':omz:plugins:nvm' lazy yes
+# zstyle ':omz:plugins:nvm' autoload yes
 
 # timer
 TIMER_THRESHOLD=0.1
-
-# nvm plugin config
-zstyle ':omz:plugins:nvm' lazy yes
-# zstyle ':omz:plugins:nvm' autoload yes
 
 # z
 ZSHZ_CMD=j
 ZSHZ_ECHO=1
 ZSHZ_TILDE=1
-# alias j='z'
-# alias jumpto='z'
-# alias jump='z'
-
-# nvm stuff
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 source $ZSH/oh-my-zsh.sh
 
@@ -165,5 +155,6 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# adds my configurations
+# Adds my configurations
+source $HOME/.custom/.zsh_aliases
 source $HOME/.custom/.aliases

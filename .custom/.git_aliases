@@ -1,0 +1,64 @@
+# GIT_ALIASES
+
+# opens the stuff
+alias git_aliases='${EDITOR} ~/.custom/.git_aliases'
+alias vscgit_aliases='code ~/.custom/.git_aliases'
+
+# ---
+
+# custom git aliases
+alias ga='git add -v'
+alias gaa='git add -v --all'
+
+alias gbb='git branch -vv'
+alias gbba='git branch -vv --all'
+
+alias gcm='git commit -v --message'
+alias gcam='git commit -v --all --message'
+alias gcdr='git commit -v --dry-run'
+alias gcmdr='git commit -v --dry-run --message'
+alias gcamdr='git commit -v --dry-run --all --message'
+
+alias gdl='git diff HEAD HEAD~1'
+
+alias gl='git pull -v'
+alias gldr='git pull -v --dry-run'
+
+alias gp='git push -v'
+alias gpo='git push -v origin'
+alias gpdr='git push -v --dry-run'
+
+alias gr='git remote -v'
+
+alias grst='git reset'
+alias grstr='git restore'
+alias grstra='git restore .'
+
+# logging stuff
+alias gstat='git status --short --branch'
+
+alias glogg='_glogg() { git log --oneline --decorate --graph --max-count="$1" ; }; _glogg'
+alias glogp='git log --stat --patch' # as 'glgp' in zsh
+alias gloog='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'\'' --stat' # as 'glols' in zsh
+alias grlog='git reflog'
+alias gcfg='git config --list --global'
+
+# utilities
+alias gnb='git switch --create'
+alias ghelp='_ghelp() { man git-"$1" ; }; _ghelp'
+alias grclean='git remote -v update origin --prune'
+alias gback='_gback() { git reset HEAD~"$1" ; }; _gback'
+
+alias gset='git branch -vv --set-upstream-to=origin/$(git_current_branch)'
+alias gunset='git branch -vv --unset-upstream && echo hey, it looks like you unset that upstream branch'
+alias gsetup='git push -v --set-upstream origin $(git_current_branch)'               
+
+# safeguards
+alias gbd='echo hey! that command was intentionally blocked, use a more verbose one like \"gb -d\" instead'
+alias gbD='echo hey! that command was intentionally blocked, use a more verbose one like \"gb -df or gb -D\" instead'
+alias ggf='echo hey! that command was intentionally blocked, use a more verbose one like \"git push --force origin $(current_branch\" instead)'
+alias gpod='echo hey! that command was intentionally blocked, use a more verbose one like \"gpo -d\" instead'
+alias gpristine='echo hey! that command was intentionally blocked, use more verbose ones like \"git reset --hard\" and \"git clean --force -dfx\" instead'
+alias grhh='echo hey! that command was intentionally blocked, use a more verbose one like \"git reset --hard\" instead'  
+alias groh='echo hey! that command was intentionally blocked, use a more verbose one like \"git reset origin/$(git_current_branch) --hard\" instead'
+alias='gpf!'='echo hey! that command was intentionally blocked, use a more verbose one like \"git push --force\" instead'
