@@ -6,6 +6,13 @@ alias vscls_aliases='code ~/.custom/.ls_aliases'
 
 # ---
 
+alias cl='_cdl'
+alias cll='_cdll'
+alias cla='_cdla'
+alias clsa='_cdlsa'
+alias clll='_cdlll'
+alias cllll='_cdllll'
+
 # alternate many-l forms for oh-my-zsh ls aliases
 alias lll='la'
 alias llll='lsa'
@@ -14,13 +21,12 @@ alias llll='lsa'
 alias lsize='ls -1ahsS'
 
 # go down directories and list contents
-alias cl='_cdl() { cd "$1" && l ; }; _cdl'
-alias cll='_cdll() { cd "$1" && ll ; }; _cdll'
-alias cla='_cdla() { cd "$1" && la ; }; _cdla'
-alias clsa='_cdlsa() { cd "$1" && lsa ; }; _cdlsa'
-
-alias clll='_cdlll() { cd "$1" && lll ; }; _cdlll'
-alias cllll='_cdllll() { cd "$1" && llll ; }; _cdllll'
+alias cdl='_cdl() { cd "$1" && l ; }; _cdl'
+alias cdll='_cdll() { cd "$1" && ll ; }; _cdll'
+alias cdla='_cdla() { cd "$1" && la ; }; _cdla'
+alias cdlsa='_cdlsa() { cd "$1" && lsa ; }; _cdlsa'
+alias cdlll='_cdlll() { cd "$1" && lll ; }; _cdlll'
+alias cdllll='_cdllll() { cd "$1" && llll ; }; _cdllll'
 
 # go up directories and list contents
 alias ..l='.. && l'

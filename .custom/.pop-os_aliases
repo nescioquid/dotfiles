@@ -1,21 +1,37 @@
 # POP-OS_ALIASES
 
+# opens the stuff
+alias aliases='${EDITOR} ~/.custom/.pop-os_aliases'
+alias vscaliases='code ~/.custom/.pop-os_aliases'
+
+# ---
+
+alias toss='tossout'
+alias trash='totrash'
+alias tossed='totossed'
+alias lt='ltossed'
+
 # opens up a file explorer at the current directory
 alias explore='nautilus .'
 
-# trash and toss stuff
-
 # toss things into the trash instead of hard deleting
-alias toss='_tossout() { 
+alias tossout='_tossout() { 
   md ~/.local/share/Trash/files/tossed && 
   mv -ivt ~/.local/share/Trash/files/tossed "$1" && 
   echo hey, you just tossed that \""$1"\" thing in the trash using the \*mv\* command. so stinky! ; 
   }; _tossout'
 
-# lists what is in trash and tossed
-alias ltrash='_ltrash() { la -got ~/.local/share/Trash/files && echo \(listed by last modified\) ; }; _ltrash'
-alias lt='_ltossed() { la -got ~/.local/share/Trash/files/tossed && echo \(listed by last modified\) ; }; _ltossed'
+# gets you to the trash and tossed
+alias totrash='_totrash() { cd ~/.local/share/Trash/files ; }; _totrash'
+alias totossed='_totossed() { cd ~/.local/share/Trash/files/tossed ; }; _totossed'
 
-# cd/jump into trash and tossed
-alias trash='_totrash() { cd ~/.local/share/Trash/files ; }; _totrash'
-alias tossed='_totossed() { cd ~/.local/share/Trash/files/tossed ; }; _totossed'
+# lists what is in the trash and tossed
+alias ltrash='_ltrash() {
+  la -got ~/.local/share/Trash/files &&
+  echo \(listed by last modified\) ;
+}; _ltrash'
+
+alias ltossed='_ltossed() {
+  la -got ~/.local/share/Trash/files/tossed &&
+  echo \(listed by last modified\) ;
+}; _ltossed'

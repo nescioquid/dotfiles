@@ -21,10 +21,18 @@ source ~/.custom/.pokemon_aliases
 alias a='alias'
 alias an='alias'
 
+alias cl='cdl'
+alias mcd='mdcd'
+alias saw='sauu'
+alias mf='makefile'
+alias rf='removefile'
+alias md='makedirectory'
+alias rd='removedirectory'
+
 # vscode
 alias vsc='code'
 
-# custom cd and ls
+# cd and ls
 
 alias back='cd ..'
 alias to='cd'
@@ -55,11 +63,10 @@ alias llll='_llll() {
 
 # go up and down directories and list contents
 alias ..l='.. && l'
-alias cl='_cdl() { cd "$1" && l ; }; _cdl'
+alias cdl='_cdl() { cd "$1" && l ; }; _cdl'
 
 # make a directory and cd into it
 alias mdcd='_mdcd() { md "$1" && cd "$1" ; }; _mdcd'
-alias mcd='_mdcd() { md "$1" && cd "$1" ; }; _mdcd'
 
 # easier/more english-like common utilities
 
@@ -68,7 +75,6 @@ alias sapt='sudo apt'
 alias supt='sudo apt'
 alias apti='sudo apt install'
 alias sauu='sudo apt update && sudo apt upgrade -y'
-alias saw='sudo apt update && sudo apt upgrade -y'
 
 alias here='pwd'
 alias clr='clear'
@@ -101,26 +107,21 @@ alias makefile='_makefile() {
   touch "$1" &&
   echo hey, you just created that \""$1"\" file using the \*touch\* command. yay! ;
 }; _makefile'
+# alias mkf='makefile'
 
 alias removefile='_removefile() {
   rm -Iv "$1" &&
   echo hey, you just removed that \""$1"\" thing using the \*rm\* command! ;
 }; _removefile'
+# alias rmf='removefile'
 
 alias makedirectory='mkdir -pv'
+# alias mkd='makedirectory'
 
 alias removedirectory='_removedirectory() {
   rm -Ivr "$1" &&
   echo hey, you just removed that \""$1"\" directory using the \*rm\* command, NOT rmdir! ;
 }; _removedirectory'
-
-alias mf='makefile'
-# alias mkf='makefile'
-alias rf='removefile'
-# alias rmf='removefile'
-alias md='makedirectory'
-# alias mkd='makedirectory'
-alias rd='removedirectory'
 # alias rmd='removedirectory'
 # alias rmdir='removedirectory'
 
