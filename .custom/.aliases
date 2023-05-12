@@ -6,16 +6,16 @@ alias an='alias'
 alias funcs='print -l ${(ok)functions}\n'
 
 # open this file and others like it
-alias aliases='${=EDITOR} ~/.aliases'
-alias more_aliases='${=EDITOR} ~/.more_aliases'
+alias aliases='${=EDITOR} ~/.custom/.aliases'
+alias more_aliases='${=EDITOR} ~/.custom/.more_aliases'
+alias bash_aliases='${=EDITOR} ~/.custom/.bash_aliases'
 alias bashrc='${=EDITOR} ~/.bashrc'
-alias bash_aliases='${=EDITOR} ~/.bash_aliases'
 alias zshrc='${=EDITOR} ~/.zshrc'
 
-alias vscaliases='code ~/.aliases'
-alias vscmore_aliases='code ~/.more_aliases'
+alias vscaliases='code ~/.custom/.aliases'
+alias vscmore_aliases='code ~/.custom/.more_aliases'
+alias vscbash_aliases='code ~/.custom/.bash_aliases'
 alias vscbashrc='code ~/.bashrc'
-alias vscbash_aliases='code ~/.bash_aliases'
 alias vsczshrc='code ~/.zshrc'
 
 # source run commands and aliases
@@ -23,8 +23,17 @@ alias src='source ~/.zshrc && echo hey, you sourced zsh things, yay!'
 alias srcb='source ~/.bashrc && echo hey, you sourced bash things, yay!'
 alias srcz='source ~/.zshrc && echo hey, you sourced zsh things, yay!'
 
-# copies run command and alias files to sh-config (git/github)
-alias copyconfig='_copyconfig() { cp -f ~/.aliases ~/builds/.sh-config/ && cp -f ~/.bashrc ~/builds/.sh-config/ && cp -f ~/.bash_aliases ~/builds/.sh-config/ && cp -f ~/.zshrc ~/builds/.sh-config/ && echo aliases and run commands copied ; }; _copyconfig'
+# copies configurations to .sh-config (for backup on github)
+alias copyconfig='_copyconfig() { 
+  cp -fr ~/.custom ~/builds/.sh-config/ && 
+  cp -f ~/.bash_history ~/builds/.sh-config/ && 
+  cp -f ~/.bashrc ~/builds/.sh-config/ && 
+  cp -f ~/.gitconfig ~/builds/.sh-config/ && 
+  cp -f ~/.z ~/builds/.sh-config/ && 
+  cp -f ~/.zsh_history ~/builds/.sh-config/ && 
+  cp -f ~/.zshrc ~/builds/.sh-config/ && 
+  echo configurations copied, hooray! ;
+}; _copyconfig'
 
 # git aliases
 alias ga='git add -v'
@@ -32,7 +41,6 @@ alias gaa='git add -v --all'
 
 alias gbb='git branch -vv'
 alias gbba='git branch -vv --all'
-
 
 alias gcm='git commit -v --message'
 alias gcam='git commit -v --all --message'
@@ -294,4 +302,4 @@ function topfifty() {
 # Other sources
 
 # sources more project-specific aliases
-source ~/.more_aliases
+source ~/.custom/.more_aliases

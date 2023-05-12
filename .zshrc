@@ -165,5 +165,5 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# # adds my common aliases
-source $HOME/.aliases
+# adds my configurations
+source $HOME/.custom/.aliases
