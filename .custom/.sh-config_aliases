@@ -10,9 +10,7 @@ alias sh-config='cd ~/builds/sh-config/'
 
 # ---
 
-# https://github.com/nescioquid/sh-config.git
-
-# ---
+alias backupconfig='sh-configpush'
 
 # pushes configurations to github
 alias sh-configpush='_sh-configpush() {
@@ -44,7 +42,7 @@ alias sh-configpull='_sh-configpull() {
   cd - ;
 }; _sh-configpull'
 
-# copies home and ~/.custom configurations to sh-config 
+# copies home and ~/.custom configurations to sh-config
 alias sh-configpushcopy='_sh-configpushcopy() {
   cp -fr ~/.custom/      ~/builds/sh-config/ &&
   cp -f  ~/.bash_history ~/builds/sh-config/ &&
@@ -58,12 +56,12 @@ alias sh-configpushcopy='_sh-configpushcopy() {
 
 # copies sh-config configurations to home and ~/.custom
 alias sh-configpullcopy='_sh-configpullcopy() {
-  cp -fr ~/builds/sh-config/.custom/      ~/.custom/      &&
-  cp -f  ~/builds/sh-config/.bash_history ~/.bash_history &&
-  cp -f  ~/builds/sh-config/.bashrc       ~/.bashrc       &&
-  cp -f  ~/builds/sh-config/.gitconfig    ~/.gitconfig    &&
-  cp -f  ~/builds/sh-config/.z            ~/.z            &&
-  cp -f  ~/builds/sh-config/.zsh_history  ~/.zsh_history  &&
-  cp -f  ~/builds/sh-config/.zshrc        ~/.zshrc        &&
+  cp -fr ~/builds/sh-config/.custom/      ~ &&
+  cp -f  ~/builds/sh-config/.bash_history ~ &&
+  cp -f  ~/builds/sh-config/.bashrc       ~ &&
+  cp -f  ~/builds/sh-config/.gitconfig    ~ &&
+  cp -f  ~/builds/sh-config/.z            ~ &&
+  cp -f  ~/builds/sh-config/.zsh_history  ~ &&
+  cp -f  ~/builds/sh-config/.zshrc        ~ &&
   echo configurations copied for pull, hooray! ;
-}; _sh-configpullcopy' 
+}; _sh-configpullcopy'
