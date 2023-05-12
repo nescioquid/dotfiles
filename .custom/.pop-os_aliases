@@ -1,8 +1,8 @@
 # POP-OS_ALIASES
 
 # opens the stuff
-alias aliases='${EDITOR} ~/.custom/.pop-os_aliases'
-alias vscaliases='code ~/.custom/.pop-os_aliases'
+alias pop-os_aliases='${EDITOR} ~/.custom/.pop-os_aliases'
+alias vscpop-os_aliases='code ~/.custom/.pop-os_aliases'
 
 # ---
 

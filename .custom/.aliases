@@ -3,10 +3,10 @@
 # opens the stuff
 alias aliases='${EDITOR} ~/.custom/.aliases'
 alias vscaliases='code ~/.custom/.aliases'
-alias vsccustom='code -n ~/.custom'
+alias vsccustom='code -n ~/.custom/'
 
 # gets you to the stuff
-alias custom='cd ~/.custom'
+alias custom='cd ~/.custom/'
 
 # domain-specific aliases
 # comment out lines to remove them from what's loaded by run commands
