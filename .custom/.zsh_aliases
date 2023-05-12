@@ -1,4 +1,4 @@
-#ZSH_ALIASES
+# ZSH_ALIASES
 
 # opens the stuff
 alias zshrc='${EDITOR} ~/.zshrc'

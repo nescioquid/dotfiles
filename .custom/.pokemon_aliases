@@ -1,13 +1,14 @@
 # POKEMON_ALIASES
 
 # opens the stuff
-alias vscpokeemerald='code -n ~/builds/pokemon/pokeemerald'
-alias pokeemerald_aliases='${EDITOR} ~/.custom/.pokeemerald_aliases'
-alias vscpokeemerald_aliases='code ~/.custom/.pokeemerald_aliases'
+alias vscpokemon='code -n ~/builds/pokemon/'
+alias vscpokeemerald='code -n ~/builds/pokemon/pokeemerald/'
+alias pokemon_aliases='${EDITOR} ~/.custom/.pokemon_aliases'
+alias vscpokemon_aliases='code ~/.custom/.pokemon_aliases'
 
 # gets you to the stuff
 alias pokemon='cd ~/builds/pokemon/'
-alias pokeemerald='cd ~/builds/pokemon/pokeemerald'
+alias pokeemerald='cd ~/builds/pokemon/pokeemerald/'
 
 # ---
 
@@ -34,13 +35,13 @@ alias maakke='make clean && make -j6'
 alias OA='echo haha it happened again oooh aaah hahaha'
 
 alias agbcc1='sudo apt install build-essential binutils-arm-none-eabi git libpng-dev && git clone https://github.com/pret/agbcc && cd agbcc && ./build.sh'
-alias agbcc2='./install.sh ../pokeemerald'
+alias agbcc2='./install.sh ../pokeemerald/'
 
 # deprecated
 
-alias vscgreen-thing='code -n ~/builds/pokemon/archive/green-thing'
-alias green-thing='cd ~/builds/pokemon/archive/green-thing'
+alias vscgreen-thing='code -n ~/builds/pokemon/archive/green-thing/'
+alias green-thing='cd ~/builds/pokemon/archive/green-thing/'
 
-# alias addporyscript='md tools/poryscript && copy ~/builds/pokemon/poryscript/poryscript-linux/font_config.json ~/builds/pokemon/pokeemerald/tools/poryscript/font_config.json && copy ~/builds/pokemon/poryscript/poryscript-linux/poryscript ~/builds/pokemon/pokeemerald/tools/poryscript/poryscript'
+# alias addporyscript='md tools/poryscript/ && copy ~/builds/pokemon/poryscript/poryscript-linux/font_config.json ~/builds/pokemon/pokeemerald/tools/poryscript/font_config.json && copy ~/builds/pokemon/poryscript/poryscript-linux/poryscript ~/builds/pokemon/pokeemerald/tools/poryscript/poryscript'
 
-# alias removeporyscript='rd tools/poryscript'
+# alias removeporyscript='rd tools/poryscript/'

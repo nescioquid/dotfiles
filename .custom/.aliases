@@ -40,6 +40,11 @@ alias home='cd ~'
 alias root='cd /'
 alias last='cd -'
 
+alias builds='cd ~/builds'
+alias desktop='cd ~/Desktop'
+alias documents='cd ~/Documents'
+alias downloads='cd ~/Downloads'
+
 alias l='_l() {
   ls -1A --group-directories-first &&
   echo --- &&
