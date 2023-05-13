@@ -13,6 +13,7 @@ alias custom='cd ~/.custom/'
 source ~/.custom/.git_aliases
 # source ~/.custom/.ls_aliases
 source ~/.custom/.pop-os_aliases
+# source ~/.custom/.windows_aliases
 source ~/.custom/.sh-config_aliases
 source ~/.custom/.pokemon_aliases
 

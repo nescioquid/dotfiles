@@ -1,18 +1,23 @@
-# POP-OS_ALIASES
+# WINDOWS_ALIASES
 
 # opens the stuff
-alias pop-os_aliases='${EDITOR} ~/.custom/.pop-os_aliases'
-alias vscpop-os_aliases='code ~/.custom/.pop-os_aliases'
+alias windows_aliases='${EDITOR} ~/.custom/.windows_aliases'
+alias vscwindows_aliases='code ~/.custom/.windows_aliases'
 
 # ---
+
+alias windows='/mnt/c/Users'
 
 alias toss='tossout'
 alias trash='totrash'
 alias tossed='totossed'
 alias lt='ltossed'
 
-# opens up a file explorer at the current directory
-alias explore='nautilus .'
+# moves tossed folder to the windows desktop
+alias tosstodesktop='_tosstodesktop() { 
+  mv -ivt /mnt/c/"$1"/Desktop/ ~/.local/share/Trash/files/tossed/ && 
+  echo hey, you just moved the "tossed" directory to the windows desktop using the \*mv\* command. nice! ; 
+  }; _tosstodesktop'
 
 # toss things into the trash instead of hard deleting
 alias tossout='_tossout() { 
