@@ -18,7 +18,7 @@ git clone https://github.com/nescioquid/sh-config.git &&
 source ~/builds/sh-config/.custom/.sh-config_aliases
 ```
 
-While the second actually installs the configurations:
+While the second actually installs the configurations locally:
 
 ```shell
 installconfig
