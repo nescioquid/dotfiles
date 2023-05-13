@@ -16,7 +16,8 @@ Then, run the following commands, _separately_ (testing with Ubuntu on WSL2 has 
 mkdir ~/.custom/ &&
 mkdir ~/builds/ &&
 cd ~/builds &&
-git clone https://github.com/nescioquid/sh-config.git
+git clone https://github.com/nescioquid/sh-config.git &&
+source ~/builds/sh-config/.custom/.sh-config_aliases
 ```
 
 And the second copy-pastes the configurations from the now-local repo and sources the new `.bashrc` file:
