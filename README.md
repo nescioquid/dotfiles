@@ -25,7 +25,7 @@ And the second copy-pastes the configurations from the now-local repo and source
 installconfig
 ```
 
-Then, you should run `aliases` and make sure you're `source` -ing whatever aliases you want in your new environment.
+Then, you should run `aliases` and make sure you're `source`-ing whatever aliases you want in your new environment.
 
 _Don't forget to make this repo private again afterwards!_
 
