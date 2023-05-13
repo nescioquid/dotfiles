@@ -2,14 +2,35 @@
 
 _The backups for my shell configurations._
 
-You're welcome, Future Person That I Turn Out To Be :)
+You're welcome, future me!
 
 ### Usage
 
 #### Adding these configurations to your Linux distro for the first time?
 
-Clone this repo to `~/builds/sh-config` and run `sh-configpull`. That's it!
+First, make this repo publicly visible.
+
+Then, run the following commands, _separately_ (testing with Ubuntu on WSL2 has routinely failed as a single command, for whatever reason). The first makes some temporary directories, clones this repo into them, and sources a `.sh-config_aliases` that contains the prerequisite commands:
+
+```shell
+mkdir ~/.custom/ &&
+mkdir ~/builds/ &&
+cd ~/builds &&
+git clone https://github.com/nescioquid/sh-config.git &&
+cp ~/builds/sh-config/.custom/.sh-config_aliases ~/.custom/ &&
+source ~/.custom/.sh-config_aliases
+```
+
+And the second retrieves the config from the now-local repo and sources the new `.bashrc` file:
+
+```shell
+retrieveconfig && source ~/.bashrc
+```
+
+Then, you should run `aliases` and make sure you're `source`ing whatever aliases you want in your new environment.
+
+_Don't forget to make this repo private again afterwards!_
 
 #### Else
 
-Push to this repo with `sh-configpush`, also aliased to `backupconfig` to make it a little easier. Remember to run it whenever you make any configuration changes!
+Push to this repo with `backupconfig` and pull from it with `retrieveconfig`. Remember to run it whenever you make any configuration changes!
