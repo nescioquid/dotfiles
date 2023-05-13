@@ -30,6 +30,8 @@ alias rf='removefile'
 alias md='makedirectory'
 alias rd='removedirectory'
 
+alias ydtt='youdidthething'
+
 # vscode
 alias vsc='code'
 
@@ -127,6 +129,12 @@ alias removedirectory='_removedirectory() {
 }; _removedirectory'
 # alias rmd='removedirectory'
 # alias rmdir='removedirectory'
+
+# https://texteditor.com/multiline-text-art/ ("Blocks in two lines - filled" was the font I used)
+alias youdidthething='_youdidthething() {
+  echo ░▀▄▀░▄▀▄░█▒█░░░█▀▄░█░█▀▄░░░▀█▀░█▄█▒██▀░░░▀█▀░█▄█░█░█▄░█░▄▀▒░█ &&
+  echo ░▒█▒░▀▄▀░▀▄█▒░▒█▄▀░█▒█▄▀▒░░▒█▒▒█▒█░█▄▄▒░░▒█▒▒█▒█░█░█▒▀█░▀▄█░▄
+}; _youdidthething'
 
 # ---
 

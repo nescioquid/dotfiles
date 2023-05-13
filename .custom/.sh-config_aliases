@@ -10,8 +10,8 @@ alias sh-config='cd ~/builds/sh-config/'
 
 # ---
 
-alias backupconfig='sh-configpush'
-alias retrieveconfig='sh-configpull'
+alias backupconfig='sh-configpush && sh-configyoudidthething'
+alias retrieveconfig='sh-configpull && sh-configyoudidthething'
 
 # pushes configurations to github
 alias sh-configpush='_sh-configpush() {
@@ -66,3 +66,9 @@ alias sh-configpullcopy='_sh-configpullcopy() {
   cp -f  ~/builds/sh-config/.zshrc        ~ &&
   echo configurations copied for pull, hooray! ;
 }; _sh-configpullcopy'
+
+# https://texteditor.com/multiline-text-art/ ("Blocks in two lines - filled" was the font I used)
+alias sh-configyoudidthething='_sh-configyoudidthething() {
+  echo ░▀▄▀░▄▀▄░█▒█░░░█▀▄░█░█▀▄░░░▀█▀░█▄█▒██▀░░░▀█▀░█▄█░█░█▄░█░▄▀▒░█ &&
+  echo ░▒█▒░▀▄▀░▀▄█▒░▒█▄▀░█▒█▄▀▒░░▒█▒▒█▒█░█▄▄▒░░▒█▒▒█▒█░█░█▒▀█░▀▄█░▄
+}; _sh-configyoudidthething'
