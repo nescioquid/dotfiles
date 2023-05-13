@@ -6,12 +6,12 @@ alias vscls_aliases='code ~/.custom/.ls_aliases'
 
 # ---
 
-alias cl='_cdl'
-alias cll='_cdll'
-alias cla='_cdla'
-alias clsa='_cdlsa'
-alias clll='_cdlll'
-alias cllll='_cdllll'
+alias cl='cdl'
+alias cll='cdll'
+alias cla='cdla'
+alias clsa='cdlsa'
+alias clll='cdlll'
+alias cllll='cdllll'
 
 # alternate many-l forms for oh-my-zsh ls aliases
 alias lll='la'
