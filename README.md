@@ -10,7 +10,7 @@ You're welcome, future me!
 
 First, make this repo publicly visible.
 
-Then, run the following commands, _separately_ (testing with Ubuntu on WSL2 has routinely failed as a single command, for whatever reason). The first makes some temporary directories, clones this repo into them, and sources a `.sh-config_aliases` that contains the prerequisite commands:
+Then, run the following commands, _separately_ (testing with Ubuntu on WSL2 has routinely failed as a single command, for whatever reason). The first makes some temporary directories, clones this repo into them, and sources a `.sh-config_aliases` file that contains the prerequisite commands:
 
 ```shell
 mkdir ~/.custom/ &&
