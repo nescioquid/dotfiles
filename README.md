@@ -30,4 +30,4 @@ _Don't forget to make this repo private again afterwards!_
 
 #### Else
 
-Push to this repo with `backupconfig` and pull from it with `retrieveconfig`. Remember to run it whenever you make any configuration changes!
+Push to this repo with `backupconfig` and pull from it with `retrieveconfig`. That's it! Remember to run `backupconfig` whenever you make any configuration changes!
