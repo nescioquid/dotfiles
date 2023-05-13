@@ -10,23 +10,21 @@ You're welcome, future me!
 
 First, make this repo publicly visible.
 
-Then, run the following commands, _separately_ (testing with Ubuntu on WSL2 has routinely failed as a single command, for whatever reason). The first makes some temporary directories, clones this repo into them, and sources a `.sh-config_aliases` file that contains the prerequisite commands:
+Then, run the following commands, _separately_ (testing with Ubuntu on WSL2 has routinely failed as a single command, for whatever reason). The first makes the right directory in the right location, clones this repo into it, and sources a `.sh-config_aliases` file that contains the prerequisite commands:
 
 ```shell
-mkdir ~/.custom/ &&
-mkdir ~/builds/ &&
-cd ~/builds &&
+mkdir ~/builds/ && cd ~/builds &&
 git clone https://github.com/nescioquid/sh-config.git &&
 source ~/builds/sh-config/.custom/.sh-config_aliases
 ```
 
-And the second copy-pastes the configurations from the now-local repo and sources the new `.bashrc` file:
+While the second actually installs the configurations:
 
 ```shell
 installconfig
 ```
 
-Then, you should run `aliases` and make sure you're `source`-ing whatever aliases you want in your new environment.
+Afterwards, you should run `aliases` to make sure you're `source`-ing whatever aliases you want in your new environment.
 
 _Don't forget to make this repo private again afterwards!_
 
