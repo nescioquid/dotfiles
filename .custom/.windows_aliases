@@ -14,16 +14,16 @@ alias tossed='totossed'
 alias lt='ltossed'
 
 # moves tossed folder to the windows desktop
-alias tosstodesktop='_tosstodesktop() { 
-  mv -ivt /mnt/c/"$1"/Desktop/ ~/.local/share/Trash/files/tossed/ && 
-  echo hey, you just moved the "tossed" directory to the windows desktop using the \*mv\* command. nice! ; 
+alias tosstodesktop='_tosstodesktop() {
+  mv -ivt /mnt/c/"$1"/Desktop/ ~/.local/share/Trash/files/tossed/ &&
+  echo hey, you just moved the "tossed" directory to the windows desktop using the \*mv\* command. nice! ;
   }; _tosstodesktop'
 
 # toss things into the trash instead of hard deleting
-alias tossout='_tossout() { 
-  md ~/.local/share/Trash/files/tossed/ && 
-  mv -ivt ~/.local/share/Trash/files/tossed/ "$1" && 
-  echo hey, you just tossed that \""$1"\" thing in the trash using the \*mv\* command. so stinky! ; 
+alias tossout='_tossout() {
+  md ~/.local/share/Trash/files/tossed/ &&
+  mv -ivt ~/.local/share/Trash/files/tossed/ "$1" &&
+  echo hey, you just tossed that \""$1"\" thing in the trash using the \*mv\* command. so stinky! ;
   }; _tossout'
 
 # gets you to the trash and tossed
