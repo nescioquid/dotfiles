@@ -12,7 +12,8 @@ alias sh-config='cd ~/builds/sh-config/'
 
 alias backupconfig='sh-configpush && sh-configyoudidthething'
 alias retrieveconfig='sh-configpull && sh-configyoudidthething'
-alias installconfig='sh-configpullcopy && sh-configyoudidthething'
+
+alias installconfig='&& cp ~/builds/sh-config/.custom/.sh-config_aliases ~/.custom/ && source ~/.custom/.sh-config_aliasessh-configpullcopy && source ~/.bashrc && sh-configyoudidthething'
 
 # pushes configurations to github
 alias sh-configpush='_sh-configpush() {

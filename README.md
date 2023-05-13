@@ -16,18 +16,16 @@ Then, run the following commands, _separately_ (testing with Ubuntu on WSL2 has 
 mkdir ~/.custom/ &&
 mkdir ~/builds/ &&
 cd ~/builds &&
-git clone https://github.com/nescioquid/sh-config.git &&
-cp ~/builds/sh-config/.custom/.sh-config_aliases ~/.custom/ &&
-source ~/.custom/.sh-config_aliases
+git clone https://github.com/nescioquid/sh-config.git
 ```
 
-And the second retrieves the config from the now-local repo and sources the new `.bashrc` file:
+And the second copy-pastes the configurations from the now-local repo and sources the new `.bashrc` file:
 
 ```shell
-retrieveconfig && source ~/.bashrc
+installconfig
 ```
 
-Then, you should run `aliases` and make sure you're `source`ing whatever aliases you want in your new environment.
+Then, you should run `aliases` and make sure you're `source` -ing whatever aliases you want in your new environment.
 
 _Don't forget to make this repo private again afterwards!_
 
