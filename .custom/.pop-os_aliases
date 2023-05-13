@@ -6,6 +6,10 @@ alias vscpop-os_aliases='code ~/.custom/.pop-os_aliases'
 
 # ---
 
+alias desktop='cd ~/Desktop'
+alias documents='cd ~/Documents'
+alias downloads='cd ~/Downloads'
+
 alias toss='tossout'
 alias trash='totrash'
 alias tossed='totossed'

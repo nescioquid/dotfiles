@@ -6,7 +6,10 @@ alias vscwindows_aliases='code ~/.custom/.windows_aliases'
 
 # ---
 
-alias windows='/mnt/c/Users'
+alias windows='cd /mnt/c/Users'
+alias desktop='_desktop() { cd /mnt/c/Users/"$1"/Desktop/ ; }; _desktop'
+alias documents='_documents() { cd /mnt/c/Users/"$1"/Documents/ ; }; _documents'
+alias downloads='_downloads() { cd /mnt/c/Users/"$1"/Downloads/ ; }; _downloads'
 
 alias toss='tossout'
 alias trash='totrash'
@@ -15,7 +18,7 @@ alias lt='ltossed'
 
 # moves tossed folder to the windows desktop
 alias tosstodesktop='_tosstodesktop() {
-  mv -ivt /mnt/c/"$1"/Desktop/ ~/.local/share/Trash/files/tossed/ &&
+  mv -ivt /mnt/c/Users/"$1"/Desktop/ ~/.local/share/Trash/files/tossed/ &&
   echo hey, you just moved the "tossed" directory to the windows desktop using the \*mv\* command. nice! ;
   }; _tosstodesktop'
 
