@@ -10,8 +10,8 @@ alias sh-config='cd ~/builds/sh-config/'
 
 # ---
 
-alias backupconfig='_sh-config_push && _sh-config_youdidthething'
-alias retrieveconfig='_sh-config_pull && _sh-config_youdidthething'
+alias backupconfig='_sh-config_push'
+alias retrieveconfig='_sh-config_pull'
 
 # installs configurations
 function installconfig() {
