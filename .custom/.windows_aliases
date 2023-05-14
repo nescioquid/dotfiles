@@ -6,8 +6,6 @@ alias vscwindows_aliases='code ~/.custom/.windows_aliases'
 
 # ---
 
-alias windows='cd /mnt/c/Users'
-
 function desktop() {
   cd /mnt/c/Users/"$1"/Desktop/
 }
@@ -20,10 +18,10 @@ function downloads() {
   cd /mnt/c/Users/"$1"/Downloads/
 }
 
-alias toss='tossout'
-alias trash='totrash'
-alias tossed='totossed'
-alias lt='ltossed'
+# opens up a file explorer at the current directory
+alias explore='explorer.exe .'
+
+alias windows='cd /mnt/c/Users'
 
 function lw() {
   ls -1 --group-directories-first &&
@@ -35,26 +33,4 @@ function lw() {
 function tosstodesktop() {
   mv -ivt /mnt/c/Users/"$1"/Desktop/ ~/.local/share/Trash/files/tossed/ &&
   echo hey, you just moved the "tossed" directory to the windows desktop using the \*mv\* command. nice!
-}
-
-# toss things into the trash instead of hard deleting
-function tossout() {
-  md ~/.local/share/Trash/files/tossed/ &&
-  mv -ivt ~/.local/share/Trash/files/tossed/ "$1" &&
-  echo hey, you just tossed that \""$1"\" thing in the trash using the \*mv\* command. so stinky!
-}
-
-# gets you to the trash and tossed
-alias totrash='cd ~/.local/share/Trash/files/'
-alias totossed='cd ~/.local/share/Trash/files/tossed/'
-
-# lists what is in the trash and tossed
-function ltrash() {
-  la -got ~/.local/share/Trash/files/ &&
-  echo \(listed by last modified\)
-}
-
-function ltossed() {
-  la -got ~/.local/share/Trash/files/tossed/ &&
-  echo \(listed by last modified\)
 }

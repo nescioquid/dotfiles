@@ -10,32 +10,5 @@ alias desktop='cd ~/Desktop'
 alias documents='cd ~/Documents'
 alias downloads='cd ~/Downloads'
 
-alias toss='tossout'
-alias trash='totrash'
-alias tossed='totossed'
-alias lt='ltossed'
-
 # opens up a file explorer at the current directory
 alias explore='nautilus .'
-
-# toss things into the trash instead of hard deleting
-function tossout() {
-  md ~/.local/share/Trash/files/tossed/ &&
-  mv -ivt ~/.local/share/Trash/files/tossed/ "$1" &&
-  echo hey, you just tossed that \""$1"\" thing in the trash using the \*mv\* command. so stinky!
-}
-
-# gets you to the trash and tossed
-alias totrash='cd ~/.local/share/Trash/files/'
-alias totossed='cd ~/.local/share/Trash/files/tossed/'
-
-# lists what is in the trash and tossed
-function ltrash() {
-  la -got ~/.local/share/Trash/files/ &&
-  echo \(listed by last modified\)
-}
-
-function ltossed() {
-  la -got ~/.local/share/Trash/files/tossed/ &&
-  echo \(listed by last modified\)
-}

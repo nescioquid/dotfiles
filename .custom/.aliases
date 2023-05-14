@@ -11,7 +11,6 @@ alias custom='cd ~/.custom/'
 # domain-specific aliases
 # comment out lines to remove them from what's loaded by run commands
 source ~/.custom/.git_aliases
-# source ~/.custom/.ls_aliases
 source ~/.custom/.pop-os_aliases
 # source ~/.custom/.windows_aliases
 source ~/.custom/.sh-config_aliases
@@ -33,6 +32,8 @@ alias mf='makefile'
 alias rf='removefile'
 alias md='makedirectory'
 alias rd='removedirectory'
+alias toss='tossout'
+alias lt='ltossed'
 alias ydtt='youdidthething'
 
 # vscode
@@ -45,11 +46,11 @@ alias to='cd'
 alias home='cd ~'
 alias root='cd /'
 alias last='cd -'
-alias ..l='.. && l'
-
 
 alias builds='cd ~/builds'
 alias sandbox='cd ~/builds/sandbox'
+alias trash='cd ~/.local/share/Trash/files/'
+alias tossed='cd ~/.local/share/Trash/files/tossed/'
 
 alias apt='sudo apt' # overwrites original for copy-paste reasons
 alias sapt='sudo apt'
@@ -68,6 +69,9 @@ alias search='grep -ir'
 
 alias f='find . -iname'
 alias count='find . -type f | wc -l'
+
+alias ..l='.. && l'
+alias lsize='ls -1ahsS'
 
 function l() {
   ls -1A --group-directories-first
@@ -98,6 +102,12 @@ function cdl() {
   l
 }
 
+function look() {
+  ls -1A --group-directories-first "$1"
+  echo ---
+  echo \(listed with directories first\)
+}
+
 function mdcd() {
   makedirectory "$1"
   cd "$1"
@@ -118,28 +128,45 @@ function rename() {
   echo hey, you renamed that \""$1"\" thing to \""$2"\" using the \*mv\* command!
 }
 
-# alias mkf='makefile'
 function makefile() {
   touch "$1"
   echo hey, you just made that \""$1"\" file using the \*touch\* command. yay!
 }
 
-# alias rmf='removefile'
 function removefile() {
   rm -Iv "$1"
   echo hey, you just removed that \""$1"\" file using the \*rm\* command!
 }
 
-# alias mkd='makedirectory'
 function makedirectory() {
   mkdir -pv "$1"
   echo hey, you just made that \""$1"\" directory using the \*mkdir\* command. yay!
 }
-# alias rmd='removedirectory'
-# alias rmdir='removedirectory'
+
 function removedirectory() {
   rm -Ivr "$1"
   echo hey, you just removed that \""$1"\" directory using the \*rm\* command, NOT rmdir!
+}
+
+# toss things into the trash instead of hard deleting
+function tossout() {
+  md ~/.local/share/Trash/files/tossed/ &&
+  mv -ivt ~/.local/share/Trash/files/tossed/ "$1" &&
+  echo hey, you just tossed that \""$1"\" thing in the trash using the \*mv\* command. so stinky!
+}
+
+# lists what's in the trash
+function ltrash() {
+  la --group-directories-first ~/.local/share/Trash/files/
+  echo ---
+  echo \(listed with directories first\)
+}
+
+# lists what's in tossed
+function ltossed() {
+  la --group-directories-first ~/.local/share/Trash/files/tossed/
+  echo ---
+  echo \(listed with directories first\)
 }
 
 # https://texteditor.com/multiline-text-art/ ("Blocks in two lines - filled" was the font I used)
@@ -176,10 +203,5 @@ function removeemptydirectories() {
 # ---
 
 # new stuff here
-function look() {
-  cd "$1"
-  l
-  cd -
-}
 
 # ---
