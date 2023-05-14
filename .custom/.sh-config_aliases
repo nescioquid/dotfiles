@@ -10,16 +10,16 @@ alias sh-config='cd ~/builds/sh-config/'
 
 # ---
 
-alias backupconfig='sh-configpush && sh-configyoudidthething'
-alias retrieveconfig='sh-configpull && sh-configyoudidthething'
-alias installconfig='sh-configpullcopy && source ~/.bashrc && sh-configyoudidthething && cd ~'
+alias backupconfig='_sh-config_push && _sh-config_youdidthething'
+alias retrieveconfig='_sh-config_pull && _sh-config_youdidthething'
+alias installconfig='_sh-config_pull_copy && source ~/.bashrc && source ~/.zshrc && _sh-config_youdidthething && cd ~'
 
 # pushes configurations to github
-function sh-configpush() {
+function _sh-config_push() {
   cd ~/builds/sh-config
   echo whoosh! heading over to:
   echo ~/builds/sh-config
-  sh-configpushcopy
+  _sh-config_push_copy
   echo starting to do git things:
   git add -v --all
   git commit -v --message "updated on $(date +"%d %B %Y at %T")"
@@ -31,45 +31,45 @@ function sh-configpush() {
 }
 
 # pulls configurations from github
-function sh-configpull() {
-  cd ~/builds/sh-config &&
-  echo whoosh! heading over to: &&
-  echo ~/builds/sh-config &&
-  echo starting to do git things: &&
-  git pull &&
-  echo done doing git things &&
-  sh-configpullcopy &&
-  echo configurations pulled, congrats! &&
-  echo and now heading back to: &&
+function _sh-config_pull() {
+  cd ~/builds/sh-config
+  echo whoosh! heading over to:
+  echo ~/builds/sh-config
+  echo starting to do git things:
+  git pull
+  echo done doing git things
+  _sh-config_pull_copy
+  echo configurations pulled, congrats!
+  echo and now heading back to:
   cd -
 }
 
 # copies home and ~/.custom configurations to sh-config
-function sh-configpushcopy() {
-  cp -fr ~/.custom/      ~/builds/sh-config/ &&
-  cp -f  ~/.bash_history ~/builds/sh-config/ &&
-  cp -f  ~/.bashrc       ~/builds/sh-config/ &&
-  cp -f  ~/.gitconfig    ~/builds/sh-config/ &&
-  cp -f  ~/.z            ~/builds/sh-config/ &&
-  cp -f  ~/.zsh_history  ~/builds/sh-config/ &&
-  cp -f  ~/.zshrc        ~/builds/sh-config/ &&
+function _sh-config_push_copy() {
+  cp -fr ~/.custom/      ~/builds/sh-config/
+  cp -f  ~/.bash_history ~/builds/sh-config/
+  cp -f  ~/.bashrc       ~/builds/sh-config/
+  cp -f  ~/.gitconfig    ~/builds/sh-config/
+  cp -f  ~/.z            ~/builds/sh-config/
+  cp -f  ~/.zsh_history  ~/builds/sh-config/
+  cp -f  ~/.zshrc        ~/builds/sh-config/
   echo configurations copied for push, hooray!
 }
 
 # copies sh-config configurations to home and ~/.custom
-function sh-configpullcopy() {
-  cp -fr ~/builds/sh-config/.custom/      ~ &&
-  cp -f  ~/builds/sh-config/.bash_history ~ &&
-  cp -f  ~/builds/sh-config/.bashrc       ~ &&
-  cp -f  ~/builds/sh-config/.gitconfig    ~ &&
-  cp -f  ~/builds/sh-config/.z            ~ &&
-  cp -f  ~/builds/sh-config/.zsh_history  ~ &&
-  cp -f  ~/builds/sh-config/.zshrc        ~ &&
+function _sh-config_pull_copy() {
+  cp -fr ~/builds/sh-config/.custom/      ~
+  cp -f  ~/builds/sh-config/.bash_history ~
+  cp -f  ~/builds/sh-config/.bashrc       ~
+  cp -f  ~/builds/sh-config/.gitconfig    ~
+  cp -f  ~/builds/sh-config/.z            ~
+  cp -f  ~/builds/sh-config/.zsh_history  ~
+  cp -f  ~/builds/sh-config/.zshrc        ~
   echo configurations copied for pull, hooray!
 }
 
 # https://texteditor.com/multiline-text-art/ ("Blocks in two lines - filled" was the font I used)
-function sh-configyoudidthething() {
-  echo ░▀▄▀░▄▀▄░█▒█░░░█▀▄░█░█▀▄░░░▀█▀░█▄█▒██▀░░░▀█▀░█▄█░█░█▄░█░▄▀▒░█ &&
+function _sh-config_youdidthething() {
+  echo ░▀▄▀░▄▀▄░█▒█░░░█▀▄░█░█▀▄░░░▀█▀░█▄█▒██▀░░░▀█▀░█▄█░█░█▄░█░▄▀▒░█
   echo ░▒█▒░▀▄▀░▀▄█▒░▒█▄▀░█▒█▄▀▒░░▒█▒▒█▒█░█▄▄▒░░▒█▒▒█▒█░█░█▒▀█░▀▄█░▄
 }
