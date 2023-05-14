@@ -11,7 +11,7 @@ alias custom='cd ~/.custom/'
 # domain-specific aliases
 # comment out lines to remove them from what's loaded by run commands
 source ~/.custom/.git_aliases
-source ~/.custom/.ls_aliases
+# source ~/.custom/.ls_aliases
 source ~/.custom/.pop-os_aliases
 # source ~/.custom/.windows_aliases
 source ~/.custom/.sh-config_aliases
@@ -38,53 +38,18 @@ alias ydtt='youdidthething'
 # vscode
 alias vsc='code'
 
-# cd and ls
+# easier/more english-like common utilities
 
 alias back='cd ..'
 alias to='cd'
 alias home='cd ~'
 alias root='cd /'
 alias last='cd -'
-
-alias builds='cd ~/builds'
-
-function l() {
-  ls -1A --group-directories-first &&
-  echo --- &&
-  echo \(listed with directories first\)
-}
-
-function ll() {
-  la -t &&
-  echo --- &&
-  echo \(listed by last modified\)
-}
-
-function lll() {
-  la --group-directories-first &&
-  echo --- &&
-  echo \(listed with directories first\)
-}
-
-function llll() {
-  lsa -F &&
-  echo --- &&
-  echo \(listed alphabetically\)
-}
-
-# go up and down directories and list contents
 alias ..l='.. && l'
 
-function cdl() {
-  cd "$1" && l
-}
 
-# make a directory and cd into it
-function mdcd() {
-  md "$1" && cd "$1"
-}
-
-# easier/more english-like common utilities
+alias builds='cd ~/builds'
+alias sandbox='cd ~/builds/sandbox'
 
 alias apt='sudo apt' # overwrites original for copy-paste reasons
 alias sapt='sudo apt'
@@ -104,46 +69,82 @@ alias search='grep -ir'
 alias f='find . -iname'
 alias count='find . -type f | wc -l'
 
+function l() {
+  ls -1A --group-directories-first
+  echo ---
+  echo \(listed with directories first\)
+}
+
+function ll() {
+  la -t
+  echo ---
+  echo \(listed by last modified\)
+}
+
+function lll() {
+  la --group-directories-first
+  echo ---
+  echo \(listed with directories first\)
+}
+
+function llll() {
+  lsa -F
+  echo ---
+  echo \(listed alphabetically\)
+}
+
+function cdl() {
+  cd "$1"
+  l
+}
+
+function mdcd() {
+  makedirectory "$1"
+  cd "$1"
+}
+
 function copy() {
-  cp -irv "$1" "$2" &&
-  echo hey, you COPIED that \""$1"\" thing using the \*cp\* command!
+  cp -irv "$1" "$2"
+  echo hey, you copied that \""$1"\" thing to \""$2"\" using the \*cp\* command!
 }
 
 function move() {
-  mv -iv "$1" "$2" &&
-  echo hey, you MOVED that \""$1"\" thing using the \*mv\* command!
+  mv -iv "$1" "$2"
+  echo hey, you moved that \""$1"\" thing to \""$2"\" using the \*mv\* command!
 }
 
 function rename() {
-  mv -iv "$1" "$2" &&
-  echo hey, you RENAMED that \""$1"\" thing using the \*mv\* command!
+  mv -iv "$1" "$2"
+  echo hey, you renamed that \""$1"\" thing to \""$2"\" using the \*mv\* command!
 }
 
 # alias mkf='makefile'
 function makefile() {
-  touch "$1" &&
-  echo hey, you just created that \""$1"\" file using the \*touch\* command. yay!
+  touch "$1"
+  echo hey, you just made that \""$1"\" file using the \*touch\* command. yay!
 }
 
 # alias rmf='removefile'
 function removefile() {
-  rm -Iv "$1" &&
-  echo hey, you just removed that \""$1"\" thing using the \*rm\* command!
+  rm -Iv "$1"
+  echo hey, you just removed that \""$1"\" file using the \*rm\* command!
 }
 
 # alias mkd='makedirectory'
-alias makedirectory='mkdir -pv'
-
+function makedirectory() {
+  mkdir -pv "$1"
+  echo hey, you just made that \""$1"\" directory using the \*mkdir\* command. yay!
+}
 # alias rmd='removedirectory'
 # alias rmdir='removedirectory'
 function removedirectory() {
-  rm -Ivr "$1" &&
+  rm -Ivr "$1"
   echo hey, you just removed that \""$1"\" directory using the \*rm\* command, NOT rmdir!
 }
 
 # https://texteditor.com/multiline-text-art/ ("Blocks in two lines - filled" was the font I used)
 function youdidthething() {
-  echo ░▀▄▀░▄▀▄░█▒█░░░█▀▄░█░█▀▄░░░▀█▀░█▄█▒██▀░░░▀█▀░█▄█░█░█▄░█░▄▀▒░█ &&
+  echo ░▀▄▀░▄▀▄░█▒█░░░█▀▄░█░█▀▄░░░▀█▀░█▄█▒██▀░░░▀█▀░█▄█░█░█▄░█░▄▀▒░█
   echo ░▒█▒░▀▄▀░▀▄█▒░▒█▄▀░█▒█▄▀▒░░▒█▒▒█▒█░█▄▄▒░░▒█▒▒█▒█░█░█▒▀█░▀▄█░▄
 }
 
@@ -163,3 +164,26 @@ function toptwenty() {
 function topfifty() {
   history | awk '{cmd[$2]++} END {for(elem in cmd) {print cmd[elem] " " elem}}' | sort -n -r | head -50
 }
+
+# ---
+
+# new stuff here
+
+# function remove_all_empty_dirs() {
+#   # check if the directory exists
+#   if [ ! -d "$1" ]; then
+#     echo "Directory $1 does not exist."
+#     return 1
+#   fi
+
+#   # find and remove all empty directories
+#   find "$1" -type d -empty -print0 | xargs -0 rmdir
+# }
+
+function remove_empty_directories() {
+    find "$1" -type d -empty -delete
+    echo done
+}
+
+
+# ---

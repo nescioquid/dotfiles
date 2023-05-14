@@ -12,22 +12,21 @@ alias sh-config='cd ~/builds/sh-config/'
 
 alias backupconfig='sh-configpush && sh-configyoudidthething'
 alias retrieveconfig='sh-configpull && sh-configyoudidthething'
-
 alias installconfig='sh-configpullcopy && source ~/.bashrc && sh-configyoudidthething && cd ~'
 
 # pushes configurations to github
 function sh-configpush() {
-  cd ~/builds/sh-config &&
-  echo whoosh! heading over to: &&
-  echo ~/builds/sh-config &&
-  sh-configpushcopy &&
-  echo starting to do git things: &&
-  git add -v --all &&
-  git commit -v --message "updated on $(date +"%d %B %Y at %T")" &&
-  git push &&
-  echo configurations pushed, congrats! &&
-  echo done doing git things, &&
-  echo and now heading back to: &&
+  cd ~/builds/sh-config
+  echo whoosh! heading over to:
+  echo ~/builds/sh-config
+  sh-configpushcopy
+  echo starting to do git things:
+  git add -v --all
+  git commit -v --message "updated on $(date +"%d %B %Y at %T")"
+  git push
+  echo configurations pushed, congrats!
+  echo done doing git things,
+  echo and now heading back to:
   cd -
 }
 

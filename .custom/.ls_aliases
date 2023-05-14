@@ -22,27 +22,33 @@ alias lsize='ls -1ahsS'
 
 # go down directories and list contents
 function cdl() {
-  cd "$1" && l
+  cd "$1"
+  l
 }
 
 function cdll() {
-  cd "$1" && ll
+  cd "$1"
+  ll
 }
 
 function cdla() {
-  cd "$1" && la
+  cd "$1"
+  la
 }
 
 function cdlsa() {
-  cd "$1" && lsa
+  cd "$1"
+  lsa
 }
 
 function cdlll() {
-  cd "$1" && lll
+  cd "$1"
+  lll
 }
 
 function cdllll() {
-  cd "$1" && llll
+  cd "$1"
+  llll
 }
 
 # go up directories and list contents
@@ -66,7 +72,6 @@ alias ...lsa='... && lsa'
 alias ....lsa='.... && lsa'
 alias .....lsa='..... && lsa'
 alias ......lsa='...... && lsa'
-
 alias ..lll='.. && lll'
 alias ...lll='... && lll'
 alias ....lll='.... && lll'
