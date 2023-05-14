@@ -16,8 +16,12 @@ alias src='source ~/.zshrc && echo hey, you sourced the zsh things, yay!'
 
 alias what='acs'
 
-alias omz='_omzplugin() { nano ~/.oh-my-zsh/plugins/"$1"/README.md ; }; _omzplugin'
+alias omz='omzplugin'
+
 # alias omzz='_omzz() { nano ~/.oh-my-zsh/plugins/z/MANUAL.md ; }; _omzz'
+function omzplugin() {
+  nano ~/.oh-my-zsh/plugins/"$1"/README.md
+}
 
 # alias jumpto='j'
 # alias jump='j'

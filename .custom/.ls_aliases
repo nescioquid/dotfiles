@@ -21,12 +21,29 @@ alias llll='lsa'
 alias lsize='ls -1ahsS'
 
 # go down directories and list contents
-alias cdl='_cdl() { cd "$1" && l ; }; _cdl'
-alias cdll='_cdll() { cd "$1" && ll ; }; _cdll'
-alias cdla='_cdla() { cd "$1" && la ; }; _cdla'
-alias cdlsa='_cdlsa() { cd "$1" && lsa ; }; _cdlsa'
-alias cdlll='_cdlll() { cd "$1" && lll ; }; _cdlll'
-alias cdllll='_cdllll() { cd "$1" && llll ; }; _cdllll'
+function cdl() {
+  cd "$1" && l
+}
+
+function cdll() {
+  cd "$1" && ll
+}
+
+function cdla() {
+  cd "$1" && la
+}
+
+function cdlsa() {
+  cd "$1" && lsa
+}
+
+function cdlll() {
+  cd "$1" && lll
+}
+
+function cdllll() {
+  cd "$1" && llll
+}
 
 # go up directories and list contents
 alias ..l='.. && l'

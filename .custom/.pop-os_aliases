@@ -19,23 +19,23 @@ alias lt='ltossed'
 alias explore='nautilus .'
 
 # toss things into the trash instead of hard deleting
-alias tossout='_tossout() { 
+function tossout() {
   md ~/.local/share/Trash/files/tossed/ &&
   mv -ivt ~/.local/share/Trash/files/tossed/ "$1" &&
-  echo hey, you just tossed that \""$1"\" thing in the trash using the \*mv\* command. so stinky! ;
-  }; _tossout'
+  echo hey, you just tossed that \""$1"\" thing in the trash using the \*mv\* command. so stinky!
+}
 
 # gets you to the trash and tossed
-alias totrash='_totrash() { cd ~/.local/share/Trash/files/ ; }; _totrash'
-alias totossed='_totossed() { cd ~/.local/share/Trash/files/tossed/ ; }; _totossed'
+alias totrash='cd ~/.local/share/Trash/files/'
+alias totossed='cd ~/.local/share/Trash/files/tossed/'
 
 # lists what is in the trash and tossed
-alias ltrash='_ltrash() {
+function ltrash() {
   la -got ~/.local/share/Trash/files/ &&
-  echo \(listed by last modified\) ;
-}; _ltrash'
+  echo \(listed by last modified\)
+}
 
-alias ltossed='_ltossed() {
+function ltossed() {
   la -got ~/.local/share/Trash/files/tossed/ &&
-  echo \(listed by last modified\) ;
-}; _ltossed'
+  echo \(listed by last modified\)
+}

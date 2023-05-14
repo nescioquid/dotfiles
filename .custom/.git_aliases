@@ -37,7 +37,10 @@ alias grstra='git restore .'
 # logging stuff
 alias gstat='git status --short --branch'
 
-alias glogg='_glogg() { git log --oneline --decorate --graph --max-count="$1" ; }; _glogg'
+function glogg() {
+  git log --oneline --decorate --graph --max-count="$1"
+}
+
 alias glogp='git log --stat --patch' # as 'glgp' in zsh
 alias gloog='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'\'' --stat' # as 'glols' in zsh
 alias grlog='git reflog'
@@ -45,9 +48,16 @@ alias gcfg='git config --list --global'
 
 # utilities
 alias gnb='git switch --create'
-alias ghelp='_ghelp() { man git-"$1" ; }; _ghelp'
+
+function ghelp() {
+  man git-"$1"
+}
+
 alias grclean='git remote -v update origin --prune'
-alias gback='_gback() { git reset HEAD~"$1" ; }; _gback'
+
+function gback() {
+  git reset HEAD~"$1"
+}
 
 alias gset='git branch -vv --set-upstream-to=origin/$(git_current_branch)'
 alias gunset='git branch -vv --unset-upstream && echo hey, it looks like you unset that upstream branch'

@@ -11,7 +11,7 @@ alias custom='cd ~/.custom/'
 # domain-specific aliases
 # comment out lines to remove them from what's loaded by run commands
 source ~/.custom/.git_aliases
-# source ~/.custom/.ls_aliases
+source ~/.custom/.ls_aliases
 source ~/.custom/.pop-os_aliases
 # source ~/.custom/.windows_aliases
 source ~/.custom/.sh-config_aliases
@@ -22,6 +22,10 @@ source ~/.custom/.pokemon_aliases
 alias a='alias'
 alias an='alias'
 
+alias l='l'
+alias ll='ll'
+alias lll='lll'
+alias llll='llll'
 alias cl='cdl'
 alias mcd='mdcd'
 alias saw='sauu'
@@ -29,7 +33,6 @@ alias mf='makefile'
 alias rf='removefile'
 alias md='makedirectory'
 alias rd='removedirectory'
-
 alias ydtt='youdidthething'
 
 # vscode
@@ -45,33 +48,41 @@ alias last='cd -'
 
 alias builds='cd ~/builds'
 
-alias l='_l() {
+function l() {
   ls -1A --group-directories-first &&
   echo --- &&
-  echo \(listed with directories first\) ;
-}; _l'
-alias ll='_ll() {
-  la -got &&
+  echo \(listed with directories first\)
+}
+
+function ll() {
+  la -t &&
   echo --- &&
-  echo \(listed by last modified\) ;
-}; _ll'
-alias lll='_lll() {
-  la -go --group-directories-first &&
+  echo \(listed by last modified\)
+}
+
+function lll() {
+  la --group-directories-first &&
   echo --- &&
-  echo \(listed with directories first\) ;
-}; _lll'
-alias llll='_llll() {
+  echo \(listed with directories first\)
+}
+
+function llll() {
   lsa -F &&
   echo --- &&
-  echo \(listed alphabetically\) ;
-}; _llll'
+  echo \(listed alphabetically\)
+}
 
 # go up and down directories and list contents
 alias ..l='.. && l'
-alias cdl='_cdl() { cd "$1" && l ; }; _cdl'
+
+function cdl() {
+  cd "$1" && l
+}
 
 # make a directory and cd into it
-alias mdcd='_mdcd() { md "$1" && cd "$1" ; }; _mdcd'
+function mdcd() {
+  md "$1" && cd "$1"
+}
 
 # easier/more english-like common utilities
 
@@ -93,48 +104,48 @@ alias search='grep -ir'
 alias f='find . -iname'
 alias count='find . -type f | wc -l'
 
-alias copy='_copy() {
+function copy() {
   cp -irv "$1" "$2" &&
-  echo hey, you COPIED that \""$1"\" thing using the \*cp\* command! ;
-}; _copy'
+  echo hey, you COPIED that \""$1"\" thing using the \*cp\* command!
+}
 
-alias move='_move() {
+function move() {
   mv -iv "$1" "$2" &&
-  echo hey, you MOVED that \""$1"\" thing using the \*mv\* command! ;
-}; _move'
+  echo hey, you MOVED that \""$1"\" thing using the \*mv\* command!
+}
 
-alias rename='_rename() {
+function rename() {
   mv -iv "$1" "$2" &&
-  echo hey, you RENAMED that \""$1"\" thing using the \*mv\* command! ;
-}; _rename'
+  echo hey, you RENAMED that \""$1"\" thing using the \*mv\* command!
+}
 
-alias makefile='_makefile() {
-  touch "$1" &&
-  echo hey, you just created that \""$1"\" file using the \*touch\* command. yay! ;
-}; _makefile'
 # alias mkf='makefile'
+function makefile() {
+  touch "$1" &&
+  echo hey, you just created that \""$1"\" file using the \*touch\* command. yay!
+}
 
-alias removefile='_removefile() {
-  rm -Iv "$1" &&
-  echo hey, you just removed that \""$1"\" thing using the \*rm\* command! ;
-}; _removefile'
 # alias rmf='removefile'
+function removefile() {
+  rm -Iv "$1" &&
+  echo hey, you just removed that \""$1"\" thing using the \*rm\* command!
+}
 
-alias makedirectory='mkdir -pv'
 # alias mkd='makedirectory'
+alias makedirectory='mkdir -pv'
 
-alias removedirectory='_removedirectory() {
-  rm -Ivr "$1" &&
-  echo hey, you just removed that \""$1"\" directory using the \*rm\* command, NOT rmdir! ;
-}; _removedirectory'
 # alias rmd='removedirectory'
 # alias rmdir='removedirectory'
+function removedirectory() {
+  rm -Ivr "$1" &&
+  echo hey, you just removed that \""$1"\" directory using the \*rm\* command, NOT rmdir!
+}
 
 # https://texteditor.com/multiline-text-art/ ("Blocks in two lines - filled" was the font I used)
-alias youdidthething='_youdidthething() {
+function youdidthething() {
   echo ░▀▄▀░▄▀▄░█▒█░░░█▀▄░█░█▀▄░░░▀█▀░█▄█▒██▀░░░▀█▀░█▄█░█░█▄░█░▄▀▒░█ &&
   echo ░▒█▒░▀▄▀░▀▄█▒░▒█▄▀░█▒█▄▀▒░░▒█▒▒█▒█░█▄▄▒░░▒█▒▒█▒█░█░█▒▀█░▀▄█░▄
-}; _youdidthething'
+}
 
 # ---
 

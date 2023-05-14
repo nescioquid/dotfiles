@@ -7,39 +7,54 @@ alias vscwindows_aliases='code ~/.custom/.windows_aliases'
 # ---
 
 alias windows='cd /mnt/c/Users'
-alias desktop='_desktop() { cd /mnt/c/Users/"$1"/Desktop/ ; }; _desktop'
-alias documents='_documents() { cd /mnt/c/Users/"$1"/Documents/ ; }; _documents'
-alias downloads='_downloads() { cd /mnt/c/Users/"$1"/Downloads/ ; }; _downloads'
+
+function desktop() {
+  cd /mnt/c/Users/"$1"/Desktop/
+}
+
+function documents() {
+  cd /mnt/c/Users/"$1"/Documents/
+}
+
+function downloads() {
+  cd /mnt/c/Users/"$1"/Downloads/
+}
 
 alias toss='tossout'
 alias trash='totrash'
 alias tossed='totossed'
 alias lt='ltossed'
 
+function lw() {
+  ls -1 --group-directories-first &&
+  echo --- &&
+  echo \(listed with directories first\)
+}
+
 # moves tossed folder to the windows desktop
-alias tosstodesktop='_tosstodesktop() {
+function tosstodesktop() {
   mv -ivt /mnt/c/Users/"$1"/Desktop/ ~/.local/share/Trash/files/tossed/ &&
-  echo hey, you just moved the "tossed" directory to the windows desktop using the \*mv\* command. nice! ;
-  }; _tosstodesktop'
+  echo hey, you just moved the "tossed" directory to the windows desktop using the \*mv\* command. nice!
+}
 
 # toss things into the trash instead of hard deleting
-alias tossout='_tossout() {
+function tossout() {
   md ~/.local/share/Trash/files/tossed/ &&
   mv -ivt ~/.local/share/Trash/files/tossed/ "$1" &&
-  echo hey, you just tossed that \""$1"\" thing in the trash using the \*mv\* command. so stinky! ;
-  }; _tossout'
+  echo hey, you just tossed that \""$1"\" thing in the trash using the \*mv\* command. so stinky!
+}
 
 # gets you to the trash and tossed
-alias totrash='_totrash() { cd ~/.local/share/Trash/files/ ; }; _totrash'
-alias totossed='_totossed() { cd ~/.local/share/Trash/files/tossed/ ; }; _totossed'
+alias totrash='cd ~/.local/share/Trash/files/'
+alias totossed='cd ~/.local/share/Trash/files/tossed/'
 
 # lists what is in the trash and tossed
-alias ltrash='_ltrash() {
+function ltrash() {
   la -got ~/.local/share/Trash/files/ &&
-  echo \(listed by last modified\) ;
-}; _ltrash'
+  echo \(listed by last modified\)
+}
 
-alias ltossed='_ltossed() {
+function ltossed() {
   la -got ~/.local/share/Trash/files/tossed/ &&
-  echo \(listed by last modified\) ;
-}; _ltossed'
+  echo \(listed by last modified\)
+}

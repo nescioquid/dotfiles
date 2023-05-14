@@ -16,7 +16,7 @@ alias retrieveconfig='sh-configpull && sh-configyoudidthething'
 alias installconfig='sh-configpullcopy && source ~/.bashrc && sh-configyoudidthething && cd ~'
 
 # pushes configurations to github
-alias sh-configpush='_sh-configpush() {
+function sh-configpush() {
   cd ~/builds/sh-config &&
   echo whoosh! heading over to: &&
   echo ~/builds/sh-config &&
@@ -28,11 +28,11 @@ alias sh-configpush='_sh-configpush() {
   echo configurations pushed, congrats! &&
   echo done doing git things, &&
   echo and now heading back to: &&
-  cd - ;
-}; _sh-configpush'
+  cd -
+}
 
 # pulls configurations from github
-alias sh-configpull='_sh-configpull() {
+function sh-configpull() {
   cd ~/builds/sh-config &&
   echo whoosh! heading over to: &&
   echo ~/builds/sh-config &&
@@ -42,11 +42,11 @@ alias sh-configpull='_sh-configpull() {
   sh-configpullcopy &&
   echo configurations pulled, congrats! &&
   echo and now heading back to: &&
-  cd - ;
-}; _sh-configpull'
+  cd -
+}
 
 # copies home and ~/.custom configurations to sh-config
-alias sh-configpushcopy='_sh-configpushcopy() {
+function sh-configpushcopy() {
   cp -fr ~/.custom/      ~/builds/sh-config/ &&
   cp -f  ~/.bash_history ~/builds/sh-config/ &&
   cp -f  ~/.bashrc       ~/builds/sh-config/ &&
@@ -54,11 +54,11 @@ alias sh-configpushcopy='_sh-configpushcopy() {
   cp -f  ~/.z            ~/builds/sh-config/ &&
   cp -f  ~/.zsh_history  ~/builds/sh-config/ &&
   cp -f  ~/.zshrc        ~/builds/sh-config/ &&
-  echo configurations copied for push, hooray! ;
-}; _sh-configpushcopy'
+  echo configurations copied for push, hooray!
+}
 
 # copies sh-config configurations to home and ~/.custom
-alias sh-configpullcopy='_sh-configpullcopy() {
+function sh-configpullcopy() {
   cp -fr ~/builds/sh-config/.custom/      ~ &&
   cp -f  ~/builds/sh-config/.bash_history ~ &&
   cp -f  ~/builds/sh-config/.bashrc       ~ &&
@@ -66,11 +66,11 @@ alias sh-configpullcopy='_sh-configpullcopy() {
   cp -f  ~/builds/sh-config/.z            ~ &&
   cp -f  ~/builds/sh-config/.zsh_history  ~ &&
   cp -f  ~/builds/sh-config/.zshrc        ~ &&
-  echo configurations copied for pull, hooray! ;
-}; _sh-configpullcopy'
+  echo configurations copied for pull, hooray!
+}
 
 # https://texteditor.com/multiline-text-art/ ("Blocks in two lines - filled" was the font I used)
-alias sh-configyoudidthething='_sh-configyoudidthething() {
+function sh-configyoudidthething() {
   echo ░▀▄▀░▄▀▄░█▒█░░░█▀▄░█░█▀▄░░░▀█▀░█▄█▒██▀░░░▀█▀░█▄█░█░█▄░█░▄▀▒░█ &&
   echo ░▒█▒░▀▄▀░▀▄█▒░▒█▄▀░█▒█▄▀▒░░▒█▒▒█▒█░█▄▄▒░░▒█▒▒█▒█░█░█▒▀█░▀▄█░▄
-}; _sh-configyoudidthething'
+}
