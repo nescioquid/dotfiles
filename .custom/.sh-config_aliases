@@ -12,7 +12,19 @@ alias sh-config='cd ~/builds/sh-config/'
 
 alias backupconfig='_sh-config_push && _sh-config_youdidthething'
 alias retrieveconfig='_sh-config_pull && _sh-config_youdidthething'
-alias installconfig='_sh-config_pull_copy && source ~/.bashrc && source ~/.zshrc && _sh-config_youdidthething && cd ~'
+
+# installs configurations
+function installconfig() {
+  _sh-config_pull_copy
+  if [ ~/.bash_aliases ]; then
+    source ~/.bashrc
+  fi
+  if [ ~/.zsh_aliases ]; then
+    source ~/.zshrc
+  fi
+  _sh-config_youdidthething
+  cd ~
+}
 
 # pushes configurations to github
 function _sh-config_push() {
