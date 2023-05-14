@@ -24,13 +24,13 @@ alias explore='explorer.exe .'
 alias windows='cd /mnt/c/Users'
 
 function lw() {
-  ls -1 --group-directories-first &&
-  echo --- &&
+  ls -1 --group-directories-first
+  echo ---
   echo \(listed with directories first\)
 }
 
 # moves tossed folder to the windows desktop
 function tosstodesktop() {
-  mv -ivt /mnt/c/Users/"$1"/Desktop/ ~/.local/share/Trash/files/tossed/ &&
+  mv -ivt /mnt/c/Users/"$1"/Desktop/ ~/.local/share/Trash/files/tossed/
   echo hey, you just moved the "tossed" directory to the windows desktop using the \*mv\* command. nice!
 }
