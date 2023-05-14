@@ -150,6 +150,8 @@ function youdidthething() {
 
 # ---
 
+# frome the internet
+
 # see the top ten commands you run most
 function topten() {
   history | awk '{cmd[$2]++} END {for(elem in cmd) {print cmd[elem] " " elem}}' | sort -n -r | head -10
@@ -165,25 +167,19 @@ function topfifty() {
   history | awk '{cmd[$2]++} END {for(elem in cmd) {print cmd[elem] " " elem}}' | sort -n -r | head -50
 }
 
-# ---
-
-# new stuff here
-
-# function remove_all_empty_dirs() {
-#   # check if the directory exists
-#   if [ ! -d "$1" ]; then
-#     echo "Directory $1 does not exist."
-#     return 1
-#   fi
-
-#   # find and remove all empty directories
-#   find "$1" -type d -empty -print0 | xargs -0 rmdir
-# }
-
-function remove_empty_directories() {
+# removes all empty directories (recursively?)
+function removeemptydirectories() {
     find "$1" -type d -empty -delete
     echo done
 }
 
+# ---
+
+# new stuff here
+function look() {
+  cd "$1"
+  l
+  cd -
+}
 
 # ---

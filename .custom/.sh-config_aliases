@@ -26,6 +26,19 @@ function installconfig() {
   cd ~
 }
 
+# undoes backupconfig from anywhere
+function lastconfig() {
+  cd ~/builds/sh-config
+  echo whoosh! heading over to:
+  echo ~/builds/sh-config
+  echo starting to do git things:
+  git reset HEAD~1
+  git push -f
+  echo done doing git things,
+  echo and now heading back to:
+  cd -
+}
+
 # pushes configurations to github
 function _sh-config_push() {
   cd ~/builds/sh-config

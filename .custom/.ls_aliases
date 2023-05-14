@@ -82,3 +82,27 @@ alias ...llll='... && llll'
 alias ....llll='.... && llll'
 alias .....llll='..... && llll'
 alias ......llll='...... && llll'
+
+function look() {
+  cd "$1"
+  l
+  cd -
+}
+
+function llook() {
+  cd "$1"
+  ll
+  cd -
+}
+
+function lllook() {
+  cd "$1"
+  lll
+  cd -
+}
+
+function llllook() {
+  cd "$1"
+  llll
+  cd -
+}
