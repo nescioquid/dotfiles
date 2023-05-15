@@ -21,7 +21,7 @@ function downloads() {
 # opens up a file explorer at the current directory
 alias explore='explorer.exe .'
 
-alias windows='cd /mnt/c/Users'
+alias windows='cd /mnt/c/Users/'
 
 function lw() {
   ls -1 --group-directories-first
