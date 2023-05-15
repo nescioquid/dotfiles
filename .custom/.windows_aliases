@@ -23,6 +23,8 @@ alias explore='explorer.exe .'
 
 alias windows='cd /mnt/c/Users/'
 
+alias np='notepad.exe'
+
 function lw() {
   ls -1 --group-directories-first
   echo ---
