@@ -71,6 +71,7 @@ alias f='find . -iname'
 alias count='find . -type f | wc -l'
 
 alias ..l='.. && l'
+alias ldot='ls -ld .*' 
 alias lsize='ls -1ahsS'
 
 function l() {
