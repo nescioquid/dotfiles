@@ -21,7 +21,7 @@ function installconfig() {
   elif [[ -n "$ZSH_VERSION" ]]; then
     source ~/.zshrc
   else
-    echo "Unknown shell, no run commands sourced"
+    echo 'unknown shell, no run commands sourced'
   fi
   _sh-config_youdidthething
   cd ~
