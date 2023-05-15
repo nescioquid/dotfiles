@@ -1,0 +1,11 @@
+# NEW_ALIASES
+
+# opens the stuff
+alias new_aliases='${EDITOR} ~/.custom/.new_aliases'
+alias vscnew_aliases='code ~/.custom/.new_aliases'
+
+# ---
+
+# add new or temporary aliases and functions here
+
+# ---

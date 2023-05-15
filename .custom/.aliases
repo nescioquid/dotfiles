@@ -194,15 +194,9 @@ function topfifty() {
   history | awk '{cmd[$2]++} END {for(elem in cmd) {print cmd[elem] " " elem}}' | sort -n -r | head -50
 }
 
-# removes all empty directories recursively in a given directory
-# first function written by chatgpt!
-function removeemptydirectories() {
-    find "$1" -type d -empty -delete
-    echo done
-}
-
 # ---
 
 # new stuff here
+source ~/.custom/.new_aliases
 
 # ---

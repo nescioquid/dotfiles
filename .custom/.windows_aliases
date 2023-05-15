@@ -34,3 +34,27 @@ function tosstodesktop() {
   mv -ivt /mnt/c/Users/"$1"/Desktop/ ~/.local/share/Trash/files/tossed/
   echo hey, you just moved the "tossed" directory to the windows desktop using the \*mv\* command. nice!
 }
+
+# removes all empty directories recursively in a given directory
+# first function written by chatgpt!
+function removeemptydirectories() {
+    find "$1" -type d -empty -delete
+    echo done
+}
+
+# rename_directory_and_write_name "/path/to/directory" "new/path/name"
+function rename_directory_and_write_name() {
+    if [[ ! -d "$1" ]]; then
+        echo "Error: $1 is not a directory"
+        return 1
+    fi
+
+    if [[ -z "$2" ]]; then
+        echo "Error: filename is empty"
+        return 1
+    fi
+
+    mv "$1" "$2"
+    echo \""$2"\"" was \""$1"\"" > ""$2"/.was_$1.txt"
+    echo renamed "$1" to "$2"
+}
