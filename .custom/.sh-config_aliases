@@ -16,11 +16,12 @@ alias retrieveconfig='_sh-config_pull'
 # installs configurations
 function installconfig() {
   _sh-config_pull_copy
-  if [ ~/.bash_aliases ]; then
+  if [[ -n "$BASH_VERSION" ]]; then
     source ~/.bashrc
-  fi
-  if [ ~/.zsh_aliases ]; then
+  elif [[ -n "$ZSH_VERSION" ]]; then
     source ~/.zshrc
+  else
+    echo "Unknown shell, no run commands sourced"
   fi
   _sh-config_youdidthething
   cd ~
