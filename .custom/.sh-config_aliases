@@ -94,8 +94,8 @@ function _sh-config_pull_copy() {
   echo configurations copied for pull, hooray!
 }
 
-# https://texteditor.com/multiline-text-art/ ("Blocks in two lines - filled" was the font I used)
+# https://texteditor.com/multiline-text-art/ ("Blocks in two lines" is the font I used)
 function _sh-config_youdidthething() {
-  echo ░▀▄▀░▄▀▄░█▒█░░░█▀▄░█░█▀▄░░░▀█▀░█▄█▒██▀░░░▀█▀░█▄█░█░█▄░█░▄▀▒░█
-  echo ░▒█▒░▀▄▀░▀▄█▒░▒█▄▀░█▒█▄▀▒░░▒█▒▒█▒█░█▄▄▒░░▒█▒▒█▒█░█░█▒▀█░▀▄█░▄
+  echo ' ▀▄▀ ▄▀▄ █ █   █▀▄ █ █▀▄   ▀█▀ █▄█ ██▀   ▀█▀ █▄█ █ █▄ █ ▄▀  █ '
+  echo '  █  ▀▄▀ ▀▄█   █▄▀ █ █▄▀    █  █ █ █▄▄    █  █ █ █ █ ▀█ ▀▄█ ▄ '
 }
