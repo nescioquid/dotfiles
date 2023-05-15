@@ -170,10 +170,10 @@ function ltossed() {
   echo \(listed with directories first\)
 }
 
-# https://texteditor.com/multiline-text-art/ ("Blocks in two lines - filled" was the font I used)
+# https://texteditor.com/multiline-text-art/ ("Blocks in two lines" is the font I used)
 function youdidthething() {
-  echo ░▀▄▀░▄▀▄░█▒█░░░█▀▄░█░█▀▄░░░▀█▀░█▄█▒██▀░░░▀█▀░█▄█░█░█▄░█░▄▀▒░█
-  echo ░▒█▒░▀▄▀░▀▄█▒░▒█▄▀░█▒█▄▀▒░░▒█▒▒█▒█░█▄▄▒░░▒█▒▒█▒█░█░█▒▀█░▀▄█░▄
+  echo ' ▀▄▀ ▄▀▄ █ █   █▀▄ █ █▀▄   ▀█▀ █▄█ ██▀   ▀█▀ █▄█ █ █▄ █ ▄▀  █ '
+  echo '  █  ▀▄▀ ▀▄█   █▄▀ █ █▄▀    █  █ █ █▄▄    █  █ █ █ █ ▀█ ▀▄█ ▄ '
 }
 
 # ---
