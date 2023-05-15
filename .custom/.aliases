@@ -14,6 +14,7 @@ source ~/.custom/.git_aliases
 source ~/.custom/.pop-os_aliases
 # source ~/.custom/.windows_aliases
 source ~/.custom/.sh-config_aliases
+source ~/.custom/.ascii_aliases
 source ~/.custom/.pokemon_aliases
 
 # ---
@@ -72,7 +73,7 @@ alias count='find . -type f | wc -l'
 
 alias ..l='.. && l'
 alias ldot='ls -ld .*' 
-alias lsize='ls -1ahsS'
+alias lsize='ls -1AhsS'
 
 function l() {
   ls -1A --group-directories-first
@@ -168,12 +169,6 @@ function ltossed() {
   la --group-directories-first ~/.local/share/Trash/files/tossed/
   echo ---
   echo \(listed with directories first\)
-}
-
-# https://texteditor.com/multiline-text-art/ ("Blocks in two lines" is the font I used)
-function youdidthething() {
-  echo ' ▀▄▀ ▄▀▄ █ █   █▀▄ █ █▀▄   ▀█▀ █▄█ ██▀   ▀█▀ █▄█ █ █▄ █ ▄▀  █ '
-  echo '  █  ▀▄▀ ▀▄█   █▄▀ █ █▄▀    █  █ █ █▄▄    █  █ █ █ █ ▀█ ▀▄█ ▄ '
 }
 
 # ---
