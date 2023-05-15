@@ -37,7 +37,7 @@ function tosstodesktop() {
 
 # removes all empty directories recursively in a given directory
 # first function written by chatgpt!
-function removeemptydirectories() {
+function remove_empty_directories() {
     find "$1" -type d -empty -delete
     echo done
 }
