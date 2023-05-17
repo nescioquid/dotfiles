@@ -35,7 +35,6 @@ alias md='makedirectory'
 alias rd='removedirectory'
 alias toss='tossout'
 alias lt='ltossed'
-alias ydtt='youdidthething'
 
 # vscode
 alias vsc='code'
