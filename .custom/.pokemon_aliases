@@ -23,10 +23,11 @@ alias pokemon-tmshms='code ~builds/pokemon/TMsHMs.md'
 alias pokemon-types='code ~/builds/pokemon/types.md'
 
 
-alias findit='f pokeemerald.sav'
 alias tossit='toss pokeemerald.sav'
 alias takeit='move pokeemerald.sav ~/builds/pokemon/last-save/'
 alias bringit='move ~/builds/pokemon/last-save/pokeemerald.sav ~/builds/pokemon/pokeemerald/'
+alias findit='f pokeemerald.sav'
+alias copyit='copy pokeemerald.sav ~/builds/pokemon/last-save/'
 
 alias maake='make -j6'
 alias makke='make clean'
