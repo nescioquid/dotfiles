@@ -35,10 +35,10 @@ alias maakke='make clean && make -j6'
 
 alias OA='echo haha it happened again oooh aaah hahaha'
 
-alias agbcc1='sudo apt install build-essential binutils-arm-none-eabi git libpng-dev && git clone https://github.com/pret/agbcc && cd agbcc && ./build.sh'
-alias agbcc2='./install.sh ../pokeemerald/'
-
 # deprecated
+
+# alias agbcc1='sudo apt install build-essential binutils-arm-none-eabi git libpng-dev && git clone https://github.com/pret/agbcc && cd agbcc && ./build.sh'
+# alias agbcc2='./install.sh ../pokeemerald/'
 
 alias vscgreen-thing='code -n ~/builds/pokemon/archive/green-thing/'
 alias green-thing='cd ~/builds/pokemon/archive/green-thing/'
