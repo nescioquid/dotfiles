@@ -40,8 +40,8 @@ alias OA='echo haha it happened again oooh aaah hahaha'
 # alias agbcc1='sudo apt install build-essential binutils-arm-none-eabi git libpng-dev && git clone https://github.com/pret/agbcc && cd agbcc && ./build.sh'
 # alias agbcc2='./install.sh ../pokeemerald/'
 
-alias vscgreen-thing='code -n ~/builds/pokemon/archive/green-thing/'
-alias green-thing='cd ~/builds/pokemon/archive/green-thing/'
+alias vscgreen-thing='code -n ~/builds/pokemon/.archive/green-thing/'
+alias green-thing='cd ~/builds/pokemon/.archive/green-thing/'
 
 # alias addporyscript='md tools/poryscript/ && copy ~/builds/pokemon/poryscript/poryscript-linux/font_config.json ~/builds/pokemon/pokeemerald/tools/poryscript/font_config.json && copy ~/builds/pokemon/poryscript/poryscript-linux/poryscript ~/builds/pokemon/pokeemerald/tools/poryscript/poryscript'
 
