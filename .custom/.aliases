@@ -191,7 +191,8 @@ function topfifty() {
 
 # ---
 
-# new stuff here
+# new and local stuff here
+source ~/.custom/.local_aliases
 source ~/.custom/.new_aliases
 
 # ---
