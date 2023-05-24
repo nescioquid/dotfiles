@@ -61,7 +61,12 @@ function gback() {
 
 alias gset='git branch -vv --set-upstream-to=origin/$(git_current_branch)'
 alias gunset='git branch -vv --unset-upstream && echo hey, it looks like you unset that upstream branch'
-alias gsetup='git push -v --set-upstream origin $(git_current_branch)'               
+alias gsetup='git push -v --set-upstream origin $(git_current_branch)'
+
+# Fetches the last commits in which the specified label appears --Lunos
+function glunos() {
+  git log -n 1 -S "$1"
+}
 
 # safeguards
 alias gbd='echo hey! that command was intentionally blocked, use a more verbose one like \"gb -d\" instead'
@@ -69,6 +74,6 @@ alias gbD='echo hey! that command was intentionally blocked, use a more verbose 
 alias ggf='echo hey! that command was intentionally blocked, use a more verbose one like \"git push --force origin $(current_branch\" instead)'
 alias gpod='echo hey! that command was intentionally blocked, use a more verbose one like \"gpo -d\" instead'
 alias gpristine='echo hey! that command was intentionally blocked, use more verbose ones like \"git reset --hard\" and \"git clean --force -dfx\" instead'
-alias grhh='echo hey! that command was intentionally blocked, use a more verbose one like \"git reset --hard\" instead'  
+alias grhh='echo hey! that command was intentionally blocked, use a more verbose one like \"git reset --hard\" instead'
 alias groh='echo hey! that command was intentionally blocked, use a more verbose one like \"git reset origin/$(git_current_branch) --hard\" instead'
 alias='gpf!'='echo hey! that command was intentionally blocked, use a more verbose one like \"git push --force\" instead'
