@@ -35,6 +35,9 @@ alias maakke='make clean && make -j6'
 
 alias OA='echo haha it happened again oooh aaah hahaha'
 
+alias addporyscript='gwip && gm --no-edit poryscript'
+alias removeporyscript='gback && grstra && gunwip'
+
 # deprecated
 
 # alias agbcc1='sudo apt install build-essential binutils-arm-none-eabi git libpng-dev && git clone https://github.com/pret/agbcc && cd agbcc && ./build.sh'
