@@ -19,9 +19,9 @@ alias gcdr='git commit -v --dry-run'
 alias gcmdr='git commit -v --dry-run --message'
 alias gcamdr='git commit -v --dry-run --all --message'
 
-alias gdhead='git diff HEAD~1 HEAD'
+alias gdh='git diff HEAD~1 HEAD'
 
-function gdlast() {
+function gdl() {
   git diff "$1"~1 "$1"
 }
 
