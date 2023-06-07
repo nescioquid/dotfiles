@@ -47,6 +47,12 @@ function glogg() {
 
 alias glogp='git log --stat --patch' # as 'glgp' in zsh
 alias gloog='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'\'' --stat' # as 'glols' in zsh
+
+
+function glogo() {
+  glog origin/"$1"
+}
+
 alias grlog='git reflog'
 alias gcfg='git config --list --global'
 
