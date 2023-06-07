@@ -28,6 +28,9 @@ function gdl() {
 alias gl='git pull -v'
 alias gldr='git pull -v --dry-run'
 
+alias gm='git merge -v'
+alias gmne='git merge --no-edit'
+
 alias gp='git push -v'
 alias gpo='git push -v origin'
 alias gpdr='git push -v --dry-run'
