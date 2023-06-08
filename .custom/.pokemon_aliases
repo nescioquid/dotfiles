@@ -12,15 +12,16 @@ alias pokeemerald='cd ~/builds/pokemon/pokeemerald/'
 
 # ---
 
-alias pokemon-berries='code ~/builds/pokemon/berries.md'
-alias pokemon-habitats='code ~/builds/pokemon/habitats.md'
-alias pokemon-items='code ~/builds/pokemon/items.md'
-alias pokemon-locations='code ~/builds/pokemon/locations.md'
-alias pokemon-marts='code ~/builds/pokemon/marts.md'
 alias pokemon-notes='code ~/builds/pokemon/notes.md'
+# alias pokemon-berries='code ~/builds/pokemon/berries.md'
+# alias pokemon-habitats='code ~/builds/pokemon/habitats.md'
+# alias pokemon-items='code ~/builds/pokemon/items.md'
+# alias pokemon-locations='code ~/builds/pokemon/locations.md'
+# alias pokemon-marts='code ~/builds/pokemon/marts.md'
+# alias pokemon-mons='code ~/builds/pokemon/mons.md'
 # alias pokemon-pickup='code ~/builds/pokemon/pickup.md'
-alias pokemon-tmshms='code ~builds/pokemon/TMsHMs.md'
-alias pokemon-types='code ~/builds/pokemon/types.md'
+# alias pokemon-tmshms='code ~builds/pokemon/TMsHMs.md'
+# alias pokemon-types='code ~/builds/pokemon/types.md'
 
 alias tossit='toss pokeemerald.sav'
 alias takeit='move pokeemerald.sav ~/builds/pokemon/last-save/'
