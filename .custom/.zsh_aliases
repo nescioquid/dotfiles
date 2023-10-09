@@ -14,7 +14,7 @@ alias src='source ~/.zshrc && echo hey, you sourced the zsh things, yay!'
 
 # ---
 
-alias what='acs'
+alias what='als'
 
 alias omzp='omzplugin'
 
