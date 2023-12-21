@@ -30,8 +30,9 @@ alias findit='f pokeemerald.sav'
 alias copyit='copy pokeemerald.sav ~/builds/pokemon/last-save/'
 
 # the command to find the j# is 'nproc'
+alias make='make -j$(nproc)'
 alias maake='make -j'
-alias makke='make clean'
+alias makke='make clean && make -j$(nproc)'
 alias maakke='make clean && make -j'
 
 alias OA='echo haha it happened again oooh aaah hahaha'
