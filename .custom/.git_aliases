@@ -19,12 +19,6 @@ alias gcdr='git commit -v --dry-run'
 alias gcmdr='git commit -v --dry-run --message'
 alias gcamdr='git commit -v --dry-run --all --message'
 
-alias gdh='git diff HEAD~1 HEAD'
-
-function gdl() {
-  git diff "$1"~1 "$1"
-}
-
 alias gl='git pull -v'
 alias gldr='git pull -v --dry-run'
 
@@ -41,6 +35,8 @@ alias grst='git reset'
 alias grstr='git restore'
 alias grstra='git restore .'
 
+alias glast='gsw -'
+
 # logging stuff
 alias gstat='git status --short --branch'
 
@@ -51,15 +47,22 @@ function glogg() {
 alias glogp='git log --stat --patch' # as 'glgp' in zsh
 alias gloog='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'\'' --stat' # as 'glols' in zsh
 
+alias glogd='glog $(git_develop_branch)'
+alias glogm='glog $(git_main_branch)'
+
 function glogo() {
-  glog origin/$(git_current_branch)
+  if [ $1 ]; then
+    glog origin/"$1"
+  else
+    glog origin/$(git_current_branch)
+  fi
 }
 
 alias grlog='git reflog'
 alias gcfg='git config --list --global'
 
 # utilities
-alias gnb='git switch --create'
+alias gnb='git switch --create' # as 'gswc' in zsh
 
 function ghelp() {
   man git-"$1"
@@ -71,6 +74,14 @@ alias grclean='git remote -v update origin --prune'
 
 function gback() {
   git reset HEAD~"$1"
+}
+
+function gdl() {
+  if [ $1 ]; then
+    git diff "$1"~1 "$1"
+  else
+    git diff HEAD~1 HEAD
+  fi
 }
 
 alias gset='git branch -vv --set-upstream-to=origin/$(git_current_branch)'

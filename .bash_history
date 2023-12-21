@@ -843,3 +843,5 @@ efi
 cd efi
 sourcebashrc 
 cd --help
+last
+zsh
