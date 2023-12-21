@@ -25,7 +25,7 @@ alias pokemon-notes='code ~/builds/pokemon/notes.md'
 
 alias tossit='toss pokeemerald.sav'
 alias takeit='move pokeemerald.sav ~/builds/pokemon/last-save/'
-alias bringit='move ~/builds/pokemon/last-save/pokeemerald.sav ~/builds/pokemon/pokeemerald/'
+alias giveit='move ~/builds/pokemon/last-save/pokeemerald.sav ~/builds/pokemon/pokeemerald/'
 alias findit='f pokeemerald.sav'
 alias copyit='copy pokeemerald.sav ~/builds/pokemon/last-save/'
 
@@ -37,8 +37,8 @@ alias maakke='make clean && make -j'
 
 alias OA='echo haha it happened again oooh aaah hahaha'
 
-alias addporyscript='gwip && gm --no-edit poryscript'
-alias removeporyscript='gback && grstra && gunwip'
+alias givepory='gm --no-edit poryscript'
+alias takepory='gback && grstra'
 
 # alias agbcc1='sudo apt install build-essential binutils-arm-none-eabi git libpng-dev && git clone https://github.com/pret/agbcc && cd agbcc && ./build.sh'
 # alias agbcc2='./install.sh ../pokeemerald/'
