@@ -29,6 +29,7 @@ alias bringit='move ~/builds/pokemon/last-save/pokeemerald.sav ~/builds/pokemon/
 alias findit='f pokeemerald.sav'
 alias copyit='copy pokeemerald.sav ~/builds/pokemon/last-save/'
 
+# the command to find the j# is 'nproc'
 alias maake='make -j6'
 alias makke='make clean'
 alias maakke='make clean && make -j6'
