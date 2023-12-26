@@ -54,7 +54,7 @@ alias glogm='glog $(git_main_branch)'
 alias glogp='git log --stat --patch' # as 'glgp' in zsh
 alias gloog='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'\'' --stat' # as 'glols' in zsh
 
-alias gnbt='gnb temp'
+alias gnbt='gnb temp && glast'
 alias gbdt='gb -df temp'
 alias gswt='gsw temp'
 alias glogt='glog temp'
