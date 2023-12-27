@@ -76,7 +76,13 @@ function ghelp() {
 }
 
 function glogg() {
-  git log --oneline --decorate --graph --max-count="$1"
+  if [ $2 ]; then
+    glog --max-count="$2" "$1"
+  elif [ $1 ]; then
+    glog --max-count="$1"
+  else
+    glog
+  fi
 }
 
 function glogo() {
@@ -89,7 +95,7 @@ function glogo() {
 
 # fetches the last commits in which the specified label appears --Lunos
 function glunos() {
-  git log -n 1 -S "$1"
+  git log -n "$2" -S "$1"
 }
 
 # safeguards
