@@ -58,6 +58,7 @@ alias gnbt='gnb temp && glast'
 alias gbdt='gb -df temp'
 alias gswt='gsw temp'
 alias glogt='glog temp'
+alias gnewt='gbdt && gnbt'
 
 function gback() {
   git reset HEAD~"$1"
