@@ -37,8 +37,8 @@ alias maakke='make clean && make -j$(nproc)'
 
 alias OA='echo haha it happened again oooh aaah hahaha'
 
-alias givepory='gm --no-edit poryscript'
-alias takepory='gback && grstra'
+# alias givepory='gm --no-edit poryscript'
+# alias takepory='gback && grstra'
 
 # alias agbcc1='sudo apt install build-essential binutils-arm-none-eabi git libpng-dev && git clone https://github.com/pret/agbcc && cd agbcc && ./build.sh'
 # alias agbcc2='./install.sh ../pokeemerald/'
