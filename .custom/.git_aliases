@@ -37,7 +37,7 @@ alias grstra='git restore .'
 alias gstat='git status --short --branch'
 
 alias glast='git switch -'
-alias gnb='git switch --create' # as 'gswc' in zsh
+alias gbn='git switch --create' # as 'gswc' in zsh
 
 alias gset='git branch -vv --set-upstream-to=origin/$(git_current_branch)'
 alias gunset='git branch -vv --unset-upstream && echo hey, it looks like you unset that upstream branch'
@@ -54,14 +54,25 @@ alias glogm='glog $(git_main_branch)'
 alias glogp='git log --stat --patch' # as 'glgp' in zsh
 alias gloog='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'\'' --stat' # as 'glols' in zsh
 
-alias gnbt='gnb temp && glast'
+alias gbnt='gbn temp && glast'
 alias gbdt='gb -df temp'
 alias gswt='gsw temp'
 alias glogt='glog temp'
-alias gnewt='gbdt && gnbt'
+
+function gtemp() {
+  if git rev-parse --quiet --verify temp; then
+    gbdt && gbnt
+  else
+    gbnt
+  fi
+}
 
 function gback() {
   git reset HEAD~"$1"
+}
+
+function gbuck() {
+  git reset HEAD~"$1" && gclr
 }
 
 function gdd() {
