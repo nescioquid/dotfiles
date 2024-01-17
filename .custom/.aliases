@@ -49,8 +49,8 @@ alias home='cd ~'
 alias root='cd /'
 alias last='cd -'
 
-alias builds='cd ~/builds'
-alias sandbox='cd ~/builds/sandbox'
+alias repos='cd ~/repos'
+alias sandbox='cd ~/repos/sandbox'
 alias trash='cd ~/.local/share/Trash/files/'
 alias tossed='cd ~/.local/share/Trash/files/tossed/'
 

@@ -1,14 +1,14 @@
 # POKEMON_ALIASES
 
 # opens the stuff
-alias vscpokemon='code -n ~/builds/pokemon/'
-alias vscpokeemerald='code -n ~/builds/pokemon/pokeemerald/'
+alias vscpokemon='code -n ~/repos/pokemon/'
+alias vscpokeemerald='code -n ~/repos/pokemon/pokeemerald/'
 alias pokemon_aliases='${EDITOR} ~/.custom/.pokemon_aliases'
 alias vscpokemon_aliases='code ~/.custom/.pokemon_aliases'
 
 # gets you to the stuff
-alias pokemon='cd ~/builds/pokemon/'
-alias pokeemerald='cd ~/builds/pokemon/pokeemerald/'
+alias pokemon='cd ~/repos/pokemon/'
+alias pokeemerald='cd ~/repos/pokemon/pokeemerald/'
 
 # ---
 
@@ -21,22 +21,13 @@ alias gsgt='gswgt'
 
 # ---
 
-alias pokemon-notes='code ~/builds/pokemon/notes.md'
-# alias pokemon-berries='code ~/builds/pokemon/berries.md'
-# alias pokemon-habitats='code ~/builds/pokemon/habitats.md'
-# alias pokemon-items='code ~/builds/pokemon/items.md'
-# alias pokemon-locations='code ~/builds/pokemon/locations.md'
-# alias pokemon-marts='code ~/builds/pokemon/marts.md'
-# alias pokemon-mons='code ~/builds/pokemon/mons.md'
-# alias pokemon-pickup='code ~/builds/pokemon/pickup.md'
-# alias pokemon-tmshms='code ~builds/pokemon/TMsHMs.md'
-# alias pokemon-types='code ~/builds/pokemon/types.md'
+alias pokenotes='code ~/repos/pokemon/notes/notes.md'
 
 alias tossit='toss pokeemerald.sav'
-alias takeit='move pokeemerald.sav ~/builds/pokemon/last-save/'
-alias giveit='move ~/builds/pokemon/last-save/pokeemerald.sav ~/builds/pokemon/pokeemerald/'
-alias findit='f pokeemerald.sav'
-alias copyit='copy pokeemerald.sav ~/builds/pokemon/last-save/'
+alias takeit='move pokeemerald.sav ~/repos/pokemon/last-save/'
+alias giveit='move ../last-save/pokeemerald.sav ~/repos/pokemon/pokeemerald/'
+alias hasit='f pokeemerald.sav'
+alias copyit='copy pokeemerald.sav ~/repos/pokemon/last-save/'
 
 # the command to find the j# is 'nproc'
 alias make='make -j'
@@ -52,16 +43,3 @@ alias gloggt='glog gt'
 alias gswdb='gsw debug'
 alias gswe='gsw expansion'
 alias gswgt='gsw gt'
-
-# alias givepory='gm --no-edit poryscript'
-# alias takepory='gback && grstra'
-
-# alias agbcc1='sudo apt install build-essential binutils-arm-none-eabi git libpng-dev && git clone https://github.com/pret/agbcc && cd agbcc && ./build.sh'
-# alias agbcc2='./install.sh ../pokeemerald/'
-
-# alias vscgreen-thing='code -n ~/builds/pokemon/.archive/green-thing/'
-# alias green-thing='cd ~/builds/pokemon/.archive/green-thing/'
-
-# alias addporyscript='md tools/poryscript/ && copy ~/builds/pokemon/poryscript/poryscript-linux/font_config.json ~/builds/pokemon/pokeemerald/tools/poryscript/font_config.json && copy ~/builds/pokemon/poryscript/poryscript-linux/poryscript ~/builds/pokemon/pokeemerald/tools/poryscript/poryscript'
-
-# alias removeporyscript='rd tools/poryscript/'
