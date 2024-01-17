@@ -6,6 +6,15 @@ alias vscgit_aliases='code ~/.custom/.git_aliases'
 
 # ---
 
+alias gl='glog'
+alias gll='gloog'
+alias glo='glogo'
+alias gld='glogd'
+alias glm='glogm'
+alias glt='glogt'
+
+# ---
+
 alias ga='git add -v'
 alias gaa='git add -v --all'
 
@@ -18,15 +27,15 @@ alias gcdr='git commit -v --dry-run'
 alias gcmdr='git commit -v --dry-run --message'
 alias gcamdr='git commit -v --dry-run --all --message'
 
-alias gl='git pull -v'
-alias gldr='git pull -v --dry-run'
+alias gpll='git pull -v'
+alias gplldr='git pull -v --dry-run'
 
 alias gm='git merge -v'
 alias gmne='git merge --no-edit'
 
-alias gp='git push -v'
-alias gpo='git push -v origin'
-alias gpdr='git push -v --dry-run'
+alias gpsh='git push -v'
+alias gpsho='git push -v origin'
+alias gpshdr='git push -v --dry-run'
 
 alias gr='git remote -v'
 
