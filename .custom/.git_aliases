@@ -12,6 +12,10 @@ alias glo='glogo'
 alias gld='glogd'
 alias glm='glogm'
 alias glt='glogt'
+alias gs='gsw'
+alias gsd='gswd'
+alias gsm='gswm'
+alias gst='gswt'
 
 # ---
 
@@ -56,19 +60,27 @@ alias gclr='git restore . && git clean -df'
 alias grclean='git remote -v update origin --prune'
 
 alias grlog='git reflog'
-alias gcfg='git config --list --global'
+alias gcnfg='git config --list --global'
 
 alias glogd='glog $(git_develop_branch)'
 alias glogm='glog $(git_main_branch)'
 alias glogp='git log --stat --patch' # as 'glgp' in zsh
 alias gloog='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'\'' --stat' # as 'glols' in zsh
 
-alias gbnt='gbn temp && glast'
+alias gbnt='gbn temp'
 alias gbdt='gb -df temp'
 alias gswt='gsw temp'
 alias glogt='glog temp'
 
 function gtemp() {
+  if git rev-parse --quiet --verify temp; then
+    gbdt && gbnt && glast
+  else
+    gbnt && glast
+  fi
+}
+
+function gtempt() {
   if git rev-parse --quiet --verify temp; then
     gbdt && gbnt
   else
@@ -120,6 +132,7 @@ function glunos() {
 }
 
 # safeguards
+alias gp='echo hey! that command was intentionally blocked, use a more verbose one like \"gpsh\" instead'
 alias gbd='echo hey! that command was intentionally blocked, use a more verbose one like \"gb -d\" instead'
 alias gbD='echo hey! that command was intentionally blocked, use a more verbose one like \"gb -df or gb -D\" instead'
 alias ggf='echo hey! that command was intentionally blocked, use a more verbose one like \"git push --force origin $(current_branch\" instead)'
