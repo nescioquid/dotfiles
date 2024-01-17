@@ -1,17 +1,19 @@
 # SH-CONFIG_ALIASES
 
 # opens the stuff
-alias vscsh-config='code -n ~/builds/sh-config/'
+alias vscsh-config='code -n ~/repos/sh-config/'
 alias sh-config_aliases='${EDITOR} ~/.custom/.sh-config_aliases'
 alias vscsh-config_aliases='code ~/.custom/.sh-config_aliases'
 
 # gets you to the stuff
-alias sh-config='cd ~/builds/sh-config/'
+alias sh-config='cd ~/repos/sh-config/'
 
 # ---
 
 alias backupconfig='_sh-config_push'
 alias retrieveconfig='_sh-config_pull'
+
+# ---
 
 # installs configurations
 function installconfig() {
@@ -29,9 +31,9 @@ function installconfig() {
 
 # undoes backupconfig from anywhere
 function lastconfig() {
-  cd ~/builds/sh-config
+  cd ~/repos/sh-config
   echo whoosh! heading over to:
-  echo ~/builds/sh-config
+  echo ~/repos/sh-config
   echo starting to do git things:
   git reset HEAD~1
   git push -f
@@ -42,9 +44,9 @@ function lastconfig() {
 
 # pushes configurations to github
 function _sh-config_push() {
-  cd ~/builds/sh-config
+  cd ~/repos/sh-config
   echo whoosh! heading over to:
-  echo ~/builds/sh-config
+  echo ~/repos/sh-config
   _sh-config_push_copy
   echo starting to do git things:
   git add -v --all
@@ -58,9 +60,9 @@ function _sh-config_push() {
 
 # pulls configurations from github
 function _sh-config_pull() {
-  cd ~/builds/sh-config
+  cd ~/repos/sh-config
   echo whoosh! heading over to:
-  echo ~/builds/sh-config
+  echo ~/repos/sh-config
   echo starting to do git things:
   git pull
   echo done doing git things
@@ -72,25 +74,25 @@ function _sh-config_pull() {
 
 # copies home and ~/.custom configurations to sh-config
 function _sh-config_push_copy() {
-  cp -fr ~/.custom/      ~/builds/sh-config/
-  cp -f  ~/.bash_history ~/builds/sh-config/
-  cp -f  ~/.bashrc       ~/builds/sh-config/
-  cp -f  ~/.gitconfig    ~/builds/sh-config/
-  cp -f  ~/.z            ~/builds/sh-config/
-  cp -f  ~/.zsh_history  ~/builds/sh-config/
-  cp -f  ~/.zshrc        ~/builds/sh-config/
+  cp -fr ~/.custom/      ~/repos/sh-config/
+  cp -f  ~/.bash_history ~/repos/sh-config/
+  cp -f  ~/.bashrc       ~/repos/sh-config/
+  cp -f  ~/.gitconfig    ~/repos/sh-config/
+  cp -f  ~/.z            ~/repos/sh-config/
+  cp -f  ~/.zsh_history  ~/repos/sh-config/
+  cp -f  ~/.zshrc        ~/repos/sh-config/
   echo configurations copied for push, hooray!
 }
 
 # copies sh-config configurations to home and ~/.custom
 function _sh-config_pull_copy() {
-  cp -fr ~/builds/sh-config/.custom/      ~
-  cp -f  ~/builds/sh-config/.bash_history ~
-  cp -f  ~/builds/sh-config/.bashrc       ~
-  cp -f  ~/builds/sh-config/.gitconfig    ~
-  cp -f  ~/builds/sh-config/.z            ~
-  cp -f  ~/builds/sh-config/.zsh_history  ~
-  cp -f  ~/builds/sh-config/.zshrc        ~
+  cp -fr ~/repos/sh-config/.custom/      ~
+  cp -f  ~/repos/sh-config/.bash_history ~
+  cp -f  ~/repos/sh-config/.bashrc       ~
+  cp -f  ~/repos/sh-config/.gitconfig    ~
+  cp -f  ~/repos/sh-config/.z            ~
+  cp -f  ~/repos/sh-config/.zsh_history  ~
+  cp -f  ~/repos/sh-config/.zshrc        ~
   echo configurations copied for pull, hooray!
 }
 
