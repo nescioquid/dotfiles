@@ -12,6 +12,13 @@ alias pokeemerald='cd ~/builds/pokemon/pokeemerald/'
 
 # ---
 
+alias glb='glogb'
+alias gle='gloge'
+alias gsb='gswb'
+alias gse='gswe'
+
+# ---
+
 alias pokemon-notes='code ~/builds/pokemon/notes.md'
 # alias pokemon-berries='code ~/builds/pokemon/berries.md'
 # alias pokemon-habitats='code ~/builds/pokemon/habitats.md'
@@ -36,6 +43,11 @@ alias makke='make clean && make -j'
 alias maakke='make clean && make -j$(nproc)'
 
 alias OA='echo haha it happened again oooh aaah hahaha'
+
+alias glogb='glog debug'
+alias gloge='glog expansion'
+alias gswb='gsw debug'
+alias gswe='gsw expansion'
 
 # alias givepory='gm --no-edit poryscript'
 # alias takepory='gback && grstra'

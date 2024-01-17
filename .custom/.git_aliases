@@ -69,8 +69,8 @@ alias gloog='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %
 
 alias gbnt='gbn temp'
 alias gbdt='gb -df temp'
-alias gswt='gsw temp'
 alias glogt='glog temp'
+alias gswt='gsw temp'
 
 function gtemp() {
   if git rev-parse --quiet --verify temp; then
