@@ -13,6 +13,8 @@ alias plshelp='_ascii_please && echo "" && _ascii_sendhelp'
 alias nolooky='_ascii_pleasestop && echo "" && _ascii_lookingovermyshoulderatmyscreen && echo "" && _ascii_thanks'
 alias noasky='_ascii_pleasestop && echo "" && _ascii_askingsomanyquestions && echo "" && _ascii_thanks'
 
+# ---
+
 # https://texteditor.com/multiline-text-art/ (font: "Blocks in two lines")
 
 function _ascii_youdidthething() {
