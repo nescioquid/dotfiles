@@ -10,10 +10,12 @@ alias gl='glog'
 alias gll='gloog'
 alias glo='glogo'
 alias gld='glogd'
+alias gldd='glogdd'
 alias glm='glogm'
 alias glt='glogt'
 alias gs='gsw'
 alias gsd='gswd'
+alias gsdd='gswdd'
 alias gsm='gswm'
 alias gst='gswt'
 
@@ -125,6 +127,14 @@ function glogo() {
   else
     glog origin/$(git_current_branch)
   fi
+}
+
+function glogdd() {
+  glog "$(git_develop_branch)-$1"
+}
+
+function gswdd() {
+  gsw "$(git_develop_branch)-$1"
 }
 
 # fetches the last commits in which the specified label appears --Lunos

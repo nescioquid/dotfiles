@@ -15,9 +15,11 @@ alias pokeemerald='cd ~/repos/pokemon/pokeemerald/'
 alias gldb='glogdb'
 alias gle='gloge'
 alias glgt='gloggt'
+alias glgtt='gloggtt'
 alias gsdb='gswdb'
 alias gse='gswe'
 alias gsgt='gswgt'
+alias gsgtt='gswgtt'
 
 # ---
 
@@ -43,3 +45,11 @@ alias gloggt='glog gt'
 alias gswdb='gsw debug'
 alias gswe='gsw expansion'
 alias gswgt='gsw gt'
+
+function gloggtt() {
+  glog "gt-$1"
+}
+
+function gswgtt() {
+  gsw "gt-$1"
+}
