@@ -38,6 +38,10 @@ alias lt='ltossed'
 
 # ---
 
+# nano
+alias nanorc='${EDITOR} ~/.nanorc'
+alias vscnanorc='code ~/.nanorc'
+
 # vscode
 alias vsc='code'
 

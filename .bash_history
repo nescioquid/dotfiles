@@ -845,3 +845,21 @@ sourcebashrc
 cd --help
 last
 zsh
+gstat
+gse
+gstat
+glast
+exit
+docs
+downloads
+repos
+pokeemerald 
+back
+l
+last-save
+cd last-save/
+l
+exit
+clr
+zsh
+exit
