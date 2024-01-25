@@ -76,6 +76,7 @@ function _sh-config_push_copy() {
   cp -f  ~/.bash_history ~/repos/sh-config/
   cp -f  ~/.bashrc       ~/repos/sh-config/
   cp -f  ~/.gitconfig    ~/repos/sh-config/
+  cp -f  ~/.nanorc       ~/repos/sh-config/
   cp -f  ~/.z            ~/repos/sh-config/
   cp -f  ~/.zsh_history  ~/repos/sh-config/
   cp -f  ~/.zshrc        ~/repos/sh-config/
@@ -88,6 +89,7 @@ function _sh-config_pull_copy() {
   cp -f  ~/repos/sh-config/.bash_history ~
   cp -f  ~/repos/sh-config/.bashrc       ~
   cp -f  ~/repos/sh-config/.gitconfig    ~
+  cp -f  ~/repos/sh-config/.nanorc       ~
   cp -f  ~/repos/sh-config/.z            ~
   cp -f  ~/repos/sh-config/.zsh_history  ~
   cp -f  ~/repos/sh-config/.zshrc        ~
