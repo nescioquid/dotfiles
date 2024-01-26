@@ -863,3 +863,6 @@ exit
 clr
 zsh
 exit
+nanorc 
+j notes
+exit
