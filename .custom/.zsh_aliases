@@ -1,16 +1,11 @@
 # ZSH_ALIASES
 
-# opens the stuff
-alias zshrc='${EDITOR} ~/.zshrc'
-alias vsczshrc='code ~/.zshrc'
 alias zsh_aliases='${EDITOR} ~/.custom/.zsh_aliases'
 alias vsczsh_aliases='code ~/.custom/.zsh_aliases'
 
-# sources the stuff
-alias srczshrc='source ~/.zshrc && echo hey, you sourced .zshrc, yay!'
-alias srczsh_aliases='source ~/.custom/.zsh_aliases && echo hey, you sourced .zsh_aliases, yay!'
-
-alias src='source ~/.zshrc && echo hey, you sourced the zsh things, yay!'
+alias zshrc='${EDITOR} ~/.zshrc'
+alias vsczshrc='code ~/.zshrc'
+alias src='source ~/.zshrc && echo hey, you sourced .zshrc, yay!'
 
 # ---
 

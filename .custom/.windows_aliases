@@ -1,6 +1,5 @@
 # WINDOWS_ALIASES
 
-# opens the stuff
 alias windows_aliases='${EDITOR} ~/.custom/.windows_aliases'
 alias vscwindows_aliases='code ~/.custom/.windows_aliases'
 

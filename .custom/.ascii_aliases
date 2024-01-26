@@ -1,6 +1,5 @@
 # ASCII_ALIASES
 
-# opens the stuff
 alias ascii_aliases='${EDITOR} ~/.custom/.ascii_aliases'
 alias vscascii_aliases='code ~/.custom/.ascii_aliases'
 

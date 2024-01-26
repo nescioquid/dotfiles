@@ -1,20 +1,30 @@
 # BASH_ALIASES
 
-# opens the stuff
-alias bashrc='${EDITOR} ~/.bashrc'
-alias vscbashrc='code ~/.bashrc'
 alias bash_aliases='${EDITOR} ~/.custom/.bash_aliases'
 alias vscbash_aliases='code ~/.custom/.bash_aliases'
 
-# sources the stuff
-alias srcbashrc='source ~/.bashrc && echo hey, you sourced .bashrc, yay!'
-alias srcbash_aliases='source ~/.custom/.bash_aliases && echo hey, you sourced .bash_aliases, yay!'
-
-alias src='source ~/.bashrc && echo hey, you sourced the bash things, yay!'
+alias bashrc='${EDITOR} ~/.bashrc'
+alias vscbashrc='code ~/.bashrc'
+alias src='source ~/.bashrc && echo hey, you sourced .bashrc, yay!'
 
 # ---
 
 alias what='alias'
+
+# utilities
+alias ..l='.. && l'
+alias cl='cdl'
+alias mcd='mdcd'
+
+function cdl() {
+  cd "$1"
+  l
+}
+
+function mdcd() {
+  makedirectory "$1"
+  cd "$1"
+}
 
 # oh-my-zsh cd .. aliases
 alias ..='cd ..'

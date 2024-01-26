@@ -1,14 +1,13 @@
 # POKEMON_ALIASES
 
-# opens the stuff
-alias vscpokemon='code -n ~/repos/pokemon/'
-alias vscpokeemerald='code -n ~/repos/pokemon/pokeemerald/'
 alias pokemon_aliases='${EDITOR} ~/.custom/.pokemon_aliases'
 alias vscpokemon_aliases='code ~/.custom/.pokemon_aliases'
 
-# gets you to the stuff
 alias pokemon='cd ~/repos/pokemon/'
+alias vscpokemon='code -n ~/repos/pokemon/'
+
 alias pokeemerald='cd ~/repos/pokemon/pokeemerald/'
+alias vscpokeemerald='code -n ~/repos/pokemon/pokeemerald/'
 
 # ---
 
@@ -23,22 +22,27 @@ alias gsgtt='gswgtt'
 
 # ---
 
-alias pokenotes='code ~/repos/pokemon/notes/notes.md'
+alias OA='echo haha it happened again oooh aaah hahaha'
 
+# opens main notes file
+alias pokenotes='nano ~/repos/pokemon/notes/notes.md'
+alias vscpokenotes='code ~/repos/pokemon/notes/notes.md'
+
+# manages the save file
 alias tossit='toss pokeemerald.sav'
 alias takeit='move pokeemerald.sav ~/repos/pokemon/last-save/'
 alias giveit='move ../last-save/pokeemerald.sav ~/repos/pokemon/pokeemerald/'
 alias hasit='f pokeemerald.sav'
 alias copyit='copy pokeemerald.sav ~/repos/pokemon/last-save/'
 
-# the command to find the j# is 'nproc'
+# 'make' is overridden for speed reasons; the command to find the j# is 'nproc'
 alias make='make -j'
 alias maake='make -j$(nproc)'
 alias makke='make clean && make -j'
 alias maakke='make clean && make -j$(nproc)'
 
-alias OA='echo haha it happened again oooh aaah hahaha'
 
+# faster logging and switching for common branches
 alias glogdb='glog debug'
 alias gloge='glog expansion'
 alias gloggt='glog gt'

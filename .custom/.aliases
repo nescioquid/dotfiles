@@ -1,42 +1,23 @@
 # ALIASES
 
-# opens the stuff
 alias aliases='${EDITOR} ~/.custom/.aliases'
 alias vscaliases='code ~/.custom/.aliases'
+
+alias custom='cd ~/.custom/'
 alias vsccustom='code -n ~/.custom/'
 
-# gets you to the stuff
-alias custom='cd ~/.custom/'
-
-# domain-specific aliases
-# comment out lines to remove them from what's loaded by run commands
-source ~/.custom/.git_aliases
-source ~/.custom/.pop-os_aliases
-# source ~/.custom/.windows_aliases
-source ~/.custom/.sh-config_aliases
+# uncomment the domain-specific aliases you want to use
 source ~/.custom/.ascii_aliases
+source ~/.custom/.git_aliases
 source ~/.custom/.pokemon_aliases
+source ~/.custom/.pop-os_aliases
+source ~/.custom/.sh-config_aliases
+# source ~/.custom/.windows_aliases
 
 # ---
 
 alias a='alias'
 alias an='alias'
-
-alias l='l'
-alias ll='ll'
-alias lll='lll'
-alias llll='llll'
-alias cl='cdl'
-alias mcd='mdcd'
-alias saw='sauu'
-alias mf='makefile'
-alias rf='removefile'
-alias md='makedirectory'
-alias rd='removedirectory'
-alias toss='tossout'
-alias lt='ltossed'
-
-# ---
 
 # nano
 alias nanorc='${EDITOR} ~/.nanorc'
@@ -46,40 +27,78 @@ alias n='nano'
 # vscode
 alias vsc='code'
 
-# easier/more english-like common utilities
-
-alias back='cd ..'
-alias to='cd'
+# locations
 alias home='cd ~'
 alias root='cd /'
-alias last='cd -'
-
 alias repos='cd ~/repos'
 alias sandbox='cd ~/repos/sandbox'
-alias trash='cd ~/.local/share/Trash/files/'
 alias tossed='cd ~/.local/share/Trash/files/tossed/'
+alias trash='cd ~/.local/share/Trash/files/'
 
-alias apt='sudo apt' # overwrites original for copy-paste reasons
-alias sapt='sudo apt'
-alias supt='sudo apt'
+# 'apt' overwritten for copypaste reasons
+alias apt='sudo apt'
 alias apti='sudo apt install'
 alias sauu='sudo apt update && sudo apt upgrade -y'
+alias saw='sauu'
 
-alias here='pwd'
+# easier/more English-like commands
+alias back='cd ..'
 alias clr='clear'
-alias help='man'
-alias funcs='print -l ${(ok)functions}\n'
-alias o='open'
-
-alias s='grep -ir'
-alias search='grep -ir'
-
-alias f='find . -iname'
 alias count='find . -type f | wc -l'
+alias f='find . -iname'
+alias help='man'
+alias here='pwd'
+alias last='cd -'
+alias o='open'
+alias to='cd'
+alias search='grep -ir'
+alias s='grep -ir'
 
-alias ..l='.. && l'
+function copy() {
+  cp -irv "$1" "$2"
+  echo hey, you copied that \""$1"\" thing to \""$2"\" using the \*cp\* command!
+}
+
+function move() {
+  mv -iv "$1" "$2"
+  echo hey, you moved that \""$1"\" thing to \""$2"\" using the \*mv\* command!
+}
+
+function rename() {
+  mv -iv "$1" "$2"
+  echo hey, you renamed that \""$1"\" thing to \""$2"\" using the \*mv\* command!
+}
+
+# create and remove files and directories
+alias md='makedirectory'
+alias mf='makefile'
+alias rd='removedirectory'
+alias rf='removefile'
+
+function makedirectory() {
+  mkdir -pv "$1"
+  echo hey, you just made that \""$1"\" directory using the \*mkdir\* command. yay!
+}
+
+function makefile() {
+  touch "$1"
+  echo hey, you just made that \""$1"\" file using the \*touch\* command. yay!
+}
+
+function removedirectory() {
+  rm -Ivr "$1"
+  echo hey, you just removed that \""$1"\" directory using the \*rm\* command, NOT rmdir!
+}
+
+function removefile() {
+  rm -Iv "$1"
+  echo hey, you just removed that \""$1"\" file using the \*rm\* command!
+}
+
+# ls
 alias ldot='ls -ld .*' 
 alias lsize='ls -1AhsS'
+alias lt='ltossed'
 
 function l() {
   ls -1A --group-directories-first
@@ -105,101 +124,43 @@ function llll() {
   echo \(listed alphabetically\)
 }
 
-function cdl() {
-  cd "$1"
-  l
-}
-
 function look() {
   ls -1A --group-directories-first "$1"
   echo ---
   echo \(listed with directories first\)
 }
 
-function mdcd() {
-  makedirectory "$1"
-  cd "$1"
-}
-
-function copy() {
-  cp -irv "$1" "$2"
-  echo hey, you copied that \""$1"\" thing to \""$2"\" using the \*cp\* command!
-}
-
-function move() {
-  mv -iv "$1" "$2"
-  echo hey, you moved that \""$1"\" thing to \""$2"\" using the \*mv\* command!
-}
-
-function rename() {
-  mv -iv "$1" "$2"
-  echo hey, you renamed that \""$1"\" thing to \""$2"\" using the \*mv\* command!
-}
-
-function makefile() {
-  touch "$1"
-  echo hey, you just made that \""$1"\" file using the \*touch\* command. yay!
-}
-
-function removefile() {
-  rm -Iv "$1"
-  echo hey, you just removed that \""$1"\" file using the \*rm\* command!
-}
-
-function makedirectory() {
-  mkdir -pv "$1"
-  echo hey, you just made that \""$1"\" directory using the \*mkdir\* command. yay!
-}
-
-function removedirectory() {
-  rm -Ivr "$1"
-  echo hey, you just removed that \""$1"\" directory using the \*rm\* command, NOT rmdir!
-}
-
-# toss things into the trash instead of hard deleting
-function tossout() {
-  md ~/.local/share/Trash/files/tossed/ &&
-  mv -ivt ~/.local/share/Trash/files/tossed/ "$1" &&
-  echo hey, you just tossed that \""$1"\" thing in the trash using the \*mv\* command. so stinky!
-}
-
-# lists what's in the trash
-function ltrash() {
-  la --group-directories-first ~/.local/share/Trash/files/
-  echo ---
-  echo \(listed with directories first\)
-}
-
-# lists what's in tossed
 function ltossed() {
   la --group-directories-first ~/.local/share/Trash/files/tossed/
   echo ---
   echo \(listed with directories first\)
 }
 
-# ---
-
-# from the internet
-
-# see the top ten commands you run most
-function topten() {
-  history | awk '{cmd[$2]++} END {for(elem in cmd) {print cmd[elem] " " elem}}' | sort -n -r | head -10
+function ltrash() {
+  la --group-directories-first ~/.local/share/Trash/files/
+  echo ---
+  echo \(listed with directories first\)
 }
 
-# see the top twenty commands you run most
-function toptwenty() {
-  history | awk '{cmd[$2]++} END {for(elem in cmd) {print cmd[elem] " " elem}}' | sort -n -r | head -20
+# toss things into the trash instead of hard deleting them
+function toss() {
+  md ~/.local/share/Trash/files/tossed/ &&
+  mv -ivt ~/.local/share/Trash/files/tossed/ "$1" &&
+  echo hey, you just tossed that \""$1"\" thing in the trash using the \*mv\* command. so stinky!
 }
 
 # see the top fifty commands you run most
-function topfifty() {
+function topcommands() {
   history | awk '{cmd[$2]++} END {for(elem in cmd) {print cmd[elem] " " elem}}' | sort -n -r | head -50
+}
+
+# copies a .local_aliases template to the correct location
+function localizeit() {
+  cp -irv ~/.custom/.local_aliases ~/.local/.local_aliases
 }
 
 # ---
 
-# new and local stuff here
-source ~/.custom/.local_aliases
+# more aliases you can use
+source ~/.local/.local_aliases
 source ~/.custom/.new_aliases
-
-# ---

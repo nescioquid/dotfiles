@@ -1,20 +1,22 @@
 # SH-CONFIG_ALIASES
 
-# opens the stuff
-alias vscsh-config='code -n ~/repos/sh-config/'
 alias sh-config_aliases='${EDITOR} ~/.custom/.sh-config_aliases'
 alias vscsh-config_aliases='code ~/.custom/.sh-config_aliases'
 
-# gets you to the stuff
 alias sh-config='cd ~/repos/sh-config/'
+alias vscsh-config='code -n ~/repos/sh-config/'
 
 # ---
 
+alias installconfig='_sh-config_install'
+alias lastconfig='_sh-config_last'
 alias pushconfig='_sh-config_push'
 alias pullconfig='_sh-config_pull'
 
-# installs configurations
-function installconfig() {
+# ---
+
+# installs configurations in a new environment
+function _sh-config_install() {
   _sh-config_pull_copy
   if [[ -n "$BASH_VERSION" ]]; then
     source ~/.bashrc
@@ -28,7 +30,7 @@ function installconfig() {
 }
 
 # undoes backupconfig from anywhere
-function lastconfig() {
+function _sh-config_last() {
   cd ~/repos/sh-config
   echo whoosh! heading over to:
   echo ~/repos/sh-config

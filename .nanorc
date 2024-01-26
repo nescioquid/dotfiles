@@ -1,3 +1,5 @@
+## NANORC
+
 set autoindent
 set atblanks
 set boldtext
@@ -13,23 +15,22 @@ set tabstospaces
 set tabsize 2
 set wordchars "<_>."
 set zap
-
 unset stateflags
 
 ## there are no colors by default, except for errorcolor and spotlightcolor
-# set titlecolor bold,white,blue
-set promptcolor bold,cyan
-set statuscolor bold,green
 # set errorcolor bold,white,red
-# set spotlightcolor black,lightyellow
-set selectedcolor ,grey
-# set stripecolor ,yellow
-# set scrollercolor cyan
-# set numbercolor cyan
-# set keycolor cyan
 # set functioncolor green
+# set keycolor cyan
+# set numbercolor cyan
+set promptcolor bold,cyan
+# set scrollercolor cyan
+set selectedcolor ,grey
+# set spotlightcolor black,lightyellow
+set statuscolor bold,green
+# set stripecolor ,yellow
+# set titlecolor bold,white,blue
 
-## binding reset
+## resets keybindings
 # unbind F1 all
 unbind F2 all
 unbind F3 all
@@ -74,7 +75,6 @@ unbind M-H all
 # unbind ^I all
 unbind M-I all
 unbind ^J all
-unbind M-J all
 unbind ^K all
 unbind M-K all
 unbind ^L all
@@ -108,25 +108,15 @@ unbind M-Y all
 unbind ^Z all
 unbind M-Z all
 
-# unbind ^0 all
 unbind M-0 all
-# unbind ^1 all
 unbind M-1 all
-# unbind ^2 all
 unbind M-2 all
-# unbind ^3 all
 unbind M-3 all
-# unbind ^4 all
 unbind M-4 all
-# unbind ^5 all
 unbind M-5 all
-# unbind ^6 all
 unbind M-6 all
-# unbind ^7 all
 unbind M-7 all
-# unbind ^8 all
 unbind M-8 all
-# unbind ^9 all
 unbind M-9 all
 
 unbind ^/ all
@@ -137,42 +127,28 @@ unbind ^^ all
 unbind M-^ all
 unbind ^- all
 unbind M-- all
-# unbind ^+ all
 unbind M-+ all
 unbind ^_ all
 unbind M-_ all
-# unbind ^= all
 unbind M-= all
 unbind ^[ all
 unbind M-[ all
 unbind ^] all
 unbind M-] all
-# unbind ^{ all
 unbind M-{ all
-# unbind ^} all
 unbind M-} all
-# unbind ^( all
 unbind M-( all
-# unbind ^) all
 unbind M-) all
-# unbind ^< all
 unbind M-< all
-# unbind ^> all
 unbind M-> all
-# unbind ^, all
-unbind M-, all
-# unbind ^. all
 unbind M-. all
-# unbind ^; all
-unbind M-; all
-# unbind ^: all
-unbind M-: all
+unbind M-, all
+# unbind M-: all
+# unbind M-; all
 
 unbind ^Space all
 unbind M-Space all
 # unbind Ins all
-# unbind ^Ins all
-# unbind M-Ins all
 
 ## my keybinds
 bind ^C cancel all

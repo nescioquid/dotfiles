@@ -866,3 +866,7 @@ exit
 nanorc 
 j notes
 exit
+src
+exit
+src
+exit
