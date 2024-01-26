@@ -162,5 +162,5 @@ function localizeit() {
 # ---
 
 # more aliases you can use
-source ~/.local/.local_aliases
+# source ~/.local/.local_aliases
 source ~/.custom/.new_aliases
