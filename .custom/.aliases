@@ -96,6 +96,10 @@ function removefile() {
 }
 
 # ls
+alias l='l' 
+alias ll='ll' 
+alias lll='lll' 
+alias llll='llll' 
 alias ldot='ls -ld .*' 
 alias lsize='ls -1AhsS'
 alias lt='ltossed'
