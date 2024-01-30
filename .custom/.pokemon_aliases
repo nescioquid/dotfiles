@@ -14,11 +14,9 @@ alias vscpokeemerald='code -n ~/repos/pokemon/pokeemerald/'
 alias gldb='glogdb'
 alias gle='gloge'
 alias glgt='gloggt'
-alias glgtt='gloggtt'
 alias gsdb='gswdb'
 alias gse='gswe'
 alias gsgt='gswgt'
-alias gsgtt='gswgtt'
 
 # ---
 
@@ -41,19 +39,34 @@ alias maake='make -j$(nproc)'
 alias makke='make clean && make -j'
 alias maakke='make clean && make -j$(nproc)'
 
-
 # faster logging and switching for common branches
 alias glogdb='glog debug'
 alias gloge='glog expansion'
-alias gloggt='glog gt'
+# alias gloggt='glog gt'
 alias gswdb='gsw debug'
 alias gswe='gsw expansion'
-alias gswgt='gsw gt'
+# alias gswgt='gsw gt'
 
-function gloggtt() {
-  glog "gt-$1"
+function gloggt() {
+  if [ $1 ]; then
+    glog gt-"$1"
+  else
+    glog gt
+  fi
 }
 
-function gswgtt() {
-  gsw "gt-$1"
+# alias of function is used because I couldn't get it to work without doing so :O
+alias gswgt='function _gswgt() { if [ $1 ]; then gsw gt-"$1"; else gsw gt; fi }; _gswgt'
+
+# function gswgt() {
+#   if [ $1 ]; then
+#     gsw gt-"$1"
+#   else
+#     gsw gt
+#   fi
+# }
+
+# copies the gba file to a file for versioned roms
+function copygt() {
+  copy ~/repos/pokemon/pokeemerald/pokeemerald.gba ~/Documents/green-thing-roms/green-thing-v"$1".gba
 }

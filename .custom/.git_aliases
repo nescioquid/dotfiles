@@ -5,16 +5,15 @@ alias vscgit_aliases='code ~/.custom/.git_aliases'
 
 # ---
 
+alias gist='gstat'
 alias gl='glog'
 alias gll='gloog'
 alias glo='glogo'
 alias gld='glogd'
-alias gldd='glogdd'
 alias glm='glogm'
 alias glt='glogt'
 alias gs='gsw'
 alias gsd='gswd'
-alias gsdd='gswdd'
 alias gsl='glast'
 alias gsm='gswm'
 alias gst='gswt'
@@ -76,18 +75,16 @@ function ghelp() {
 
 # logging
 alias grlog='git reflog'
-alias glogd='glog $(git_develop_branch)'
+# alias glogd='glog $(git_develop_branch)'
 alias glogm='glog $(git_main_branch)'
 alias glogp='git log --stat --patch' # as 'glgp' in zsh
 alias gloog='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'\'' --stat' # as 'glols' in zsh
 
-function glogg() {
-  if [ $2 ]; then
-    glog --max-count="$2" "$1"
-  elif [ $1 ]; then
-    glog --max-count="$1"
+function glogd() {
+  if [ $1 ]; then
+    glog $(git_develop_branch)-"$1"
   else
-    glog
+    glog $(git_develop_branch)
   fi
 }
 
@@ -99,14 +96,17 @@ function glogo() {
   fi
 }
 
-# faster logging and switching for development branches
-function glogdd() {
-  glog "$(git_develop_branch)-$1"
-}
+# overrides oh-my-zsh alias 'gswd'
+# alias of function is used because I couldn't get it to work without doing so, but appears related to git, not oh-my-zsh :O
+alias gswd='function _gswd() { if [ $1 ]; then gsw $(git_develop_branch)-"$1"; else gsw $(git_develop_branch); fi }; _gswd'
 
-function gswdd() {
-  gsw "$(git_develop_branch)-$1"
-}
+# function gswd() {
+#   if [ $1 ]; then
+#     gsw $(git_develop_branch)-"$1"
+#   else
+#     gsw $(git_develop_branch)
+#   fi
+# }
 
 # creates and manages a temporary branch
 alias gbnt='gbn temp'
