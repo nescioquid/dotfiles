@@ -7,3 +7,9 @@ alias vscnew_aliases='code ~/.custom/.new_aliases'
 
 alias astro='npm run astro'
 alias astrohelp='astro -- --help'
+
+alias rmgit='rm -rf .git'
+
+source ~/Documents/git-aliases-for-noobs/.git_aliases && echo hey, you sourced .git_aliases, yay!
+
+alias srcg='source ~/.custom/.new_aliases'

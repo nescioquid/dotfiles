@@ -870,3 +870,764 @@ src
 exit
 src
 exit
+glog
+glogg
+exit
+glog
+gloog
+glogg
+docs-gt && source ~/Documents/.git_aliases
+glogg
+a gsw
+exit
+glog
+clr
+git log
+glog
+a glog
+exit
+docs-gt && source ~/Documents/.git_aliases
+omzp git
+docs-gt && source ~/Documents/.git_aliases
+gl
+a gl
+glogg
+gll
+gl
+ghelp log
+docs-gt && source ~/Documents/.git_aliases
+gl
+glog
+clr
+gl
+gll
+last
+gl
+pokeemerald 
+gl
+last
+clr
+l
+gist
+gwip
+gl
+gunwip
+gl
+gist
+gaa
+gist
+gwip
+gl
+omzp git
+zsh_aliases
+bash_aliases
+docs-gt && source ~/Documents/.git_aliases
+glm
+a glogm
+docs-gt && source ~/Documents/.git_aliases
+glm
+docs-gt && source ~/Documents/.git_aliases
+glm
+a glogm
+bashrc
+docs-gt && source ~/Documents/.git_aliases
+l
+clr
+gl
+gld
+what gld
+what glogd
+docs-gt && source ~/Documents/.git_aliases
+gld
+gl
+gunwip
+gwip
+home
+l
+here
+bashrc
+thanksquegg
+source ~/Documents/.git_aliases
+srcg
+thanksquegg
+source ~/Documents/.git_aliases
+thanksquegg
+gb
+docs-gt
+gb
+gba
+source ~/Documents/.git_aliases
+gb
+gbb
+source ~/Documents/.git_aliases
+gb
+gb -df dev-nice
+gbb
+gsd
+gswd
+gtemp
+gist
+g status
+gback
+g status
+g status --branch
+g status --short
+g status --short --branch
+home
+documents 
+to git-aliases-for-noobs/
+l
+vsc .git_aliases 
+source ~/Documents/git-aliases-for-noobs/.git_aliases
+srcg
+thanksquegg
+clr
+gist
+gstat
+clr
+what gstat
+srcg
+source ~/Documents/git-aliases-for-noobs/.git_aliases
+gstat
+srcg
+source ~/Documents/git-aliases-for-noobs/.git_aliases
+gb
+gbb
+gbba
+source ~/Documents/git-aliases-for-noobs/.git_aliases
+thanksquegg
+docs-gt
+gb
+gbb
+gba
+gbba
+source ~/Documents/git-aliases-for-noobs/.git_aliases
+thanksquegg
+docs-gt
+gstat
+gist
+gwip
+gdd
+gl
+glog
+gunwip
+gist
+gaa
+srcg
+source ~/Documents/git-aliases-for-noobs/.git_aliases
+glogp
+source ~/Documents/git-aliases-for-noobs/.git_aliases
+what gs
+source ~/Documents/git-aliases-for-noobs/.git_aliases
+thanksquegg
+gist
+glogg
+glog
+gbdt
+gsd
+gswd
+gbdt
+source ~/Documents/git-aliases-for-noobs/.git_aliases
+thanksquegg
+clr
+docs-gt
+gist
+glog
+gcam "changed logo"
+gl
+glog
+gswd
+gl
+glog
+gbdt
+glo
+what glo
+omzp git
+glo
+alias
+alias
+aliases
+bash_aliases
+aliases
+bashrc
+source ~/Documents/git-aliases-for-noobs/.git_aliases
+thanksquegg
+alias
+docs-gt
+gstat
+gist
+gbb
+gbn dev-me
+gbb
+gsm
+gsd me
+gswd me
+gsw dev-me
+gsm
+gswm
+gb -df dev-me
+gbb
+gswd
+gsit
+gist
+gl
+glog
+gtemp
+grename play
+gist
+gsetup
+gsetup play
+gbb
+source ~/Documents/git-aliases-for-noobs/.git_aliases
+gbb
+gunset
+gbb
+gset
+gset play
+source ~/Documents/git-aliases-for-noobs/.git_aliases
+gset play
+source ~/Documents/git-aliases-for-noobs/.git_aliases
+gset play
+gl
+gbb
+gunset
+gbb
+gset
+gset play
+gbb
+gbn fun
+gbb
+gsetup
+gbb
+source ~/Documents/git-aliases-for-noobs/.git_aliases
+gsetup
+source ~/Documents/git-aliases-for-noobs/.git_aliases
+gsetup
+gsetup fun
+gbb
+gbn good
+gbb
+gset good
+gsetup good
+gbb
+gunset
+gbb
+gset good
+gbb
+gpo -d fun
+gpsh -d origin fun
+gbb
+gpsh -d origin good
+gbb
+gpsh -d origin play
+gb -d play
+gb -d fun
+gswd
+gb -d good
+gcc
+gbb
+ghelp switch
+ghelp branch
+gc!
+source ~/Documents/git-aliases-for-noobs/.git_aliases
+thanksquegg
+gbb
+gtemp
+gsm
+gswm
+gl
+glog
+gbm this
+mf wow.md
+gist
+gaa
+gcm "wowed"
+glog
+gswm
+gbb
+gswd
+gcreate main
+gbb
+glog
+glog this
+gist
+gsw this
+gtemp
+gbb
+glog
+gl
+gist
+gbb
+gswd
+gist
+gswm
+gsit
+gist
+gbb
+gb -df this
+gbdt
+gbb
+docs-gt
+gbb
+gtemp
+gbb
+gsetup 
+gsetup temp
+gbb
+gunset
+gbb
+gb
+gbb
+gset
+gset temp
+gbb
+gpsh -d origin temp
+gbb
+gswd
+gtemp
+gbb
+glog
+gbb
+gca!
+gbb
+gc!
+gbb
+gc!
+source ~/Documents/git-aliases-for-noobs/.git_aliases
+gc!
+source ~/Documents/git-aliases-for-noobs/.git_aliases
+gc!
+glog
+glogg
+glogp
+clr
+source ~/Documents/git-aliases-for-noobs/.git_aliases
+clr
+gbb
+gbba
+gba
+source ~/Documents/git-aliases-for-noobs/.git_aliases
+thanksquegg
+alias
+gl
+l
+clr
+l
+n sand.md 
+nanorc
+src
+source .bashrc
+source ~/.bashrc
+n shovel.md 
+gist
+gaa
+gds
+l
+n nanotests.txt 
+clr
+l
+gist
+gstat
+git status
+grst sand.md 
+gist
+gstat
+clr
+gstat
+gist
+rf nanotests.txt 
+gist
+gaa
+gstat
+gist
+gcm "modifies sand.md and shovel.md, deletes nanotests.txt"
+glog
+gbb
+gswd
+grb main
+gbb
+gbba
+clr
+bashrc
+n ~/.bashrc
+bashrc
+bashrc
+bash_aliases 
+aliases
+src
+git-aliases
+aliases
+src
+git_aliases
+zsh
+clr
+new_aliases
+vscnew_aliases
+zsh
+src
+what src
+what srcg
+what srcnoob
+srcnoob
+what srcg
+src
+srcnoob
+clr
+gl
+glog
+gbb
+gcreate new
+gbb
+touch sand.md
+n shovel.md
+gstat
+gist
+gclr
+gist
+n shovel.md
+gaa
+gds
+n shovel.md
+gist
+gaa
+gds
+gist
+gclr
+grst shovel.md
+clr
+asf
+clear
+l
+ls
+bashrc
+src
+bashrc
+clear
+bashrc
+vscbashrc
+src
+alias
+ls
+l
+la
+ll
+ls
+clr
+clear
+source /home/drjw/Documents/git-aliases-for-noobs/.git_aliases
+alias
+gstat
+gist
+gaa
+gist
+glogg
+clear
+l
+here
+pwd
+clr
+clear
+gbb
+gsw dev
+gsl
+glast
+gwip
+gbb
+gunwip
+gaa
+gswd
+gbb
+gswm
+glog
+gback
+gclr
+gclear
+gist
+gbb
+gsw new
+gswd
+clear
+gbb
+gb -d new
+gbb
+gc!
+gbb
+gist
+gswm
+gswd
+gbb
+docs-gt
+..
+back
+cd ..
+l
+ll
+lll
+la
+ls
+alias
+ll
+clear
+ll
+pokemon
+cd pokemon
+ll
+cd docs-gt
+gbb
+gswd
+gbdt
+gbb
+a gbn
+alias gbn
+clear
+l
+clear
+ll
+gbb
+gtemp
+gbb
+glast
+gbb
+clear
+gbb
+gcreate feat
+gbb
+gsetup
+gsetup feat
+gbb
+gunset
+gbb
+gset
+gest feat
+gset feat
+gbb
+gunset
+gset dev
+gbb
+gset feat
+gbb
+gpsh -d origin feat
+gbb
+gbba
+gswd
+g branch -d feat
+gbb
+glog
+gbb
+gbdt
+gbb
+clear
+cd ..
+cd sandbox/
+gbb
+clear
+alias
+gist
+g
+help alias
+man alias
+clear
+gbb
+gbn feat
+gbb
+cd ..
+cd pokemon
+cd docs-gt/
+gbb
+alias srcnoob='source ~/Documents/git-aliases-for-noobs/.git_aliases && echo sourced noob things'
+srcnoob
+clear
+gdd
+glog
+gdd 600599b
+exit
+srcnoob
+alias
+alias srcnoob='source ~/Documents/git-aliases-for-noobs/.git_aliases && echo sourced noob things'
+alias
+srcnoob
+srcg
+thanksquegg
+clear
+alias
+clear
+gbb
+gsw dev
+git switch main
+gswd
+gbb
+gb -d feat
+gbb
+gdd
+glog
+glogg
+gdd 9130194
+glog
+gdd 9130194
+glog
+n shovel.md 
+nano shovel.md
+gdd
+gaa
+gds
+nano shovel.md
+gaa
+gds
+nano shovel.md
+gaa
+gds
+nano shovel.md
+gaa
+gds
+glog
+gcm "the shovely one"
+gl
+glog
+glogg
+glogp
+glog
+gtemp
+gbb
+glog
+clear
+glog
+gist
+gstat
+clear
+glogg
+clear
+glog
+git log
+git log --oneline
+zsh
+clr
+clear
+gbb
+glog
+gback
+glog
+glogd
+git log dev
+clear
+glogd
+gpll dev
+gm dev
+gclr
+gclear
+gm dev
+gbb
+glog
+gswd
+gclear
+clear
+glog
+gist
+nano sand.md 
+gcam "nice one"
+glog
+gswt
+glogd
+glog
+glog dev temp
+clear
+nano toy.md
+gcam "new toy feature"
+gaa
+gcam "new toy feature"
+glog
+glogd
+glogd temp
+clear
+gist
+clear
+glog
+gswm
+clear
+gbb
+glogt
+glogd
+glog dev temp
+glog temp dev
+gswt
+grename feat
+gbb
+clear
+glogt
+glog
+clear
+gswd
+gm feat
+glog
+cd box
+ll
+cd ..
+ll box
+l box
+clear
+gbb
+remove .git
+zsh
+clear
+glog
+rd box
+zsh
+clear
+clr
+clear
+alias
+srcnoob
+clear
+gstat
+git init
+glog
+alias srcnoob='source ~/Documents/git-aliases-for-noobs/.git_aliases && echo sourced noob things' && alias rmgit='rm -rf .git'
+alias rmgit
+rmgit
+glog
+clear
+git init
+rmgit
+glog
+git init
+rmgit
+clear
+git init
+rmgit
+slr
+clr
+clear
+glog
+clear
+alias srcnoob='source ~/Documents/git-aliases-for-noobs/.git_aliases && echo sourced noob things' && alias rmgit='rm -rf .git'
+srcnoob
+clear
+git init
+git add all
+git add --all
+grstr .
+gcm "initial commit"
+glog
+gcreate dev
+glog
+gbb
+clear
+zsh
+clear
+zsh
+alias srcn='source ~/.custom/.new_aliases'
+srcn
+srcn
+alias srcn='source ~/.custom/.new_aliases'
+srcn
+clear
+alias
+clear
+alias srcg='source ~/.custom/.new_aliases'
+srcg
+a srcg
+alias srcg
+alias
+srcg
+alias srcg='source ~/.custom/.new_aliases'
+srcg
+clear

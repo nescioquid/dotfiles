@@ -152,7 +152,7 @@ unbind M-Space all
 
 ## my keybinds
 bind ^C cancel all
-bind ^Q exit all
+# bind ^Q exit all
 bind ^W exit all
 bind ^X cut main
 bind ^C copy main
