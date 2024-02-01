@@ -18,7 +18,7 @@ set zap
 unset stateflags
 
 ## there are no colors by default, except for errorcolor and spotlightcolor
-# set errorcolor bold,white,red
+set errorcolor bold,red
 # set functioncolor green
 # set keycolor cyan
 # set numbercolor cyan

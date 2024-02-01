@@ -1,58 +1,3 @@
-npm -v
-sudo apt install nodejs
-node -v
-npm -v
-clear
-sudo apt install npm
-npm -v
-sudo apt update
-sudo apt install
-clear
-node -v
-npx -v
-clear
-eleventy -v
-eleventy --version
-clear
-npx @11ty/eleventy
-node -v
-sudo apt upgrade
-sudo apt install
-sudo apt upgrade node
-node -v
-nvm ls
-nvm -v
-sudo apt install nvm
-sudo apt install node -g
-sudo apt update upgrade -y
-clear
-sudo apt update
-sudo apt upgrade -y
-sudo apt update
-sudo apt upgrade
-node -v
-sudo apt install nvm
-npm -v
-nodejs -v
-sudo apt install nvm
-npm install nvm
-nvm -v
-sudo apt-get install -y nodejs
-curl --help
-clear
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-nvm -v
-command -v nvm
-nvm -v
-command -v nvm
-nvm install node
-node -v
-npm -v
-npx @11ty/eleventy --save-dev
-npm -v
-npm install -g npm@8.5.3
-npx @11ty/eleventy --save-dev
-npx @11ty/eleventy
 npm init -y
 npx @11ty/eleventy --save-dev
 eleventy -v
@@ -1997,4 +1942,59 @@ clr
 exit
 vscbash_aliases
 pushconfig 
+exit
+docs-gt
+gist
+l
+sandbox
+gist
+l
+clr
+what gwip
+bash_aliases
+l
+gbb
+gl
+n soft_sand.md
+less sand.md
+less more_sand.md
+gist
+gwip
+gl
+what gunwipall
+what gunwip
+clear
+gl
+gist
+gunwip
+gist
+gwip
+n black_sand.md
+gist
+gwip
+gist
+gll
+gcfg
+g config --global user.name nescioquid
+gcfg
+gl
+gll
+gunwip
+gwip
+gll
+gcfg
+gll expansion
+pokeemerald
+gll expansion
+gle
+last
+gl
+gback 2
+gl
+gclr
+gist
+what gclr
+what gclear
+git_aliases
+zsh_aliases
 exit

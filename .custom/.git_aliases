@@ -6,9 +6,7 @@ alias vscgit_aliases='code ~/.custom/.git_aliases'
 # ---
 
 # a faster way to get to the man pages for whatever git things you're learning about
-function ghelp() {
-  man git-"$1"
-}
+alias ghelp='ghelp() { man git-"$1"; };'
 
 # opens the README for oh-my-zsh's git plugin
 alias gomz='omzplugin git'
@@ -17,6 +15,7 @@ alias gomz='omzplugin git'
 
 alias gl='glog'
 alias gll='glogg'
+alias glp='glogp'
 alias gs='gsw'
 
 alias gld='glogd'
@@ -89,11 +88,11 @@ alias gist='git status --short --branch'
 # utilities
 
 # creates a new branch
-alias gcreate='git switch --create'
-alias gbn='git switch --create'
+alias gcreate='gsw --create'
+alias gbn='gsw --create'
 
 # switches to the last branch that you were on
-alias glast='git switch -'
+alias glast='gsw -'
 
 # clears out the working tree entirely, except for already staged (added) changes
 # assumes you're at the base directory of your repo
@@ -104,76 +103,46 @@ alias gclr='git restore . && git clean -df'
 # alias grclean='git remote -v update origin --prune'
 
 # basically uncommits one or more commits, leaving their changes in the working tree
-function gback() {
-  git reset HEAD~"$1"
-}
-
-# pretty sure gbuck is just g reset --hard
-function gbuck() {
-  git reset HEAD~"$1" && gclr
-}
+alias gback='gback() { git reset HEAD~"$1" }; gback'
 
 # diffs a given commit with the commit just before it
 # defaults to the commit where the HEAD is pointing
-function gdd() {
-  if [ $1 ]; then
-    git diff "$1"~1 "$1"
-  else
-    git diff HEAD~1 HEAD
-  fi
-}
-
-# fetches the last commits in which the specified label appears --Lunos
-function glunos() {
-  git log -n "$2" -S "$1"
-}
+alias gdd='gdd() { if [ $1 ]; then git diff "$1"~1 "$1"; else git diff HEAD~1 HEAD; fi }; gdd'
 
 # logs the branches that you use for development
-# alias glogd='glog $(git_develop_branch)'
-function glogd() {
-  if [ $1 ]; then
-    glog $(git_develop_branch)-"$1"
-  else
-    glog $(git_develop_branch)
-  fi
-}
+# defaults to the dev branch, pass in a string for any 'dev-[string]' branch
+alias glogd='glogd() { if [ $1 ]; then glog $(git_develop_branch)-"$1"; else glog $(git_develop_branch); fi }; glogd'
 
 # logs the main/master branch
 alias glogm='glog $(git_main_branch)'
 
 # logs a branch at origin
 # defaults to the the branch at origin associated with the current local branch
-function glogo() {
-  if [ $1 ]; then
-    glog origin/"$1"
-  else
-    glog origin/$(git_current_branch)
-  fi
-}
+alias glogo='glogo() { if [ $1 ]; then glog origin/"$1"; else glog origin/$(git_current_branch); fi }; glogo'
 
 # switches to the branches that you use for development
-# alias of function is used because I couldn't get it to work without doing so, but appears related to git, not oh-my-zsh :O
-alias gswd='function _gswd() { if [ $1 ]; then gsw $(git_develop_branch)-"$1"; else gsw $(git_develop_branch); fi }; _gswd'
-# function gswd() {
-#   if [ $1 ]; then
-#     gsw $(git_develop_branch)-"$1"
-#   else
-#     gsw $(git_develop_branch)
-#   fi
-# }
+# defaults to the dev branch, pass in a string for any 'dev-[string]' branch
+alias gswd='gswd() { if [ $1 ]; then gsw $(git_develop_branch)-"$1"; else gsw $(git_develop_branch); fi }; gswd'
+
+# ---
+
+# from others
+
+# fetches the last commits in which the specified label appears --Lunos
+alias glunos='glunos() { git log -n "$2" -S "$1"; }; glunos'
 
 # ---
 
 # manages associations between local and remote branches at origin
 
 # creates an upstream branch at origin associated with the current local branch
-alias gsetup='git push -v --set-upstream origin $(git_current_branch)'
+alias gsetup='gpsh -v --set-upstream origin $(git_current_branch)'
 
 # associates the current local branch with an already existing upstream branch at origin
-alias gset='git branch -vv --set-upstream-to=origin/$(git_current_branch)'
+alias gset='gb -vv --set-upstream-to=origin/$(git_current_branch)'
 
 # unsets the association between the current local branch and its upstream branch
-alias gunset='git branch -vv --unset-upstream && echo hey, it looks like you unset that upstream branch'
+alias gunset='gb -vv --unset-upstream && echo hey, it looks like you unset that upstream branch'
 
 # ---
 
@@ -181,50 +150,34 @@ alias gunset='git branch -vv --unset-upstream && echo hey, it looks like you uns
 # these features allow you to manage a branch 'temp' that you can use to store temporary changes to your code
 
 # creates a new branch 'temp'
-alias gbnt='git switch --create temp'
+alias gbnt='gsw --create temp'
 
 # deletes branch 'temp'
-alias gbdt='git branch -df temp'
+alias gbdt='gb -df temp'
 
 # logs branch 'temp'
 alias glogt='glog temp'
 
 # switches to branch 'temp'
-alias gswt='git switch temp'
+alias gswt='gsw temp'
 
 # automatically deletes any previous branch 'temp' and creates new a one
-function gtemp() {
-  if git rev-parse --quiet --verify temp; then
-    git branch -df temp
-    git switch --create temp
-    git switch -
-  else
-    git switch --create temp
-    git switch -
-  fi
-}
+alias gtemp='gtemp() { if git rev-parse --quiet --verify temp; then gb -df temp; gsw --create temp; gsw -; else gsw --create temp; gsw -; fi }; gtemp'
 
-# same as `gtemp`, but leaves you in the 'temp' branch
-function gtempt() {
-  if git rev-parse --quiet --verify temp; then
-    git branch -df temp
-    git switch --create temp
-  else
-    git switch --create temp
-  fi
-}
+# same as 'gtemp', but leaves you in the 'temp' branch
+alias gtempt='gtempt() { if git rev-parse --quiet --verify temp; then gb -df temp; gsw --create temp; else gsw --create temp; fi }; gtempt'
 
 # ---
 
 # safeguards
-alias gbd='echo hey! that command was intentionally blocked, use \`gb -d\` instead'
-alias gbD='echo hey! that command was intentionally blocked, use \`gb -df\` or \`gb -D\` instead'
-alias gbda='echo hey! that command was intentionally blocked, see git_aliases to unblock it'
-alias gbds='echo hey! that command was intentionally blocked, see git_aliases to unblock it'
-alias ggf='echo hey! that command was intentionally blocked, use \`git push --force origin $(current_branch\` instead)'
-alias gp='echo hey! that command was intentionally blocked, use \`gpsh\` instead'
-alias 'gpf!'='echo hey! that command was intentionally blocked, use \`git push --force\` instead'
-alias gpod='echo hey! that command was intentionally blocked, use \`gpsho -d\` instead'
+alias gbd='echo hey! that command is intentionally blocked, use \`git branch -d\` instead'
+alias gbD='echo hey! that command is intentionally blocked, use \`git branch -df\` or \`git branch -D\` instead'
+alias gbda='echo hey! that command is intentionally blocked, edit git aliases with \`git_aliases\` to unblock it'
+alias gbds='echo hey! that command is intentionally blocked, edit git aliases with \`git_aliases\` to unblock it'
+alias ggf='echo hey! that command is intentionally blocked, use \`git push --force origin $(current_branch\` instead)'
+alias gp='echo hey! that command is intentionally blocked, use \`git push\` instead'
+alias 'gpf!'='echo hey! that command is intentionally blocked, use \`git push --force\` instead'
+alias gpod='echo hey! that command is intentionally blocked, use \`git push origin -d\` instead'
 alias gpristine='echo hey! that command was intentionally blocked, use \`git reset --hard && git clean --force -dfx\` instead'
-alias grhh='echo hey! that command was intentionally blocked, use \`grst --hard\` instead'
-alias groh='echo hey! that command was intentionally blocked, use \`grst origin/$(git_current_branch) --hard\` instead'
+alias grhh='echo hey! that command is intentionally blocked, use \`git reset --hard\` instead'
+alias groh='echo hey! that command is intentionally blocked, use \`git reset origin/$(git_current_branch) --hard\` instead'

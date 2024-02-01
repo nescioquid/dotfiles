@@ -1,6 +1,6 @@
 [user]
-	name = drjw
-	email = danielrjaywagner@gmail.com
+	name = nescioquid
+	email = info@creachr.com
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
