@@ -5,7 +5,17 @@ alias vscgit_aliases='code ~/.custom/.git_aliases'
 
 # ---
 
-alias gist='gstat'
+# a faster way to get to the manual pages for whatever git things you're learning about
+# instead of running `man git-branch` for instance, now you can run `ghelp branch`
+function ghelp() {
+  man git-"$1"
+}
+
+# opens the README for oh-my-zsh's git plugin
+alias gomz='omzplugin git'
+
+# even shorter forms
+
 alias gl='glog'
 alias gll='gloog'
 alias glo='glogo'
@@ -21,29 +31,61 @@ alias gst='gswt'
 # ---
 
 # common commands
+
+# add
 alias ga='git add -v'
 alias gaa='git add -v --all'
+
+# branch
 alias gbb='git branch -vv'
 alias gbba='git branch -vv --all'
+
+# commit
 alias gcm='git commit -v --message'
 alias gcam='git commit -v --all --message'
-alias gcdr='git commit -v --dry-run'
 alias gcmdr='git commit -v --dry-run --message'
 alias gcamdr='git commit -v --dry-run --all --message'
-alias gm='git merge -v'
-alias gmne='git merge --no-edit'
+
+# config
+alias gcfg='git config --list --global'
+
+# log
+alias glog='git log --oneline --decorate --graph'
+alias glogg='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'\'' --stat'
+alias glogp='git log --stat --patch'
+
+# pull
 alias gpll='git pull -v'
 alias gplldr='git pull -v --dry-run'
+
+# push
 alias gpsh='git push -v'
-alias gpsho='git push -v origin'
 alias gpshdr='git push -v --dry-run'
+alias gpsho='git push -v origin'
+
+# rebase
+alias grb='git rebase'
+alias grba='git rebase --abort'
+
+# reflog
+alias grlog='git reflog'
+
+# remote
 alias gr='git remote -v'
+
+# reset
 alias grst='git reset'
+
+# restore
 alias grstr='git restore'
+
+# status
 alias gstat='git status --short --branch'
+alias gist='gstat'
+
+# ---
 
 # utilities
-alias gcfg='git config --list --global'
 alias gclr='git restore . && git clean -df'
 alias gbn='git switch --create' # as 'gswc' in zsh
 alias glast='git switch -'
@@ -57,6 +99,7 @@ function gback() {
   git reset HEAD~"$1"
 }
 
+# pretty sure gbuck is just g reset --hard
 function gbuck() {
   git reset HEAD~"$1" && gclr
 }
@@ -67,10 +110,6 @@ function gdd() {
   else
     git diff HEAD~1 HEAD
   fi
-}
-
-function ghelp() {
-  man git-"$1"
 }
 
 # logging
@@ -96,7 +135,6 @@ function glogo() {
   fi
 }
 
-# overrides oh-my-zsh alias 'gswd'
 # alias of function is used because I couldn't get it to work without doing so, but appears related to git, not oh-my-zsh :O
 alias gswd='function _gswd() { if [ $1 ]; then gsw $(git_develop_branch)-"$1"; else gsw $(git_develop_branch); fi }; _gswd'
 
@@ -108,40 +146,62 @@ alias gswd='function _gswd() { if [ $1 ]; then gsw $(git_develop_branch)-"$1"; e
 #   fi
 # }
 
-# creates and manages a temporary branch
-alias gbnt='gbn temp'
-alias gbdt='gb -df temp'
-alias glogt='glog temp'
-alias gswt='gsw temp'
-
-function gtemp() {
-  if git rev-parse --quiet --verify temp; then
-    gbdt && gbnt && glast
-  else
-    gbnt && glast
-  fi
-}
-
-function gtempt() {
-  if git rev-parse --quiet --verify temp; then
-    gbdt && gbnt
-  else
-    gbnt
-  fi
-}
-
 # fetches the last commits in which the specified label appears --Lunos
 function glunos() {
   git log -n "$2" -S "$1"
 }
 
+# ---
+
+## temporary branch functionality
+## these features allow you to manage a branch 'temp' that you can use to store temporary changes to your code,
+## like when testing out two versions of a feature, or when cherry-picking
+
+# creates a new branch 'temp'
+alias gbnt='git switch --create temp'
+
+# deletes branch 'temp'
+alias gbdt='git branch -df temp'
+
+# logs branch 'temp'
+alias glogt='glog temp'
+
+# switches to branch 'temp'
+alias gswt='git switch temp'
+
+# automatically deletes any previous branch 'temp' and creates new a one
+function gtemp() {
+  if git rev-parse --quiet --verify temp; then
+    git branch -df temp
+    git switch --create temp
+    git switch -
+  else
+    git switch --create temp
+    git switch -
+  fi
+}
+
+# same as `gtemp`, but leaves you in the 'temp' branch
+function gtempt() {
+  if git rev-parse --quiet --verify temp; then
+    git branch -df temp
+    git switch --create temp
+  else
+    git switch --create temp
+  fi
+}
+
+# ---
+
 # safeguards
-alias gbd='echo hey! that command was intentionally blocked, use a more verbose one like \"gb -d\" instead'
-alias gbD='echo hey! that command was intentionally blocked, use a more verbose one like \"gb -df or gb -D\" instead'
-alias ggf='echo hey! that command was intentionally blocked, use a more verbose one like \"git push --force origin $(current_branch\" instead)'
-alias gp='echo hey! that command was intentionally blocked, use a more verbose one like \"gpsh\" instead'
-alias gpod='echo hey! that command was intentionally blocked, use a more verbose one like \"gpo -d\" instead'
-alias gpristine='echo hey! that command was intentionally blocked, use more verbose ones like \"git reset --hard\" and \"git clean --force -dfx\" instead'
-alias grhh='echo hey! that command was intentionally blocked, use a more verbose one like \"git reset --hard\" instead'
-alias groh='echo hey! that command was intentionally blocked, use a more verbose one like \"git reset origin/$(git_current_branch) --hard\" instead'
-alias='gpf!'='echo hey! that command was intentionally blocked, use a more verbose one like \"git push --force\" instead'
+alias gbd='echo hey! that command was intentionally blocked, use \`gb -d\` instead'
+alias gbD='echo hey! that command was intentionally blocked, use \`gb -df\` or \`gb -D\` instead'
+alias gbda='echo hey! that command was intentionally blocked, see git_aliases to unblock it'
+alias gbds='echo hey! that command was intentionally blocked, see git_aliases to unblock it'
+alias ggf='echo hey! that command was intentionally blocked, use \`git push --force origin $(current_branch\` instead)'
+alias gp='echo hey! that command was intentionally blocked, use \`gpsh\` instead'
+alias 'gpf!'='echo hey! that command was intentionally blocked, use \`git push --force\` instead'
+alias gpod='echo hey! that command was intentionally blocked, use \`gpsho -d\` instead'
+alias gpristine='echo hey! that command was intentionally blocked, use \`git reset --hard && git clean --force -dfx\` instead'
+alias grhh='echo hey! that command was intentionally blocked, use \`grst --hard\` instead'
+alias groh='echo hey! that command was intentionally blocked, use \`grst origin/$(git_current_branch) --hard\` instead'

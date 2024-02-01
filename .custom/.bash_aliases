@@ -230,3 +230,13 @@ alias gwta='git worktree add'
 alias gwtls='git worktree list'
 alias gwtmv='git worktree move'
 alias gwtrm='git worktree remove'
+
+# oh-my-zsh's work in progress (wip) functionality
+# these features allow you to pause developing one branch and switch to another one ('Work in Progress', or 'wip').
+# when you want to go back to work, just 'unwip' it
+
+# commit wip branch
+alias gwip='function _gwip() { git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign --message "--wip-- [skip ci]"; }; _gwip'
+
+# uncommit wip branch
+alias gunwip='function _gunwip { git rev-list --max-count=1 --format="%s" HEAD | grep -q "\--wip--" && git reset HEAD~1; }; _gunwip'
