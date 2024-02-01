@@ -1,6 +1,3 @@
-gh auth login
-git --version
-node -v
 npm -v
 sudo apt install nodejs
 node -v
@@ -1997,4 +1994,7 @@ glog
 exit
 echo hi
 clr
+exit
+vscbash_aliases
+pushconfig 
 exit

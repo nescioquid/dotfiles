@@ -5,8 +5,7 @@ alias vscgit_aliases='code ~/.custom/.git_aliases'
 
 # ---
 
-# a faster way to get to the manual pages for whatever git things you're learning about
-# instead of running `man git-branch` for instance, now you can run `ghelp branch`
+# a faster way to get to the man pages for whatever git things you're learning about
 function ghelp() {
   man git-"$1"
 }
@@ -14,17 +13,19 @@ function ghelp() {
 # opens the README for oh-my-zsh's git plugin
 alias gomz='omzplugin git'
 
-# even shorter forms
+# short forms
 
 alias gl='glog'
-alias gll='gloog'
-alias glo='glogo'
+alias gll='glogg'
+alias gs='gsw'
+
 alias gld='glogd'
 alias glm='glogm'
+alias glo='glogo'
 alias glt='glogt'
-alias gs='gsw'
-alias gsd='gswd'
+
 alias gsl='glast'
+alias gsd='gswd'
 alias gsm='gswm'
 alias gst='gswt'
 
@@ -51,8 +52,8 @@ alias gcfg='git config --list --global'
 
 # log
 alias glog='git log --oneline --decorate --graph'
-alias glogg='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'\'' --stat'
-alias glogp='git log --stat --patch'
+alias glogg='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'\'' --stat' # 'glols' in zsh
+alias glogp='git log --stat --patch' # 'glgp' in zsh
 
 # pull
 alias gpll='git pull -v'
@@ -81,20 +82,28 @@ alias grstr='git restore'
 
 # status
 alias gstat='git status --short --branch'
-alias gist='gstat'
+alias gist='git status --short --branch'
 
 # ---
 
 # utilities
-alias gclr='git restore . && git clean -df'
-alias gbn='git switch --create' # as 'gswc' in zsh
+
+# creates a new branch
+alias gcreate='git switch --create'
+alias gbn='git switch --create'
+
+# switches to the last branch that you were on
 alias glast='git switch -'
-alias grclean='git remote -v update origin --prune'
 
-alias gsetup='git push -v --set-upstream origin $(git_current_branch)'
-alias gset='git branch -vv --set-upstream-to=origin/$(git_current_branch)'
-alias gunset='git branch -vv --unset-upstream && echo hey, it looks like you unset that upstream branch'
+# clears out the working tree entirely, except for already staged (added) changes
+# assumes you're at the base directory of your repo
+alias gclear='git restore . && git clean -df'
+alias gclr='git restore . && git clean -df'
 
+# cleans up any unused remote branches
+# alias grclean='git remote -v update origin --prune'
+
+# basically uncommits one or more commits, leaving their changes in the working tree
 function gback() {
   git reset HEAD~"$1"
 }
@@ -104,6 +113,8 @@ function gbuck() {
   git reset HEAD~"$1" && gclr
 }
 
+# diffs a given commit with the commit just before it
+# defaults to the commit where the HEAD is pointing
 function gdd() {
   if [ $1 ]; then
     git diff "$1"~1 "$1"
@@ -112,13 +123,13 @@ function gdd() {
   fi
 }
 
-# logging
-alias grlog='git reflog'
-# alias glogd='glog $(git_develop_branch)'
-alias glogm='glog $(git_main_branch)'
-alias glogp='git log --stat --patch' # as 'glgp' in zsh
-alias gloog='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'\'' --stat' # as 'glols' in zsh
+# fetches the last commits in which the specified label appears --Lunos
+function glunos() {
+  git log -n "$2" -S "$1"
+}
 
+# logs the branches that you use for development
+# alias glogd='glog $(git_develop_branch)'
 function glogd() {
   if [ $1 ]; then
     glog $(git_develop_branch)-"$1"
@@ -127,6 +138,11 @@ function glogd() {
   fi
 }
 
+# logs the main/master branch
+alias glogm='glog $(git_main_branch)'
+
+# logs a branch at origin
+# defaults to the the branch at origin associated with the current local branch
 function glogo() {
   if [ $1 ]; then
     glog origin/"$1"
@@ -135,9 +151,9 @@ function glogo() {
   fi
 }
 
+# switches to the branches that you use for development
 # alias of function is used because I couldn't get it to work without doing so, but appears related to git, not oh-my-zsh :O
 alias gswd='function _gswd() { if [ $1 ]; then gsw $(git_develop_branch)-"$1"; else gsw $(git_develop_branch); fi }; _gswd'
-
 # function gswd() {
 #   if [ $1 ]; then
 #     gsw $(git_develop_branch)-"$1"
@@ -146,16 +162,23 @@ alias gswd='function _gswd() { if [ $1 ]; then gsw $(git_develop_branch)-"$1"; e
 #   fi
 # }
 
-# fetches the last commits in which the specified label appears --Lunos
-function glunos() {
-  git log -n "$2" -S "$1"
-}
+# ---
+
+# manages associations between local and remote branches at origin
+
+# creates an upstream branch at origin associated with the current local branch
+alias gsetup='git push -v --set-upstream origin $(git_current_branch)'
+
+# associates the current local branch with an already existing upstream branch at origin
+alias gset='git branch -vv --set-upstream-to=origin/$(git_current_branch)'
+
+# unsets the association between the current local branch and its upstream branch
+alias gunset='git branch -vv --unset-upstream && echo hey, it looks like you unset that upstream branch'
 
 # ---
 
-## temporary branch functionality
-## these features allow you to manage a branch 'temp' that you can use to store temporary changes to your code,
-## like when testing out two versions of a feature, or when cherry-picking
+# temporary branch functionality
+# these features allow you to manage a branch 'temp' that you can use to store temporary changes to your code
 
 # creates a new branch 'temp'
 alias gbnt='git switch --create temp'
