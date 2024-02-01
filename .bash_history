@@ -1,37 +1,3 @@
-sudo apt update
-sudo apt upgrade
-sudo apt install os-prober
-sudo os-prober
-sudo update-grub
-sudo apt install grub
-sudo update-grub
-sudo os-prober
-sudo install-grub
-sudo update-grub
-ldr
-ls
-cd /boot/
-ls
-cd /loader
-cd boot/loader/loader.conf/
-sudo apt install grub-efi grub2-common grub-customizer
-sudo grub-install
-sudo cp /boot/grub/x86_64-efi/grub.efi /boot/efi/EFI/pop/grubx64.efi
-cd
-apt-get install git
-sudo apt-get install git
-git config --global user.name
-git config --global user.name "drjw"
-git config --global user.name
-git config --global user.email "danielrjaywagner@gmail.com"
-git config --global user.email
-sudo apt install gh
-curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/etc/apt/trusted.gpg.d/githubcli-archive-keyring.gpg
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/trusted.gpg.d/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
-sudo apt update
-sudo apt install gh
-sudo apt update
-sudo apt install gh
 gh auth login
 git --version
 node -v
@@ -1631,3 +1597,404 @@ srcg
 alias srcg='source ~/.custom/.new_aliases'
 srcg
 clear
+alias srcg='source ~/.custom/.new_aliases'
+srcg
+clear
+gswm
+gbn feat
+gtemp
+gbb
+gb -df feat
+gswd
+gbdt
+clear
+gbb
+gist
+gtemp
+gbb
+gb
+clear
+gb
+gist
+gstat
+clear
+gist
+gswd
+l
+nano sand.md
+gist
+ga sand.md
+grst sand.md 
+nano more_sand.md 
+glog
+clear
+gist
+ga sand.md 
+grst sand.md 
+git add sand.md
+git reset sand.md
+git add --all
+gist
+grst more_sand.md 
+clear
+gist
+gaa
+grst more_sand.md 
+grst sand.md 
+gcam "sandy features"
+glog
+gdd
+alias gdd
+gdd sand
+clear
+glog
+glogg
+clear
+zsh
+clear
+clr
+clear
+gl
+glog
+nano sand.md 
+clear
+glog
+clear
+gbb
+gbdt
+clear
+gl
+clear
+glog
+gwip
+gl
+glog
+glogd main
+gunwip
+clear
+g
+clear
+gaa
+gds
+glog
+gl
+glog
+gswm
+gb -df dev
+gl
+glog
+gbb
+gbba
+clear
+glog
+gds
+nano sand.md 
+gaa
+gcam "added sandy feature"
+glog
+gpsh
+zsh
+gl
+glog
+gtemp
+gl
+glog
+gback 3
+gback 2
+g reset HEAD
+gl
+glog
+g reset HEAD
+g reset --hard HEAD
+glog
+git reset --hard 81bcf08
+g reset 81bcf08
+glog
+git rebase -i HEAD~1
+rmgit
+glog
+git init
+gl
+glog
+initial commit
+gcm "initial commit"
+glog
+zsh
+gsetup main
+gset main
+gr
+gl
+gbb
+alias gsetup
+git push -vf --set-upstream origin
+git push -vf --set-upstream origin main
+gbb
+ga chest/
+grst
+l
+rename shell clam
+mv shell clam
+mv clam oyster
+ga oyster
+gcm "found a friend"
+gphs
+gpsh
+gglog
+glog
+gback
+grst
+gtemp
+grstr .
+glast
+gl
+glog
+clear
+glog
+glogo
+glogo main
+gbb
+glogo main
+alias glogo
+srcg
+glogo main
+zsh
+clear
+glgo main
+srcg
+glogo main
+clear
+glogo main
+ga sand.md 
+ga more_sand.md 
+gist
+gcm "started playing around"
+gpsh -f
+gbb
+glogo main
+gl
+ga oyster/
+gcm "found a friend"
+gpsh
+ga pail/
+gcm "began digging"
+gl
+glog
+gaa
+gcm "found buried treasure"
+gbb
+glog
+gpsh
+glog
+gbdt
+gc!
+gl
+glog
+glog main origin/main
+gpsh -f
+glog
+lgog
+glog
+gbb
+gbba
+clear
+gcreate dev
+glog
+alias n
+clear
+nano sand.md 
+gist
+gcam "adds cool new sandy feature"
+gpsh
+glog
+gtemp
+glog
+gback
+nano sand.md 
+gwip
+glog
+glogd
+glog dev temp
+git log dev temp
+git log --oneline dev temp
+git log --graph dev temp
+clear
+glog
+gunwip
+gds
+gaa
+gds
+gcam "adds cool new different sandy feature"
+glog
+gbm feat
+gbb
+gswd
+gsetup dev
+gbb
+gsw feat
+gback
+nano sand.md
+nano more_sand.md
+gaa
+gcam "adds cool new different sandy feature"
+gbb
+gswd
+gmne feat
+glog
+gswm
+gmne dev
+glog
+gpsh
+glog
+gb -df feat
+gbb
+glog
+gback
+glog
+gback
+glog
+gclr
+gist
+gclear
+gist
+gpsh -f
+gswd
+glog
+gback
+gclr
+glog
+rmgit
+glog
+clear
+git init
+ga README.md 
+gcm "initial commit"
+gsetup main -f
+alias gsetup
+git push -vf --set-upstream origin main
+zsh
+git push -vf --set-upstream origin main
+ga sand.md 
+gcm "started playing around"
+ga oyster/
+gcm "found a friend"
+ga pail/
+gcm "began digging"
+ga chest/
+gcm "discovered buried treasure"
+glog
+ga more_sand.md 
+nano more_sand.md 
+gaa
+gcm "adds cool new sandy feature"
+gdd
+gback
+glog
+gpsh
+glog
+gbb
+gbn dev
+glog
+gaa
+gcm "adds cool new sandy feature"
+gset
+gset dev
+gbba
+zsh
+clear
+glog
+gswm
+gmne dev
+glog
+gloggm
+glogg 
+gist
+gpsh
+glog
+gc!
+gpsh -f
+clear
+glog
+gswd
+grb main
+glog
+gpsh -f
+glog
+gtemp
+lgog
+glog
+gswm
+gback
+glog
+gpsh -f
+glog
+glogd
+gbdt
+gbba
+glog
+gswd
+glod
+glogd
+gclr
+gclear
+gswd
+gdd
+gbb
+gtemp
+nano sand.md 
+glog
+srcg
+alias srcg='source ~/.custom/.new_aliases'
+srcg
+glog
+gwip
+gunwip
+gaa
+gcm "woah 🪣"
+gswd
+gmne temp
+gpsh
+glog
+rmgit
+git init
+gist
+git add README.md 
+gcm "🎉 initial commit"
+glog
+zsh
+glog
+gc!
+glog
+gpsh -f
+gdd
+glogg
+glogp
+glog
+glogg
+gback
+rmgit
+git init
+zsh
+gist
+gcm "started playing around
+"
+glog
+gdd
+mv oyster seashell
+ga seashell/
+gcm "found a friend"
+gbb
+glog
+gpsh
+ga pail/
+gcm "began digging"
+ga chest/
+gcm "discovered buried treasure"
+gpsh
+gh browse
+gbn dev
+zsh
+glog
+exit
+echo hi
+clr
+exit

@@ -1,15 +1,18 @@
-## NEW_ALIASES
+# NEW_ALIASES
 
 alias new_aliases='${EDITOR} ~/.custom/.new_aliases'
 alias vscnew_aliases='code ~/.custom/.new_aliases'
 
-## ---
+# ---
 
+# astro things
 alias astro='npm run astro'
 alias astrohelp='astro -- --help'
 
-alias rmgit='rm -rf .git'
+# beginner-friendly git aliases things
+# alias rmgit='rm -rf .git'
 
-source ~/Documents/git-aliases-for-noobs/.git_aliases && echo hey, you sourced .git_aliases, yay!
+# source ~/Documents/git-aliases-for-noobs/.git_aliases && echo hey, you sourced .git_aliases, yay!
 
-alias srcg='source ~/.custom/.new_aliases'
+# copypaste this one
+# alias srcg='source ~/.custom/.new_aliases'
