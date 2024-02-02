@@ -136,13 +136,13 @@ alias glunos='glunos() { git log -n "$2" -S "$1"; }; glunos'
 # manages associations between local and remote branches at origin
 
 # creates an upstream branch at origin associated with the current local branch
-alias gsetup='gpsh -v --set-upstream origin $(git_current_branch)'
+alias gsetup='gpsh --set-upstream origin $(git_current_branch)'
 
 # associates the current local branch with an already existing upstream branch at origin
-alias gset='gb -vv --set-upstream-to=origin/$(git_current_branch)'
+alias gset='gb --set-upstream-to=origin/$(git_current_branch)'
 
 # unsets the association between the current local branch and its upstream branch
-alias gunset='gb -vv --unset-upstream && echo hey, it looks like you unset that upstream branch'
+alias gunset='gb --unset-upstream && echo hey, it looks like you unset that upstream branch'
 
 # ---
 

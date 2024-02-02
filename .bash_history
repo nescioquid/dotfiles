@@ -1,6 +1,3 @@
-npm init -y
-npx @11ty/eleventy --save-dev
-eleventy -v
 npx @11ty/eleventy -v
 clear
 npm init -y
@@ -1997,4 +1994,7 @@ what gclr
 what gclear
 git_aliases
 zsh_aliases
+exit
+bash_aliases
+vscbash_aliases
 exit

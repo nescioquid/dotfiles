@@ -19,13 +19,17 @@ source ~/.custom/.sh-config_aliases
 alias a='alias'
 alias an='alias'
 
-# nano
-alias nanorc='${EDITOR} ~/.nanorc'
-alias vscnanorc='code ~/.nanorc'
-alias n='nano'
+# short forms
 
-# vscode
-alias vsc='code'
+alias md='makedirectory'
+alias mf='makefile'
+alias lt='ltossed'
+alias rd='removedirectory'
+alias rf='removefile'
+alias s='search'
+alias saw='sauu'
+
+# ---
 
 # locations
 alias home='cd ~'
@@ -35,133 +39,64 @@ alias sandbox='cd ~/repos/sandbox'
 alias tossed='cd ~/.local/share/Trash/files/tossed/'
 alias trash='cd ~/.local/share/Trash/files/'
 
-# 'apt' overwritten for copypaste reasons
-alias apt='sudo apt'
+# nano
+alias nanorc='${EDITOR} ~/.nanorc'
+alias vscnanorc='code ~/.nanorc'
+alias n='nano'
+
+# vscode
+alias vsc='code'
+
+# apt
+alias apt='sudo apt' # 'apt' overwritten for copypaste reasons
 alias apti='sudo apt install'
 alias sauu='sudo apt update && sudo apt upgrade -y'
-alias saw='sauu'
 
-# easier/more English-like commands
+# simple things
 alias back='cd ..'
 alias clr='clear'
-alias count='find . -type f | wc -l'
-alias f='find . -iname'
 alias help='man'
 alias here='pwd'
 alias last='cd -'
 alias o='open'
 alias to='cd'
+
+# english-like commands
+alias count='find . -type f | wc -l'
+alias f='find . -iname'
 alias search='grep -ir'
-alias s='grep -ir'
-
-function copy() {
-  cp -irv "$1" "$2"
-  echo hey, you copied that \""$1"\" thing to \""$2"\" using the \*cp\* command!
-}
-
-function move() {
-  mv -iv "$1" "$2"
-  echo hey, you moved that \""$1"\" thing to \""$2"\" using the \*mv\* command!
-}
-
-function rename() {
-  mv -iv "$1" "$2"
-  echo hey, you renamed that \""$1"\" thing to \""$2"\" using the \*mv\* command!
-}
-
-# create and remove files and directories
-alias md='makedirectory'
-alias mf='makefile'
-alias rd='removedirectory'
-alias rf='removefile'
-
-function makedirectory() {
-  mkdir -pv "$1"
-  echo hey, you just made that \""$1"\" directory using the \*mkdir\* command. yay!
-}
-
-function makefile() {
-  touch "$1"
-  echo hey, you just made that \""$1"\" file using the \*touch\* command. yay!
-}
-
-function removedirectory() {
-  rm -Ivr "$1"
-  echo hey, you just removed that \""$1"\" directory using the \*rm\* command, NOT rmdir!
-}
-
-function removefile() {
-  rm -Iv "$1"
-  echo hey, you just removed that \""$1"\" file using the \*rm\* command!
-}
+alias copy='copy() { cp -irv "$1" "$2"; echo hey, you copied that \""$1"\" thing to \""$2"\" using the \*cp\* command!; }; copy'
+alias move='move() { mv -iv "$1" "$2"; echo hey, you moved that \""$1"\" thing to \""$2"\" using the \*mv\* command!; }; move'
+alias makedirectory='makedirectory() { mkdir -pv "$1"; echo hey, you just made that \""$1"\" directory using the \*mkdir\* command. yay!; }; makedirectory'
+alias makefile='makefile() { touch "$1"; echo hey, you just made that \""$1"\" file using the \*touch\* command. yay!; }; makefile'
+alias removedirectory='removedirectory() { rm -Ivr "$1"; echo hey, you just removed that \""$1"\" directory using the \*rm\* command, NOT rmdir!; }; removedirectory'
+alias removefile='removefile() { rm -Iv "$1"; echo hey, you just removed that \""$1"\" file using the \*rm\* command!; }; removefile'
+alias rename='rename() { mv -iv "$1" "$2"; echo hey, you renamed that \""$1"\" thing to \""$2"\" using the \*mv\* command!; } rename'
 
 # ls
-alias l='l' 
-alias ll='ll' 
-alias lll='lll' 
-alias llll='llll' 
-alias ldot='ls -ld .*' 
+alias l='ls -1A --group-directories-first && echo --- && echo \(listed with directories first\)'
+alias ll='ls -lAht && echo --- && echo \(listed by last modified\)'
+alias lll='ls -lAh --group-directories-first && echo --- && echo \(listed with directories first\)'
+alias llll='ls -lahF && echo --- && echo \(listed alphabetically\);'
+alias ldot='ls -ld .*'
 alias lsize='ls -1AhsS'
-alias lt='ltossed'
+alias ltossed='la --group-directories-first ~/.local/share/Trash/files/tossed/ && echo --- && echo \(listed with directories first\)'
+alias ltrash='la --group-directories-first ~/.local/share/Trash/files/ && echo --- && echo \(listed with directories first\)'
 
-function l() {
-  ls -1A --group-directories-first
-  echo ---
-  echo \(listed with directories first\)
-}
-
-function ll() {
-  la -t
-  echo ---
-  echo \(listed by last modified\)
-}
-
-function lll() {
-  la --group-directories-first
-  echo ---
-  echo \(listed with directories first\)
-}
-
-function llll() {
-  lsa -F
-  echo ---
-  echo \(listed alphabetically\)
-}
-
-function look() {
-  ls -1A --group-directories-first "$1"
-  echo ---
-  echo \(listed with directories first\)
-}
-
-function ltossed() {
-  la --group-directories-first ~/.local/share/Trash/files/tossed/
-  echo ---
-  echo \(listed with directories first\)
-}
-
-function ltrash() {
-  la --group-directories-first ~/.local/share/Trash/files/
-  echo ---
-  echo \(listed with directories first\)
-}
+alias look='look() { ls -1A --group-directories-first "$1"; echo ---; echo \(listed with directories first\); }; look'
 
 # toss things into the trash instead of hard deleting them
-function toss() {
-  md ~/.local/share/Trash/files/tossed/ &&
-  mv -ivt ~/.local/share/Trash/files/tossed/ "$1" &&
-  echo hey, you just tossed that \""$1"\" thing in the trash using the \*mv\* command. so stinky!
-}
+alias toss='toss() { md ~/.local/share/Trash/files/tossed/; mv -ivt ~/.local/share/Trash/files/tossed/ "$1"; echo hey, you just tossed that \""$1"\" thing in the trash using the \*mv\* command. so stinky!; }; toss'
+
+# copies a ''.local_aliases' template to the correct location
+alias localizeit='cp -irv ~/.custom/.local_aliases ~/.local/.local_aliases'
+
+# ---
+
+# from others
 
 # see the top fifty commands you run most
-function topcommands() {
-  history | awk '{cmd[$2]++} END {for(elem in cmd) {print cmd[elem] " " elem}}' | sort -n -r | head -50
-}
-
-# copies a .local_aliases template to the correct location
-function localizeit() {
-  cp -irv ~/.custom/.local_aliases ~/.local/.local_aliases
-}
+alias topcommands='topcommands() { history | awk '\''{cmd[$2]++} END {for(elem in cmd) {print cmd[elem] " " elem}}'\'' | sort -n -r | head -50; }; topcommands'
 
 # ---
 

@@ -52,26 +52,9 @@ alias gswdb='gsw debug'
 alias gswe='gsw expansion'
 # alias gswgt='gsw gt'
 
-function gloggt() {
-  if [ $1 ]; then
-    glog gt-"$1"
-  else
-    glog gt
-  fi
-}
+alias gloggt='gloggt() { if [ $1 ]; then glog gt-"$1"; else glog gt; fi }; gloggt'
 
-# alias of function is used because I couldn't get it to work without doing so :O
-alias gswgt='function _gswgt() { if [ $1 ]; then gsw gt-"$1"; else gsw gt; fi }; _gswgt'
-
-# function gswgt() {
-#   if [ $1 ]; then
-#     gsw gt-"$1"
-#   else
-#     gsw gt
-#   fi
-# }
+alias gswgt='gswgt() { if [ $1 ]; then gsw gt-"$1"; else gsw gt; fi }; gswgt'
 
 # copies the gba file to a file for versioned roms
-function copygt() {
-  copy ~/repos/pokemon/pokeemerald/pokeemerald.gba ~/Documents/green-thing-roms/green-thing-v"$1".gba
-}
+alias pubgt='pubgt() { copy ~/repos/pokemon/pokeemerald/pokeemerald.gba ~/Documents/green-thing-roms/green-thing-v"$1".gba; }; pubgt'

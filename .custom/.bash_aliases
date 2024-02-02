@@ -11,35 +11,40 @@ alias src='source ~/.bashrc && echo hey, you sourced .bashrc, yay!'
 
 alias what='alias'
 
-# utilities
-alias ..l='.. && l'
+# short forms
+
 alias cl='cdl'
 alias mcd='mdcd'
 
-function cdl() {
-  cd "$1"
-  l
-}
+# ---
 
-function mdcd() {
-  makedirectory "$1"
-  cd "$1"
-}
+# utilities
 
-# oh-my-zsh cd .. aliases
+alias ..l='.. && l'
+alias cdl='cdl() { cd "$1"; l; }; cdl'
+alias mdcd='mdcd() { makedirectory "$1"; cd "$1"; }; mdcd'
+
+# ---
+
+# oh-my-zsh
+
+# cd .. aliases
+
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 
-# oh-my-zsh ls aliases
+# ls aliases
+
 alias l='ls -lah'
 alias ll='ls -lh'
 alias la='ls -lAh'
 alias lsa='ls -lah'
 
-# oh-my-zsh vscode aliases
+# vscode aliases
+
 alias vsc='code .'
 alias vsca='code --add'
 alias vscd='code --diff'
@@ -55,7 +60,8 @@ alias vscue='code --uninstall-extension'
 alias vscv='code --verbose'
 alias vscw='code --wait'
 
-# oh-my-zsh git aliases
+# git aliases
+
 alias g='git'
 alias ga='git add'
 alias gaa='git add --all'
@@ -231,12 +237,12 @@ alias gwtls='git worktree list'
 alias gwtmv='git worktree move'
 alias gwtrm='git worktree remove'
 
-# oh-my-zsh's work in progress (wip) functionality
+# work in progress (wip) functionality
 # these features allow you to pause developing one branch and switch to another one ('Work in Progress', or 'wip').
 # when you want to go back to work, just 'unwip' it
 
 # commit wip branch
-alias gwip='function _gwip() { git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign --message "--wip-- [skip ci]"; }; _gwip'
+alias gwip='gwip() { git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign --message "--wip-- [skip ci]"; }; gwip'
 
 # uncommit wip branch
-alias gunwip='function _gunwip { git rev-list --max-count=1 --format="%s" HEAD | grep -q "\--wip--" && git reset HEAD~1; }; _gunwip'
+alias gunwip='gunwip { git rev-list --max-count=1 --format="%s" HEAD | grep -q "\--wip--" && git reset HEAD~1; }; gunwip'

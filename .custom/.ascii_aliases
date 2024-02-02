@@ -7,8 +7,10 @@ alias vscascii_aliases='code ~/.custom/.ascii_aliases'
 
 alias ydtt='_ascii_youdidthething'
 alias noworry='_ascii_dontworryaboutit'
+
 alias plsstopthx='_ascii_pleasestop && echo "" && _ascii_thanks'
 alias plshelp='_ascii_please && echo "" && _ascii_sendhelp'
+
 alias nolooky='_ascii_pleasestop && echo "" && _ascii_lookingovermyshoulderatmyscreen && echo "" && _ascii_thanks'
 alias noasky='_ascii_pleasestop && echo "" && _ascii_askingsomanyquestions && echo "" && _ascii_thanks'
 
