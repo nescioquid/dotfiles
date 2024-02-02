@@ -1,18 +1,10 @@
 # POKEMON_ALIASES
 
-alias pokemon_aliases='${EDITOR} ~/.custom/.pokemon_aliases'
-alias vscpokemon_aliases='code ~/.custom/.pokemon_aliases'
-
-alias pokemon='cd ~/repos/pokemon/'
-# alias vscpokemon='code -n ~/repos/pokemon/'
-
 alias pokeemerald='cd ~/repos/pokemon/pokeemerald/'
 alias vscpokeemerald='code -n ~/repos/pokemon/pokeemerald/'
 
 alias docs-gt='cd ~/repos/pokemon/docs-gt/'
 alias vscdocs-gt='code -n ~/repos/pokemon/docs-gt/'
-
-# ---
 
 # short forms
 

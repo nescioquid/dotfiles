@@ -1,13 +1,6 @@
 # BASH_ALIASES
 
-alias bash_aliases='${EDITOR} ~/.custom/.bash_aliases'
-alias vscbash_aliases='code ~/.custom/.bash_aliases'
-
-alias bashrc='${EDITOR} ~/.bashrc'
-alias vscbashrc='code ~/.bashrc'
 alias src='source ~/.bashrc && echo hey, you sourced .bashrc, yay!'
-
-# ---
 
 alias what='alias'
 

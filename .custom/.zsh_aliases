@@ -1,13 +1,6 @@
 # ZSH_ALIASES
 
-alias zsh_aliases='${EDITOR} ~/.custom/.zsh_aliases'
-alias vsczsh_aliases='code ~/.custom/.zsh_aliases'
-
-alias zshrc='${EDITOR} ~/.zshrc'
-alias vsczshrc='code ~/.zshrc'
 alias src='source ~/.zshrc && echo hey, you sourced .zshrc, yay!'
-
-# ---
 
 alias what='als'
 

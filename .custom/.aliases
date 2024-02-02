@@ -1,20 +1,36 @@
 # ALIASES
 
-alias aliases='${EDITOR} ~/.custom/.aliases'
-alias vscaliases='code ~/.custom/.aliases'
-
-alias custom='cd ~/.custom/'
-alias vsccustom='code -n ~/.custom/'
-
 # uncomment the domain-specific aliases you want to use
-source ~/.custom/.ascii_aliases
+# source ~/.custom/.ascii_aliases
 source ~/.custom/.git_aliases
 source ~/.custom/.pokemon_aliases
 source ~/.custom/.pop-os_aliases
 source ~/.custom/.sh-config_aliases
 # source ~/.custom/.windows_aliases
 
-# ---
+# opens up alias files in the terminal editor
+alias aliases='aliases() { if [ $1 ]; then ${EDITOR} ~/.custom/."$1"_aliases; else ${EDITOR} ~/.custom/.aliases; fi }; aliases'
+
+# opens up alias files in vscode
+alias vscaliases='vscaliases() { if [ $1 ]; then code ~/.custom/."$1"_aliases; else code ~/.custom/.aliases; fi }; vscaliases'
+
+# opens up run command files in the terminal editor
+alias rc='rc() { ${EDITOR} ~/."$1"rc; }; rc'
+
+# opens up run command files in vscode
+alias vscrc='vscrc() { code ~/."$1"rc; }; vscrc'
+
+# brings you to a repo
+alias torepo='torepo() {if [ $1 ]; then cd ~/repos/"$1"; else cd ~/repos; fi }; torepo'
+
+# opens up a repo in vscode
+alias vscrepo='vscrepo() { code -n ~/repos/"$1"/ }; vscrepo'
+
+# brings you to the 'custom' directory
+alias custom='cd ~/.custom/'
+
+# opens up the 'custom' directory
+alias vsccustom='code -n ~/.custom/'
 
 alias a='alias'
 alias an='alias'

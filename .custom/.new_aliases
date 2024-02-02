@@ -1,10 +1,5 @@
 # NEW_ALIASES
 
-alias new_aliases='${EDITOR} ~/.custom/.new_aliases'
-alias vscnew_aliases='code ~/.custom/.new_aliases'
-
-# ---
-
 # astro things
 alias astro='npm run astro'
 alias astrohelp='astro -- --help'

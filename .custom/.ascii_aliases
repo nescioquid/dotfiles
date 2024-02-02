@@ -1,10 +1,5 @@
 # ASCII_ALIASES
 
-alias ascii_aliases='${EDITOR} ~/.custom/.ascii_aliases'
-alias vscascii_aliases='code ~/.custom/.ascii_aliases'
-
-# ---
-
 alias ydtt='_ascii_youdidthething'
 alias noworry='_ascii_dontworryaboutit'
 

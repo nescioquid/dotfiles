@@ -1,10 +1,5 @@
 # GIT_ALIASES
 
-alias git_aliases='${EDITOR} ~/.custom/.git_aliases'
-alias vscgit_aliases='code ~/.custom/.git_aliases'
-
-# ---
-
 # a faster way to get to the man pages for whatever git things you're learning about
 alias ghelp='ghelp() { man git-"$1"; };'
 

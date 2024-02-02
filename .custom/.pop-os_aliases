@@ -1,10 +1,5 @@
 # POP-OS_ALIASES
 
-alias pop-os_aliases='${EDITOR} ~/.custom/.pop-os_aliases'
-alias vscpop-os_aliases='code ~/.custom/.pop-os_aliases'
-
-# ---
-
 alias desktop='cd ~/Desktop'
 alias documents='cd ~/Documents'
 alias downloads='cd ~/Downloads'

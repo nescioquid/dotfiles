@@ -1,21 +1,8 @@
 # WINDOWS_ALIASES
 
-alias windows_aliases='${EDITOR} ~/.custom/.windows_aliases'
-alias vscwindows_aliases='code ~/.custom/.windows_aliases'
-
-# ---
-
-function desktop() {
-  cd /mnt/c/Users/"$1"/Desktop/
-}
-
-function documents() {
-  cd /mnt/c/Users/"$1"/Documents/
-}
-
-function downloads() {
-  cd /mnt/c/Users/"$1"/Downloads/
-}
+alias desktop='desktop() { cd /mnt/c/Users/"$1"/Desktop/ }; desktop'
+alias documents='documents() { cd /mnt/c/Users/"$1"/Documents/; }; documents'
+alias downloads='downloads() { cd /mnt/c/Users/"$1"/Downloads/; }; downloads'
 
 # opens up a file explorer at the current directory
 alias explore='explorer.exe .'
@@ -24,24 +11,14 @@ alias windows='cd /mnt/c/Users/'
 
 alias np='notepad.exe'
 
-function lw() {
-  ls -1 --group-directories-first
-  echo ---
-  echo \(listed with directories first\)
-}
+alias lw='ls -1 --group-directories-first && echo --- && echo \(listed with directories first\)'
 
 # moves tossed folder to the windows desktop
-function tosstodesktop() {
-  mv -ivt /mnt/c/Users/"$1"/Desktop/ ~/.local/share/Trash/files/tossed/
-  echo hey, you just moved the "tossed" directory to the windows desktop using the \*mv\* command. nice!
-}
+alias tosstodesktop='tosstodesktop() { mv -ivt /mnt/c/Users/"$1"/Desktop/ ~/.local/share/Trash/files/tossed/; echo hey, you just moved the "tossed" directory to the windows desktop using the \*mv\* command. nice!; }; tosstodesktop'
 
-# removes all empty directories recursively in a given directory
-# first function written by chatgpt!
-function remove_empty_directories() {
-    find "$1" -type d -empty -delete
-    echo done
-}
+# ---
+
+# function stuff
 
 # from chatgpt:
 # >> can be used to In Bash, the >> operator is used for redirecting the output of a command or a series of commands to a file, and it appends the output to the end of the file without overwriting its existing content. Here's a simple example:
@@ -49,6 +26,13 @@ function remove_empty_directories() {
 # This command appends the string "Hello, World!" to the file named output.txt. If output.txt already exists, the new content will be added to the end of the file. In contrast, the > operator is used for redirecting output to a file but it will overwrite the file if it already exists. If the file doesn't exist, it will be created.
 # echo "Hello, World!" > output.txt
 # This command would create a new file named output.txt or overwrite its content if it already exists. So, >> is specifically for appending output to a file in Bash.
+
+# removes all empty directories recursively in a given directory
+# first function written by chatgpt!
+function remove_empty_directories() {
+    find "$1" -type d -empty -delete
+    echo done
+}
 
 # rename_directory_and_write_name "/path/to/directory" "new/path/name"
 function rename_directory_and_write_name() {
