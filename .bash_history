@@ -1,17 +1,3 @@
-npx @11ty/eleventy -v
-clear
-npm init -y
-npx @11ty/eleventy --save-dev
-npx @11ty/eleventy
-clear
-npm start
-clear
-npm start
-repoman
-clear
-npm start
-clear
-npm start
 clear
 npm --help
 npm install -h
@@ -1998,3 +1984,17 @@ exit
 bash_aliases
 vscbash_aliases
 exit
+aliases vsc pokemon
+aliases code pokemon
+aliases code git
+vscal git
+src
+vscal git
+src
+vscal git
+repo creachr-astro
+exit
+home
+repo sandbox
+src
+repo sandbox

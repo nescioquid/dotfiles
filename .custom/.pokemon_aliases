@@ -1,11 +1,5 @@
 # POKEMON_ALIASES
 
-alias pokeemerald='cd ~/repos/pokemon/pokeemerald/'
-alias vscpokeemerald='code -n ~/repos/pokemon/pokeemerald/'
-
-alias docs-gt='cd ~/repos/pokemon/docs-gt/'
-alias vscdocs-gt='code -n ~/repos/pokemon/docs-gt/'
-
 # short forms
 
 alias gldb='glogdb'
@@ -26,11 +20,12 @@ alias vscpokenotes='code ~/repos/pokemon/notes/notes.md'
 # manages the save file
 alias tossit='toss pokeemerald.sav'
 alias takeit='move pokeemerald.sav ~/repos/pokemon/last-save/'
-alias giveit='move ../last-save/pokeemerald.sav ~/repos/pokemon/pokeemerald/'
+alias giveit='move ~/repos/pokemon/last-save/pokeemerald.sav ~/repos/pokeemerald/'
 alias hasit='f pokeemerald.sav'
 alias copyit='copy pokeemerald.sav ~/repos/pokemon/last-save/'
 
-# 'make' is overridden for speed reasons; the command to find the j# is 'nproc'
+# 'make' is overridden for speed reasons
+# the command to find the j# is 'nproc'
 alias make='make -j'
 alias maake='make -j$(nproc)'
 alias makke='make clean && make -j'
@@ -44,9 +39,13 @@ alias gswdb='gsw debug'
 alias gswe='gsw expansion'
 # alias gswgt='gsw gt'
 
+# logs the green-thing branches
+# defaults to the 'gt' branch, pass in a string for any 'gt-[string]' branch
 alias gloggt='gloggt() { if [ $1 ]; then glog gt-"$1"; else glog gt; fi }; gloggt'
 
+# switches to the green-thing branches
+# defaults to the 'gt' branch, pass in a string for any 'gt-[string]' branch
 alias gswgt='gswgt() { if [ $1 ]; then gsw gt-"$1"; else gsw gt; fi }; gswgt'
 
 # copies the gba file to a file for versioned roms
-alias pubgt='pubgt() { copy ~/repos/pokemon/pokeemerald/pokeemerald.gba ~/Documents/green-thing-roms/green-thing-v"$1".gba; }; pubgt'
+alias pubgt='pubgt() { copy ~/repos/pokeemerald/pokeemerald.gba ~/Documents/green-thing-roms/green-thing-v"$1".gba; }; pubgt'

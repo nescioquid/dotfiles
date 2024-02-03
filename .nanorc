@@ -11,11 +11,13 @@ set nohelp
 # set positionlog
 set smarthome
 set softwrap
-set tabstospaces
-set tabsize 2
 set wordchars "<_>."
 set zap
 unset stateflags
+
+## comment out or edit the lines below to contribute to the holy wars
+set tabstospaces
+set tabsize 2
 
 ## there are no colors by default, except for errorcolor and spotlightcolor
 set errorcolor bold,red

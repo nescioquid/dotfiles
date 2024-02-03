@@ -21,7 +21,7 @@ alias rc='rc() { ${EDITOR} ~/."$1"rc; }; rc'
 alias vscrc='vscrc() { code ~/."$1"rc; }; vscrc'
 
 # brings you to a repo
-alias torepo='torepo() {if [ $1 ]; then cd ~/repos/"$1"; else cd ~/repos; fi }; torepo'
+alias repos='repos() { if [ $1 ]; then cd ~/repos/"$1"; else cd ~/repos; fi }; repos'
 
 # opens up a repo in vscode
 alias vscrepo='vscrepo() { code -n ~/repos/"$1"/ }; vscrepo'
@@ -37,30 +37,27 @@ alias an='alias'
 
 # short forms
 
+alias al='aliases'
+alias vscal='vscaliases'
+alias repo='repos'
+alias saw='sauu'
+alias s='search'
 alias md='makedirectory'
 alias mf='makefile'
-alias lt='ltossed'
 alias rd='removedirectory'
 alias rf='removefile'
-alias s='search'
-alias saw='sauu'
+alias lt='ltossed'
 
 # ---
 
 # locations
 alias home='cd ~'
 alias root='cd /'
-alias repos='cd ~/repos'
-alias sandbox='cd ~/repos/sandbox'
 alias tossed='cd ~/.local/share/Trash/files/tossed/'
 alias trash='cd ~/.local/share/Trash/files/'
 
-# nano
-alias nanorc='${EDITOR} ~/.nanorc'
-alias vscnanorc='code ~/.nanorc'
+# editors
 alias n='nano'
-
-# vscode
 alias vsc='code'
 
 # apt
