@@ -21,7 +21,7 @@ alias mdcd='mdcd() { makedirectory "$1"; cd "$1"; }; mdcd'
 
 # oh-my-zsh
 
-# cd .. aliases
+# cd ..
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -29,14 +29,14 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 
-# ls aliases
+# ls
 
 alias l='ls -lah'
 alias ll='ls -lh'
 alias la='ls -lAh'
 alias lsa='ls -lah'
 
-# vscode aliases
+# vscode
 
 alias vsc='code .'
 alias vsca='code --add'
@@ -53,7 +53,7 @@ alias vscue='code --uninstall-extension'
 alias vscv='code --verbose'
 alias vscw='code --wait'
 
-# git aliases
+# git
 
 alias g='git'
 alias ga='git add'
