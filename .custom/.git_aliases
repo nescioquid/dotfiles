@@ -105,6 +105,13 @@ alias gclr='git restore . && git clean -df'
 # basically uncommits one or more commits, leaving their changes in the working tree
 alias gback='gback() { git reset HEAD~"$1" }; gback'
 
+# same as 'gback' but removes all changes from the working tree
+alias gbuck='gbuck() { git reset --hard HEAD~"$1" }; gbuck'
+
+# function gbuck() {
+#   git reset HEAD~"$1" && gclr
+# }
+
 # diffs a given commit with the commit just before it
 # defaults to the commit where the HEAD is pointing
 alias gdd='gdd() { if [ $1 ]; then git diff "$1"~1 "$1"; else git diff HEAD~1 HEAD; fi }; gdd'
