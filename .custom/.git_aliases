@@ -1,7 +1,7 @@
 # GIT_ALIASES
 
 # a faster way to get to the man pages for whatever git things you're learning about
-alias ghelp='ghelp() { man git-"$1"; };'
+alias ghelp='ghelp() { man git-"$1"; }; ghelp'
 
 # opens the README for oh-my-zsh's git plugin
 alias gomz='omzplugin git'
@@ -10,6 +10,7 @@ alias gomz='omzplugin git'
 
 alias gl='glog'
 alias gll='glogg'
+alias gla='gloga'
 alias glp='glogp'
 alias gs='gsw'
 
@@ -48,6 +49,10 @@ alias gcfg='git config --list --global'
 alias glog='git log --oneline --decorate --graph'
 alias glogg='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'\'' --stat' # 'glols' in zsh
 alias glogp='git log --stat --patch' # 'glgp' in zsh
+
+# merge
+alias gm='git merge -v'
+alias gmne='git merge --no-edit'
 
 # pull
 alias gpll='git pull -v'

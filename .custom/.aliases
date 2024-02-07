@@ -84,7 +84,7 @@ alias makedirectory='makedirectory() { mkdir -pv "$1"; echo hey, you just made t
 alias makefile='makefile() { touch "$1"; echo hey, you just made that \""$1"\" file using the \*touch\* command. yay!; }; makefile'
 alias removedirectory='removedirectory() { rm -Ivr "$1"; echo hey, you just removed that \""$1"\" directory using the \*rm\* command, NOT rmdir!; }; removedirectory'
 alias removefile='removefile() { rm -Iv "$1"; echo hey, you just removed that \""$1"\" file using the \*rm\* command!; }; removefile'
-alias rename='rename() { mv -iv "$1" "$2"; echo hey, you renamed that \""$1"\" thing to \""$2"\" using the \*mv\* command!; } rename'
+alias rename='rename() { mv -iv "$1" "$2"; echo hey, you renamed that \""$1"\" thing to \""$2"\" using the \*mv\* command!; }; rename'
 
 # ls
 alias l='ls -1A --group-directories-first && echo --- && echo \(listed with directories first\)'
