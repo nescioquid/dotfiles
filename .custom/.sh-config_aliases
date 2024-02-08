@@ -21,7 +21,7 @@ function _sh-config_install() {
   cd ~
 }
 
-# undoes backupconfig from anywhere
+# undoes pushconfig from anywhere
 function _sh-config_last() {
   cd ~/repos/sh-config
   echo whoosh! heading over to:
