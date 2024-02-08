@@ -161,6 +161,7 @@ alias gbnt='gsw --create temp'
 
 # deletes branch 'temp'
 alias gbdt='gb -df temp'
+alias gtempd='gb -df temp'
 
 # logs branch 'temp'
 alias glogt='glog temp'
