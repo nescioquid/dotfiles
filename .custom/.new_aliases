@@ -7,6 +7,9 @@ alias astrohelp='astro -- --help'
 # sh-config things
 alias pc='pushconfig'
 
+# git things
+alias adddb='gmne debug'
+
 # beginner-friendly git aliases things
 # alias rmgit='rm -rf .git'
 
