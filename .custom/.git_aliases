@@ -173,7 +173,7 @@ alias gswt='gsw temp'
 alias gtemp='gtemp() { if git rev-parse --quiet --verify temp; then gb -df temp; gsw --create temp; gsw -; else gsw --create temp; gsw -; fi }; gtemp'
 
 # same as 'gtemp', but leaves you in the 'temp' branch
-alias gtempt='gtempt() { if git rev-parse --quiet --verify temp; then gb -df temp; gsw --create temp; else gsw --create temp; fi }; gtempt'
+alias gtempn='gtempn() { if git rev-parse --quiet --verify temp; then gb -df temp; gsw --create temp; else gsw --create temp; fi }; gtempn'
 
 # ---
 
