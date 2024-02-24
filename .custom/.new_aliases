@@ -9,6 +9,7 @@ alias pc='pushconfig'
 
 # git things
 alias adddb='gmne debug'
+alias gcc='gc --amend --author=nescioquid'
 
 # beginner-friendly git aliases things
 # alias rmgit='rm -rf .git'

@@ -83,6 +83,9 @@ alias grstr='git restore'
 alias gstat='git status --short --branch'
 alias gist='git status --short --branch'
 
+# tag
+alias gt='git tag'
+
 # ---
 
 # utilities
