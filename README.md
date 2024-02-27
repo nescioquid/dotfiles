@@ -1,4 +1,4 @@
-# sh-config 💾
+# dotfiles 💾
 
 _The backups for my shell configurations._
 
@@ -10,12 +10,12 @@ You're welcome, future me!
 
 First, make this repo publicly visible.
 
-Then, run the following commands, _separately_ (testing with Ubuntu on WSL2 has routinely failed as a single command, for whatever reason). The first makes the right directory in the right location, clones this repo into it, and sources a `.sh-config_aliases` file that contains the prerequisite commands:
+Then, run the following commands, _separately_ (testing with Ubuntu on WSL2 has routinely failed as a single command, for whatever reason). The first makes the right directory in the right location, clones this repo into it, and sources a `.dotfiles_aliases` file that contains the prerequisite commands:
 
 ```shell
 mkdir ~/repos/ && cd ~/repos &&
-git clone https://github.com/nescioquid/sh-config.git &&
-source ~/repos/sh-config/.custom/.sh-config_aliases
+git clone https://github.com/nescioquid/dotfiles.git &&
+source ~/repos/dotfiles/.dotfiles/.dotfiles_aliases
 ```
 
 While the second actually installs the configurations locally:
