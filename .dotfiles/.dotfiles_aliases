@@ -1,0 +1,96 @@
+# DOTFILES_ALIASES
+
+alias installconfig='_dotfiles_install'
+alias lastconfig='_dotfiles_last'
+alias pushconfig='_dotfiles_push'
+alias pullconfig='_dotfiles_pull'
+
+# ---
+
+# installs configurations in a new environment
+function _dotfiles_install() {
+  _dotfiles_pull_copy
+  if [[ -n "$BASH_VERSION" ]]; then
+    source ~/.bashrc
+  elif [[ -n "$ZSH_VERSION" ]]; then
+    source ~/.zshrc
+  else
+    echo 'unknown shell, no run commands sourced'
+  fi
+  _dotfiles_youdidthething
+  cd ~
+}
+
+# undoes pushconfig from anywhere
+function _dotfiles_last() {
+  cd ~/repos/dotfiles
+  echo whoosh! heading over to:
+  echo ~/repos/dotfiles
+  echo starting to do git things:
+  git reset HEAD~1
+  git push -f
+  echo done doing git things,
+  echo and now heading back to:
+  cd -
+}
+
+# pushes configurations to github
+function _dotfiles_push() {
+  cd ~/repos/dotfiles
+  echo whoosh! heading over to:
+  echo ~/repos/dotfiles
+  _dotfiles_push_copy
+  echo starting to do git things:
+  git add -v --all
+  git commit -v --message "updated on $(date +"%d %B %Y at %T")"
+  git push
+  echo configurations pushed, congrats!
+  echo done doing git things,
+  echo and now heading back to:
+  cd -
+}
+
+# pulls configurations from github
+function _dotfiles_pull() {
+  cd ~/repos/dotfiles
+  echo whoosh! heading over to:
+  echo ~/repos/dotfiles
+  echo starting to do git things:
+  git pull
+  echo done doing git things
+  _dotfiles_pull_copy
+  echo configurations pulled, congrats!
+  echo and now heading back to:
+  cd -
+}
+
+# copies home and ~/.dotfiles configurations to dotfiles
+function _dotfiles_push_copy() {
+  cp -fr ~/.dotfiles/      ~/repos/dotfiles/
+  cp -f  ~/.bash_history ~/repos/dotfiles/
+  cp -f  ~/.bashrc       ~/repos/dotfiles/
+  cp -f  ~/.gitconfig    ~/repos/dotfiles/
+  cp -f  ~/.nanorc       ~/repos/dotfiles/
+  cp -f  ~/.z            ~/repos/dotfiles/
+  cp -f  ~/.zsh_history  ~/repos/dotfiles/
+  cp -f  ~/.zshrc        ~/repos/dotfiles/
+  echo configurations copied for push, hooray!
+}
+
+# copies dotfiles configurations to home and ~/.dotfiles
+function _dotfiles_pull_copy() {
+  cp -fr ~/repos/dotfiles/.dotfiles/      ~
+  cp -f  ~/repos/dotfiles/.bash_history ~
+  cp -f  ~/repos/dotfiles/.bashrc       ~
+  cp -f  ~/repos/dotfiles/.gitconfig    ~
+  cp -f  ~/repos/dotfiles/.nanorc       ~
+  cp -f  ~/repos/dotfiles/.z            ~
+  cp -f  ~/repos/dotfiles/.zsh_history  ~
+  cp -f  ~/repos/dotfiles/.zshrc        ~
+  echo configurations copied for pull, hooray!
+}
+
+function _dotfiles_youdidthething() {
+  echo '▀▄▀ ▄▀▄ █ █   █▀▄ █ █▀▄   ▀█▀ █▄█ ██▀   ▀█▀ █▄█ █ █▄ █ ▄▀  █'
+  echo ' █  ▀▄▀ ▀▄█   █▄▀ █ █▄▀    █  █ █ █▄▄    █  █ █ █ █ ▀█ ▀▄█ ▄'
+}

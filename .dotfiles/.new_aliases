@@ -1,0 +1,20 @@
+# NEW_ALIASES
+
+# astro things
+alias astro='npm run astro'
+alias astrohelp='astro -- --help'
+
+# sh-config things
+alias pc='pushconfig'
+
+# git things
+alias adddb='gmne debug'
+alias gcc='gc --amend --author=nescioquid'
+
+# beginner-friendly git aliases things
+# alias rmgit='rm -rf .git'
+
+# source ~/Documents/git-aliases-for-noobs/.git_aliases && echo hey, you sourced .git_aliases, yay!
+
+# copypaste this one
+# alias srcg='source ~/.dotfiles/.new_aliases'

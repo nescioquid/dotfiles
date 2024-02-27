@@ -1,0 +1,8 @@
+# POP-OS_ALIASES
+
+alias desktop='cd ~/Desktop'
+alias documents='cd ~/Documents'
+alias downloads='cd ~/Downloads'
+
+# opens up a file explorer at the current directory
+alias explore='nautilus .'

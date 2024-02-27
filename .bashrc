@@ -127,5 +127,5 @@ else
 fi
 
 # Adds my configurations
-source $HOME/.custom/.bash_aliases
-source $HOME/.custom/.aliases
+source $HOME/.dotfiles/.bash_aliases
+source $HOME/.dotfiles/.aliases

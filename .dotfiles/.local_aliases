@@ -1,0 +1,4 @@
+# LOCAL_ALIASES
+
+alias local_aliases='${EDITOR} ~/.local/.local_aliases'
+alias vsclocal_aliases='code ~/.local/.local_aliases'

@@ -156,5 +156,5 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Adds my configurations
-source $HOME/.custom/.zsh_aliases
-source $HOME/.custom/.aliases
+source $HOME/.dotfiles/.zsh_aliases
+source $HOME/.dotfiles/.aliases

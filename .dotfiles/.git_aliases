@@ -1,0 +1,194 @@
+# GIT_ALIASES
+
+# a faster way to get to the man pages for whatever git things you're learning about
+alias ghelp='ghelp() { man git-"$1"; }; ghelp'
+
+# opens the README for oh-my-zsh's git plugin
+alias gomz='omzplugin git'
+
+# short forms
+
+alias gl='glog'
+alias gll='glogg'
+alias gla='gloga'
+alias glp='glogp'
+alias gs='gsw'
+
+alias gld='glogd'
+alias glm='glogm'
+alias glo='glogo'
+alias glt='glogt'
+
+alias gsl='glast'
+alias gsd='gswd'
+alias gsm='gswm'
+alias gst='gswt'
+
+# ---
+
+# common commands
+
+# add
+alias ga='git add -v'
+alias gaa='git add -v --all'
+
+# branch
+alias gbb='git branch -vv'
+alias gbba='git branch -vv --all'
+
+# commit
+alias gcm='git commit -v --message'
+alias gcam='git commit -v --all --message'
+alias gcmdr='git commit -v --dry-run --message'
+alias gcamdr='git commit -v --dry-run --all --message'
+
+# config
+alias gcfg='git config --list --global'
+
+# log
+alias glog='git log --oneline --decorate --graph'
+alias glogg='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'\'' --stat' # 'glols' in zsh
+alias glogp='git log --stat --patch' # 'glgp' in zsh
+
+# merge
+alias gm='git merge -v'
+alias gmne='git merge --no-edit'
+
+# pull
+alias gpll='git pull -v'
+alias gplldr='git pull -v --dry-run'
+
+# push
+alias gpsh='git push -v'
+alias gpshdr='git push -v --dry-run'
+alias gpsho='git push -v origin'
+
+# rebase
+alias grb='git rebase'
+alias grba='git rebase --abort'
+
+# reflog
+alias grlog='git reflog'
+
+# remote
+alias gr='git remote -v'
+
+# reset
+alias grst='git reset'
+
+# restore
+alias grstr='git restore'
+
+# status
+alias gstat='git status --short --branch'
+alias gist='git status --short --branch'
+
+# tag
+alias gt='git tag'
+
+# ---
+
+# utilities
+
+# creates a new branch
+alias gcreate='gsw --create'
+alias gbn='gsw --create'
+
+# switches to the last branch that you were on
+alias glast='gsw -'
+
+# clears out the working tree entirely, except for already staged (added) changes
+# assumes you're at the base directory of your repo
+alias gclear='git restore . && git clean -df'
+alias gclr='git restore . && git clean -df'
+
+# cleans up any unused remote branches
+# alias grclean='git remote -v update origin --prune'
+
+# basically uncommits one or more commits, leaving their changes in the working tree
+alias gback='gback() { git reset HEAD~"$1" }; gback'
+
+# same as 'gback' but removes all changes from the working tree
+alias gbuck='gbuck() { git reset --hard HEAD~"$1" }; gbuck'
+
+# function gbuck() {
+#   git reset HEAD~"$1" && gclr
+# }
+
+# diffs a given commit with the commit just before it
+# defaults to the commit where the HEAD is pointing
+alias gdd='gdd() { if [ $1 ]; then git diff "$1"~1 "$1"; else git diff HEAD~1 HEAD; fi }; gdd'
+
+# logs the branches that you use for development
+# defaults to the dev branch, pass in a string for any 'dev-[string]' branch
+alias glogd='glogd() { if [ $1 ]; then glog $(git_develop_branch)-"$1"; else glog $(git_develop_branch); fi }; glogd'
+
+# logs the main/master branch
+alias glogm='glog $(git_main_branch)'
+
+# logs a branch at origin
+# defaults to the the branch at origin associated with the current local branch
+alias glogo='glogo() { if [ $1 ]; then glog origin/"$1"; else glog origin/$(git_current_branch); fi }; glogo'
+
+# switches to the branches that you use for development
+# defaults to the dev branch, pass in a string for any 'dev-[string]' branch
+alias gswd='gswd() { if [ $1 ]; then gsw $(git_develop_branch)-"$1"; else gsw $(git_develop_branch); fi }; gswd'
+
+# ---
+
+# from others
+
+# fetches the last commits in which the specified label appears --Lunos
+alias glunos='glunos() { git log -n "$2" -S "$1"; }; glunos'
+
+# ---
+
+# manages associations between local and remote branches at origin
+
+# creates an upstream branch at origin associated with the current local branch
+alias gsetup='gpsh --set-upstream origin $(git_current_branch)'
+
+# associates the current local branch with an already existing upstream branch at origin
+alias gset='gb --set-upstream-to=origin/$(git_current_branch)'
+
+# unsets the association between the current local branch and its upstream branch
+alias gunset='gb --unset-upstream && echo hey, it looks like you unset that upstream branch'
+
+# ---
+
+# temporary branch functionality
+# these features allow you to manage a branch 'temp' that you can use to store temporary changes to your code
+
+# creates a new branch 'temp'
+alias gbnt='gsw --create temp'
+
+# deletes branch 'temp'
+alias gbdt='gb -df temp'
+alias gtempd='gb -df temp'
+
+# logs branch 'temp'
+alias glogt='glog temp'
+
+# switches to branch 'temp'
+alias gswt='gsw temp'
+
+# automatically deletes any previous branch 'temp' and creates new a one
+alias gtemp='gtemp() { if git rev-parse --quiet --verify temp; then gb -df temp; gsw --create temp; gsw -; else gsw --create temp; gsw -; fi }; gtemp'
+
+# same as 'gtemp', but leaves you in the 'temp' branch
+alias gtempn='gtempn() { if git rev-parse --quiet --verify temp; then gb -df temp; gsw --create temp; else gsw --create temp; fi }; gtempn'
+
+# ---
+
+# safeguards
+alias gbd='echo hey! that command is intentionally blocked, use \`git branch -d\` instead'
+alias gbD='echo hey! that command is intentionally blocked, use \`git branch -df\` or \`git branch -D\` instead'
+alias gbda='echo hey! that command is intentionally blocked, edit git aliases with \`git_aliases\` to unblock it'
+alias gbds='echo hey! that command is intentionally blocked, edit git aliases with \`git_aliases\` to unblock it'
+alias ggf='echo hey! that command is intentionally blocked, use \`git push --force origin $(current_branch\` instead)'
+alias gp='echo hey! that command is intentionally blocked, use \`git push\` instead'
+alias 'gpf!'='echo hey! that command is intentionally blocked, use \`git push --force\` instead'
+alias gpod='echo hey! that command is intentionally blocked, use \`git push origin -d\` instead'
+alias gpristine='echo hey! that command was intentionally blocked, use \`git reset --hard && git clean --force -dfx\` instead'
+alias grhh='echo hey! that command is intentionally blocked, use \`git reset --hard\` instead'
+alias groh='echo hey! that command is intentionally blocked, use \`git reset origin/$(git_current_branch) --hard\` instead'
