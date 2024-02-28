@@ -66,20 +66,23 @@ function _dotfiles_pull() {
 
 # copies home and ~/.dotfiles configurations to dotfiles
 function _dotfiles_push_copy() {
-  cp -fr ~/.dotfiles/      ~/repos/dotfiles/
-  cp -f  ~/.bash_history ~/repos/dotfiles/
-  cp -f  ~/.bashrc       ~/repos/dotfiles/
-  cp -f  ~/.gitconfig    ~/repos/dotfiles/
-  cp -f  ~/.nanorc       ~/repos/dotfiles/
-  cp -f  ~/.z            ~/repos/dotfiles/
-  cp -f  ~/.zsh_history  ~/repos/dotfiles/
-  cp -f  ~/.zshrc        ~/repos/dotfiles/
+  # cp -fr ~/.dotfiles/    ~/repos/dotfiles/
+  # cp -f  ~/.bash_history ~/repos/dotfiles/
+  # cp -f  ~/.bashrc       ~/repos/dotfiles/
+  # cp -f  ~/.gitconfig    ~/repos/dotfiles/
+  # cp -f  ~/.nanorc       ~/repos/dotfiles/
+  # cp -f  ~/.z            ~/repos/dotfiles/
+  # cp -f  ~/.zsh_history  ~/repos/dotfiles/
+  # cp -f  ~/.zshrc        ~/repos/dotfiles/
+  for file in ~/.dotfiles/ ~/.bash_history ~/.bashrc ~/.gitconfig ~/.nanorc ~/.z ~/.zsh_history ~/.zshrc; do
+      cp -fr "$file" ~/repos/dotfiles/
+  done
   echo configurations copied for push, hooray!
 }
 
 # copies dotfiles configurations to home and ~/.dotfiles
 function _dotfiles_pull_copy() {
-  cp -fr ~/repos/dotfiles/.dotfiles/      ~
+  cp -fr ~/repos/dotfiles/.dotfiles/    ~
   cp -f  ~/repos/dotfiles/.bash_history ~
   cp -f  ~/repos/dotfiles/.bashrc       ~
   cp -f  ~/repos/dotfiles/.gitconfig    ~
