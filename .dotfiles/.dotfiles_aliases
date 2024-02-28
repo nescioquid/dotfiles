@@ -44,7 +44,7 @@ function _dotfiles_push() {
   git add -v --all
   git commit -v --message "updated on $(date +"%d %B %Y at %T")"
   git push
-  echo done doing git things
+  echo done doing git things.
   echo configurations pushed, congrats!
   echo now heading back to:
   cd -
@@ -57,7 +57,7 @@ function _dotfiles_pull() {
   echo ~/repos/dotfiles
   echo starting to do git things:
   git pull
-  echo done doing git things
+  echo done doing git things.
   for file in "${dotfiles[@]}"; do
     cp -fr ~/repos/dotfiles/"$file" ~
   done
