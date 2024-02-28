@@ -7,7 +7,7 @@ alias pullconfig='_dotfiles_pull'
 
 # ---
 
-# defines an array containing the list of files
+# defines an array containing the list of dotfiles you want backed up
 dotfiles=(
   .dotfiles/
   .bash_history
@@ -18,11 +18,6 @@ dotfiles=(
   .zsh_history
   .zshrc
 )
-
-# adds a file to the dotfiles array
-function dotfiles_add_file() {
-  dotfiles+=(~/."$1")
-}
 
 # installs configurations in a new environment
 function _dotfiles_install() {
@@ -56,7 +51,10 @@ function _dotfiles_push() {
   cd ~/repos/dotfiles
   echo whoosh! heading over to:
   echo ~/repos/dotfiles
-  _dotfiles_push_copy
+  for file in "${dotfiles[@]}"; do
+      cp -fr ~/"$file" ~/repos/dotfiles/
+  done
+  echo configurations copied for push, hooray!
   echo starting to do git things:
   git add -v --all
   git commit -v --message "updated on $(date +"%d %B %Y at %T")"
@@ -82,43 +80,18 @@ function _dotfiles_pull() {
 }
 
 # copies home and ~/.dotfiles configurations to dotfiles
-function _dotfiles_push_copy() {
-  # cp -fr ~/.dotfiles/    ~/repos/dotfiles/
-  # cp -f  ~/.bash_history ~/repos/dotfiles/
-  # cp -f  ~/.bashrc       ~/repos/dotfiles/
-  # cp -f  ~/.gitconfig    ~/repos/dotfiles/
-  # cp -f  ~/.nanorc       ~/repos/dotfiles/
-  # cp -f  ~/.z            ~/repos/dotfiles/
-  # cp -f  ~/.zsh_history  ~/repos/dotfiles/
-  # cp -f  ~/.zshrc        ~/repos/dotfiles/
-
-  # for file in ~/.dotfiles/ ~/.bash_history ~/.bashrc ~/.gitconfig ~/.nanorc ~/.z ~/.zsh_history ~/.zshrc; do
-  #     cp -fr "$file" ~/repos/dotfiles/
-  # done
-
-  # Loop over the array and copy each file to the destination directory
-  for file in "${dotfiles[@]}"; do
-      cp -fr ~/"$file" ~/repos/dotfiles/
-  done
-
-  echo configurations copied for push, hooray!
-}
+# function _dotfiles_push_copy() {
+#   for file in "${dotfiles[@]}"; do
+#       cp -fr ~/"$file" ~/repos/dotfiles/
+#   done
+#   echo configurations copied for push, hooray!
+# }
 
 # copies dotfiles configurations to home and ~/.dotfiles
 function _dotfiles_pull_copy() {
-  # cp -fr ~/repos/dotfiles/.dotfiles/    ~
-  # cp -f  ~/repos/dotfiles/.bash_history ~
-  # cp -f  ~/repos/dotfiles/.bashrc       ~
-  # cp -f  ~/repos/dotfiles/.gitconfig    ~
-  # cp -f  ~/repos/dotfiles/.nanorc       ~
-  # cp -f  ~/repos/dotfiles/.z            ~
-  # cp -f  ~/repos/dotfiles/.zsh_history  ~
-  # cp -f  ~/repos/dotfiles/.zshrc        ~
-  
   for file in "${dotfiles[@]}"; do
     cp -fr ~/repos/dotfiles/"$file" ~
   done
-  
   echo configurations copied for pull, hooray!
 }
 
