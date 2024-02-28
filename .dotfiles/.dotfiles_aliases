@@ -37,8 +37,8 @@ function _dotfiles_push() {
   cd ~/repos/dotfiles
   echo whoosh! heading over to:
   echo ~/repos/dotfiles
-  for file in "${dotfiles[@]}"; do
-      cp -fr ~/"$file" ~/repos/dotfiles/
+  for dotfile in "${dotfiles[@]}"; do
+      cp -fr ~/"$dotfile" ~/repos/dotfiles/
   done
   echo starting to do git things:
   git add -v --all
@@ -58,8 +58,8 @@ function _dotfiles_pull() {
   echo starting to do git things:
   git pull
   echo done doing git things.
-  for file in "${dotfiles[@]}"; do
-    cp -fr ~/repos/dotfiles/"$file" ~
+  for dotfile in "${dotfiles[@]}"; do
+    cp -fr ~/repos/dotfiles/"$dotfile" ~
   done
   echo configurations pulled, congrats!
   echo now heading back to:
