@@ -96,25 +96,29 @@ function _dotfiles_push_copy() {
   #     cp -fr "$file" ~/repos/dotfiles/
   # done
 
-# Loop over the array and copy each file to the destination directory
-for file in "${dotfiles[@]}"; do
-    cp -fr ~/"$file" ~/repos/dotfiles/
-done
-
+  # Loop over the array and copy each file to the destination directory
+  for file in "${dotfiles[@]}"; do
+      cp -fr ~/"$file" ~/repos/dotfiles/
+  done
 
   echo configurations copied for push, hooray!
 }
 
 # copies dotfiles configurations to home and ~/.dotfiles
 function _dotfiles_pull_copy() {
-  cp -fr ~/repos/dotfiles/.dotfiles/    ~
-  cp -f  ~/repos/dotfiles/.bash_history ~
-  cp -f  ~/repos/dotfiles/.bashrc       ~
-  cp -f  ~/repos/dotfiles/.gitconfig    ~
-  cp -f  ~/repos/dotfiles/.nanorc       ~
-  cp -f  ~/repos/dotfiles/.z            ~
-  cp -f  ~/repos/dotfiles/.zsh_history  ~
-  cp -f  ~/repos/dotfiles/.zshrc        ~
+  # cp -fr ~/repos/dotfiles/.dotfiles/    ~
+  # cp -f  ~/repos/dotfiles/.bash_history ~
+  # cp -f  ~/repos/dotfiles/.bashrc       ~
+  # cp -f  ~/repos/dotfiles/.gitconfig    ~
+  # cp -f  ~/repos/dotfiles/.nanorc       ~
+  # cp -f  ~/repos/dotfiles/.z            ~
+  # cp -f  ~/repos/dotfiles/.zsh_history  ~
+  # cp -f  ~/repos/dotfiles/.zshrc        ~
+  
+  for file in "${dotfiles[@]}"; do
+    cp -fr ~/repos/dotfiles/"$file" ~
+  done
+  
   echo configurations copied for pull, hooray!
 }
 
