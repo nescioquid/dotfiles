@@ -7,8 +7,21 @@ alias pullconfig='_dotfiles_pull'
 
 # ---
 
-# Define an array containing the list of files
-dotfiles=(~/.dotfiles/ ~/.bash_history ~/.bashrc ~/.gitconfig ~/.nanorc ~/.z ~/.zsh_history ~/.zshrc)
+# defines an array containing the list of files
+dotfiles=(
+  ~/.dotfiles/
+  ~/.bash_history
+  ~/.bashrc
+  ~/.gitconfig
+  ~/.nanorc
+  ~/.z
+  ~/.zsh_history
+  ~/.zshrc)
+
+# adds a file to the dotfiles array
+function dotfiles_add_file() {
+  dotfiles+=(~/."$1")
+}
 
 # installs configurations in a new environment
 function _dotfiles_install() {
