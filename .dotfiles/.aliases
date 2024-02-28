@@ -36,9 +36,8 @@ alias a='alias'
 alias an='alias'
 
 # short forms
-
-alias al='aliases'
-alias vscal='vscaliases'
+alias dot='aliases'
+alias vscdot='vscaliases'
 alias repo='repos'
 alias saw='sauu'
 alias s='search'

@@ -7,7 +7,6 @@ alias ghelp='ghelp() { man git-"$1"; }; ghelp'
 alias gomz='omzplugin git'
 
 # short forms
-
 alias gl='glog'
 alias gll='glogg'
 alias gla='gloga'

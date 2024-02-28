@@ -5,7 +5,6 @@ alias src='source ~/.bashrc && echo hey, you sourced .bashrc, yay!'
 alias what='alias'
 
 # short forms
-
 alias cl='cdl'
 alias mcd='mdcd'
 

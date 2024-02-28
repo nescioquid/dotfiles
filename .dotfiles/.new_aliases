@@ -4,28 +4,6 @@
 alias astro='npm run astro'
 alias astrohelp='astro -- --help'
 
-# dotfiles things
-alias pc='pushconfig'
-
-alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME'
-alias dots='dot status --short --branch'
-alias dota='dot add -v'
-alias dotc='dot commit -v'
-alias dotl='dot log --oneline --decorate --graph'
-alias dotll='dot log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'\'' --stat'
-alias dotlp='dot log --stat --patch'
-alias dotback='dotback() { dot reset HEAD~"$1" }; dotback'
-
-alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias cfgs='cfg status --short --branch'
-alias cfga='cfg add -v'
-alias cfgc='cfg commit -v'
-alias cfgl='cfg log --oneline --decorate --graph'
-alias cfgll='cfg log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'\'' --stat'
-alias cfglp='cfg log --stat --patch'
-alias cfgback='cfgback() { cfg reset HEAD~"$1" }; cfgback'
-
-# git things
+# pokemon things
 alias adddb='gmne debug'
 # alias gcc='gc --amend --author=nescioquid'
-alias rmgit='rm -rf .git'
