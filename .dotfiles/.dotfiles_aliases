@@ -1,7 +1,6 @@
 # DOTFILES_ALIASES
 
 alias installconfig='_dotfiles_install'
-alias lastconfig='_dotfiles_last'
 alias pushconfig='_dotfiles_push'
 alias pullconfig='_dotfiles_pull'
 
@@ -33,19 +32,6 @@ function _dotfiles_install() {
   cd ~
 }
 
-# undoes pushconfig from anywhere
-function _dotfiles_last() {
-  cd ~/repos/dotfiles
-  echo whoosh! heading over to:
-  echo ~/repos/dotfiles
-  echo starting to do git things:
-  git reset HEAD~1
-  git push -f
-  echo done doing git things,
-  echo and now heading back to:
-  cd -
-}
-
 # pushes configurations to github
 function _dotfiles_push() {
   cd ~/repos/dotfiles
@@ -54,14 +40,13 @@ function _dotfiles_push() {
   for file in "${dotfiles[@]}"; do
       cp -fr ~/"$file" ~/repos/dotfiles/
   done
-  echo configurations copied for push, hooray!
   echo starting to do git things:
   git add -v --all
   git commit -v --message "updated on $(date +"%d %B %Y at %T")"
   git push
+  echo done doing git things
   echo configurations pushed, congrats!
-  echo done doing git things,
-  echo and now heading back to:
+  echo now heading back to:
   cd -
 }
 
@@ -73,26 +58,12 @@ function _dotfiles_pull() {
   echo starting to do git things:
   git pull
   echo done doing git things
-  _dotfiles_pull_copy
-  echo configurations pulled, congrats!
-  echo and now heading back to:
-  cd -
-}
-
-# copies home and ~/.dotfiles configurations to dotfiles
-# function _dotfiles_push_copy() {
-#   for file in "${dotfiles[@]}"; do
-#       cp -fr ~/"$file" ~/repos/dotfiles/
-#   done
-#   echo configurations copied for push, hooray!
-# }
-
-# copies dotfiles configurations to home and ~/.dotfiles
-function _dotfiles_pull_copy() {
   for file in "${dotfiles[@]}"; do
     cp -fr ~/repos/dotfiles/"$file" ~
   done
-  echo configurations copied for pull, hooray!
+  echo configurations pulled, congrats!
+  echo now heading back to:
+  cd -
 }
 
 function _dotfiles_youdidthething() {
