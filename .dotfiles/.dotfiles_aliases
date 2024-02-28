@@ -6,7 +6,7 @@ alias pullconfig='_dotfiles_pull'
 
 # ---
 
-# defines an array containing the list of dotfiles you want backed up
+# defines an array containing the list of dotfiles to be backed up
 dotfiles=(
   .dotfiles/
   .bash_history
