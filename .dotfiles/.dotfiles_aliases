@@ -7,6 +7,9 @@ alias pullconfig='_dotfiles_pull'
 
 # ---
 
+# Define an array containing the list of files
+dotfiles=(~/.dotfiles/ ~/.bash_history ~/.bashrc ~/.gitconfig ~/.nanorc ~/.z ~/.zsh_history ~/.zshrc)
+
 # installs configurations in a new environment
 function _dotfiles_install() {
   _dotfiles_pull_copy
@@ -74,9 +77,17 @@ function _dotfiles_push_copy() {
   # cp -f  ~/.z            ~/repos/dotfiles/
   # cp -f  ~/.zsh_history  ~/repos/dotfiles/
   # cp -f  ~/.zshrc        ~/repos/dotfiles/
-  for file in ~/.dotfiles/ ~/.bash_history ~/.bashrc ~/.gitconfig ~/.nanorc ~/.z ~/.zsh_history ~/.zshrc; do
-      cp -fr "$file" ~/repos/dotfiles/
-  done
+
+  # for file in ~/.dotfiles/ ~/.bash_history ~/.bashrc ~/.gitconfig ~/.nanorc ~/.z ~/.zsh_history ~/.zshrc; do
+  #     cp -fr "$file" ~/repos/dotfiles/
+  # done
+
+# Loop over the array and copy each file to the destination directory
+for file in "${dotfiles[@]}"; do
+    cp -fr "$file" ~/repos/dotfiles/
+done
+
+
   echo configurations copied for push, hooray!
 }
 
