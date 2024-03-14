@@ -87,7 +87,7 @@ plugins=(
   timer
   universalarchive
   vscode
-  z
+  # z
 
   # other plugins I might like
 
