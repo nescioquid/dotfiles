@@ -1,6 +1,3 @@
-npm install -h
-npm help install
-npm install -h
 npm help install
 clear
 npm start
@@ -1997,4 +1994,7 @@ repo sandbox
 src
 repo sandbox
 rogue
+exit
+ji poke
+j poke
 exit

@@ -127,7 +127,7 @@ else
 fi
 
 # zoxide things
-eval "$(zoxide init bash)"
+eval "$(zoxide init --cmd j bash)"
 
 # fzf things
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

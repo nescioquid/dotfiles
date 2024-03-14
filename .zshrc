@@ -124,9 +124,9 @@ zstyle ':omz:plugins:nvm' lazy yes
 TIMER_THRESHOLD=0.1
 
 # z
-ZSHZ_CMD=j
-ZSHZ_ECHO=1
-ZSHZ_TILDE=1
+# ZSHZ_CMD=j
+# ZSHZ_ECHO=1
+# ZSHZ_TILDE=1
 
 source $ZSH/oh-my-zsh.sh
 
@@ -157,7 +157,7 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # zoxide things
-eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd j zsh)"
 
 # fzf things
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
