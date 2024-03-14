@@ -78,7 +78,6 @@ plugins=(
   copyfile
   copypath
   extract
-  fzf
   gh
   git
   history
