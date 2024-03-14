@@ -1,8 +1,8 @@
 # DOTFILES_ALIASES
 
-alias installconfig='_dotfiles_install'
-alias pushconfig='_dotfiles_push'
-alias pullconfig='_dotfiles_pull'
+alias installdotfiles='_dotfiles_install'
+alias pushdotfiles='_dotfiles_push'
+alias pulldotfiles='_dotfiles_pull'
 
 # ---
 
