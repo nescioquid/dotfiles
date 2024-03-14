@@ -4,6 +4,7 @@
 /etc|12|1706249017
 /usr/share/icons/Adwaita|4|1707243756
 /home/drjw/repos/pokemon/.archive/green-thing/include/config|3|1707166174
+/home/drjw/.local/share/zoxide|9|1710377625
 /home/drjw/repos/blog-eleventy|2|1706926809
 /home/drjw/.oh-my-zsh/plugins|13|1709260609
 /home/drjw/repos/sandbox/seashell|4|1706749701
@@ -12,7 +13,7 @@
 /home/drjw/.cache/vscode-cpptools|2|1706763526
 /usr/share/pixmaps/faces|3|1707244589
 /mnt/windows-boot|7|1707343353
-/home/drjw/.local/share/Trash/files|3|1710377292
+/home/drjw/.local/share/Trash/files|6|1710377309
 /media|2.9791308637205836|1699930613
 /home/drjw/Documents/reads|3.1279506169432731|1710377186
 /home/drjw/Documents|49.441923381393678|1710377264
@@ -27,11 +28,11 @@
 /home/drjw/.local/state|7|1706197348
 /home/drjw/Downloads/utorrent/utorrent-server-alpha-v3_3/docs|1.6747984156435907|1703457997
 /home/drjw/.local/share/Trash|12|1706763131
-/mnt|6.5535407403319272|1707343344
-/home/drjw/repos/pokeruby|3|1709232128
 /home/drjw/.local/bin|3|1706197325
 /home/drjw/Downloads/utorrent|3.9078629698350453|1703457934
 /home/drjw/repos/pokemon|67|1709000643
+/mnt|6.5535407403319272|1707343344
+/home/drjw/repos/pokeruby|3|1709232128
 /home/drjw/.oh-my-zsh/plugins/git|23|1706824213
 /home/drjw/repos/sandbox|1345|1709101590
 /home/drjw/Downloads|27.468096651798589|1707101772
@@ -41,8 +42,8 @@
 /home/drjw/.oh-my-zsh|6|1709260605
 /home/drjw/repos/sandbox/pail|4|1706749750
 /home/drjw/.fzf|3|1710376954
+/home/drjw/.local/share|8|1710377536
 /home/drjw/Documents/green-thing-roms|14|1706552221
-/home/drjw/.local/share|4|1706197426
 /home/drjw/.oh-my-zsh/plugins/aliases|130|1706835112
 /usr/games|33|1707340852
 /|29.214162961327709|1709070101
