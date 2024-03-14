@@ -1,12 +1,8 @@
 # POKEMON_ALIASES
 
 # short forms
-alias gldb='glogdb'
 alias gle='gloge'
-alias glgt='gloggt'
-alias gsdb='gswdb'
 alias gse='gswe'
-alias gsgt='gswgt'
 
 # ---
 

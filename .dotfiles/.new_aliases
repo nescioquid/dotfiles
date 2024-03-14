@@ -5,9 +5,7 @@ alias astro='npm run astro'
 alias astrohelp='astro -- --help'
 
 # pokemon things
-alias adddb='gmne debug'
 # alias gcc='gc --amend --author=nescioquid'
 
 # dotfiles things
-
 alias pd='pushdotfiles'
