@@ -12,7 +12,7 @@ dotfiles=(
   .bash_history
   .bashrc
   .gitconfig
-  .local/share/zoxide/
+  .local/share/zoxide/db.zo
   .nanorc
   .z
   .zsh_history
