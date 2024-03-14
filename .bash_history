@@ -1,4 +1,3 @@
-npm --help
 npm install -h
 npm help install
 npm install -h
@@ -1998,3 +1997,4 @@ repo sandbox
 src
 repo sandbox
 rogue
+exit

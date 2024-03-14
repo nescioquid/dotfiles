@@ -78,6 +78,7 @@ plugins=(
   copyfile
   copypath
   extract
+  fzf
   gh
   git
   history
@@ -154,6 +155,14 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# zoxide things
+eval "$(zoxide init zsh)"
+
+# fzf things
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --zsh)"
 
 # Adds my configurations
 source $HOME/.dotfiles/.zsh_aliases
