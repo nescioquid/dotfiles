@@ -21,7 +21,7 @@ source ~/repos/dotfiles/.dotfiles/.dotfiles_aliases
 While the second actually installs the configurations locally:
 
 ```shell
-installconfig
+installdotfiles
 ```
 
 Afterwards, you should run `aliases` to make sure you're `source`-ing whatever aliases you want in your new environment.
@@ -30,4 +30,4 @@ _Don't forget to make this repo private again afterwards!_
 
 #### Else
 
-Push to this repo with `pushconfig` and pull from it with `pullconfig`. That's it! Remember to run `pushconfig` whenever you make any configuration changes!
+Push to this repo with `pushdotfiles` and pull from it with `pulldotfiles`. That's it! Remember to run `pushdotfiles` whenever you make any configuration changes!
