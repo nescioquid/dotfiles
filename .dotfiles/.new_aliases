@@ -1,11 +1,11 @@
 # NEW_ALIASES
 
 # astro things
-alias astro='npm run astro'
-alias astrohelp='astro -- --help'
-
-# pokemon things
-# alias gcc='gc --amend --author=nescioquid'
+# alias astro='npm run astro'
+# alias astrohelp='astro -- --help'
 
 # dotfiles things
 alias pd='pushdotfiles'
+
+# mom-health-updates things
+# alias momnp='mompn() vsc momnp()'

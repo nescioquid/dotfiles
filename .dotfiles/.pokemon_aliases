@@ -45,6 +45,10 @@ alias gswgt='gswgt() { if [ $1 ]; then gsw gt-"$1"; else gsw gt; fi }; gswgt'
 # copies the gba file to a file for versioned roms
 alias pubgt='pubgt() { copy ~/repos/pokeemerald/pokeemerald.gba ~/Documents/green-thing-roms/green-thing-v"$1".gba; }; pubgt'
 
+
+# changes commit author to nescioquid
+alias gcc='gc --amend --author=nescioquid'
+
 # merges select branches but faster
 alias gmp='gmne poryscript'
 alias gmdb='gmne debug'
