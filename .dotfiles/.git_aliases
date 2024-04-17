@@ -138,6 +138,7 @@ alias gswd='gswd() { if [ $1 ]; then gsw $(git_develop_branch)-"$1"; else gsw $(
 # from others
 
 # fetches the last commits in which the specified label appears --Lunos
+# takes a label for the first argument, number of commits to output as the second
 alias glunos='glunos() { git log -n "$2" -S "$1"; }; glunos'
 
 # ---
