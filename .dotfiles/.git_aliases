@@ -18,6 +18,7 @@ alias glm='glogm'
 alias glo='glogo'
 alias gloo='glogoo'
 alias glt='glogt'
+alias gltt='glogtt'
 
 alias gsl='glast'
 alias gsd='gswd'
@@ -173,6 +174,9 @@ alias gtempd='gb -df temp'
 
 # logs branch 'temp'
 alias glogt='glog temp'
+
+# logs the current local branch and branch 'temp'
+alias glogtt='glog $(git_current_branch) temp'
 
 # switches to branch 'temp'
 alias gswt='gsw temp'
