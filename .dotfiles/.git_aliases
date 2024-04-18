@@ -16,6 +16,7 @@ alias gs='gsw'
 alias gld='glogd'
 alias glm='glogm'
 alias glo='glogo'
+alias gloo='glogoo'
 alias glt='glogt'
 
 alias gsl='glast'
@@ -126,8 +127,12 @@ alias glogd='glogd() { if [ $1 ]; then glog $(git_develop_branch)-"$1"; else glo
 alias glogm='glog $(git_main_branch)'
 
 # logs a branch at origin
-# defaults to the the branch at origin associated with the current local branch
+# defaults to the branch at origin associated with the current local branch
 alias glogo='glogo() { if [ $1 ]; then glog origin/"$1"; else glog origin/$(git_current_branch); fi }; glogo'
+
+# logs a branch and its associated branch at origin
+# defaults to the current local branch and its associated branch at origin
+alias glogoo='glogoo() { if [ $1 ]; then glog "$1" origin/"$1"; else glog $(git_current_branch) origin/$(git_current_branch); fi }; glogoo'
 
 # switches to the branches that you use for development
 # defaults to the dev branch, pass in a string for any 'dev-[string]' branch
