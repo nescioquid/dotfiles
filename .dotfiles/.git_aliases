@@ -19,6 +19,7 @@ alias glo='glogo'
 alias gloo='glogoo'
 alias glt='glogt'
 alias gltt='glogtt'
+alias glot='glogot'
 
 alias gsl='glast'
 alias gsd='gswd'
@@ -186,6 +187,11 @@ alias gtemp='gtemp() { if git rev-parse --quiet --verify temp; then gb -df temp;
 
 # same as 'gtemp', but leaves you in the 'temp' branch
 alias gtempn='gtempn() { if git rev-parse --quiet --verify temp; then gb -df temp; gsw --create temp; else gsw --create temp; fi }; gtempn'
+
+# ---
+
+# combination of 'gloo' and 'gltt'
+alias glogot='glog $(git_current_branch) origin/$(git_current_branch) temp'
 
 # ---
 

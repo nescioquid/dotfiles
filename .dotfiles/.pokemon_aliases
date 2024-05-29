@@ -6,8 +6,6 @@ alias gse='gswe'
 
 # ---
 
-alias OA='echo haha it happened again oooh aaah hahaha'
-
 # opens main notes file
 alias pokenotes='nano ~/repos/pokemon/notes/notes.md'
 alias vscpokenotes='code ~/repos/pokemon/notes/notes.md'
@@ -27,29 +25,11 @@ alias makke='make clean && make -j$(nproc)'
 alias maakke='make clean && make -j'
 
 # faster logging and switching for common branches
-alias glogdb='glog debug'
 alias gloge='glog expansion'
-# alias gloggt='glog gt'
-alias gswdb='gsw debug'
 alias gswe='gsw expansion'
-# alias gswgt='gsw gt'
-
-# logs the green-thing branches
-# defaults to the 'gt' branch, pass in a string for any 'gt-[string]' branch
-alias gloggt='gloggt() { if [ $1 ]; then glog gt-"$1"; else glog gt; fi }; gloggt'
-
-# switches to the green-thing branches
-# defaults to the 'gt' branch, pass in a string for any 'gt-[string]' branch
-alias gswgt='gswgt() { if [ $1 ]; then gsw gt-"$1"; else gsw gt; fi }; gswgt'
 
 # copies the gba file to a file for versioned roms
-alias pubgt='pubgt() { copy ~/repos/pokeemerald/pokeemerald.gba ~/Documents/green-thing-roms/green-thing-v"$1".gba; }; pubgt'
-
+alias publishit='publishit() { copy ~/repos/pokeemerald/pokeemerald.gba ~/repos/pokemon/gt-roms/gt-"$1".gba; }; publishit'
 
 # changes commit author to nescioquid
-alias gcc='gc --amend --author=nescioquid'
-
-# merges select branches but faster
-alias gmp='gmne poryscript'
-alias gmdb='gmne debug'
-alias gmpdb='gmne poryscript && gmne debug'
+alias gcnescio='gc --amend --author=nescioquid'

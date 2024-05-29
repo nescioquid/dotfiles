@@ -3,9 +3,22 @@
 # astro things
 # alias astro='npm run astro'
 # alias astrohelp='astro -- --help'
+alias astrodev='npm run dev'
 
 # dotfiles things
 alias pd='pushdotfiles'
 
 # mom-health-updates things
 # alias momnp='mompn() vsc momnp()'
+
+# git things
+alias gun='gunwip'
+alias guna='gunwipall'
+# diffs a commit with the commit just before it
+# defaults to the commit where the HEAD is pointing
+# takes in a number for the amount of commits prior to HEAD
+alias gdh='gdh() { if [ $1 ]; then n=$1; git diff HEAD~$((n)) HEAD~$((n-1)); else git diff HEAD~1 HEAD; fi }; gdh'
+
+
+# docs-gt things
+alias opentrainerparties='vscr ~/repos/pokeemerald/src/data/trainer_parties.h'

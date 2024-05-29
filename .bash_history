@@ -1,5 +1,3 @@
-npm help install
-clear
 npm start
 clear
 npm start
@@ -1997,4 +1995,6 @@ rogue
 exit
 ji poke
 j poke
+exit
+zsh
 exit
