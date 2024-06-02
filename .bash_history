@@ -1,4 +1,3 @@
-npm start
 clear
 npm start
 clear
@@ -1998,3 +1997,4 @@ j poke
 exit
 zsh
 exit
+zsh

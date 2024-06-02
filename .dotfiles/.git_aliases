@@ -3,9 +3,6 @@
 # a faster way to get to the man pages for whatever git things you're learning about
 alias ghelp='ghelp() { man git-"$1"; }; ghelp'
 
-# opens the README for oh-my-zsh's git plugin
-alias gomz='omzplugin git'
-
 # short forms
 alias gl='glog'
 alias gll='glogg'
@@ -25,6 +22,9 @@ alias gsl='glast'
 alias gsd='gswd'
 alias gsm='gswm'
 alias gst='gswt'
+
+alias gun='gunwip'
+alias guna='gunwipall'
 
 # ---
 
@@ -113,13 +113,14 @@ alias gback='gback() { git reset HEAD~"$1" }; gback'
 # same as 'gback' but removes all changes from the working tree
 alias gbuck='gbuck() { git reset --hard HEAD~"$1" }; gbuck'
 
-# function gbuck() {
-#   git reset HEAD~"$1" && gclr
-# }
-
 # diffs a given commit with the commit just before it
 # defaults to the commit where the HEAD is pointing
 alias gdd='gdd() { if [ $1 ]; then git diff "$1"~1 "$1"; else git diff HEAD~1 HEAD; fi }; gdd'
+
+# diffs a commit with the commit just before it
+# defaults to the commit where the HEAD is pointing
+# takes in a number for the amount of commits prior to HEAD
+alias gdh='gdh() { if [ $1 ]; then n=$1; git diff HEAD~$((n)) HEAD~$((n-1)); else git diff HEAD~1 HEAD; fi }; gdh'
 
 # logs the branches that you use for development
 # defaults to the dev branch, pass in a string for any 'dev-[string]' branch

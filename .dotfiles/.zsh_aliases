@@ -8,10 +8,9 @@ alias what='als'
 
 # utilities
 
-alias omzplugin='omzplugin() { nano ~/.oh-my-zsh/plugins/"$1"/README.md; }; omzplugin'
-# alias omzp='omzplugin'
-
-# alias omzz='nano ~/.oh-my-zsh/plugins/z/MANUAL.md'
+# omz things
+alias omzhelp='omz plugin info'
+alias omzz='nano ~/.oh-my-zsh/plugins/z/MANUAL.md'
 
 # alias jumpto='j'
 # alias jump='j'
