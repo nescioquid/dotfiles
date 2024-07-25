@@ -1,5 +1,8 @@
 # NEW_ALIASES
 
+# git things
+alias gcaa = gaa && gca
+
 # astro things
 # alias astro='npm run astro'
 # alias astrohelp='astro -- --help'
