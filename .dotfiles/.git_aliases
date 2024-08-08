@@ -26,6 +26,12 @@ alias gst='gswt'
 alias gun='gunwip'
 alias guna='gunwipall'
 
+# combination of 'gloo' and 'gltt'
+alias glogot='glog $(git_current_branch) origin/$(git_current_branch) temp'
+
+# combination of 'gaa' and 'gca'
+alias gcaa='git add -v --all && git commit -v --all'
+
 # ---
 
 # common commands
@@ -37,6 +43,10 @@ alias gaa='git add -v --all'
 # branch
 alias gbb='git branch -vv'
 alias gbba='git branch -vv --all'
+
+# checkout
+alias gcod='git checkout $(git_develop_branch)'
+alias gcom='git checkout $(git_main_branch)'
 
 # commit
 alias gcm='git commit -v --message'
@@ -147,7 +157,7 @@ alias gswd='gswd() { if [ $1 ]; then gsw $(git_develop_branch)-"$1"; else gsw $(
 
 # fetches the last commits in which the specified label appears --Lunos
 # takes a label for the first argument, number of commits to output as the second
-alias glunos='glunos() { git log -n "$2" -S "$1"; }; glunos'
+alias glunos='glunos() { git log --max-count="$2" -S "$1"; }; glunos'
 
 # ---
 
@@ -188,11 +198,6 @@ alias gtemp='gtemp() { if git rev-parse --quiet --verify temp; then gb -df temp;
 
 # same as 'gtemp', but leaves you in the 'temp' branch
 alias gtempn='gtempn() { if git rev-parse --quiet --verify temp; then gb -df temp; gsw --create temp; else gsw --create temp; fi }; gtempn'
-
-# ---
-
-# combination of 'gloo' and 'gltt'
-alias glogot='glog $(git_current_branch) origin/$(git_current_branch) temp'
 
 # ---
 

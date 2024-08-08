@@ -1,8 +1,5 @@
 # NEW_ALIASES
 
-# git things
-alias gcaa='gaa && gca'
-
 # astro things
 # alias astro='npm run astro'
 # alias astrohelp='astro -- --help'
@@ -14,3 +11,12 @@ alias astrodev='npm run dev'
 # pokemon things
 alias vsctrainerparties='vscr ~/repos/pokeemerald/src/data/trainer_parties.h'
 # alias gae='ga src/data/wild_encounters.json && gclr'
+
+# python things
+alias python='python3'
+alias py='python3'
+
+# git things
+# glp but for only a single commit, like a diff
+alias glogpp='glpp() { if [ $1 ]; then git log --stat --patch --max-count=1 "$1"; else git log --stat --patch --max-count=1 HEAD; fi }; glpp'
+alias glpp='glogpp'
