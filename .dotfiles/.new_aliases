@@ -25,4 +25,5 @@ alias gaarbc='gaa && grbc'
 
 # pokemon things
 alias gcpdebug='gcp f9ee0f0622e237178f4253d1fbae03e000918e1c'
-alias gcpporyscript='gcp 75d4a57f010f6530ee6b295c113969fa3c6f26c0'
+alias gcpporyscript='gcp 3a9b712e6fda8a349b867afd6add62d63d8fef26'
+alias gcpsplit='gcp 0c5479eb9a8b4013127fb017e980192d463bb833'
