@@ -22,3 +22,7 @@ alias glogpp='glpp() { if [ $1 ]; then git log --stat --patch --max-count=1 "$1"
 alias glpp='glogpp'
 # combination of 'gaa' and 'grbc'
 alias gaarbc='gaa && grbc'
+
+# pokemon things
+alias gcppory='gcp 75d4a57f010f6530ee6b295c113969fa3c6f26c0'
+alias gcpdebug='gcp f9ee0f0622e237178f4253d1fbae03e000918e1c'
