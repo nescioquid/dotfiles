@@ -20,3 +20,5 @@ alias py='python3'
 # glp but for only a single commit, like a diff
 alias glogpp='glpp() { if [ $1 ]; then git log --stat --patch --max-count=1 "$1"; else git log --stat --patch --max-count=1 HEAD; fi }; glpp'
 alias glpp='glogpp'
+# combination of 'gaa' and 'grbc'
+alias gaarbc='gaa && grbc'

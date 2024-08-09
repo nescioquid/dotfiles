@@ -32,4 +32,5 @@ alias gswe='gsw expansion'
 alias publishit='publishit() { copy ~/repos/pokeemerald/pokeemerald.gba ~/repos/pokemon/gt-roms/gt-"$1".gba; }; publishit'
 
 # changes commit author to nescioquid
+# HEAD must be on the commit to be amended
 alias gcnescio='gc --amend --author=nescioquid'
