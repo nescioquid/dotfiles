@@ -71,6 +71,9 @@ alias help='man'
 alias here='pwd'
 alias last='cd -'
 alias o='open'
+alias please='sudo'
+alias plis='sudo'
+alias pls='sudo'
 alias to='cd'
 
 # english-like commands

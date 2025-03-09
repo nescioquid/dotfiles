@@ -167,3 +167,4 @@ eval "$(fzf --zsh)"
 # Adds my configurations
 source $HOME/.dotfiles/.zsh_aliases
 source $HOME/.dotfiles/.aliases
+. "/home/drjw/.deno/env"
