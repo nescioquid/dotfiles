@@ -20,9 +20,9 @@ alias copyit='copy pokeemerald.sav ~/repos/pokemon/last-save/'
 # 'make' is overridden for speed reasons
 # the command to find the j# is 'nproc'
 alias make='make -j$(nproc)'
-alias maake='make -j'
+# alias maake='make -j'
 alias makke='make clean && make -j$(nproc)'
-alias maakke='make clean && make -j'
+# alias maakke='make clean && make -j'
 
 # faster logging and switching for common branches
 alias gloge='glog expansion'
