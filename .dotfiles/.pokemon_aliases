@@ -34,3 +34,6 @@ alias publishit='publishit() { copy ~/repos/pokeemerald/pokeemerald.gba ~/repos/
 # changes commit author to nescioquid
 # HEAD must be on the commit to be amended
 alias gcnescio='gc --amend --author=nescioquid'
+
+# adds poryscript executable
+alias addporyscript='copy /home/drjw/Downloads/poryscript-linux/poryscript tools/poryscript/'

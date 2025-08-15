@@ -32,6 +32,10 @@ alias glogot='glog $(git_current_branch) origin/$(git_current_branch) temp'
 # combination of 'gaa' and 'gca'
 alias gcaa='git add -v --all && git commit -v --all'
 
+# combination of 'gaa' and 'grbc'
+alias gaarbc='gaa && grbc'
+
+
 # ---
 
 # common commands

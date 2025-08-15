@@ -1,16 +1,12 @@
 # NEW_ALIASES
 
+# windsurf things
+alias ws='windsurf'
+
 # astro things
 # alias astro='npm run astro'
 # alias astrohelp='astro -- --help'
 alias astrodev='npm run dev'
-
-# mom-health-updates things
-# alias momnp='mompn() vsc momnp()'
-
-# pokemon things
-alias vsctrainerparties='vscr ~/repos/pokeemerald/src/data/trainer_parties.h'
-# alias gae='ga src/data/wild_encounters.json && gclr'
 
 # python things
 alias python='python3'
@@ -18,13 +14,18 @@ alias py='python3'
 
 # git things
 # glp but for only a single commit, like a diff
-alias glogpp='glpp() { if [ $1 ]; then git log --stat --patch --max-count=1 "$1"; else git log --stat --patch --max-count=1 HEAD; fi }; glpp'
-alias glpp='glogpp'
-# combination of 'gaa' and 'grbc'
-alias gaarbc='gaa && grbc'
+# alias glogpp='glpp() { if [ $1 ]; then git log --stat --patch --max-count=1 "$1"; else git log --stat --patch --max-count=1 HEAD; fi }; glpp'
+# alias glpp='glogpp'
+
+# starts an interactive rebase from a certain number of commits before the HEAD
+alias grbii='grbii() { git rebase --interactive HEAD~"$1" }; grbii'
+
+# mom-health-updates things
+# alias momnp='mompn() vsc momnp()'
 
 # pokemon things
-alias gcpdebug='gcp f9ee0f0622e237178f4253d1fbae03e000918e1c'
-alias gcpporyscript='gcp 3a9b712e6fda8a349b867afd6add62d63d8fef26'
-alias gcpsplit='gcp 0c5479eb9a8b4013127fb017e980192d463bb833'
-alias addporyscript='copy /home/drjw/Downloads/poryscript-linux/poryscript tools/poryscript/'
+# alias vsctrainerparties='vscr ~/repos/pokeemerald/src/data/trainer_parties.h'
+# alias gae='ga src/data/wild_encounters.json && gclr'
+# alias gcpdebug='gcp f9ee0f0622e237178f4253d1fbae03e000918e1c'
+# alias gcpporyscript='gcp 3a9b712e6fda8a349b867afd6add62d63d8fef26'
+# alias gcpsplit='gcp 0c5479eb9a8b4013127fb017e980192d463bb833'
