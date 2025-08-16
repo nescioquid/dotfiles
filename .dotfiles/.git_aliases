@@ -8,6 +8,7 @@ alias gl='glog'
 alias gll='glogg'
 alias gla='gloga'
 alias glp='glogp'
+alias glpp='glogpp'
 alias gs='gsw'
 
 alias gld='glogd'
@@ -151,9 +152,15 @@ alias glogo='glogo() { if [ $1 ]; then glog origin/"$1"; else glog origin/$(git_
 # defaults to the current local branch and its associated branch at origin
 alias glogoo='glogoo() { if [ $1 ]; then glog "$1" origin/"$1"; else glog $(git_current_branch) origin/$(git_current_branch); fi }; glogoo'
 
+# glogp but for only a single commit, like a diff
+alias glogpp='glpp() { if [ $1 ]; then git log --stat --patch --max-count=1 "$1"; else git log --stat --patch --max-count=1 HEAD; fi }; glpp'
+
 # switches to the branches that you use for development
 # defaults to the dev branch, pass in a string for any 'dev-[string]' branch
 alias gswd='gswd() { if [ $1 ]; then gsw $(git_develop_branch)-"$1"; else gsw $(git_develop_branch); fi }; gswd'
+
+# starts an interactive rebase from a certain number of commits before the HEAD
+alias grbii='grbii() { git rebase --interactive HEAD~"$1" }; grbii'
 
 # ---
 

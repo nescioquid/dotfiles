@@ -12,14 +12,6 @@ alias astrodev='npm run dev'
 alias python='python3'
 alias py='python3'
 
-# git things
-# glp but for only a single commit, like a diff
-# alias glogpp='glpp() { if [ $1 ]; then git log --stat --patch --max-count=1 "$1"; else git log --stat --patch --max-count=1 HEAD; fi }; glpp'
-# alias glpp='glogpp'
-
-# starts an interactive rebase from a certain number of commits before the HEAD
-alias grbii='grbii() { git rebase --interactive HEAD~"$1" }; grbii'
-
 # mom-health-updates things
 # alias momnp='mompn() vsc momnp()'
 
