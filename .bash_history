@@ -1,6 +1,3 @@
-unzip -d ../destination/ CascadiaCode-2111.01.zip 
-unzip -d ../destination2/ CascadiaCode-2111.01.zip 
-~
 cd ~
 /
 ls
@@ -1997,4 +1994,7 @@ gsd
 grb temp
 gl
 zsh
+exit
+what gupom
+pushdotfiles 
 exit

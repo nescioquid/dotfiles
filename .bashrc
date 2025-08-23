@@ -126,6 +126,8 @@ else
   export EDITOR='nano'
 fi
 
+. "/home/drjw/.deno/env"
+
 # zoxide things
 eval "$(zoxide init --cmd j bash)"
 
@@ -137,4 +139,3 @@ eval "$(fzf --bash)"
 # Adds my configurations
 source $HOME/.dotfiles/.bash_aliases
 source $HOME/.dotfiles/.aliases
-. "/home/drjw/.deno/env"

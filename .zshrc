@@ -156,6 +156,8 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+. "/home/drjw/.deno/env"
+
 # zoxide things
 eval "$(zoxide init --cmd j zsh)"
 
@@ -167,4 +169,3 @@ eval "$(fzf --zsh)"
 # Adds my configurations
 source $HOME/.dotfiles/.zsh_aliases
 source $HOME/.dotfiles/.aliases
-. "/home/drjw/.deno/env"
