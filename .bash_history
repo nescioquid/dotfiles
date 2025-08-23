@@ -1,128 +1,3 @@
-npm start
-npx create-next-app firstapp
-npm run dev
-clear
-npm run dev
-npx create-next-app the-first
-ls
-cd the-first
-npm run dev
-cd /
-ls
-cd home
-ls
-cd drjw
-ls
-cd code
-cd nextjs
-ls
-cd .
-cd ..
-ls
-cd 11ty
-npm install react react-dom next
-npm run dev
-node -v
-ls
-cd code/nextjs
-ls
-mkdir two
-ls
-cd two
-ls
-cd ..
-ls
-cd two
-npx create-next-app nextjs-blog --use-npm --example "https://github.com/vercel/next-learn/tree/master/basics/learn-starter"
-cd nextjs-blog
-ls
-npm run dev
-npm i gray-matter
-clear
-npm run dev
-npm install remark remark-html
-npm run dev
-clear
-npm i date-fns
-npm run dev
-git -v
-git --version
-clear
-cd 
-ls
-code
-ls code
-code .
-ls
-cd code
-ls
-code .
-ls
-cd codes nextjs
-cd codes/nextjs
-ls
-cd nextjs-one/
-code .
-npx serve
-clear
-cd 
-ls
-cd
-ls
-cd /
-ls
-cd usr
-ls
-cd share
-ls
-cd fonts
-ls
-cd truetype
-ls
-cd ..
-cd type1
-ls
-cd ..
-cd opentype
-ls
-clear
-fc-list "JetBrains Mono"
-ls
-cd ..
-ls
-cd
-ls
-cd 
-cd /
-ls
-cd home
-ls
-cd drjw/
-ls
-cd .local
-ls
-cd share
-ls
-cd fonts
-ls
-rm 4JetBrainsMono-VariableFont_wght.ttf
-ls
-rm 1JetBrainsMono-VariableFont_wght.ttf
-rm JetBrainsMono-Bold.ttf
-ls
-cd ~
-ls
-cd Downloads
-cd
-ls
-cd Downloads
-ls
-cd fonts
-ls
-cd zips
-ls
-unzip JetBrains_Mono.zip 
-ls
 unzip -d ../destination/ CascadiaCode-2111.01.zip 
 unzip -d ../destination2/ CascadiaCode-2111.01.zip 
 ~
@@ -1997,4 +1872,129 @@ gstat
 addporyscript 
 exit
 gstat
+exit
+clr
+gdd
+gstat
+gaa
+gstat
+git status
+git restore include/constants/battle_ai_composite_flags.h
+git status
+gclr
+gstat
+g status
+clr
+gwip
+gun
+gunwip
+vscbash_aliases
+dot bash
+what gunwip
+vscdot bash
+src
+what gunwip
+gl
+gunwip
+gwip
+gun
+gwip
+pushdotfiles 
+clr
+what j
+clr
+docs
+documents
+gl
+l
+aliases-for-noobs/
+cd aliases-for-noobs/
+clr
+gl
+l
+vsc .git_aliases 
+exit
+alias marco='echo polo'
+marco
+exit
+marco
+documents
+cd aliases-for-noobs/
+vsc .aliases 
+vscdot aliases
+vscdot
+repos
+cd pokeemerald/
+clr
+gl
+gd
+gdd
+gdh 2
+gl
+gstat
+gl
+gsd
+gl
+what gsd
+what gswd
+gsd
+gsw dev
+gsm
+what gsm
+what gswm
+vscdot git
+exit
+gsm
+src
+gsd
+what gsd
+what gswd
+dot bashrc
+home
+l
+n .bashrc
+repos pokeemerald
+src
+what gswd
+gstat
+gswd
+src
+what gswd
+gsd
+gsm
+src
+what gswm
+what gswd
+repos pokeemerald
+glt
+what glt
+what glogtt
+glt
+gltt
+clr
+gl
+gstat
+gswt
+gswm
+src
+gswm
+gswd
+what gswm
+src
+what gswm
+gswm
+gsd
+gsm
+gsd
+gsm
+gsl
+gst
+gltt
+glt
+gl
+gdh
+gsd
+grb temp
+gl
+zsh
 exit
