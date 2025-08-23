@@ -1,0 +1,17 @@
+# NOOB_MODE_ALIASES
+
+alias noob_mode_aliases='${EDITOR} ~/.dotfiles/.noob_mode/.noob_mode_aliases'
+alias vscnoob_mode_aliases='code ~/.dotfiles/.noob_mode/.noob_mode_aliases'
+
+# The following are intended to override the corresponding noob mode aliases
+
+alias aliases='${EDITOR} ~/.dotfiles/.noob_mode/.aliases'
+alias naliases='nano ~/.dotfiles/.noob_mode/.aliases'
+alias npaliases='np ~/.dotfiles/.noob_mode/.aliases'
+alias vscaliases='code ~/.dotfiles/.noob_mode/.aliases'
+
+alias git_aliases='${EDITOR} ~/.dotfiles/.noob_mode/.git_aliases'
+alias ngit_aliases='nano ~/.dotfiles/.noob_mode/.git_aliases'
+alias npgit_aliases='np ~/.dotfiles/.noob_mode/.git_aliases'
+alias vscgit_aliases='code ~/.dotfiles/.noob_mode/.git_aliases'
+alias srcg='source ~/.dotfiles/.noob_mode/.git_aliases && echo hey, you sourced .git_aliases, yay!'

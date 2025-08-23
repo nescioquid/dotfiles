@@ -7,6 +7,9 @@ source ~/.dotfiles/.pokemon_aliases
 source ~/.dotfiles/.pop-os_aliases
 source ~/.dotfiles/.dotfiles_aliases
 # source ~/.dotfiles/.windows_aliases
+# source ~/.dotfiles/.noob_mode/.aliases
+# source ~/.dotfiles/.noob_mode/.git_aliases
+# source ~/.dotfiles/.noob_mode/.noob_mode_aliases
 
 # opens up alias files in the terminal editor
 alias aliases='aliases() { if [ $1 ]; then ${EDITOR} ~/.dotfiles/."$1"_aliases; else ${EDITOR} ~/.dotfiles/.aliases; fi }; aliases'

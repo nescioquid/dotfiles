@@ -1,70 +1,3 @@
-cd ~
-/
-ls
-codes
-open codes
-ls
-clear
-cd ~
-ls
-cd Downloads
-ls
-unzip -d /nd/ CascadiaCode-2111.01.zip 
-unzip -d /ndirectory/ CascadiaCode-2111.01.zip 
-unzip -d /newDirman/ CascadiaCode-2111.01.zip 
-sudo unzip -d /newDirman/ CascadiaCode-2111.01.zip 
-ls
-cd /
-ls
-cd newDirman/
-ls
-cd ../
-ls
-rm -r newDirman/
-ls
-cd newDirman/
-ls
-cd ../
-ls
-rm -rf newDirman/
-sudo rm -r newDirman/
-ls
-cd ~/Downloads
-ls
-unzip -d ./newFont/ CascadiaCode-2111.01.zip 
-ls
-unzip -d ~/.local/share/fonts/JetBrainsMono/ JetBrains_Mono.zip 
-unzip -d ~/.local/share/fonts/CascadiaCode/ CascadiaCode-2111.01.zip 
-cd /
-ls
-~
-cd ~
-ls
-cd /
-ls
-cd ~
-ls
-cd .local
-ls
-cd share/fonts
-ls
-cd JetBrains
-ls
-cd TrueType/
-ls
-cd JetBrains\ Mono/
-ls
-cd /usr
-cd
-cd /usr
-ls
-cd share/fonts
-ls
-cd truetype/
-ls
-cd ../
-ls X11
-ls type1/
 ls
 ls cmap
 ls cMap
@@ -1997,4 +1930,71 @@ zsh
 exit
 what gupom
 pushdotfiles 
+exit
+thanksnescip
+thanksnescio
+exit
+thanksnescio
+thanksqueggs
+exit
+bashrc
+exit
+home
+last
+n .bashrc
+nano .bashrc
+clr
+last
+what
+alias
+aliases
+clr
+dotfiles
+home
+cd .dotfiles
+cd .noob_mode/
+l
+n .aliases 
+nano .aliases 
+alias srcg
+clr
+l
+mf .noob_mode_aliases
+touch .noob_mode_aliases
+l
+vsc .aliases .git_aliases 
+code .aliases .git_aliases 
+..
+.aliases
+vsc .aliases
+l
+code .aliases
+code .new_aliases
+code .local_aliases
+.noob_mode/
+l
+cd noob_mode
+cd .noob_mode
+l
+vsc .noob_mode_aliases 
+code .noob_mode_aliases 
+src
+home
+repos pokeemerald
+cd repos
+src
+clr
+aliases
+alias aliases
+home
+code .bashrc
+src
+alias aliases
+aliases
+clr
+src
+alias noob_mode_aliases
+noob_mode_aliases
+aliases
+ngit_aliases 
 exit
