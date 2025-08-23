@@ -1,24 +1,3 @@
-ls
-ls cmap
-ls cMap
-ls opentype/
-ls truetype/
-ls truetype/ubuntu/
-ls cd /home/drjw/.local/share/fonts/Saja Typeworks/TrueType/Cascadia Code/Cascadia_Code_Regular.ttf
-cd /
-cd /home/drjw/.local/share/fonts/Saja Typeworks/TrueType/Cascadia Code/Cascadia_Code_Regular.ttf
-cd ~
-cd .local/share/fonts
-ls
-cd Saja\ Typeworks/
-ls
-cd TrueType/
-ls
-cd ../
-ls
-cd ../
-ls
-rm Saja\ Typeworks/
 rm --help
 ls
 rmdir Saja\ Typeworks/
@@ -1997,4 +1976,25 @@ alias noob_mode_aliases
 noob_mode_aliases
 aliases
 ngit_aliases 
+exit
+clr
+gl
+glog
+gsm
+gswm
+gsw feat
+gtemp
+gswd
+glt
+gltt
+glogt
+gtemp
+gtempd
+gbdt
+gstat
+gsw dev
+gbdt
+ngit_aliases 
+what n
+alias n
 exit
