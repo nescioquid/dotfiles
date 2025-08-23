@@ -1,34 +1,3 @@
-clear
-npm start
-clear
-npm start
-clear
-npm install luxon
-npm start
-clear
-npm list -g 
-ls
-cd
-ls
-cd .
-ls
-cd ..
-ls
-cd ..
-ls
-cd ..
-ls
-sudo apt list --installed
-clear
-cd
-ls
-sudo apt list --installed
-sudo apt list --installed | less
-sudo apt install visual-studio-code
-sudo apt purge visual-studio-code
-sudo apt purge code
-npm start
-clear
 npm start
 npx create-next-app firstapp
 npm run dev
@@ -1998,3 +1967,34 @@ exit
 zsh
 exit
 zsh
+exit
+zsh
+exit
+l
+clr
+alias what
+what
+clr
+what gsw
+git status
+what status
+what gist
+dot git
+gstat
+gl
+gbb
+git branch
+what gbb
+alias gbb
+gse
+gstat
+gst
+gstat
+what g status
+g status
+clear
+gstat
+addporyscript 
+exit
+gstat
+exit
