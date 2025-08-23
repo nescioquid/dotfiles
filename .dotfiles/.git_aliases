@@ -3,6 +3,10 @@
 # a faster way to get to the man pages for whatever git things you're learning about
 alias ghelp='ghelp() { man git-"$1"; }; ghelp'
 
+# experimenting with swapping default behaviors with temp commands
+alias glt='glogtt'
+alias gltt='glogt'
+
 # short forms
 alias gl='glog'
 alias gll='glogg'
@@ -15,8 +19,8 @@ alias gld='glogd'
 alias glm='glogm'
 alias glo='glogo'
 alias gloo='glogoo'
-alias glt='glogt'
-alias gltt='glogtt'
+# alias glt='glogt'
+# alias gltt='glogtt'
 alias glot='glogot'
 
 alias gsl='glast'
