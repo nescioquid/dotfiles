@@ -165,7 +165,7 @@ alias gback='gback() { git reset --mixed HEAD~"$1"; }; gback'
 alias gdd='gdd() { if [ $1 ]; then git diff "$1"~1 "$1"; else git diff HEAD~1 HEAD; fi }; gdd'
 
 # my preferred git-status
-alias gist='git status --short --branch'
+# alias gist='git status --short --branch'
 
 # fetches the last commits in which the specified label appears --Lunos
 # takes a label for the first argument, number of commits to output as the second
@@ -223,7 +223,11 @@ alias glogt='git log --oneline --decorate --graph temp'
 alias gswt='git switch temp'
 
 # automatically deletes any previous branch 'temp' and creates new a one
+# choose your preferred functionality:
+# this one leaves you in the 'temp' branch
 alias gtemp='gtemp() { if git rev-parse --quiet --verify temp; then git branch -df temp && git switch --create temp; else git switch --create temp; fi }; gtemp'
+# while this one brings you back to the branch you created it from
+# alias gtemp='gtemp() { if git rev-parse --quiet --verify temp; then gb -df temp; gsw --create temp; gsw -; else gsw --create temp; gsw -; fi }; gtemp'
 
 # ---
 

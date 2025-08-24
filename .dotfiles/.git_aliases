@@ -161,7 +161,7 @@ alias glogpp='glpp() { if [ $1 ]; then git log --stat --patch --max-count=1 "$1"
 
 # switches to the branches that you use for development
 # defaults to the dev branch, pass in a string for any 'dev-[string]' branch
-# alias gswd='gswd() { if [ $1 ]; then gsw $(git_develop_branch)-"$1"; else gsw $(git_develop_branch); fi }; gswd'
+alias gswd='gswd() { if [ $1 ]; then gsw $(git_develop_branch)-"$1"; else gsw $(git_develop_branch); fi }; gswd'
 
 # starts an interactive rebase from a certain number of commits before the HEAD
 alias grbii='grbii() { git rebase --interactive HEAD~"$1" }; grbii'

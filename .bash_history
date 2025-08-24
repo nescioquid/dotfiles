@@ -1,187 +1,3 @@
-rm --help
-ls
-rmdir Saja\ Typeworks/
-rmdir --help
-rm -r Saja\ Typeworks/
-ls
-rm -r JetBrains/
-ls
-cd ../../../
-clear
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-$ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-zsh -v
-sudo apt i zsh
-sudo apt install zsh
-zsh -v
-cd /
-ls
-cd bin
-ls
-vsh --version
-cd ~
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-vsh --version
-vsh -v
-cd ~
-sudo apt install zsh
-zsh -h
-cd ~
-zh
-zsh
-zsh
-code
-cd ~
-python -v
-python3 -v
-autojump -v
-z -v
-sudo apt install autojump
-cd ~
-ls
-cd Documents/codes
-cd Documents
-ls
-../
-cd ../
-cd codes
-cd nextjs
-cd ~
-j nextjs
-cd /
-usr/share
-cd usr/share
-ls
-cd autojump
-ls
-sudo apt uninstall autojump
-
-sudo apt uninstall autojump
-cd usr/share
-cd autojump
-ls
-cd ../
-cd doc
-ls
-cd autojump
-ls
-cd README.Debian
-open README.Debian
-cat README.Debian
-sudo apt remove autojump
-ls
-../
-cd ../
-ls
-cd autojump
-start .
-~
-start .
-cd ~
-nautilus .
-sudo apt autoremove
-cd /
-ls
-cd ~
-ls
-code ~/.bashrc
-cd custom
-ls
-echo .
-pwd
-cd ~
-../
-cd ../
-ls
-cd ~
-ls
-cd custom
-ls
-code .
-z c
-cd ~
-cd codes
-cd nextjs
-cd ../
-cd eleventy
-cd ~
-cd Documents/
-cd ../
-cd codes
-cd eleventy
-cd ../
-cd nextjs
-j eleventy
-z eleventy
-j nextjs
-j eleventy
-z documents
-z home
-z /
-z eleventy
-j next
-j eleventy
-history
-j eleventy
-z eleventy
-j eleventy
-ls
-j doc
-ls
-z fing
-cd Fingering\ Charts/
-ls
-z ~
-z Fingering\ Charts/
-z /home/drjw/codes/eleventy/
-cd ./
-cd pwd
-cd ;pwd
-....
-..l
-..l -Q
-....
-j doc
-l
-nautilus.
-nautilus .
-j code
-j next
-l
-j tests
-cd tests
-l
-cd dumb
-..l
-l
-cd dumb
-j/
-j /
-j dumb
-j ~
-j dumb
-...l
-..l
-dumb
-cd dumb
-~
-j dumb
-..l
-..
-cl -h
-~
-j ~
-j dumb
-..
-cd nextjs/
-j dumb
-..
-cd nextjs/
-j -c dumb
-z ~
-source ~/.bashrc
-j eleventy
 z eleventy
 ~
 j eleventy
@@ -1998,3 +1814,187 @@ ngit_aliases
 what n
 alias n
 exit
+ngit_aliases 
+exit
+gstat
+what gist
+what gstat
+alias gstat
+ngit_aliases 
+glogo
+glogo dev
+clr
+gl
+glog
+g log
+vscgit_aliases 
+clr
+topcommands 
+alias gco
+exit
+gt
+git tag
+glog
+gswt
+g checkout expansion/1.12.2
+glog
+gtemp
+glt
+glogt
+gbb
+gb -df lowercased
+gbb
+gb -df gabby-and-ty-removal
+gbb
+glog main
+gbb
+git branch
+alias gbb
+g branch -v
+g branch -vv
+exit
+clr
+gstat
+alias ga
+alias gaa
+alias gcaa
+glog
+gaa
+gstat
+gclr
+gclear
+gstat
+alias grstr
+git restore .
+gstat
+ghelp restore
+what gclear
+alias gclear
+ghelp clean
+git clean
+git clean -f
+gstat
+git clean -fd
+gstat
+zsh
+grst .
+gstat
+clear
+src
+nano git_aliases
+aliases
+naliases
+...
+last
+alias last
+clear
+glog temp
+gswd
+clr
+glog
+alias gdh
+glog
+gdd ee2e0b15b4
+glog
+glogt
+gtemp
+gh browse
+gist
+what gist
+alias gist
+ngit_aliases 
+zsh
+clr
+gist
+gstat
+ngit_aliases 
+zsh
+ngit_aliases 
+clr
+gstat
+gbm nice
+gstat
+grename temp
+gstat
+gbn temper
+gbb
+gswt
+alias gbd
+gb -df temper
+gbb
+g checkout origin/clean
+gl
+glog
+gsl
+gswl
+gswt
+glog
+g checkout expansion/1.12.2
+glog
+gbnt
+gtemp
+glog
+grename clean
+gstat
+gclear
+gist
+gstat
+glog
+gset
+gset clean
+glogo
+glogo clean
+glog
+gpush -f
+g push -f
+gbb
+glog
+gtemp
+glog
+clr
+ngit_aliases 
+exit
+gswt
+gswd
+what gswd
+alias gswd
+src
+glog
+gs mods
+clr
+gs mods
+glob
+glog
+gbb
+exit
+alias gist
+gstat
+clr
+glog
+gswd
+glog
+gtemp
+gback
+gstat
+gclear
+gstat
+glogt
+glog
+glogd
+gswd
+gtemp
+glog
+vscgit_aliases 
+glog
+gbuck
+zsh
+gsw mods
+alias gs
+gtemp
+glog
+src
+gtemp
+exit
+gl
+glog
+gs feat
