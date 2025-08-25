@@ -1,0 +1,236 @@
+# CHEATSHEET
+
+# instructions
+
+#    to include these aliases in your linux environment (WSL, WSL2, Ubuntu, Debian etc):
+# 1) add this file to your home directory, so that it's located at `~/.cheatsheet`
+# 2) add the following line of code (besides the hashtag [#]) to the bottom of your `.bashrc` file,
+#    located at `~/.bashrc`:
+
+#    source $HOME/.cheatsheet
+
+#    which will make it so that this file gets automatically sourced whenever you open your terminal
+# 3) exit out of your terminal and open up a new one
+# 4) that's it! to confirm this file has been sourced correctly, try running `thanks`
+#    you should get a message that says "you are so welcome!"
+#    if you do, you did everything right! congrats!
+#    give yourself a pat on the back. savor it.
+# 5) try out some of the aliases below in your own repo
+# 6) see the bottom of this file to learn about creating your own custom aliases
+
+# ---
+
+# bash
+
+# sets nano as your terminal editor
+export EDITOR='nano'
+
+# sources (reloads/reinitializes) your `.bashrc` file, which in turn sources this file
+alias reload_cheatsheet='source ~/.bashrc && echo hey, you reloaded the cheetsheat, yay!'
+
+# opens this file in your terminal editor
+alias nano_cheatsheet='nano ~/.cheatsheet'
+
+# opens this file in VS Code
+alias vscode_cheatsheet='code ~/.cheatsheet'
+
+# ---
+
+# plain English vocabulary
+alias to='cd'
+alias back='cd ..'
+alias home='cd ~'
+alias root='cd /'
+alias last='cd -'
+alias help='man'
+alias here='pwd'
+alias list='ls -1A --group-directories-first'
+alias what='alias'
+
+# gets you back and forth between the Windows and Linux file systems
+alias linux='cd ~'
+alias windows='cd /mnt/c/Users/'
+
+# useful stuff
+alias apt='sudo apt'
+alias sauu='sudo apt update && sudo apt upgrade -y'
+alias vscode='code -n .'
+alias explorer='explorer.exe .'
+
+# ---
+
+# git
+
+alias g='git'
+
+# local and remote branches at origin management
+
+# creates an upstream branch at origin associated with the current local branch
+# pass in the name of the new origin branch
+# (you probably want the same name as the current local branch)
+alias gsetup='git push -v --set-upstream origin'
+
+# associates a local branch with an already existing upstream branch at origin
+# pass in the name of an already existing upstrean branch at origin
+# (you probably want the same name as the current local branch)
+alias gset='gset() { git branch --set-upstream-to=origin/"$1"; }; gset'
+
+# unsets the association between the current local branch and its upstream branch
+alias gunset='git branch --unset-upstream && echo hey, it looks like you unset that upstream branch'
+
+# ---
+
+# temporary branches
+# these features allow you to manage a branch 'temp' that you can use to store temporary changes to your code,
+# like when testing out two versions of a feature, or when cherry-picking
+
+# automatically deletes any existing 'temp' branch and creates new a one from the current branch
+alias gtemp='gtemp() { if git rev-parse --quiet --verify temp; then gb -df temp; gsw --create temp; gsw -; else gsw --create temp; gsw -; fi }; gtemp'
+
+# deletes 'temp' branch 
+alias guntemp='git branch -df temp'
+
+# ---
+
+# oh-my-zsh's work in progress (wip)
+# these features allow you to pause developing one branch and switch to another one ('Work in Progress', or 'wip')
+# when you want to go back to work, just 'unwip' it
+
+# makes wip commit
+alias gwip='gwip() { git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign --message "--wip-- [skip ci]"; }; gwip'
+
+# undoes wip commit
+alias gunwip='gunwip() { git rev-list --max-count=1 --format="%s" HEAD | grep -q "\--wip--" && git reset HEAD~1; }; gunwip'
+
+# ---
+
+# utility aliases
+# adds features for common workflows, some assumed but not directly provided by git itself
+
+# a way to get to the manual pages for whatever git things you're learning about
+# instead of running `man git-branch` for instance, now you can run `ghelp branch`
+alias ghelp='ghelp() { man git-"$1"; }; ghelp'
+
+# renames a git branch
+alias grename='git branch --move'
+
+# creates a new branch
+alias gcreate='git switch --create'
+alias gbc='git switch --create'
+alias gbn='git switch --create'
+
+# clears out the working tree entirely, except for already staged (added) changes
+alias gclear='git restore . && git clean -df'
+
+# uncommits one or more commits, leaving their changes in the working tree
+# defaults to one commit, pass in a number to undo more than one
+alias gback='gback() { git reset --mixed HEAD~"$1"; }; gback'
+
+# diffs a given commit with the commit just before it
+# defaults to the commit where the HEAD is pointing
+# pass in the hash of the commit you want to see the diff of
+alias gdd='gdd() { if [ $1 ]; then git diff "$1"~1 "$1"; else git diff HEAD~1 HEAD; fi }; gdd'
+
+# logs a branch at origin
+alias glogo='glogo() { git log --oneline --decorate --graph origin/"$1"; }; glogo'
+
+# clears out the working tree entirely, including already staged (added) changes
+alias gwipe='git reset --hard && git clean --force -df'
+
+# switches to the last branch that you were on
+alias glast='git switch -'
+alias gswl='git switch -'
+
+# ---
+
+# short forms
+# verbose flags (-v, -vv, --verbose) are added if possible
+
+# add
+alias ga='git add -v'
+alias gaa='git add -v --all'
+
+# bisect
+alias gbs='git bisect'
+alias gbsb='git bisect bad'
+alias gbsg='git bisect good'
+alias gbsn='git bisect new'
+alias gbso='git bisect old'
+alias gbsr='git bisect reset'
+alias gbss='git bisect start'
+
+# branch
+alias gb='git branch -vv'
+alias gba='git branch -vv --all'
+alias gbm='git branch --move'
+
+# checkout
+alias gco='git checkout'
+
+# cherry-pick
+alias gcp='git cherry-pick'
+alias gcpa='git cherry-pick --abort'
+alias gcpc='git cherry-pick --continue'
+
+# commit
+alias gc='git commit -v'
+alias 'gc!'='git commit -v --amend'
+alias gcm='git commit -v --message'
+alias gcam='git commit -v --all --message'
+
+# config
+alias gcf='git config --list'
+alias gcfg='git config --list --global'
+
+# diff
+alias gd='git diff'
+alias gds='git diff --staged'
+
+# fetch
+alias gf='git fetch'
+
+# log
+alias glog='git log --oneline --decorate --graph'
+alias gloga='git log --oneline --decorate --graph --all'
+alias glogg='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'\'' --stat'
+alias glogp='git log --stat --patch'
+
+# merge
+alias gm='git merge -v'
+alias gma='git merge --abort'
+
+# pull
+alias gpll='git pull -v'
+
+# push
+alias gpsh='git push -v'
+
+# rebase
+alias grb='git rebase'
+alias grba='git rebase --abort'
+alias grbc='git rebase --continue'
+
+# remote
+alias gr='git remote -v'
+alias gra='git remote add'
+
+# reset
+alias grst='git reset'
+
+# restore
+alias grstr='git restore'
+
+# status
+alias gstat='git status'
+
+# switch
+alias gsw='git switch'
+alias gswc='git switch --create'
+
+
+# ---
+
+# add your own aliases here!
+
+# this example prints 'you are so welcome!' when you call it, try it out!
+alias thanks='echo you are so welcome!'

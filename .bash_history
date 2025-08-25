@@ -1,69 +1,3 @@
-zsh_aliases
-bash_aliases
-docs-gt && source ~/Documents/.git_aliases
-glm
-a glogm
-docs-gt && source ~/Documents/.git_aliases
-glm
-docs-gt && source ~/Documents/.git_aliases
-glm
-a glogm
-bashrc
-docs-gt && source ~/Documents/.git_aliases
-l
-clr
-gl
-gld
-what gld
-what glogd
-docs-gt && source ~/Documents/.git_aliases
-gld
-gl
-gunwip
-gwip
-home
-l
-here
-bashrc
-thanksquegg
-source ~/Documents/.git_aliases
-srcg
-thanksquegg
-source ~/Documents/.git_aliases
-thanksquegg
-gb
-docs-gt
-gb
-gba
-source ~/Documents/.git_aliases
-gb
-gbb
-source ~/Documents/.git_aliases
-gb
-gb -df dev-nice
-gbb
-gsd
-gswd
-gtemp
-gist
-g status
-gback
-g status
-g status --branch
-g status --short
-g status --short --branch
-home
-documents 
-to git-aliases-for-noobs/
-l
-vsc .git_aliases 
-source ~/Documents/git-aliases-for-noobs/.git_aliases
-srcg
-thanksquegg
-clr
-gist
-gstat
-clr
 what gstat
 srcg
 source ~/Documents/git-aliases-for-noobs/.git_aliases
@@ -1998,3 +1932,69 @@ gcaa
 gaa
 gc
 exit
+gaa
+gc
+alias gcfg
+gcfg
+echo $EDITOR
+grep -R "EDITOR" ~/.bashrc ~/.bash_profile ~/.profile /etc/profile /etc/bash.bashrc /etc/environment /etc/profile.d/
+aliases
+sudo aliases
+home
+cd .dotfiles
+cd .noob_mode/
+aliases
+less .aliases
+rc bash
+clr
+lw
+poke
+lw
+what lw
+alias lw
+alias l
+ldot
+vscdot
+src
+alias list
+list
+vscode
+back
+l
+cd banh-mi/
+vscode
+vscode_aliases
+l
+list
+what l
+alias l
+home
+vscode
+.bashrc
+vscode .bashrc
+list
+cd repos
+src
+source_aliases 
+reload_cheasheet
+reload_cheatsheet
+whatis
+whatis alias
+whatis --help
+whatis --usage
+help whatis
+code
+whereami
+vscode
+l
+vscode colored-folders-path.md 
+list
+rc bash
+nano_cheatsheet 
+reload_cheatsheet 
+nano_cheatsheet 
+reload_cheatsheet 
+nano_cheatsheet 
+what
+clr
+what gbb

@@ -16,15 +16,5 @@ alias npgit_aliases='np ~/.dotfiles/.noob_mode/.git_aliases'
 alias vscgit_aliases='code ~/.dotfiles/.noob_mode/.git_aliases'
 alias srcg='source ~/.dotfiles/.noob_mode/.git_aliases && echo hey, you sourced .git_aliases, yay!'
 
-# ---
-
-# Notes after first use with a bash CLI and git learner:
-
-# should stick to one style of calling commands, like git/g status vs gstat vs unused "gstatus"
-# could also paper over those differences using more aliases, like just include "gstatus" to handle gracefully?
-# include alias what='alias'? gets around alias being awkward to spell if unknown to learner
-# remove aliases that reference their local/windows username, both because:
-# - it created an awkward moment where personal information was given
-# - ended up breaking as handling the space in the windows username was unhandled
-# stop even reverencing the shorter aliases, rethink some like 'gbba' that require explanation
-# just configure their editor to be nano instead of vim
+alias nano_cheatsheet='nano ~/.dotfiles/.noob_mode/.cheatsheet'
+alias vscode_cheatsheet='code ~/.dotfiles/.noob_mode/.cheatsheet'
