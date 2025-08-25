@@ -27,3 +27,4 @@ alias srcg='source ~/.dotfiles/.noob_mode/.git_aliases && echo hey, you sourced 
 # - it created an awkward moment where personal information was given
 # - ended up breaking as handling the space in the windows username was unhandled
 # stop even reverencing the shorter aliases, rethink some like 'gbba' that require explanation
+# just configure their editor to be nano instead of vim

@@ -1,8 +1,3 @@
-gaa
-gist
-gwip
-gl
-omzp git
 zsh_aliases
 bash_aliases
 docs-gt && source ~/Documents/.git_aliases
@@ -1997,4 +1992,9 @@ glog dev main
 gsw mods
 glog dev main
 clr
+exit
+aliases
+gcaa
+gaa
+gc
 exit

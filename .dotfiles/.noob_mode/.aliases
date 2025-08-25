@@ -11,105 +11,51 @@
 
 #    which will make it so that this file gets automatically sourced whenever you open your terminal
 # 3) exit out of your terminal and open up a new one
-# 4) that's it! to confirm this file has been sourced correctly, try running `thanksnescio`
+# 4) that's it! to confirm this file has been sourced correctly, try running `thanks`
 #    you should get a message that says "you are so welcome!"
 #    if you do, you did everything right! congrats!
 #    give yourself a pat on the back. savor it.
-# 5) take a moment to configure the interface below to your needs,
-#    as some commands will not work properly without configuration
-# 6) try out some of the aliases below in your own repo
-# 7) see the bottom of this file to learn about creating your own custom aliases
+# 5) try out some of the aliases below in your own repo
+# 6) see the bottom of this file to learn about creating your own custom aliases
 
 # ---
 
-## interface
+# sets nano as your terminal editor
+export EDITOR='nano'
 
-# what's your Windows username?
-# must be an exact match
-# if you're unsure, run `windows && lw' and look for your username
-USER='your_username'
+# sources (reloads/reinitializes) your `.bashrc` file, which in turn sources this file
+alias source_aliases='source ~/.bashrc && echo hey, you sourced .bashrc, yay!'
 
 # opens this file in your terminal editor
-alias aliases='${EDITOR} ~/.aliases'
-
-# opens this file in nano, a simple terminal editor
-alias naliases='nano ~/.aliases'
-
-# opens this file in notepad
-# assumes you're using Windows
-alias npaliases='np ~/.aliases'
+alias nano_aliases='nano ~/.aliases'
 
 # opens this file in VS Code
-# assumes you're using VS Code
-alias vscaliases='code ~/.aliases'
-
-# sources (updates/reinitializes) your `.bashrc` file, which in turn sources this file
-# assumes you've placed it in your home directory, so that it's located at `~/.aliases`
-alias src='source ~/.bashrc && echo hey, you sourced .bashrc, yay!'
+alias vscode_aliases='code ~/.aliases'
 
 # ---
 
-## actual aliases
-
-# locations
+# plain English vocabulary
 alias home='cd ~'
 alias root='cd /'
-alias windows='cd /mnt/c/Users/'
-
-alias desktop='desktop() { cd /mnt/c/Users/"${USER}"/Desktop/ }; desktop'
-alias documents='documents() { cd /mnt/c/Users/"${USER}"/Documents/; }; documents'
-alias downloads='downloads() { cd /mnt/c/Users/"${USER}"/Downloads/; }; downloads'
-
-# opens up a file explorer at the current directory
-alias explore='explorer.exe .'
-
-# opens up a file in notepad
-# pass in the name of the file
-alias np='notepad.exe'
-
-# apt
-alias apt='sudo apt' # 'apt' overwritten for copypaste reasons
-alias sauu='sudo apt update && sudo apt upgrade -y'
-
-# simple things
-alias clr='clear'
+alias back='cd ..'
+alias last='cd -'
 alias help='man'
 alias here='pwd'
-alias last='cd -'
+alias list='ls -1A --group-directories-first && echo --- && echo \(listed with directories first\)'
 
-# cd ..
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
-alias ......='cd ../../../../..'
+# gets you back and forth between the Windows and Linux file systems
+alias linux='cd ~'
+alias windows='cd /mnt/c/Users/'
 
-# ls
-# alias l='ls -lah'
-alias ll='ls -lh'
-alias la='ls -lAh'
-alias lsa='ls -lah'
-
-alias l='ls -1A --group-directories-first && echo --- && echo \(listed with directories first\)'
-alias ll='ls -lAht && echo --- && echo \(listed by last modified\)'
-alias lll='ls -lAh --group-directories-first && echo --- && echo \(listed with directories first\)'
-alias llll='ls -lahF && echo --- && echo \(listed alphabetically\);'
-alias ldot='ls -ld .*'
-alias lsize='ls -1AhsS'
-alias lw='ls -1 --group-directories-first && echo --- && echo \(listed with directories first\)'
-
-# see the top fifty commands you run most
-alias topcommands='topcommands() { history | awk '\''{cmd[$2]++} END {for(elem in cmd) {print cmd[elem] " " elem}}'\'' | sort -n -r | head -50; }; topcommands'
+# useful stuff
+alias apt='sudo apt'
+alias sauu='sudo apt update && sudo apt upgrade -y'
+alias vscode='code -n .'
+alias explorer='explorer.exe .'
 
 # ---
 
 ## add your own aliases here!
 
 # this example prints 'you are so welcome!' when you call it, try it out!
-alias thanksnescio='echo you are so welcome!'
-
-# want to give another name to any of the aliases above? it's easy! just make another alias!
-# this example aliases the name 'docs' to `documents`, which is in turn an alias of
-# `documents() { cd /mnt/c/Users/"${USER}"/Documents/; }; documents`
-# just in case you'd like a shorter name to access your Documents folder/directory by
-alias docs='documents'
+alias thanks='echo you are so welcome!'
