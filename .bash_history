@@ -1,371 +1,3 @@
-z eleventy
-~
-j eleventy
-z next
-~
-la
-ls -a
-ls -l
-ll
-ls -F
-l
-l
-ls -c
-ls -C
-ll
-ls -h
-ls --help
-...l
-l
-..l
-ll
-type ll
-..
-cd --help
-type l
-l
-ls -lah
-alias ls
-alias
-printenv
-printenv
-. ~/.bashrc
-printenv
-. ~/.bashrc
-printenv
-cd --help
-printenc
-printenv
-. ~/.bashrc
-printenv
-ls -a ~
-~/.oh-my-zsh/
-/
-~
-clear
-alias
-. ~/.bashrc
-alias
-alias
-. ~/.bashrc
-alias
-clear
-l
-clear
-alias
-clear
-alias
-...
-j eleventy/
-j next
-j eleventy
-~
-....
-whence --help
-mkdir --help
-md newb
-rd newb
-type md
-type mv
-type ls
-type mkdir
-type touch
-clear
-type clear
-clear
-l
-la
-ll
-lsa
-cd .git
-ls
-cd hooks
-ls
-la
-...
-la
-ls
-lsa
-ll
-l
-ll
-clear
-ll
-la
-lsa
-. ~/.bashrc
-l
-ll
-la
-ls --help
-ls -g
-ls -G
-ls --group-directories-first 
-ls -f
-ls -F
-l
-l
-la
-ll
-lsa
-l
-..l
-..
-...
-cd ..
-j ne
-cd ../
-alias
-...ll
-.l
-..l
-ll
-l
-...l
-clear
-alias
-ll
-la
-~
-l
-ll
-la
-clear
-..
-..l
-ll
-ls -h
-ls
-clear
-ls -h
-ls -l
-ls -a
-l
-~
-la
-touch .aliases
-l
-la
-code .aliases
-. ~/.bashrc
-aliases
-alias
-. ~/.bashrc
-alias
-clear
-npm list -g
-_npm uninstall trash-cli
-_ npm uninstall trash-cli
-sudo npm autoremove
-j codes
-touch mybody.md
-l
-toss mybody.md 
-l
-j trash f
-nautilus . 
-j c
-mv --help
-j eleventy
-...la
-cd --help
-type make
-make --help
-lt --help
-alias
-cowsay i love you
-alias
-j next-one
-j next next
-l
-....lsa
-ll
-type open
-type start
-type open
-type explore
-j sand
-open
-clear
-alias
-la
-lsa
-~
-l
-ll
-la
-lsa
-alias
-lsa
-....lsa
-alias
-type a
-j sand
-l
-chest
-cd chest
-l
-vscode ~/.aliases 
-j sand
-goto chest/
-type g
-li
-ll
-j sand
-l
-chest
-go chest
-l
-..
-jumpto next
-l
-goback
-goto eleventy
-jumpto next next
-ll
-goback
-type back
-type backup
-j sand
-~~
-root
-gohome
-jumpto sandbox
-jump next next
-li
-clear
-back
-goback
-back
-li
-l
-jumpto documents
-l
-gohom
-gohome
-j sand
-~~
-/
-info
-hello --help
-type ~
-alias ~
-alias ~~
-~
-nano .aliases 
-aliased
-topten
-shopt -h
-shopt --help
-doaliases
-dobash
-node -v
-dobash
-toptwenty
-command -v nvm
-node -v
-zsh
-type xz-utils
-type snap
-curl -h
-zah
-lll
-..
-toss flutter
-..l
-close
-clear
-zsh
-lll
-/mnt/C
-explore
-lll
-/
-cd /
-lll
-cd boot
-ll
-cd efi
-sudo cd efi
-cd --help
-sudo --help
-sudo -s cd efi
-l
-efi
-cd efi
-sourcebashrc 
-cd --help
-last
-zsh
-gstat
-gse
-gstat
-glast
-exit
-docs
-downloads
-repos
-pokeemerald 
-back
-l
-last-save
-cd last-save/
-l
-exit
-clr
-zsh
-exit
-nanorc 
-j notes
-exit
-src
-exit
-src
-exit
-glog
-glogg
-exit
-glog
-gloog
-glogg
-docs-gt && source ~/Documents/.git_aliases
-glogg
-a gsw
-exit
-glog
-clr
-git log
-glog
-a glog
-exit
-docs-gt && source ~/Documents/.git_aliases
-omzp git
-docs-gt && source ~/Documents/.git_aliases
-gl
-a gl
-glogg
-gll
-gl
-ghelp log
-docs-gt && source ~/Documents/.git_aliases
-gl
-glog
-clr
-gl
-gll
-last
-gl
-pokeemerald 
-gl
-last
-clr
-l
-gist
-gwip
-gl
-gunwip
-gl
-gist
 gaa
 gist
 gwip
@@ -1998,3 +1630,371 @@ exit
 gl
 glog
 gs feat
+gstat
+glogt
+clr
+glog
+gs feats
+alias gs='echo'
+gs feats
+alias gs='you mean gsw'
+gsw feats
+gstat
+gbb
+clear
+gsw feat
+gtemp
+gsw mods
+gtemp
+gswd
+glast
+home
+what n
+alias n
+nano .bashrc
+src
+pushdotfiles 
+n .bashrc
+src
+thanksqueggs 
+exit
+thanksqueggs 
+glast
+clr
+gist
+gstat
+clr
+glogt
+gtemp
+glast
+clear
+glog
+gback
+gclear
+gstat
+glog
+gunwip
+gds
+gaa
+gds
+gstat
+gaa
+gc
+glog
+glogt
+gswt
+glog
+gc!
+glog
+grbi dev
+ghelp rebase
+grb -i dev
+glog
+gswd
+grb temp
+glog
+gback
+gwip
+gtemp
+glast
+glog
+gbuck
+glog
+gback
+gclear
+glog
+glogt
+grb temp
+glog
+clr
+glog
+gsw clean
+glast
+glog
+gunwip
+gwip
+gsw clean
+glast
+gunwip
+gwip
+glog
+gstat
+glog
+gunwip
+glog
+gwip
+gdd
+glog
+gc!
+glog
+glogt
+gtemp
+glog
+grb -i 17c846217f
+glog
+gswd
+glog
+gtemp
+glast
+grb -i 17c846217f
+glog
+glogt
+glog
+gpsh -f
+glog
+clear
+addporyscript
+zsh
+clr
+glog
+glogm
+glogt
+gbdt
+clear
+thanksqueggs
+clr
+gstat
+glog
+gtempn
+gtemp
+clr
+gstat
+gwip
+gunwip
+gwip
+gunwip
+gwip
+gunwip
+gwip
+glog
+gunwip
+glog
+gwip
+gc!
+glog
+gunwip
+gwip
+gunwip
+gwip
+gstat
+glog
+gdd
+clr
+gunwip
+glog
+gstat
+gcaa
+gaa
+gc
+glog
+gsw feat
+gcp temp
+glog
+gpsh
+glast
+glog
+gswd
+clr
+gstat
+glog
+gtemp
+gwip
+make
+cl
+clr
+make
+what make
+alias make
+make -j6
+gwip
+make -j6
+gwip
+make -j6
+glog
+gdh
+gdd
+gunwip
+gclr
+gdd
+gc!
+glog
+gtemp
+clr
+glog
+clr
+git init
+gt
+git tag
+gl
+gaa
+gc
+gbb
+gsetup main
+gbba
+alias gsetup
+what gsetup
+alias gsetup
+ngit_aliases 
+gsetup main
+[200~git remote add origin https://github.com/USERNAME/REPO.git
+zsh
+clr
+aliases
+vscgit_aliases 
+here
+src
+root
+poke
+clr
+l
+clr
+src
+ogpoke
+repo
+mkdir ogpoke
+stat
+..
+mkdir ogpoke
+ogpoke
+l
+touch ogpoke.md
+nano ogpoke.md 
+l
+vsc .
+code .
+poke
+clr
+src
+last
+back
+..
+toss ogpoke/
+rmdir --help
+rmdir ogpoke
+help rmdir
+help rm
+rm -r ogpoke/
+zsh
+clr
+poke
+clr
+glog
+gl
+glog
+gcreate ttime
+gtemp
+last
+glog
+g remote add ttime https://github.com/Ttime100/og-pokemon.git
+g remote
+git remote
+poke
+g remote add ttime https://github.com/Ttime100/og-pokemon.git
+gstat
+g remote -v
+gl
+glog
+glast
+gstat
+zsh
+clr
+git pull ttime og-pokemon
+git fetch ttime
+git pull ttime og-pokemon
+git pull ttime main
+glog
+clr
+gbba
+git merge --squash ttime/main
+g checkout ttime/main
+gtemp
+glog
+gb -df ttime
+gcreate ttime
+glog
+gsw clean
+glog
+ghelp merge
+glog
+gtemp
+g merge --squash ttime
+gclear
+glog
+gsw ttime
+glog
+g checkout ttime/main
+gloug
+glog
+gstat
+glast
+git pull
+alias gset
+git branch --set-upstream-to=<ttime>/<og-pokemon> ttime
+git branch --set-upstream-to=ttime/og-pokemon ttime
+git branch --set-upstream-to=ttime/main ttime
+g pull
+glog
+gswt
+glog
+alias gcp
+git cherry-pick ttime
+glog
+gc!
+glog
+gcreate og-changes
+glog
+gsetup og-changes
+gbb
+gb -df ttime
+gbdt
+clr
+glog
+gswd
+clr
+gbb
+gh browse
+gb -df og-changes
+gbb
+free-h
+free -h
+zsh
+vscaliases 
+help cp
+zsh
+exit
+gbb
+glog better-bag
+glogp 966ca56850
+gbb
+glog better-bag
+glogds better-bag
+glogd better-bag
+gll better-bag
+glogg better-bag
+clr
+gbb
+glog expansion
+gs mods
+glog mods
+glogd
+gdd 577f5ab23d
+glogp 577f5ab23d
+glog dev main
+glogp eacbddb66e
+glog dev main
+gsw main
+gtemp
+grbi mods
+grb -i mods
+glog
+glast
+grb -i mods
+glog dev main
+gpsh -f
+clr
+gbdt
+glog dev main
+gsw mods
+glog dev main
+clr
+exit

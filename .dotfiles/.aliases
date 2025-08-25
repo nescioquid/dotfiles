@@ -2,11 +2,12 @@
 
 # uncomment the domain-specific aliases you want to use
 # source ~/.dotfiles/.ascii_aliases
+source ~/.dotfiles/.dotfiles_aliases
 source ~/.dotfiles/.git_aliases
 source ~/.dotfiles/.pokemon_aliases
 source ~/.dotfiles/.pop-os_aliases
-source ~/.dotfiles/.dotfiles_aliases
 # source ~/.dotfiles/.windows_aliases
+
 # source ~/.dotfiles/.noob_mode/.aliases
 # source ~/.dotfiles/.noob_mode/.git_aliases
 # source ~/.dotfiles/.noob_mode/.noob_mode_aliases
