@@ -16,7 +16,7 @@
 #    if you do, you did everything right! congrats!
 #    give yourself a pat on the back. savor it.
 # 5) try out some of the aliases below in your own repo
-# 6) see the bottom of this file to learn about creating your own custom aliases
+# 6) have fun!
 
 # ---
 
@@ -32,6 +32,7 @@ alias reload_cheatsheet='source ~/.bashrc && echo hey, you reloaded the cheetshe
 alias nano_cheatsheet='nano ~/.cheatsheet'
 
 # opens this file in VS Code
+alias edit_cheatsheet='code ~/.cheatsheet'
 alias vscode_cheatsheet='code ~/.cheatsheet'
 
 # ---

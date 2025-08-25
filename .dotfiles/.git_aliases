@@ -5,10 +5,6 @@
 # a faster way to get to the man pages for whatever git things you're learning about
 alias ghelp='ghelp() { man git-"$1"; }; ghelp'
 
-# experimenting with swapping default behaviors with temp commands
-alias glt='glogtt'
-alias gltt='glogt'
-
 # short forms
 alias gl='glog'
 alias gll='glogg'
@@ -32,16 +28,6 @@ alias gst='gswt'
 
 alias gun='gunwip'
 alias guna='gunwipall'
-
-# combination of 'gloo' and 'gltt'
-alias glogot='glog $(git_current_branch) origin/$(git_current_branch) temp'
-
-# combination of 'gaa' and 'gca'
-alias gcaa='git add -v --all && git commit -v --all'
-
-# combination of 'gaa' and 'grbc'
-alias gaarbc='gaa && grbc'
-
 
 # ---
 
@@ -116,13 +102,20 @@ alias gt='git tag'
 # utilities
 
 # creates a new branch
-alias gcreate='git switch --create'
 alias gbc='git switch --create'
 alias gbn='git switch --create'
+alias gcreate='git switch --create'
+
+# creates a branch at origin
+alias gbco='gbco() { git push -v origin HEAD:refs/heads/"$1"; }; gbco'
+alias gbno='gbno() { git push -v origin HEAD:refs/heads/"$1"; }; gbno'
+
+# deletes a branch at origin
+alias gbdo='git push -v origin --delete'
 
 # switches to the last branch that you were on
-alias glast='git switch -'
 alias gswl='git switch -'
+alias glast='git switch -'
 
 # clears out the working tree entirely, except for already staged (added) changes
 # assumes you're at the base directory of your repo
@@ -169,14 +162,18 @@ alias glogpp='glpp() { if [ $1 ]; then git log --stat --patch --max-count=1 "$1"
 # defaults to the dev branch, pass in a string for any 'dev-[string]' branch
 alias gswd='gswd() { if [ $1 ]; then git switch $(git_develop_branch)-"$1"; else git switch $(git_develop_branch); fi }; gswd'
 
+# combination of 'gaa' and 'gca'
+alias gaca='git add -v --all && git commit -v --all'
+alias gcaa='git add -v --all && git commit -v --all'
+
+# combination of 'gloo' and 'gltt'
+alias glogot='glog $(git_current_branch) origin/$(git_current_branch) temp'
+
+# combination of 'gaa' and 'grbc'
+alias gaarbc='gaa && grbc'
+
 # starts an interactive rebase from a certain number of commits before the HEAD
 alias grbii='grbii() { git rebase --interactive HEAD~"$1" }; grbii'
-
-# creates a branch at origin
-alias gbno='gbno() { git push -v origin HEAD:refs/heads/"$1"; }; gbno'
-
-# deletes a branch at origin
-alias gbdo='git push -v origin --delete'
 
 
 # ---
@@ -198,7 +195,7 @@ alias gsetup='git push -v --set-upstream origin $(git_current_branch)'
 alias gset='git branch --set-upstream-to=origin/$(git_current_branch)'
 
 # unsets the association between the current local branch and its upstream branch
-alias gunset='gb --unset-upstream && echo hey, it looks like you unset that upstream branch'
+alias gunset='git branch --unset-upstream && echo hey, it looks like you unset that upstream branch'
 
 # ---
 
@@ -206,11 +203,13 @@ alias gunset='gb --unset-upstream && echo hey, it looks like you unset that upst
 # these features allow you to manage a branch 'temp' that you can use to store temporary changes to your code
 
 # creates a new branch 'temp'
+alias gbct='git switch --create temp'
 alias gbnt='git switch --create temp'
 
 # deletes branch 'temp'
-alias gbdt='gb -df temp'
-alias gtempd='gb -df temp'
+alias gbdt='git branch -df temp'
+alias gtempd='git branch -df temp'
+alias guntemp='git branch -df temp'
 
 # logs branch 'temp'
 alias glogt='glog temp'
@@ -222,10 +221,11 @@ alias glogtt='glog $(git_current_branch) temp'
 alias gswt='git switch temp'
 
 # automatically deletes any previous branch 'temp' and creates new a one
-alias gtemp='gtemp() { if git rev-parse --quiet --verify temp; then gb -df temp; git switch --create temp; git switch -; else git switch --create temp; git switch -; fi }; gtemp'
+alias gtemp='gtemp() { if git rev-parse --quiet --verify temp; then git branch -df temp; git switch --create temp; git switch -; else git switch --create temp; git switch -; fi }; gtemp'
 
 # same as 'gtemp', but leaves you in the 'temp' branch
-alias gtempn='gtempn() { if git rev-parse --quiet --verify temp; then gb -df temp; git switch --create temp; else git switch --create temp; fi }; gtempn'
+alias gtempc='gtempc() { if git rev-parse --quiet --verify temp; then git branch -df temp; git switch --create temp; else git switch --create temp; fi }; gtempc'
+alias gtempn='gtempn() { if git rev-parse --quiet --verify temp; then git branch -df temp; git switch --create temp; else git switch --create temp; fi }; gtempn'
 
 # ---
 
