@@ -142,6 +142,6 @@ source $HOME/.dotfiles/.aliases
 
 # Comment out configs above and uncomment these for noob mode
 # source $HOME/.dotfiles/.noob_mode/.aliases
-# source $HOME/.dotfiles/.noob_mode/.cheatsheet
 # source $HOME/.dotfiles/.noob_mode/.git_aliases
+# source $HOME/.dotfiles/.noob_mode/.cheatsheet
 # source $HOME/.dotfiles/.noob_mode/.noob_mode_aliases
