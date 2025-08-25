@@ -16,5 +16,6 @@ alias npgit_aliases='np ~/.dotfiles/.noob_mode/.git_aliases'
 alias vscgit_aliases='code ~/.dotfiles/.noob_mode/.git_aliases'
 alias srcg='source ~/.dotfiles/.noob_mode/.git_aliases && echo hey, you sourced .git_aliases, yay!'
 
+alias edit_cheatsheet='code ~/.cheatsheet'
 alias nano_cheatsheet='nano ~/.dotfiles/.noob_mode/.cheatsheet'
 alias vscode_cheatsheet='code ~/.dotfiles/.noob_mode/.cheatsheet'
