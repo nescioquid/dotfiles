@@ -9,6 +9,7 @@ source ~/.dotfiles/.pop-os_aliases
 # source ~/.dotfiles/.windows_aliases
 
 # source ~/.dotfiles/.noob_mode/.aliases
+# source $HOME/.dotfiles/.noob_mode/.cheatsheet
 # source ~/.dotfiles/.noob_mode/.git_aliases
 # source ~/.dotfiles/.noob_mode/.noob_mode_aliases
 

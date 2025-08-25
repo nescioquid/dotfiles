@@ -27,3 +27,8 @@ alias py='python3'
 # experimenting with swapping default behaviors with temp commands
 alias glt='glogtt'
 alias gltt='glogt'
+
+# noob mode things
+alias startnoobmode='move ~/.nanorc ~/repos/.nanorc'
+alias endnoobmode='move ~/repos/.nanorc ~/.nanorc'
+
