@@ -227,7 +227,7 @@ alias gswt='git switch temp'
 # this one leaves you in the 'temp' branch
 alias gtemp='gtemp() { if git rev-parse --quiet --verify temp; then git branch -df temp && git switch --create temp; else git switch --create temp; fi }; gtemp'
 # while this one brings you back to the branch you created it from
-# alias gtemp='gtemp() { if git rev-parse --quiet --verify temp; then gb -df temp; gsw --create temp; gsw -; else gsw --create temp; gsw -; fi }; gtemp'
+# alias gtemp='gtemp() { if git rev-parse --quiet --verify temp; then git branch -df temp; git switch --create temp; git switch -; else git switch --create temp; git switch -; fi }; gtemp'
 
 # ---
 

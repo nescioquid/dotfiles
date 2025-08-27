@@ -1,22 +1,3 @@
-what gstat
-srcg
-source ~/Documents/git-aliases-for-noobs/.git_aliases
-gstat
-srcg
-source ~/Documents/git-aliases-for-noobs/.git_aliases
-gb
-gbb
-gbba
-source ~/Documents/git-aliases-for-noobs/.git_aliases
-thanksquegg
-docs-gt
-gb
-gbb
-gba
-gbba
-source ~/Documents/git-aliases-for-noobs/.git_aliases
-thanksquegg
-docs-gt
 gstat
 gist
 gwip
@@ -1998,3 +1979,22 @@ nano_cheatsheet
 what
 clr
 what gbb
+startnoobmode
+src
+reload_cheatsheet 
+src
+clr
+endnoobmode 
+src
+nano README.md 
+endnoobmode 
+nano README.md 
+startnoobmode
+nano README.md 
+gstat
+clr
+home
+poke
+gb
+what gb
+exit

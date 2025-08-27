@@ -86,7 +86,7 @@ alias gunset='git branch --unset-upstream && echo hey, it looks like you unset t
 # like when testing out two versions of a feature, or when cherry-picking
 
 # automatically deletes any existing 'temp' branch and creates new a one from the current branch
-alias gtemp='gtemp() { if git rev-parse --quiet --verify temp; then gb -df temp; gsw --create temp; gsw -; else gsw --create temp; gsw -; fi }; gtemp'
+alias gtemp='gtemp() { if git rev-parse --quiet --verify temp; then git branch -df temp; git switch --create temp; git switch -; else git switch --create temp; git switch -; fi }; gtemp'
 
 # deletes 'temp' branch 
 alias guntemp='git branch -df temp'
