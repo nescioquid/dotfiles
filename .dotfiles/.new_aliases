@@ -8,10 +8,6 @@ alias ws='windsurf'
 # alias astrohelp='astro -- --help'
 alias astrodev='npm run dev'
 
-# python things
-alias python='python3'
-alias py='python3'
-
 # mom-health-updates things
 # alias momnp='mompn() vsc momnp()'
 
@@ -28,7 +24,11 @@ alias py='python3'
 alias glt='glogtt'
 alias gltt='glogt'
 
+# search files rename for gfg
+alias gsearch='git ls-files | grep'
+alias gfs='git ls-files | grep'
+alias gsf='git ls-files | grep'
+
 # noob mode things
 alias startnoobmode='mv ~/.nanorc ~/repos/.nanorc'
 alias endnoobmode='mv ~/repos/.nanorc ~/.nanorc'
-

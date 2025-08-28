@@ -57,6 +57,9 @@ alias gcamdr='git commit -v --dry-run --all --message'
 # config
 alias gcfg='git config --list --global'
 
+# fetch
+alias gf='git fetch -v'
+
 # log
 alias glog='git log --oneline --decorate --graph'
 alias glogg='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'\'' --stat' # 'glols' in zsh

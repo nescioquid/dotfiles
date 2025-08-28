@@ -33,6 +33,7 @@ alias nano_cheatsheet='nano ~/.cheatsheet'
 
 # opens this file in VS Code
 alias edit_cheatsheet='code ~/.cheatsheet'
+alias open_cheatsheet='code ~/.cheatsheet'
 alias vscode_cheatsheet='code ~/.cheatsheet'
 
 # ---

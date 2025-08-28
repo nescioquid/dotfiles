@@ -64,6 +64,10 @@ alias trash='cd ~/.local/share/Trash/files/'
 alias n='nano'
 alias vsc='code'
 
+# python
+alias python='python3'
+alias py='python3'
+
 # apt
 alias apt='sudo apt' # 'apt' overwritten for copypaste reasons
 alias apti='sudo apt install'
