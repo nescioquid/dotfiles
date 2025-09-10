@@ -12,13 +12,11 @@ alias astrodev='npm run dev'
 # alias momnp='mompn() vsc momnp()'
 
 # pokemon things
-# alias vsctrainerparties='vscr ~/repos/pokeemerald/src/data/trainer_parties.h'
-# alias gae='ga src/data/wild_encounters.json && gclr'
-# alias gcpdebug='gcp f9ee0f0622e237178f4253d1fbae03e000918e1c'
-# alias gcpporyscript='gcp 3a9b712e6fda8a349b867afd6add62d63d8fef26'
-# alias gcpsplit='gcp 0c5479eb9a8b4013127fb017e980192d463bb833'
+alias gtpp='gb -df tpp && gbn tpp && gsl'
 
 # git things
+alias gcoo='gcoo() { if [ $1 ]; then git checkout origin/"$1"; else git checkout origin/$(git_current_branch); fi }; gcoo'
+alias grbt='grb temp'
 
 # experimenting with swapping default behaviors with temp commands
 alias glt='glogtt'
@@ -30,5 +28,5 @@ alias gfs='git ls-files | grep'
 alias gsf='git ls-files | grep'
 
 # noob mode things
-alias startnoobmode='mv ~/.nanorc ~/repos/.nanorc'
-alias endnoobmode='mv ~/repos/.nanorc ~/.nanorc'
+alias startnoobmode='mv ~/.nanorc ~/repos/.nanorc && echo noob mode initiated.'
+alias endnoobmode='mv ~/repos/.nanorc ~/.nanorc && echo noob mode terminated.'

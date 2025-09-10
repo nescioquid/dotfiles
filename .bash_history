@@ -1,90 +1,3 @@
-gstat
-gist
-gwip
-gdd
-gl
-glog
-gunwip
-gist
-gaa
-srcg
-source ~/Documents/git-aliases-for-noobs/.git_aliases
-glogp
-source ~/Documents/git-aliases-for-noobs/.git_aliases
-what gs
-source ~/Documents/git-aliases-for-noobs/.git_aliases
-thanksquegg
-gist
-glogg
-glog
-gbdt
-gsd
-gswd
-gbdt
-source ~/Documents/git-aliases-for-noobs/.git_aliases
-thanksquegg
-clr
-docs-gt
-gist
-glog
-gcam "changed logo"
-gl
-glog
-gswd
-gl
-glog
-gbdt
-glo
-what glo
-omzp git
-glo
-alias
-alias
-aliases
-bash_aliases
-aliases
-bashrc
-source ~/Documents/git-aliases-for-noobs/.git_aliases
-thanksquegg
-alias
-docs-gt
-gstat
-gist
-gbb
-gbn dev-me
-gbb
-gsm
-gsd me
-gswd me
-gsw dev-me
-gsm
-gswm
-gb -df dev-me
-gbb
-gswd
-gsit
-gist
-gl
-glog
-gtemp
-grename play
-gist
-gsetup
-gsetup play
-gbb
-source ~/Documents/git-aliases-for-noobs/.git_aliases
-gbb
-gunset
-gbb
-gset
-gset play
-source ~/Documents/git-aliases-for-noobs/.git_aliases
-gset play
-source ~/Documents/git-aliases-for-noobs/.git_aliases
-gset play
-gl
-gbb
-gunset
 gbb
 gset
 gset play
@@ -1997,4 +1910,91 @@ home
 poke
 gb
 what gb
+exit
+startnoobmode
+what startnoobmode
+thanks
+gl
+gstat
+gcaa
+gaa
+gc
+gl
+g lot
+g log
+gclear
+gl
+clr
+gsw dev
+gclear
+gstat
+gsw dev
+gsw demo-giveitem
+gdd
+what gdd
+gsw demo-giveitem
+clr
+gll
+glogg
+gdd
+glogp
+clr
+gl
+glog
+gtempn
+gtemp
+gsw temp
+gback
+gclear
+clr
+gl
+glog
+gs demo-pokemarts
+clr
+gstat
+gwip
+gsw demo-pokemarts
+gl
+glog
+gback 2
+glog
+gclear
+grb origin/demo-pokemarts
+gl
+g log
+glog
+gtemp
+gsw temp
+clr
+gl
+glog
+gback 2
+gloga
+glog demo-pokemarts
+gwip
+gsw dev
+gb
+clr
+gb
+glog expansion
+gsw temp
+gun
+gunwip
+gwip
+gsw dev
+gl
+glog
+clr
+gb
+gloga
+clr
+zsh
+gstat
+clr
+gsw demo-pokemarts
+gtemp
+gback
+gwip
+glog demo-pokemarts
+glog origin/demo-pokemarts
 exit
