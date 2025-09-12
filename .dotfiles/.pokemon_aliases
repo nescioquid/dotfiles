@@ -43,6 +43,35 @@ alias addp='cp -irv ~/repos/pokemon/poryscript/poryscript tools/poryscript/'
 # checks out a tagged release of expansion
 alias gcoe='gcoe() { git checkout expansion/"$1"; }; gcoe'
 
+completely resets a poryscript map file to where it should go and reworks the git index
+alias porymake='porymake() {
+  local map="$1"
+  local mapdir="data/maps/$map"
+  local incfile="$mapdir/scripts.inc"
+  local poryfile="$mapdir/scripts.pory"
+
+  # Add ignore rule relative to data/maps
+  echo "$map/scripts.inc" >> data/maps/.gitignore
+  git add data/maps/.gitignore
+
+  # Prepend scripts.inc wrapped in raw` ... `
+  if [[ -f "$incfile" ]]; then
+    {
+      echo "raw\`"
+      cat "$incfile"
+      echo "\`"
+      echo ""
+    } > "$poryfile"
+  fi
+
+  # Forget old files in Git
+  git rm --cached "$incfile" 2>/dev/null
+
+  # Delete the file locally (it will regenerate on build)
+  # rm -f "$incfile"
+
+}; porymake'
+
 # completely resets a poryscript map file to where it should go and reworks the git index
 # alias porymv='porymv() {
 #   local map="$1"

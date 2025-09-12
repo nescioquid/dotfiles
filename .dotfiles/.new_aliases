@@ -17,6 +17,7 @@ alias gtpp='gb -df tpp && gbn tpp && gsl'
 # git things
 alias gcoo='gcoo() { if [ $1 ]; then git checkout origin/"$1"; else git checkout origin/$(git_current_branch); fi }; gcoo'
 alias grbt='grb temp'
+alias giwp='gwip'
 
 # experimenting with swapping default behaviors with temp commands
 alias glt='glogtt'
