@@ -11,13 +11,15 @@ alias astrodev='npm run dev'
 # mom-health-updates things
 # alias momnp='mompn() vsc momnp()'
 
-# pokemon things
-alias gtpp='gb -df tpp && gbn tpp && gsl'
-
 # git things
-alias gcoo='gcoo() { if [ $1 ]; then git checkout origin/"$1"; else git checkout origin/$(git_current_branch); fi }; gcoo'
-alias grbt='grb temp'
+
+# typo catching
 alias giwp='gwip'
+alias GWIP='gwip'
+alias GIWP='gwip'
+alias maek='make'
+alias MAKE='make'
+alias MAEK='make'
 
 # experimenting with swapping default behaviors with temp commands
 alias glt='glogtt'
@@ -31,3 +33,115 @@ alias gsf='git ls-files | grep'
 # noob mode things
 alias startnoobmode='mv ~/.nanorc ~/repos/.nanorc && echo noob mode initiated.'
 alias endnoobmode='mv ~/repos/.nanorc ~/.nanorc && echo noob mode terminated.'
+
+# pokemon things
+# alias gtpp='gb -df tpp && gbn tpp && gsl'
+
+completely resets a poryscript map file to where it should go and reworks the git index
+alias porymake='porymake() {
+  local map="$1"
+  local mapdir="data/maps/$map"
+  local incfile="$mapdir/scripts.inc"
+  local poryfile="$mapdir/scripts.pory"
+
+  # Add ignore rule relative to data/maps
+  echo "$map/scripts.inc" >> data/maps/.gitignore
+  git add data/maps/.gitignore
+
+  # Prepend scripts.inc wrapped in raw` ... `
+  if [[ -f "$incfile" ]]; then
+    {
+      echo "raw\`"
+      cat "$incfile"
+      echo "\`"
+      echo ""
+    } > "$poryfile"
+  fi
+
+  # Forget old files in Git
+  git rm --cached "$incfile" 2>/dev/null
+
+  # Delete the file locally (it will regenerate on build)
+  # rm -f "$incfile"
+
+}; porymake'
+
+# completely resets a poryscript map file to where it should go and reworks the git index
+# alias porymv='porymv() {
+#   local map="$1"
+#   local mapdir="data/maps/$map"
+#   local incfile="$mapdir/scripts.inc"
+#   local porysrc="data/scripts/pory_scripts/maps/$map.pory"
+#   local porydest="$mapdir/scripts.pory"
+
+#   # Add ignore rule relative to data/maps
+#   echo "$map/scripts.inc" >> data/maps/.gitignore
+#   git add data/maps/.gitignore
+
+#   # Move .pory file
+#   mv "$porysrc" "$porydest"
+
+#   # Prepend scripts.inc wrapped in raw` ... `
+#   if [[ -f "$incfile" ]]; then
+#     {
+#       echo "raw\`"
+#       cat "$incfile"
+#       echo "\`"
+#       echo ""
+#       cat "$porydest"
+#     } > "$porydest.tmp" && mv "$porydest.tmp" "$porydest"
+#   fi
+
+#   # Forget old files in Git
+#   git rm --cached "$porysrc" 2>/dev/null
+#   git rm --cached "$incfile" 2>/dev/null
+
+#   # Delete the file locally (it will regenerate on build)
+#   # rm -f "$incfile"
+
+#   # Remove the exact .include line for this map from pory_scripts.inc
+#   sed -i "/^\.include \"data\/scripts\/pory_scripts\/maps\/$map\.inc\"$/d" data/scripts/pory_scripts.inc
+# }; porymv'
+
+# function used to refactor all of pory_scripts/maps/ to their respective directires in data/maps/
+# porymva() {
+# grep '^\.include "data/scripts/pory_scripts/maps/.*\.inc"$' data/scripts/pory_scripts.inc | \
+# sed -E 's#^\.include "data/scripts/pory_scripts/maps/(.*)\.inc"$#\1#' | \
+# while read -r map; do
+#     echo "Processing map: $map"
+
+#     mapdir="data/maps/$map"
+#     incfile="$mapdir/scripts.inc"
+#     porysrc="data/scripts/pory_scripts/maps/$map.pory"
+#     porydest="$mapdir/scripts.pory"
+
+#     # Add ignore rule safely
+#     grep -qxF "$map/scripts.inc" data/maps/.gitignore || echo "$map/scripts.inc" >> data/maps/.gitignore
+#     git add data/maps/.gitignore
+
+#     # Move .pory file
+#     mv "$porysrc" "$porydest"
+
+#     # Prepend scripts.inc
+#     if [[ -f "$incfile" ]]; then
+#       {
+#         echo "raw\`"
+#         cat "$incfile"
+#         echo "\`"
+#         echo ""
+#         cat "$porydest"
+#       } > "$porydest.tmp" && mv "$porydest.tmp" "$porydest"
+#     fi
+
+#     # Forget old files in Git
+#     git rm --cached "$porysrc" 2>/dev/null
+#     git rm --cached "$incfile" 2>/dev/null
+
+#     # Delete the file locally
+#     # rm -f "$incfile"
+
+#     # Remove the exact .include line
+#     sed -i "/^\.include \"data\/scripts\/pory_scripts\/maps\/$map\.inc\"$/d" data/scripts/pory_scripts.inc
+
+# done
+# }

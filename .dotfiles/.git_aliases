@@ -179,6 +179,8 @@ alias gaarbc='gaa && grbc'
 # starts an interactive rebase from a certain number of commits before the HEAD
 alias grbii='grbii() { git rebase --interactive HEAD~"$1" }; grbii'
 
+# checkouts the current branch at origin; essentially a switch to the remote branch
+alias gcoo='gcoo() { if [ $1 ]; then git checkout origin/"$1"; else git checkout origin/$(git_current_branch); fi }; gcoo'
 
 # ---
 
@@ -230,6 +232,9 @@ alias gtemp='gtemp() { if git rev-parse --quiet --verify temp; then git branch -
 # same as 'gtemp', but leaves you in the 'temp' branch
 alias gtempc='gtempc() { if git rev-parse --quiet --verify temp; then git branch -df temp; git switch --create temp; else git switch --create temp; fi }; gtempc'
 alias gtempn='gtempn() { if git rev-parse --quiet --verify temp; then git branch -df temp; git switch --create temp; else git switch --create temp; fi }; gtempn'
+
+# rebases the current branch onto temp
+alias grbt='git rebase temp'
 
 # ---
 
