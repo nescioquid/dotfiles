@@ -18,8 +18,10 @@ alias giwp='gwip'
 alias GWIP='gwip'
 alias GIWP='gwip'
 alias maek='make'
+alias amke='make'
 alias MAKE='make'
 alias MAEK='make'
+alias AMKE='make'
 
 # experimenting with swapping default behaviors with temp commands
 alias glt='glogtt'
