@@ -1,60 +1,3 @@
-gbb
-gset
-gset play
-gbb
-gbn fun
-gbb
-gsetup
-gbb
-source ~/Documents/git-aliases-for-noobs/.git_aliases
-gsetup
-source ~/Documents/git-aliases-for-noobs/.git_aliases
-gsetup
-gsetup fun
-gbb
-gbn good
-gbb
-gset good
-gsetup good
-gbb
-gunset
-gbb
-gset good
-gbb
-gpo -d fun
-gpsh -d origin fun
-gbb
-gpsh -d origin good
-gbb
-gpsh -d origin play
-gb -d play
-gb -d fun
-gswd
-gb -d good
-gcc
-gbb
-ghelp switch
-ghelp branch
-gc!
-source ~/Documents/git-aliases-for-noobs/.git_aliases
-thanksquegg
-gbb
-gtemp
-gsm
-gswm
-gl
-glog
-gbm this
-mf wow.md
-gist
-gaa
-gcm "wowed"
-glog
-gswm
-gbb
-gswd
-gcreate main
-gbb
 glog
 glog this
 gist
@@ -1997,4 +1940,61 @@ gback
 gwip
 glog demo-pokemarts
 glog origin/demo-pokemarts
+exit
+startnoobmode
+what gset
+what gesetup
+what gsetup
+endnoobmode
+exit
+clr
+ls
+Documents
+cd Documents
+cd
+ls
+l
+cd repos
+cd pokeemerald-expansion/
+code .
+l
+clr
+clr
+gs clean
+gsw clean
+clr
+git log
+glog
+gsw dev
+glog
+gdd 19d44f1a14
+glpp 19d44f1a14
+glogpp 19d44f1a14
+gdd 19d44f1a14
+glog
+gdd 19d44f1a14
+glog
+glogg c53b236278
+exit
+clr
+glog
+gback
+glog
+gwip
+glog
+gdd
+gh browse
+gr
+clr
+gb
+gswd
+glog
+gcreate roxx
+glog
+glog lc
+gloga
+glog
+endnoobmode
+startnoobmode
+endnoobmode
 exit

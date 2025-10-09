@@ -167,6 +167,7 @@ alias glogpp='glpp() { if [ $1 ]; then git log --stat --patch --max-count=1 "$1"
 alias gswd='gswd() { if [ $1 ]; then git switch $(git_develop_branch)-"$1"; else git switch $(git_develop_branch); fi }; gswd'
 
 # combination of 'gaa' and 'gca'
+alias gaac='git add -v --all && git commit -v --all'
 alias gaca='git add -v --all && git commit -v --all'
 alias gcaa='git add -v --all && git commit -v --all'
 

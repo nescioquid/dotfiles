@@ -13,7 +13,7 @@ alias vscpokenotes='code ~/repos/pokemon/notes/notes.md'
 # manages the save file
 alias tossit='tossit() { mv -fvt ~/.local/share/Trash/files/tossed/ pokeemerald.sav ; }; tossit'
 alias takeit='move pokeemerald.sav ~/repos/pokemon/last-save/'
-alias giveit='move ~/repos/pokemon/last-save/pokeemerald.sav ~/repos/pokeemerald/'
+alias giveit='move ~/repos/pokemon/last-save/pokeemerald.sav ~/repos/pokeemerald-expansion/'
 alias hasit='f pokeemerald.sav'
 alias copyit='copy pokeemerald.sav ~/repos/pokemon/last-save/'
 
