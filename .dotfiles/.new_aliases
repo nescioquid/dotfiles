@@ -12,6 +12,7 @@ alias astrodev='npm run dev'
 # alias momnp='mompn() vsc momnp()'
 
 # git things
+alias gcpt='gcp temp'
 
 # typo catching
 alias giwp='gwip'
@@ -33,10 +34,13 @@ alias gsf='git ls-files | grep'
 alias startnoobmode='mv ~/.nanorc ~/repos/.nanorc && echo noob mode initiated.'
 alias endnoobmode='mv ~/repos/.nanorc ~/.nanorc && echo noob mode terminated.'
 alias exitnoobmode='mv ~/repos/.nanorc ~/.nanorc && echo noob mode terminated.'
+alias cheatsheet='nano ~/.dotfiles/.noob_mode/.cheatsheet'
 
 # pokemon things
 # alias gtpp='gb -df tpp && gbn tpp && gsl'
 alias pmv='porymove'
+alias makke='make tidy && make -j$(nproc)'
+alias makkke='make clean && make -j$(nproc)'
 
 # completely resets a poryscript map file to where it should go and reworks the git index
 alias porymove='porymove() {

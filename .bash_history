@@ -1,18 +1,3 @@
-glog
-glog this
-gist
-gsw this
-gtemp
-gbb
-glog
-gl
-gist
-gbb
-gswd
-gist
-gswm
-gsit
-gist
 gbb
 gb -df this
 gbdt
@@ -1997,4 +1982,19 @@ glog
 endnoobmode
 startnoobmode
 endnoobmode
+exit
+clr
+startnoobmode 
+clr
+cheatsheet
+dot new
+zsh
+exit
+what desktop
+alias windows
+cheatsheet
+gcf
+gcfg
+what gcfg
+clr
 exit

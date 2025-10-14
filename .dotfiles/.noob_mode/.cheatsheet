@@ -229,7 +229,6 @@ alias gstat='git status'
 alias gsw='git switch'
 alias gswc='git switch --create'
 
-
 # ---
 
 # add your own aliases here!
