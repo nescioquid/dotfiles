@@ -126,17 +126,6 @@ else
   export EDITOR='nano'
 fi
 
-# deno thinss
-# . "/home/drjw/.deno/env"
-
-# zoxide things
-# eval "$(zoxide init --cmd j bash)"
-
-# fzf things
-# [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-# Set up fzf key bindings and fuzzy completion
-# eval "$(fzf --bash)"
-
 # Adds my configurations
 source $HOME/.dottrines/custom/.bash_aliases
 source $HOME/.dottrines/custom/.aliases

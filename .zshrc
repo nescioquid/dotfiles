@@ -156,6 +156,7 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# deno things
 . "/home/drjw/.deno/env"
 
 # zoxide things

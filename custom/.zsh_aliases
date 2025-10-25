@@ -1,14 +1,13 @@
 # ZSH_ALIASES
 
-alias src='source ~/.zshrc && echo hey, you sourced .zshrc, yay!'
+source $HOME/.dottrines/custom/.git_aliases
 
+alias src='source ~/.zshrc && echo hey, you sourced .zshrc, yay!'
 alias what='als'
 
 # ---
 
-# utilities
-
-# omz things
+# oh-my-zsh things
 alias omzhelp='omz plugin info'
 alias omzz='nano ~/.oh-my-zsh/plugins/z/MANUAL.md'
 

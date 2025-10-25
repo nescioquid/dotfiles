@@ -4,14 +4,11 @@ alias desktop='desktop() { cd /mnt/c/Users/"$1"/Desktop/ }; desktop'
 alias documents='documents() { cd /mnt/c/Users/"$1"/Documents/; }; documents'
 alias downloads='downloads() { cd /mnt/c/Users/"$1"/Downloads/; }; downloads'
 
-# opens up a file explorer at the current directory
 alias explore='explorer.exe .'
-
-alias windows='cd /mnt/c/Users/'
-
-alias np='notepad.exe'
-
+alias linux='cd ~'
 alias lw='ls -1 --group-directories-first && echo --- && echo \(listed with directories first\)'
+alias np='notepad.exe'
+alias windows='cd /mnt/c/Users/'
 
 # moves tossed folder to the windows desktop
 alias tosstodesktop='tosstodesktop() { mv -ivt /mnt/c/Users/"$1"/Desktop/ ~/.local/share/Trash/files/tossed/; echo hey, you just moved the "tossed" directory to the windows desktop using the \*mv\* command. nice!; }; tosstodesktop'

@@ -1,10 +1,19 @@
 # DOTTRINES_ALIASES
 
-# alias installdotfiles='_dotfiles_install'
+# editing
+alias vscdottrines='code -n ~/.dottrines/'
+
+# navigation
+alias dottrines='cd ~/.dottrines/'
+
+# short forms
+alias dot='aliases'
+alias vscdot='vscaliases'
+
+# interface
 # alias pushdotfiles='_dotfiles_push'
-alias promulgatedots='_dotfiles_push'
-alias promuldot='_dotfiles_push'
 # alias pulldotfiles='_dotfiles_pull'
+alias promulgatedots='_dotfiles_push'
 alias noobmode='_toggle_noob_mode'
 
 alias reindottrinate='sh -c "$(curl -fsSL https://raw.githubusercontent.com/nescioquid/dottrines/main/tools/install.sh)"'
@@ -24,21 +33,20 @@ omzcustom=(
   .oh-my-zsh/custom/
 )
 
-# installs configurations in a new environment
-# function _dotfiles_install() {
+# pulls configurations from github
+# function _dotfiles_pull() {
+#   cd ~/.dottrines
+#   echo whoosh! heading over to:
+#   echo ~/.dottrines
+#   echo starting to do git things:
+#   git pull
+#   echo done doing git things.
 #   for dotfile in "${dotfiles[@]}"; do
 #     cp -fr ~/.dottrines/"$dotfile" ~
 #   done
 #   echo configurations pulled, congrats!
-#   if [[ -n "$BASH_VERSION" ]]; then
-#     source ~/.bashrc
-#   elif [[ -n "$ZSH_VERSION" ]]; then
-#     source ~/.zshrc
-#   else
-#     echo 'unknown shell, no run commands sourced'
-#   fi
-#   _dotfiles_youdidthething
-#   cd ~
+#   echo now heading back to:
+#   cd -
 # }
 
 # pushes configurations to github
@@ -88,27 +96,6 @@ function _dotfiles_push() {
   echo
   echo "now heading back to:"
   cd - >/dev/null || true
-}
-
-# pulls configurations from github
-# function _dotfiles_pull() {
-#   cd ~/.dottrines
-#   echo whoosh! heading over to:
-#   echo ~/.dottrines
-#   echo starting to do git things:
-#   git pull
-#   echo done doing git things.
-#   for dotfile in "${dotfiles[@]}"; do
-#     cp -fr ~/.dottrines/"$dotfile" ~
-#   done
-#   echo configurations pulled, congrats!
-#   echo now heading back to:
-#   cd -
-# }
-
-function _dotfiles_youdidthething() {
-  echo '▀▄▀ ▄▀▄ █ █   █▀▄ █ █▀▄   ▀█▀ █▄█ ██▀   ▀█▀ █▄█ █ █▄ █ ▄▀  █'
-  echo ' █  ▀▄▀ ▀▄█   █▄▀ █ █▄▀    █  █ █ █▄▄    █  █ █ █ █ ▀█ ▀▄█ ▄'
 }
 
 function _toggle_noob_mode() {

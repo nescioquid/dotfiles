@@ -17,7 +17,7 @@ source ~/.dottrines/custom/.new_aliases
 
 # ---
 
-alias poke='cd ~/repos/pokeemerald'
+alias poke='cd ~/repos/pokeemerald-expansion'
 
 # (re)adds poryscript executable
 alias addporyscript='cp -irv ~/repos/pokemon/poryscript/poryscript tools/poryscript/'

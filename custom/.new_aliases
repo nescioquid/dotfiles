@@ -11,9 +11,6 @@ alias astrodev='npm run dev'
 # mom-health-updates things
 # alias momnp='mompn() vsc momnp()'
 
-# git things
-alias gcpt='gcp temp'
-
 # typo catching
 alias giwp='gwip'
 alias gtmep='gtemp'
@@ -22,8 +19,8 @@ alias amke='make'
 alias amek='make'
 
 # experimenting with swapping default behaviors with temp commands
-alias glt='glogtt'
-alias gltt='glogt'
+# alias glt='glogtt'
+# alias gltt='glogt'
 
 # search files rename for gfg
 alias gsearch='git ls-files | grep'
@@ -31,9 +28,6 @@ alias gfs='git ls-files | grep'
 alias gsf='git ls-files | grep'
 
 # noob mode things
-alias startnoobmode='mv ~/.nanorc ~/repos/.nanorc && echo noob mode initiated.'
-alias endnoobmode='mv ~/repos/.nanorc ~/.nanorc && echo noob mode terminated.'
-alias exitnoobmode='mv ~/repos/.nanorc ~/.nanorc && echo noob mode terminated.'
 alias cheatsheet='nano ~/.dottrines/noob_mode/.cheatsheet'
 
 # pokemon things

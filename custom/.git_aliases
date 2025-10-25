@@ -7,26 +7,23 @@ alias ghelp='ghelp() { man git-"$1"; }; ghelp'
 
 # short forms
 alias gl='glog'
-alias gll='glogg'
 alias gla='gloga'
-alias glp='glogp'
-alias glpp='glogpp'
-alias gs='gsw'
-
 alias gld='glogd'
+alias gll='glogg'
 alias glm='glogm'
 alias glo='glogo'
 alias gloo='glogoo'
+alias glot='glogot'
+alias glp='glogp'
+alias glpp='glogpp'
 # alias glt='glogt'
 # alias gltt='glogtt'
-alias glot='glogot'
-
+alias gs='gsw'
 alias gsc='gswc'
 alias gsd='gswd'
 alias gsl='gswl'
 alias gsm='gswm'
 alias gst='gswt'
-
 alias gun='gunwip'
 alias guna='gunwipall'
 
@@ -183,6 +180,12 @@ alias grbii='grbii() { git rebase --interactive HEAD~"$1" }; grbii'
 # checkouts the current branch at origin; essentially a switch to the remote branch
 alias gcoo='gcoo() { if [ $1 ]; then git checkout origin/"$1"; else git checkout origin/$(git_current_branch); fi }; gcoo'
 
+# cherry-picks from the branch that you use for development
+alias gcpd='gcp $(git_develop_branch)'
+
+# cherry-picks from the main/master branch
+alias gcpm='gcp $(git_main_branch)'
+
 # ---
 
 # from others
@@ -234,8 +237,11 @@ alias gtemp='gtemp() { if git rev-parse --quiet --verify temp; then git branch -
 alias gtempc='gtempc() { if git rev-parse --quiet --verify temp; then git branch -df temp; git switch --create temp; else git switch --create temp; fi }; gtempc'
 alias gtempn='gtempn() { if git rev-parse --quiet --verify temp; then git branch -df temp; git switch --create temp; else git switch --create temp; fi }; gtempn'
 
-# rebases the current branch onto temp
+# rebases the current branch onto the branch 'temp'
 alias grbt='git rebase temp'
+
+# cherry-picks from the branch 'temp'
+alias gcpt='gcp temp'
 
 # ---
 
