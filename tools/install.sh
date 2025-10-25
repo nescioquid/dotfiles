@@ -30,36 +30,41 @@ supports_truecolor() {
 
 setup_colors() {
   if ! is_tty; then
-    RED=""; GREEN=""; YELLOW=""; CYAN=""; BOLD=""; RESET=""
+    RED=""; DARK_GREEN=""; GREEN=""; ORANGE=""; YELLOW=""; CYAN=""; BOLD=""; ITALIC=""; RESET=""
     return
   fi
 
   if supports_truecolor; then
-    RED=$(printf '\033[38;2;255;85;85m')
-    GREEN=$(printf '\033[38;2;80;250;123m')
-    YELLOW=$(printf '\033[38;2;241;250;140m')
-    CYAN=$(printf '\033[38;2;139;233;253m')
+    RED=$(printf '\033[38;2;255;85;85m')         # bright red
+    DARK_GREEN=$(printf '\033[38;2;80;250;123m') # vivid green
+    GREEN=$(printf '\033[38;2;144;238;144m')     # light green
+    ORANGE=$(printf '\033[38;2;255;165;0m')      # orange
+    YELLOW=$(printf '\033[38;2;241;250;140m')    # soft yellow
+    CYAN=$(printf '\033[38;2;139;233;253m')      # light cyan
   else
     RED=$(printf '\033[31m')
-    GREEN=$(printf '\033[32m')
+    DARK_GREEN=$(printf '\033[32m')
+    GREEN=$(printf '\033[92m')                   # bright green as fallback
+    ORANGE=$(printf '\033[33m')                  # reuse yellow slot for orange fallback
     YELLOW=$(printf '\033[33m')
     CYAN=$(printf '\033[36m')
   fi
 
   BOLD=$(printf '\033[1m')
+  ITALIC=$(printf '\033[3m')
   RESET=$(printf '\033[0m')
 }
 
-log()      { printf '%b %s\n' "${CYAN}==>${RESET}" "$*"; }
-success()  { printf '%b %s\n' "${GREEN}✔${RESET}" "$*"; }
-warn()     { printf '%b %s\n' "${YELLOW}!${RESET}" "$*"; }
-error()    { printf '%b %s\n' "${RED}✖${RESET}" "$*" >&2; }
+log()     { printf '%b %s\n' "${CYAN}>${RESET}" "$*"; }
+success() { printf '%b %s\n' "${GREEN}•${RESET}" "$*"; }
+warn()    { printf '%b %s\n' "${YELLOW}!${RESET}" "$*"; }
+error()   { printf '%b %s\n' "${RED}•${RESET}" "$*" >&2; }
 
 # ⚙️ Configuration
 
 REPO_URL="https://github.com/nescioquid/dottrines.git"
 BRANCH="main"
-INDOTTRINATED_DIR="$HOME/.dottrines"
+DOTTRINES_DIR="$HOME/.dottrines"
 HOME_DIR="$HOME"
 # RELOAD_SHELL=yes
 UNATTENDED=no
@@ -83,16 +88,30 @@ parse_args() {
 # 🧠 Print Header
 
 print_intro() {
-  printf '\n%b╭─────────────────────────────────────────────╮%b\n' "$BOLD$CYAN" "$RESET"
-  printf   '%b│ °·.·.°·. indottrinate the environs .·°.·.·° │%b\n' "$BOLD$CYAN" "$RESET"
-  printf   '%b╰─────────────────────────────────────────────╯%b\n\n' "$BOLD$CYAN" "$RESET"
+  printf '%b•.·.°•.·.°•.·.°•.·.°•.·.°•.·.°•.·.°•.·.°•.·.°•.·.°•.·.°•.·.°•.·.°•.·.°•.·.°•%b\n\n' "$BOLD$CYAN" "$RESET"
 
-  printf '%bNote:%b This installer does not delete or overwrite your files.\n' "$YELLOW" "$RESET"
-  printf 'Existing dotfiles are safely %brenamed%b:\n' "$BOLD" "$RESET"
-  printf '  • %b.filename%b → %b.filename.pre-indottrination%b\n' "$CYAN" "$RESET" "$CYAN" "$RESET"
-  printf '  • If that already exists, a timestamped backup like\n'
-  printf '    %b.filename.YYYY-MM-DD_HH-MM-SS%b will be created.\n' "$CYAN" "$RESET"
-  printf 'Your original configs remain untouched and recoverable.\n\n'
+  printf '•    "%bA dotfiles manager for true believers of the orthodotsy%b."\n\n' "$BOLD$ITALIC" "$RESET"
+
+  printf '        --Nescioquid, %bPrimus Inter Orthodotos%b\n\n' "$ITALIC" "$RESET"
+
+  printf   '      %b╭────────────────────────────────────────────╮%b\n' "$BOLD$CYAN" "$RESET"
+  printf   '      %b│ °•.·%b%b.°•.·%b%b.°•.%b  %bINDOTTRINATE%b  %b.•°.%b%b·.•°.%b%b·.•° │%b\n' "$BOLD$CYAN" "$RESET" "$BOLD$RED" "$RESET" "$BOLD$CYAN" "$RESET" "$BOLD$RED" "$RESET" "$BOLD$CYAN" "$RESET" "$BOLD$RED" "$RESET" "$BOLD$CYAN" "$RESET"
+  printf   '      %b│ °•.·%b%b.°•.·%b%b.°•.%b  %bTHE%b           %b.•°.%b%b·.•°.%b%b·.•° │%b\n' "$BOLD$CYAN" "$RESET" "$BOLD$RED" "$RESET" "$BOLD$CYAN" "$RESET" "$BOLD$RED" "$RESET" "$BOLD$CYAN" "$RESET" "$BOLD$RED" "$RESET" "$BOLD$CYAN" "$RESET"
+  printf   '      %b│ °•.·%b%b.°•.·%b%b.°•.%b  %bENVIRONMENTS%b  %b.•°.%b%b·.•°.%b%b·.•° │%b\n' "$BOLD$CYAN" "$RESET" "$BOLD$RED" "$RESET" "$BOLD$CYAN" "$RESET" "$BOLD$RED" "$RESET" "$BOLD$CYAN" "$RESET" "$BOLD$RED" "$RESET" "$BOLD$CYAN" "$RESET"
+  printf   '      %b╰────────────────────────────────────────────╯%b\n\n' "$BOLD$CYAN" "$RESET"
+
+  sleep 3
+
+  printf '%b!%b   This promulgator/installer does not delete or overwrite your files.\n' "$YELLOW" "$RESET"
+  printf '    Existing dotfiles are safely %brenamed%b:\n\n' "$BOLD" "$RESET"
+
+  printf '      %b.dotfile%b > %b.dotfile%b%b.pre-indottrination%b\n\n' "$ITALIC" "$RESET" "$ITALIC" "$RESET" "$ITALIC$GREEN" "$RESET"
+
+  printf '    If that already exists, a timestamped backup like\n\n'
+
+  printf '      %b.dotfile%b%b.YYYY-MM-DD_HH-MM-SS%b gets created instead.\n\n' "$ITALIC" "$RESET" "$ITALIC$GREEN" "$RESET"
+
+  printf '    Your original configs remain untouched and recoverable.\n\n'
 }
 
 # 🧰 Check dependencies
@@ -107,20 +126,20 @@ check_dependencies() {
 # 📥 Clone or update repo
 
 fetch_repo() {
-  if [ -d "$INDOTTRINATED_DIR/.git" ]; then
+  if [ -d "$DOTTRINES_DIR/.git" ]; then
     log "Updating existing dottrines..."
-    git -C "$INDOTTRINATED_DIR" fetch --depth=1 origin "$BRANCH" >/dev/null 2>&1 || {
+    git -C "$DOTTRINES_DIR" fetch --depth=1 origin "$BRANCH" >/dev/null 2>&1 || {
       warn "Could not fetch updates from remote."
     }
-    git -C "$INDOTTRINATED_DIR" reset --hard "origin/$BRANCH" >/dev/null 2>&1
+    git -C "$DOTTRINES_DIR" reset --hard "origin/$BRANCH" >/dev/null 2>&1
     success "dottrines updated."
   else
-    log "Cloning dottrines into $INDOTTRINATED_DIR..."
-    git clone --depth=1 --branch "$BRANCH" "$REPO_URL" "$INDOTTRINATED_DIR" >/dev/null 2>&1 || {
+    log "Cloning dottrines repo into $DOTTRINES_DIR..."
+    git clone --branch "$BRANCH" "$REPO_URL" "$DOTTRINES_DIR" >/dev/null 2>&1 || {
       error "Failed to clone repository."
       exit 1
     }
-    success "Repository cloned."
+    success "Repository cloned"
   fi
 }
 
@@ -138,17 +157,17 @@ backup_file() {
 
   if [ -e "$prefile" ]; then
     mv "$file" "$datedfile"
-    success "Backed up $base → ${datedfile#$HOME_DIR/}"
+    success "Backed up $base > ${datedfile#$HOME_DIR/}"
   else
     mv "$file" "$prefile"
-    success "Backed up $base → ${prefile#$HOME_DIR/}"
+    success "Backed up $base > ${prefile#$HOME_DIR/}"
   fi
 }
 
 # 📦 Installation
 
 install_files() {
-  log "Installing dottrines into $HOME_DIR..."
+  log "Promulgating dottrines into $HOME_DIR..."
 
   # General files to install for everyone
   WHITELIST_GENERAL=".gitconfig .nanorc"
@@ -159,7 +178,7 @@ install_files() {
 
   # Install general files
   for file in $WHITELIST_GENERAL; do
-    src="$INDOTTRINATED_DIR/$file"
+    src="$DOTTRINES_DIR/$file"
     dest="$HOME_DIR/$file"
     if [ -f "$src" ]; then
       [ -e "$dest" ] && backup_file "$dest"
@@ -171,7 +190,7 @@ install_files() {
   # Install bash files if bash is present
   if [ "$HAS_BASH" = yes ]; then
     for file in $WHITELIST_BASH; do
-      src="$INDOTTRINATED_DIR/bash/$file"
+      src="$DOTTRINES_DIR/bash/$file"
       dest="$HOME_DIR/$file"
       if [ -f "$src" ]; then
         [ -e "$dest" ] && backup_file "$dest"
@@ -184,7 +203,7 @@ install_files() {
   # Install zsh files if zsh is present
   if [ "$HAS_ZSH" = yes ]; then
     for file in $WHITELIST_ZSH; do
-      src="$INDOTTRINATED_DIR/zsh/$file"
+      src="$DOTTRINES_DIR/zsh/$file"
       dest="$HOME_DIR/$file"
       if [ -f "$src" ]; then
         [ -e "$dest" ] && backup_file "$dest"
@@ -197,22 +216,22 @@ install_files() {
 
 install_run_commands() {
   # Install bash run commands if bash is present
-  if [ "$HAS_BASH" = yes ] && [ -f "$INDOTTRINATED_DIR/.bashrc" ]; then
+  if [ "$HAS_BASH" = yes ] && [ -f "$DOTTRINES_DIR/.bashrc" ]; then
     dest="$HOME_DIR/.bashrc"
     if [ -e "$dest" ]; then
       backup_file "$dest"
     fi
-    cp "$INDOTTRINATED_DIR/.bashrc" "$dest"
+    cp "$DOTTRINES_DIR/.bashrc" "$dest"
     success "Installed .bashrc"
   fi
 
   # Install zsh run commands if zsh is present
-  if [ "$HAS_ZSH" = yes ] && [ -f "$INDOTTRINATED_DIR/.zshrc" ]; then
+  if [ "$HAS_ZSH" = yes ] && [ -f "$DOTTRINES_DIR/.zshrc" ]; then
     dest="$HOME_DIR/.zshrc"
     if [ -e "$dest" ]; then
       backup_file "$dest"
     fi
-    cp "$INDOTTRINATED_DIR/.zshrc" "$dest"
+    cp "$DOTTRINES_DIR/.zshrc" "$dest"
     success "Installed .zshrc"
   fi
 }
@@ -221,10 +240,10 @@ install_oh_my_zsh() {
   [ "$HAS_ZSH" = yes ] || return 0
   [ -d "$HOME/.oh-my-zsh" ] || return 0
 
-  OMZ_SRC="$INDOTTRINATED_DIR/.oh-my-zsh"
+  OMZ_SRC="$DOTTRINES_DIR/oh-my-zsh"
   [ -d "$OMZ_SRC" ] || return
 
-  log "Merging indottrinated oh-my-zsh customizations into ~/.oh-my-zsh..."
+  log "Promulgating custom oh-my-zsh indottrinations into ~/.oh-my-zsh..."
 
   find "$OMZ_SRC" -mindepth 1 ! -path "*/.git/*" | while IFS= read -r src; do
     # Determine relative path inside .oh-my-zsh
@@ -244,21 +263,31 @@ install_oh_my_zsh() {
       mkdir -p "$dest"
     fi
   done
-
-  success "indottrinated oh-my-zsh customizations installed."
 }
 
 # 🎉 Success banner
 
 print_success() {
-  local tty=/dev/tty
+  printf '\n      %b╭────────────────────────────────────────────╮%b\n' "$BOLD$CYAN" "$RESET"
+  printf   '      %b│ .•°%b%b.·.%b%b•°%b%b.·.%b%b•°%b  %bDOTTRINES%b     %b°•%b%b.·.%b%b°•%b%b.·.%b%b°•. │%b\n' "$BOLD$CYAN" "$RESET" "$BOLD$GREEN" "$RESET" "$BOLD$CYAN" "$RESET" "$BOLD$GREEN" "$RESET" "$BOLD$CYAN" "$RESET" "$BOLD$GREEN" "$RESET" "$BOLD$CYAN" "$RESET" "$BOLD$GREEN" "$RESET" "$BOLD$CYAN" "$RESET" "$BOLD$GREEN" "$RESET" "$BOLD$CYAN" "$RESET"
+  printf   '      %b│ .•°%b%b.·.%b%b•°%b%b.·.%b%b•°%b  %bPROMULGATED%b   %b°•%b%b.·.%b%b°•%b%b.·.%b%b°•. │%b\n' "$BOLD$CYAN" "$RESET" "$BOLD$GREEN" "$RESET" "$BOLD$CYAN" "$RESET" "$BOLD$GREEN" "$RESET" "$BOLD$CYAN" "$RESET" "$BOLD$GREEN" "$RESET" "$BOLD$CYAN" "$RESET" "$BOLD$GREEN" "$RESET" "$BOLD$CYAN" "$RESET" "$BOLD$GREEN" "$RESET" "$BOLD$CYAN" "$RESET"
+  printf   '      %b│ .•°%b%b.·.%b%b•°%b%b.·.%b%b•°%b  %bSUCCESSFULLY%b  %b°•%b%b.·.%b%b°•%b%b.·.%b%b°•. │%b\n' "$BOLD$CYAN" "$RESET" "$BOLD$GREEN" "$RESET" "$BOLD$CYAN" "$RESET" "$BOLD$GREEN" "$RESET" "$BOLD$CYAN" "$RESET" "$BOLD$GREEN" "$RESET" "$BOLD$CYAN" "$RESET" "$BOLD$GREEN" "$RESET" "$BOLD$CYAN" "$RESET" "$BOLD$GREEN" "$RESET" "$BOLD$CYAN" "$RESET"
+  printf   '      %b╰────────────────────────────────────────────╯%b\n\n' "$BOLD$CYAN" "$RESET"
 
-  printf '\n%b╭─────────────────────────────────────────────╮%b\n' "$BOLD$GREEN" "$RESET" > "$tty"
-  printf   '%b│  .·°.·.·°  dottrines promulgated  °·.·.°·.  │%b\n' "$BOLD$GREEN" "$RESET" > "$tty"
-  printf   '%b╰─────────────────────────────────────────────╯%b\n\n' "$BOLD$GREEN" "$RESET" > "$tty"
+  sleep 2.5
 
-  printf '\n%b✨ Congrats on your indottrination! ✨%b\n' "$CYAN" "$RESET" > "$tty"
-  printf 'You'\''re all good! Go explore your new setup!\n\n' > "$tty"
+  printf '•   Congrats on being indottrinated!\n\n'
+
+  sleep 2.5
+
+  printf '•°. You are now a %btrue believer%b, one of the %borthodots%b.·.°•\n\n' "$ITALIC" "$RESET" "$YELLOW" "$RESET"
+
+  sleep 3
+
+  printf '    Just have faith, reload your shell and you'\''re good to go.\n'
+  printf '    Have fun creating things in your new environment!\n\n'
+
+  printf '%b•°.·.•°.·.•°.·.•°.·.•°.·.•°.·.•°.·.•°.·.•°.·.•°.·.•°.·.•°.·.•°.·.•°.·.•°.·.•%b\n\n' "$BOLD$CYAN" "$RESET"
 }
 
 # ♻️ Reload run commands
@@ -307,6 +336,25 @@ main() {
   parse_args "$@"
   setup_colors
   print_intro
+
+  # Pause and prompt the user
+  if [ "$UNATTENDED" != yes ]; then
+    printf "%b?%b   Proceed with the indottrination? [Y/n]: " "$YELLOW" "$RESET"
+    read -r answer
+    case "$answer" in
+      [Nn]*)
+        printf "\n%b•%b   Indottrination aborted. You remain dotless, unbeliever.\n\n" "$RED" "$RESET"
+
+        printf '%b•°.·.•°.·.•°.·.•°.·.•°.·.•°.·.•°.·.•°.·.•°.·.•°.·.•°.·.•°.·.•°.·.•°.·.•°.·.•%b\n\n' "$BOLD$CYAN" "$RESET"
+        exit 0
+        ;;
+    esac
+  fi
+
+  printf "\n"
+  printf "•°. %bMay the Dots abide and multiply with you.%b\n\n" "$BOLD" "$RESET"
+  sleep 2.5
+
   check_dependencies
 
   # Detect installed shells safely under POSIX sh
@@ -332,6 +380,7 @@ main() {
   install_files
   install_run_commands
   install_oh_my_zsh
+  sleep 3
   print_success
   # reload_shell
 }
